@@ -5,7 +5,7 @@ import {
     Route
 } from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar'
-import Login from './views/Login'
+import Login from './views/users/Login'
 
 const App = () => {
     return(
