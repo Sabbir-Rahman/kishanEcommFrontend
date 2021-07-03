@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Deployed app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is deployed in netlify to see the demo click on(https://infallible-khorana-836787.netlify.app/).
 
 
 ## Available Scripts
