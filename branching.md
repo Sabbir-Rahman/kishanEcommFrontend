@@ -8,6 +8,7 @@ Pushing to this master will check some automated deployment test and deploy it d
 Push to master will trigger deployment.yml
 Pull to master will trigger development.yml
 
-# 2/ Staging
+# 2/ Staging:-
 This branch will consist development final code which have no bug, running in browser. This will also autometically tested. Master code will be pulled from here.
-Pushing/ Pulling to this branch will call test.yml and cypress.yml
+
+Pushing/ Pulling to this branch will trigger test.yml and cypress.yml
