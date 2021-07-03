@@ -3,7 +3,7 @@ import { Button, Form, Grid, Message, Segment } from 'semantic-ui-react'
 
 const Registration = () => {
     return(
-        <div style={{backgroundColor: "#CCFFCC"}}>
+        <div style={{backgroundColor: "#F4FFEE"}}>
             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
             <Grid.Column style={{ maxWidth: 450 }}>
                 <Form size='large'>
