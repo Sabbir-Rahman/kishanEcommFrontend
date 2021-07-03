@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Message, Segment } from 'semantic-ui-react'
 
 const Login = () => {
     return(
@@ -8,6 +8,7 @@ const Login = () => {
                 <Form size='large'>
                     <Segment stacked>
                         <h1>প্রবেশ করুন</h1>
+                        <Message color='olive'><a href="#">গুগল একাউন্ট দিয়ে</a></Message>
                         <Form.Input fluid icon='user' iconPosition='left' placeholder='ইমেইল' />
                         <Form.Input
                             fluid
@@ -16,10 +17,10 @@ const Login = () => {
                             placeholder='পাসওয়ার্ড'
                             type='password'
                         />
-                        <Button color='teal' fluid size='large'>প্রবেশ করুন</Button>
+                        <Button color='green' fluid size='large'>প্রবেশ করুন</Button>
                     </Segment>
                 </Form>
-                <Message>একাউন্ট নেই?<a href='/register'><br/>নতুন একাউন্ট খুলুন</a></Message>
+                <Message>একাউন্ট নেই?<Button color='green' fluid size='tiny'>একাউন্ট খুলুন</Button></Message>
             </Grid.Column>
         </Grid>
     )
