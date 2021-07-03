@@ -8,7 +8,7 @@ const Login = () => {
                 <Form size='large'>
                     <Segment stacked>
                         <h1>প্রবেশ করুন</h1>
-                        <Message color='olive'><a href="#">গুগল একাউন্ট দিয়ে</a></Message>
+                        <Message color='olive'><a href="/login">গুগল একাউন্ট দিয়ে</a></Message>
                         <Form.Input fluid icon='user' iconPosition='left' placeholder='ইমেইল' />
                         <Form.Input
                             fluid
