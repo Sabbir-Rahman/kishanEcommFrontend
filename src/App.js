@@ -1,9 +1,18 @@
 import React from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar'
+import Login from './views/Login'
 
 const App = () => {
     return(
-        <Navbar/>
+        <Router>
+            <Navbar/>
+            <Route path="/login" component={Login}/>
+        </Router>
     )
 }
 
