@@ -1,12 +1,20 @@
-import React from "react";
-import Footer from "./components/Footer";
+import React from 'react'
+import {
+    BrowserRouter as Router,
+    Route
+} from 'react-router-dom'
+import Navbar from './Components/Navbar/Navbar'
+import Login from './views/users/Login'
+import Registration from './views/users/Registration'
 
 const App = () => {
-  return (
-    <div>
-      <Footer />
-    </div>
-  );
-};
+    return(
+        <Router>
+            <Navbar/>
+            <Route path="/login" component={Login}/>
+            <Route path="/register" component={Registration}/>
+        </Router>
+    )
+}
 
-export default App;
+export default App
