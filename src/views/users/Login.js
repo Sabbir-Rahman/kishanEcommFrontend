@@ -21,7 +21,7 @@ const Login = () => {
                             <Button color='green' fluid size='large'>প্রবেশ করুন</Button>
                         </Segment>
                     </Form>
-                    <Message>একাউন্ট নেই?<Button color='green' fluid size='tiny'>একাউন্ট খুলুন</Button></Message>
+                    <Message>একাউন্ট নেই?<Button color='green' fluid size='tiny' onClick={event=> window.location.href='/register'}>একাউন্ট খুলুন</Button></Message>
                 </Grid.Column>
             </Grid>
         </div>
