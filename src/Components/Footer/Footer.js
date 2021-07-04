@@ -38,7 +38,7 @@ function Footer() {
         </div>
         <p className="text-1">
           <span className="roboto-normal-dune-16px">
-            © 2021. All rights reserved by{" "}
+            © 2021. All rights reserved by Three Comrades
           </span>
           <span className="span1roboto-normal-dune-16px">Three Comrades</span>
           <span className="roboto-normal-dune-16px">.</span>
