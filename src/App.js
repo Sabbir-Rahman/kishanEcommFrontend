@@ -13,6 +13,7 @@ const App = () => {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Registration} />
       </Router>
+
       <Footer />
     </div>
   );
