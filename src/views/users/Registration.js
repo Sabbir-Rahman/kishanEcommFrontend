@@ -15,7 +15,7 @@ const Registration = () => {
       body: JSON.stringify(user),
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
+        accepted: "application/json",
       },
     });
 
