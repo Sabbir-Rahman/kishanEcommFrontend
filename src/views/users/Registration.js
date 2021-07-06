@@ -3,12 +3,14 @@ import { Button, Form, Grid, Message, Segment } from "semantic-ui-react";
 import axios from "axios";
 import { Redirect } from "react-router";
 import { Link, Router, Route } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Registration = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullname, setFullname] = useState("");
   const [confpassword, setConfpassword] = useState("");
+  let history = useHistory();
 
   async function signUp() {
     const user = { fullname, email, password, confpassword };
@@ -26,9 +28,12 @@ const Registration = () => {
     axios(options)
       .then((response) => {
         //redirect to login page
+        console.log(response);
+
       })
       .catch((error) => {
         // redirect to register page
+       
       });
   }
 
