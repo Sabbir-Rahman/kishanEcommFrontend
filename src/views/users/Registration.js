@@ -1,9 +1,11 @@
 import React from 'react'
 import { Button, Form, Grid, Message, Segment } from 'semantic-ui-react'
+import Navbar from '../../Components/Navbar/Navbar'
 
 const Registration = () => {
     return(
         <div style={{backgroundColor: "#F4FFEE"}}>
+            <Navbar/>
             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
             <Grid.Column style={{ maxWidth: 450 }}>
                 <Form size='large'>
