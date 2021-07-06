@@ -1,16 +1,12 @@
 import React from 'react'
 import Navbar from '../../Components/Navbar/NavbarDash/Navbar'
-import Sidebar from '../../Components/Sidebar/SidebarDash/Sidebar'
+import Sidebar from '../../Components/Sidebar/Sidebar'
 
 const Dashboard = () => {
     return(
         <div>
-            <div>
-                <Navbar />
-            </div>
-            <div>
-                <Sidebar />
-            </div>
+            <Navbar />
+            <Sidebar />
         </div>
     )
 }

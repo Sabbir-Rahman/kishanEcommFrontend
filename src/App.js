@@ -6,7 +6,6 @@ import Login from "./views/users/Login";
 import Registration from "./views/users/Registration";
 import KrishiBazar from "./views/KrishiBazar";
 import Dashboard from "./views/users/Dashboard";
-import Sidebar from "./Components/Sidebar/Sidebar";
 
 const App = () => {
   return (
@@ -18,7 +17,6 @@ const App = () => {
         <Route path="/krishiBazar" component={KrishiBazar} />
         <Route path="/dashboard" component={Dashboard} />
       </Router>
-      <Sidebar />
       <Footer />
     </div>
   );

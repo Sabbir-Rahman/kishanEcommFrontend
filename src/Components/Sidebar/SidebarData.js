@@ -1,18 +1,18 @@
 import React from "react";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import EqualizerIcon from "@material-ui/icons/Equalizer";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import RedeemIcon from "@material-ui/icons/Redeem";
-import EmailIcon from "@material-ui/icons/Email";
-import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
-import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import DashboardIcon from "@material-ui/icons/Dashboard"
+import EqualizerIcon from "@material-ui/icons/Equalizer"
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart"
+import RedeemIcon from "@material-ui/icons/Redeem"
+import EmailIcon from "@material-ui/icons/Email"
+import MonetizationOnIcon from "@material-ui/icons/MonetizationOn"
+import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive"
+import ExitToAppIcon from "@material-ui/icons/ExitToApp"
 
 export const SidebarData = [
   {
     title: "ড্যাশবোর্ড",
     icon: <DashboardIcon />,
-    link: "/home",
+    link: "/dashboard",
   },
   {
     title: "পরিসংখ্যান",
