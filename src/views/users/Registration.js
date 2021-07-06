@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Button, Form, Grid, Message, Segment } from "semantic-ui-react";
+import axios from "axios";
+import { Redirect } from "react-router";
+import { Link, Router, Route } from "react-router-dom";
 
 const Registration = () => {
   const [email, setEmail] = useState("");
@@ -10,17 +13,23 @@ const Registration = () => {
   async function signUp() {
     const user = { fullname, email, password, confpassword };
 
-    let result = await fetch("http://127.0.0.1:5000/auth/register", {
+    // axios
+    const options = {
+      url: "http://127.0.0.1:5000/auth/register",
       method: "POST",
-      body: JSON.stringify(user),
       headers: {
-        "Content-Type": "application/json",
-        accepted: "application/json",
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
       },
-    });
-
-    result = await result.json();
-    console.warn("result", result);
+      data: user,
+    };
+    axios(options)
+      .then((response) => {
+        //redirect to login page
+      })
+      .catch((error) => {
+        // redirect to register page
+      });
   }
 
   return (
@@ -35,10 +44,10 @@ const Registration = () => {
             <Segment stacked>
               <h1>একাউন্ট খুলুন</h1>
               <Message color="olive">
-                <a href="/register">জাতীয় পরিচয়পত্র দিয়ে</a>
+                <Link to="/register">জাতীয় পরিচয়পত্র দিয়ে</Link>
               </Message>
               <Message color="olive">
-                <a href="/register">গুগল একাউন্ট দিয়ে</a>
+                <Link to="/register">গুগল একাউন্ট দিয়ে</Link>
               </Message>
               <h3>অথবা ইমেইল/ফোন নাম্বার দিয়ে একাউন্ট খুলুন</h3>
               <Form.Input
