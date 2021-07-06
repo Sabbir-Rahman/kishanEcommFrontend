@@ -5,6 +5,7 @@ import Footer from "./Components/Footer/Footer";
 import Login from "./views/users/Login";
 import Registration from "./views/users/Registration";
 import KrishiBazar from "./views/KrishiBazar";
+import Dashboard from "./views/users/Dashboard";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Registration} />
         <Route path="/krishiBazar" component={KrishiBazar} />
+        <Route path="/dashboard" component={Dashboard} />
       </Router>
       <Footer />
     </div>
