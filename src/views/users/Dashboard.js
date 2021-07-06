@@ -6,7 +6,7 @@ const Dashboard = () => {
     return(
         <div>
             <Navbar />
-            <Sidebar />
+            <Sidebar/>
         </div>
     )
 }
