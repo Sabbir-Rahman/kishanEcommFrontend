@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu } from '@material-ui/core';
-import { ShoppingCart } from '@material-ui/icons';
-import { Link, useLocation } from 'react-router-dom';
-import useStyles from './styles';
-import NavbarMain from '../Navbar'
+import React, { useState } from "react";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Badge,
+  MenuItem,
+  Menu,
+} from "@material-ui/core";
+import { ShoppingCart } from "@material-ui/icons";
+import { Link, useLocation } from "react-router-dom";
+import useStyles from "./styles";
+import NavbarMain from "../Navbar";
+import SearchBar from "../../SearchBar/SearchBar";
 
 const PrimarySearchAppBar = ({ totalItems }) => {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -14,12 +22,25 @@ const PrimarySearchAppBar = ({ totalItems }) => {
 
   const handleMobileMenuClose = () => setMobileMoreAnchorEl(null);
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const mobileMenuId = "primary-search-account-menu-mobile";
 
   const renderMobileMenu = (
-    <Menu anchorEl={mobileMoreAnchorEl} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} id={mobileMenuId} keepMounted transformOrigin={{ vertical: 'top', horizontal: 'right' }} open={isMobileMenuOpen} onClose={handleMobileMenuClose}>
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
       <MenuItem>
-        <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
+        <IconButton
+          component={Link}
+          to="/cart"
+          aria-label="Show cart items"
+          color="inherit"
+        >
           <Badge badgeContent={totalItems} color="secondary">
             <ShoppingCart />
           </Badge>
@@ -32,17 +53,22 @@ const PrimarySearchAppBar = ({ totalItems }) => {
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
-      <NavbarMain />
+        <NavbarMain />
         <Toolbar>
           <div className={classes.grow} />
-          {location.pathname === '/krishiBazar' && (
-          <div className={classes.button}>
-            <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
-              <Badge badgeContent={totalItems} color="secondary">
-                <ShoppingCart />
-              </Badge>
-            </IconButton>
-          </div>
+          {location.pathname === "/krishiBazar" && (
+            <div className={classes.button}>
+              <IconButton
+                component={Link}
+                to="/cart"
+                aria-label="Show cart items"
+                color="inherit"
+              >
+                <Badge badgeContent={totalItems} color="secondary">
+                  <ShoppingCart />
+                </Badge>
+              </IconButton>
+            </div>
           )}
         </Toolbar>
       </AppBar>
