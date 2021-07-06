@@ -1,3 +1,4 @@
+import { colors } from "@material-ui/core";
 import React from "react";
 import "./Footer.css";
 function Footer() {
@@ -18,11 +19,10 @@ function Footer() {
           <div className="col">
             <h4>আমাদের সম্পর্কে জানুন</h4>
             <ui className="list-unstyled">
-              <li>আমরা কারা</li>
-              <li>আমাদের উদ্দেশ্য</li>
-              <li>আমাদের প্রজেক্ট</li>
-              <li>সামাজিক যোগাযোগ</li>
-              <li>ইমেইল করুন</li>
+              <li><a href="/about" class="link">আমরা কারা</a></li>
+              <li><a href="#" class="link">আমাদের উদ্দেশ্য</a></li>
+              <li><a href="#" class="link">সামাজিক যোগাযোগ</a></li>
+              <li><a href="#" class="link">ইমেইল করুন</a></li>
             </ui>
           </div>
           {/* Column3 */}
@@ -40,7 +40,6 @@ function Footer() {
           <span className="roboto-normal-dune-16px">
             © 2021. All rights reserved by Three Comrades
           </span>
-          <span className="span1roboto-normal-dune-16px">Three Comrades</span>
           <span className="roboto-normal-dune-16px">.</span>
         </p>
         <hr />
