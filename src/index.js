@@ -7,13 +7,15 @@ import "./assets/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
 import "./assets/css/demo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import User from "layouts/User";
+import User from "layouts/User"
+import Home from "layouts/Home"
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/user" render={(props) => <User {...props} />} />
-      <Redirect from="/" to="/user/dashboard" />
+      <Route path="/" render={(props) => <Home {...props} />} />
+      {/* <Redirect from="/" to="/user/dashboard" /> */}
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
