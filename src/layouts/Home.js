@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { useLocation, Route, Switch } from "react-router-dom";
-import UserNavbar from "components/Navbars/UserNavbar";
+import Navbar from "components/Navbars/Navbar";
 import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
-import routes from "routes/dashboardRoutes.js";
+import routes from "routes/routes";
 import sidebarImage from "assets/img/sidebar-3.jpg";
 
 function Home() {
@@ -14,7 +14,7 @@ function Home() {
   const mainPanel = React.useRef(null);
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/") {
+      if (prop.layout === "/ecomm") {
         return (
           <Route
             path={prop.layout + prop.path}
@@ -45,7 +45,7 @@ function Home() {
       <div className="wrapper">
         <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
         <div className="main-panel" ref={mainPanel}>
-          <UserNavbar />
+          <Navbar />
           <div className="content">
             <Switch>{getRoutes(routes)}</Switch>
           </div>
