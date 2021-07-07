@@ -3,7 +3,7 @@ import { Container, Typography, Button, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem/CartItem";
 import useStyles from "./styles";
-import Checkout from "../CheckoutForm/Checkout/Checkout";
+
 
 const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
   const classes = useStyles();
@@ -52,7 +52,7 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
           </Button>
           <Button
             className={classes.checkoutButton}
-            component={Checkout}
+            // component={}
             to="/checkout"
             size="large"
             type="button"
