@@ -15,7 +15,6 @@ ReactDOM.render(
     <Switch>
       <Route path="/user" render={(props) => <User {...props} />} />
       <Route path="/" render={(props) => <Home {...props} />} />
-      <Redirect from="/" to="/ecomm/dashboard" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

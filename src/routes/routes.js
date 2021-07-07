@@ -1,97 +1,29 @@
-import Dashboard from "views/Dashboard.js";
-import UserProfile from "views/UserProfile.js";
-import TableList from "views/TableList.js";
-import Typography from "views/Typography.js";
-import Icons from "views/Icons.js";
-import Maps from "views/Maps.js";
-import Notifications from "views/Notifications.js";
-import Messages from "views/Messages"
-import Upgrade from "views/Upgrade.js";
+import Home from "views/Home";
 import Login from "views/Login";
 import Register from "views/Registration";
 
-const dashboardRoutes = [
+const routes = [
   {
-    upgrade: true,
-    path: "/addProduct",
-    name: "পণ্য যোগ করুন",
-    icon: "nc-icon nc-alien-33",
-    component: Upgrade,
-    layout: "/ecomm",
-  },
-  {
-    path: "/dashboard",
-    name: "ড্যাশবোর্ড",
-    icon: "nc-icon nc-chart-pie-35",
-    component: Dashboard,
-    layout: "/ecomm",
-  },
-  {
-    path: "/user",
-    name: "প্রোফাইল",
-    icon: "nc-icon nc-circle-09",
-    component: UserProfile,
-    layout: "/ecomm",
-  },
-  {
-    path: "/notifications",
-    name: "নোটিফিকেশন",
-    icon: "nc-icon nc-bell-55",
-    component: Notifications,
-    layout: "/ecomm",
-  },
-  {
-    path: "/messages",
-    name: "বার্তাবাক্স",
-    icon: "nc-icon nc-email-85",
-    component: Messages,
-    layout: "/ecomm",
-  },
-  {
-    path: "/table",
-    name: "পরিসংখ্যান",
-    icon: "nc-icon nc-notes",
-    component: TableList,
-    layout: "/ecomm",
-  },
-  {
-    path: "/sells",
-    name: "পণ্য বিক্রি",
-    icon: "nc-icon nc-cart-simple",
-    component: Typography,
-    layout: "/ecomm",
-  },
-  {
-    path: "/sell-request",
-    name: "পণ্য বিক্রয় অনুরোধ",
-    icon: "nc-icon nc-delivery-fast",
-    component: Icons,
-    layout: "/ecomm",
-  },
-  {
-    path: "/buyings",
-    name: "পণ্য ক্রয়",
-    icon: "nc-icon nc-cart-simple",
-    component: Maps,
-    layout: "/ecomm",
-  },
-  {
-    path: "/buy-request",
-    name: "পণ্য ক্রয় অনুরোধ",
-    icon: "nc-icon nc-delivery-fast",
-    component: Maps,
-    layout: "/ecomm",
+    path: "/home",
+    name: "মূল পাতা",
+    icon: "nc-icon nc-mobile",
+    component: Home,
+    layout: "",
   },
   {
     path: "/login",
+    name: "প্রবেশ করুন",
+    icon: "nc-icon nc-single-02",
     component: Login,
-    layout: "/ecomm",
+    layout: "",
   },
   {
     path: "/register",
+    name: "যোগ দিন",
+    icon: "nc-icon nc-stre-right",
     component: Register,
-    layout: "/ecomm",
+    layout: ""
   },
 ];
 
-export default dashboardRoutes;
+export default routes;
