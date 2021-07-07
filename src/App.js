@@ -16,8 +16,8 @@ const App = () => {
   return (
     <div>
       <Router>
-        <Route path="/login"><Login/></Route>
-        <Route path="/register"><Registration/></Route>
+        <Route path="/login" exact component={Login} />
+        <Route path="/register" exact component={Registration} />
         <Route path="/krishiBazar"><KrishiBazar/></Route>
         <Route path="/dashboard"><Dashboard/></Route>
       </Router>
