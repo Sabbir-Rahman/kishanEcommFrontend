@@ -1,5 +1,17 @@
 import React from 'react'
-import { Button, Form, Grid, Message, Segment } from 'semantic-ui-react'
+import {
+    Alert,
+    Badge,
+    Button,
+    Card,
+    Modal,
+    Navbar,
+    Nav,
+    Container,
+    Row,
+    Col,
+    Form
+  } from "react-bootstrap";
 import { useState } from "react";
 import axios from "axios";
 
@@ -31,52 +43,50 @@ const Login = () => {
     }
     return(
             <div style={{ backgroundColor: "#F4FFEE" }}>
-                <Grid 
-                    textAlign="center"
-                    style={{ height: "100vh" }}
-                    verticalAlign="middle"
-                >
-                    <Grid.Column style={{ maxWidth: 450 }}>
-                        <Form size="large">
-                            <Segment stacked>
-                                <h1>প্রবেশ করুন</h1>
-                                <Message color="olive">
-                                    <a href="/login">গুগল একাউন্ট দিয়ে</a>
-                                </Message>
-                                <Form.Input
-                                    fluid
-                                    icon="user"
-                                    iconPosition="left"
-                                    placeholder="ইমেইল"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                                <Form.Input
-                                    fluid
-                                    icon="lock"
-                                    iconPosition="left"
-                                    placeholder="পাসওয়ার্ড"
-                                    type="password"
-                                    onChange={(e) => setPassword(e.target.value)}
-                                />
-                                <Button color="green" fluid size="large" onClick={login}>
-                                    প্রবেশ করুন
-                                </Button>
-                            </Segment>
-                        </Form>
-                        <Message>
+                <Container fluid>
+                    <Card>
+                        <Card.Header>
+                            <Card.Title as="h4">প্রবেশ করুন</Card.Title>
+                            <p className="card-category">
+                                <a  href="https://github.com/EINazare"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    গুগল অ্যাকাউন্ট .
+                                </a>
+                                ব্যবহার করুন
+                            </p>
+                        </Card.Header>
+                        <Card.Body>
+                            <Form>
+                                <Form.Group controlId="email">
+                                    <Form.Label>ইমেইল</Form.Label>
+                                    <Form.Control type="email" placeholder="আপনার ইমেইল অ্যাড্রেসটি এখানে লিখুন" />
+                                    <Form.Text className="text-muted">
+                                        আপনার ইমেইলটি কখনোই কারও সাথে শেয়ার করা হবে না।
+                                    </Form.Text>
+                                </Form.Group>
+                                <Form.Group controlId="password">
+                                    <Form.Label>পাসওয়ার্ড</Form.Label>
+                                    <Form.Control type="password" placeholder="আপনার পাসওয়ার্ডটি এখানে লিখুন" />
+                                </Form.Group>
+                                <Button color="green"  onClick={login}>সাইন ইন</Button>
+                            </Form>
+                        </Card.Body>
+                        <p>
                             একাউন্ট নেই?
-                            <Button
-                                color="green"
-                                fluid
-                                size="tiny"
-                                onClick={(event) => (window.location.href = "/register")}
+                        </p>
+                        <p className="card-category">
+                            <a  href="https://github.com/EINazare"
+                                rel="noopener noreferrer"
+                                target="_blank"
                             >
-                                একাউন্ট খুলুন
-                            </Button>
-                        </Message>
-                    </Grid.Column>
-                </Grid>
+                            নতুন একাউন্ট তৈরি করুন
+                            </a>
+                        </p>
+                    </Card>
+                </Container>
+
             </div>
     )
 }
