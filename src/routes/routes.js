@@ -1,3 +1,4 @@
+import Dashboard from "views/Dashboard";
 import Home from "views/Home";
 import Login from "views/Login";
 import Register from "views/Registration";
@@ -22,6 +23,14 @@ const routes = [
     name: "যোগ দিন",
     icon: "nc-icon nc-stre-right",
     component: Register,
+    layout: ""
+  },
+  {
+    upgrade: true,
+    path: "/user/dashboard",
+    name: "ড্যাশবোর্ড",
+    icon: "nc-icon nc-chart-pie-35",
+    component: Dashboard,
     layout: ""
   },
 ];
