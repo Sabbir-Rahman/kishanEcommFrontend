@@ -1,36 +1,40 @@
-import React from "react";
-import { Button, Form, Grid, Message, Segment } from "semantic-ui-react";
+import React from 'react'
+import { Button, Form, Grid, Message, Segment } from 'semantic-ui-react'
+import Navbar from '../../Components/Navbar/Navbar'
+import Footer from '../../Components/Footer/Footer'
 import { useState } from "react";
 import axios from "axios";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  function login() {
-    const user = { email, password };
-
-    // axios
-    const options = {
-      url: "http://127.0.0.1:5000/auth/login",
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-      },
-      data: user,
-    };
-    axios(options)
-      .then((response) => {
-        console.warn("varified");
-      })
-      .catch((error) => {
-        // redirect to login
-        console.warn("Not varified");
-      });
-  }
-  return (
-    <div style={{ backgroundColor: "#F4FFEE" }}>
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+  
+    function login() {
+      const user = { email, password };
+  
+      // axios
+      const options = {
+        url: "http://127.0.0.1:5000/auth/login",
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        data: user,
+      };
+      axios(options)
+        .then((response) => {
+          console.warn("varified");
+        })
+        .catch((error) => {
+          // redirect to login
+          console.warn("Not varified");
+        });
+    }
+    return(
+        <div>
+            <Navbar />
+            <div style={{ backgroundColor: "#F4FFEE" }}>
       <Grid
         textAlign="center"
         style={{ height: "100vh" }}
@@ -78,7 +82,9 @@ const Login = () => {
         </Grid.Column>
       </Grid>
     </div>
-  );
-};
+            <Footer />
+        </div>
+    )
+}
 
-export default Login;
+export default Login

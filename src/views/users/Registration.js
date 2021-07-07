@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import { Button, Form, Grid, Message, Segment } from "semantic-ui-react";
+import React from 'react'
+import { Button, Form, Grid, Message, Segment } from 'semantic-ui-react'
+import Navbar from '../../Components/Navbar/Navbar'
+import Footer from '../../Components/Footer/Footer'
 import axios from "axios";
 import { Redirect } from "react-router";
 import { Link, Router, Route } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 const Registration = () => {
-  const [email, setEmail] = useState("");
+    const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullname, setFullname] = useState("");
   const [confpassword, setConfpassword] = useState("");
@@ -36,9 +38,10 @@ const Registration = () => {
        
       });
   }
-
-  return (
-    <div style={{ backgroundColor: "#F4FFEE" }}>
+    return(
+        <div>
+            <Navbar />
+            <div style={{ backgroundColor: "#F4FFEE" }}>
       <Grid
         textAlign="center"
         style={{ height: "100vh" }}
@@ -103,7 +106,9 @@ const Registration = () => {
         </Grid.Column>
       </Grid>
     </div>
-  );
-};
+            <Footer />
+        </div>    
+    )
+}
 
-export default Registration;
+export default Registration
