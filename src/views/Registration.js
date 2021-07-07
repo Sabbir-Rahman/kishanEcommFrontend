@@ -48,12 +48,12 @@ const Register = () => {
         });
     }
     return(
-            <div style={{ backgroundColor: "#F4FFEE" }}>
+            <div>
                 <Container fluid>
                     <Card>
                         <Card.Header>
-                            <Card.Title as="h4">নিবন্ধন করুন</Card.Title>
-                            <p className="card-category">
+                            <Card.Title as="h3">নিবন্ধন করুন</Card.Title>
+                            <h4 className="card-category">
                                 <a  href="https://github.com/EINazare"
                                     rel="noopener noreferrer"
                                     target="_blank"
@@ -61,8 +61,10 @@ const Register = () => {
                                     গুগল অ্যাকাউন্ট .
                                 </a>
                                 ব্যবহার করুন
-                            </p>
+                            </h4>
                         </Card.Header>
+                    </Card>
+                    <Card>
                         <Card.Body>
                             <Form>
                                 <Form.Group controlId="fullname">                                    
@@ -87,17 +89,19 @@ const Register = () => {
                                 <Button color="green"  onClick={signUp}>সাইন আপ</Button>
                             </Form>
                         </Card.Body>
-                        <p>
+                    </Card>
+                    <Card>
+                        <h4>
                             একাউন্ট আছে?
-                        </p>
-                        <p className="card-category">
+                        </h4>
+                        <h4 className="card-category">
                             <a  href="/ecomm/login"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
                             প্রবেশ করুন।
                             </a>
-                        </p>
+                        </h4>
                     </Card>
                 </Container>
 

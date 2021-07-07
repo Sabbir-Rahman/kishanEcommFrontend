@@ -41,7 +41,7 @@ function Home() {
     }
   }, [location]);
   return (
-    <>
+    <div style={{ backgroundColor: "#F4FFEE" }}>
       <div className="wrapper">
         <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
         <div className="main-panel" ref={mainPanel}>
@@ -52,7 +52,7 @@ function Home() {
           <Footer />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
