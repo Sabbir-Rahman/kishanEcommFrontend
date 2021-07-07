@@ -1,21 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Button, Form, Grid, Message, Segment } from 'semantic-ui-react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
-import axios from "axios";
-import { Redirect } from "react-router";
-import { Link, Router, Route } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import axios from "axios"
+import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 const Registration = () => {
-    const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [fullname, setFullname] = useState("");
-  const [confpassword, setConfpassword] = useState("");
-  let history = useHistory();
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [fullname, setFullname] = useState("")
+  const [confpassword, setConfpassword] = useState("")
+  let history = useHistory()
 
   async function signUp() {
-    const user = { fullname, email, password, confpassword };
+    const user = { fullname, email, password, confpassword }
 
     // axios
     const options = {
@@ -26,7 +25,8 @@ const Registration = () => {
         "Content-Type": "application/json;charset=UTF-8",
       },
       data: user,
-    };
+    }
+
     axios(options)
       .then((response) => {
         //redirect to login page
