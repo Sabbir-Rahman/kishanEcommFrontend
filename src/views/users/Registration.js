@@ -23,7 +23,7 @@ const Registration = () => {
                         <Button color='green' fluid size='large'>একাউন্ট খুলুন</Button>
                     </Segment>
                 </Form>
-                <Message>একাউন্ট আছে?<Button color='green' fluid size='tiny'>প্রবেশ করুন</Button></Message>
+                <Message>একাউন্ট আছে?<Button color='green' fluid size='tiny' onClick={event=> window.location.href='/login'}>প্রবেশ করুন</Button></Message>
             </Grid.Column>
             </Grid>
         </div>    
