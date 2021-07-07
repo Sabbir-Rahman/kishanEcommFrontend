@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { useLocation, Route, Switch } from "react-router-dom";
-import AdminNavbar from "components/Navbars/AdminNavbar";
+import UserNavbar from "components/Navbars/UserNavbar";
 import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
-import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 import routes from "routes.js";
 import sidebarImage from "assets/img/sidebar-3.jpg";
 import MainNavbar from "components/Navbars/Navbar";
@@ -48,7 +47,7 @@ function User() {
         <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
         <div className="main-panel" ref={mainPanel}>
           <MainNavbar/>
-          <AdminNavbar />
+          <UserNavbar />
           <div className="content">
             <Switch>{getRoutes(routes)}</Switch>
           </div>

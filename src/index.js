@@ -9,12 +9,12 @@ import "./assets/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
 import "./assets/css/demo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import AdminLayout from "layouts/User";
+import User from "layouts/User";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/user" render={(props) => <AdminLayout {...props} />} />
+      <Route path="/user" render={(props) => <User {...props} />} />
       <Redirect from="/" to="/user/dashboard" />
     </Switch>
   </BrowserRouter>,

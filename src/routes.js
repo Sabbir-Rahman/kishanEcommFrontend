@@ -11,7 +11,7 @@ import Upgrade from "views/Upgrade.js";
 const dashboardRoutes = [
   {
     upgrade: true,
-    path: "/upgrade",
+    path: "/addProduct",
     name: "পণ্য যোগ করুন",
     icon: "nc-icon nc-alien-33",
     component: Upgrade,
