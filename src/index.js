@@ -12,6 +12,7 @@ import Home from "layouts/Home"
 
 ReactDOM.render(
   <BrowserRouter>
+    <Redirect from="/" to="/home" />
     <Switch>
       <Route path="/user" render={(props) => <User {...props} />} />
       <Route path="/" render={(props) => <Home {...props} />} />

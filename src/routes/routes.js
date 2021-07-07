@@ -12,6 +12,13 @@ const routes = [
     layout: "",
   },
   {
+    path: "/krishi-bazar",
+    name: "কৃষি বাজার",
+    icon: "nc-icon nc-sun-fog-29",
+    component: Register,
+    layout: ""
+  },
+  {
     path: "/login",
     name: "প্রবেশ করুন",
     icon: "nc-icon nc-single-02",
