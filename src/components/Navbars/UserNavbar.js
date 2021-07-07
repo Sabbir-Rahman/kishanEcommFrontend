@@ -35,68 +35,28 @@ function Header() {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="nav mr-auto" navbar>
-            <Nav.Item>
-              <Nav.Link
-                data-toggle="dropdown"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-                className="m-0"
-              >
-                <i className="nc-icon nc-palette"></i>
-                <span className="d-lg-none ml-1">Dashboard</span>
+          <Nav.Item>
+              <Nav.Link href="/">
+                <span className="no-icon">মূল পাতা</span>
               </Nav.Link>
             </Nav.Item>
-            <Dropdown as={Nav.Item}>
-              <Dropdown.Toggle
-                as={Nav.Link}
-                data-toggle="dropdown"
-                id="dropdown-67443507"
-                variant="default"
-                className="m-0"
-              >
-                <i className="nc-icon nc-planet"></i>
-                <span className="notification">5</span>
-                <span className="d-lg-none ml-1">Notification</span>
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Notification 1
-                </Dropdown.Item>
-                <Dropdown.Item
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Notification 2
-                </Dropdown.Item>
-                <Dropdown.Item
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Notification 3
-                </Dropdown.Item>
-                <Dropdown.Item
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Notification 4
-                </Dropdown.Item>
-                <Dropdown.Item
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Another notification
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
             <Nav.Item>
-              <Nav.Link
-                className="m-0"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Nav.Link href="/krishi-bazar">
+                <span className="no-icon">কৃষি বাজার</span>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+            <Nav.Link href="/krishi-forum">
+                <span className="no-icon">কৃষি ফোরাম</span>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+            <Nav.Link href="/fosholer-doctor">
+                <span className="no-icon">ফসলের ডাক্তার</span>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="#pablo">
                 <i className="nc-icon nc-zoom-split"></i>
                 <span className="d-lg-block"> খোঁজ করুন</span>
               </Nav.Link>
@@ -104,11 +64,7 @@ function Header() {
           </Nav>
           <Nav className="ml-auto" navbar>
             <Nav.Item>
-              <Nav.Link
-                className="m-0"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Nav.Link href="/logout">
                 <span className="no-icon">লগ আউট</span>
               </Nav.Link>
             </Nav.Item>
