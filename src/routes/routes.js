@@ -79,12 +79,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-delivery-fast",
     component: Maps,
     layout: "/ecomm",
-  },
-  {
-    path: "/krishiBazar",
-    component: Maps,
-    layout: "/ecomm",
-  },
+  }
 ];
 
 export default dashboardRoutes;

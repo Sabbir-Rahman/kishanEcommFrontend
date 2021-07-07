@@ -7,6 +7,7 @@ import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
 import Messages from "views/Messages"
 import Upgrade from "views/Upgrade.js";
+import Login from "views/Login";
 
 const dashboardRoutes = [
   {
@@ -81,9 +82,9 @@ const dashboardRoutes = [
     layout: "/user",
   },
   {
-    path: "/krishiBazar",
-    component: Maps,
-    layout: "/",
+    path: "/login",
+    component: Login,
+    layout: "/user",
   },
 ];
 

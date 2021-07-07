@@ -54,7 +54,7 @@ function MainNavbar() {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/login">
+              <Nav.Link href="/user/login">
                 <span className="no-icon">প্রবেশ করুন</span>
               </Nav.Link>
             </Nav.Item>
