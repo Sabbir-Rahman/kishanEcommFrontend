@@ -5,7 +5,6 @@ import Registration from "./views/users/Registration"
 import KrishiBazar from "./views/KrishiBazar"
 import Dashboard from "./views/users/Dashboard"
 import Index from './views/Index'
-import { About } from "./Components/about"
 import Navbar from "./Components/Navbar/Navbar"
 import Footer from "./Components/Footer/Footer"
 
@@ -25,7 +24,14 @@ const App = () => {
         <Route path="/dashboard"><Dashboard/></Route>
         <Route path="/about">
           <Navbar />
-          <About />
+          <Footer />
+        </Route>
+        <Route path="/fosholerDoctor">
+          <Navbar />
+          <Footer />
+        </Route>
+        <Route path="/krishiForum">
+          <Navbar />
           <Footer />
         </Route>
       </Router>
