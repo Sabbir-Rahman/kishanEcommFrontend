@@ -5,7 +5,6 @@ import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
 import routes from "routes.js";
 import sidebarImage from "assets/img/sidebar-3.jpg";
-import MainNavbar from "components/Navbars/Navbar";
 
 function User() {
   const [image, setImage] = React.useState(sidebarImage);
@@ -46,7 +45,6 @@ function User() {
       <div className="wrapper">
         <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
         <div className="main-panel" ref={mainPanel}>
-          <MainNavbar/>
           <UserNavbar />
           <div className="content">
             <Switch>{getRoutes(routes)}</Switch>
