@@ -10,6 +10,8 @@ import { Team } from '../Components/Team'
 import { Contact } from '../Components/contact'
 import JsonData from '../data/data.json'
 import SmoothScroll from 'smooth-scroll'
+import Navbar from '../Components/Navbar/Navbar'
+import Footer from '../Components/Footer/Footer'
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
     speed: 1000,
@@ -25,6 +27,7 @@ const Index = () => {
 
     return(
         <div>
+          <Navbar />
         <Navigation />
         <Header data={landingPageData.Header} />
         <Features data={landingPageData.Features} />
@@ -34,6 +37,7 @@ const Index = () => {
         <Testimonials data={landingPageData.Testimonials} />
         <Team data={landingPageData.Team} />
         <Contact data={landingPageData.Contact} />
+        <Footer />
       </div>
     )
 }

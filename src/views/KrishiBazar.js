@@ -5,6 +5,7 @@ import Products from "../Components/Products/Products"
 import {commerce} from "../lib/commerce"
 import Navbar from '../Components/Navbar/NavbarEcom/Navbar';
 import Cart from '../Components/Cart/Cart'
+import Footer from '../Components/Footer/Footer'
 
 const KrishiBazar = () => {
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -70,6 +71,7 @@ const KrishiBazar = () => {
                         </Switch>
                     </div>
                 </Router>
+                <Footer />
         </div>    
     )
 }
