@@ -49,12 +49,12 @@ function MainNavbar() {
           </Nav>
           <Nav className="ml-auto" navbar>
             <Nav.Item>
-              <Nav.Link href="/register">
+              <Nav.Link href="/ecomm/register">
                 <span className="no-icon">যোগ দিন</span>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/user/login">
+              <Nav.Link href="/ecomm/login">
                 <span className="no-icon">প্রবেশ করুন</span>
               </Nav.Link>
             </Nav.Item>

@@ -91,7 +91,7 @@ const Register = () => {
                             একাউন্ট আছে?
                         </p>
                         <p className="card-category">
-                            <a  href="/user/login"
+                            <a  href="/ecomm/login"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >

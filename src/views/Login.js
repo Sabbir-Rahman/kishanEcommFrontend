@@ -77,7 +77,7 @@ const Login = () => {
                             একাউন্ট নেই?
                         </p>
                         <p className="card-category">
-                            <a  href="https://github.com/EINazare"
+                            <a  href="/ecomm/register"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >

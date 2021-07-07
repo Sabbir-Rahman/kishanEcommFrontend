@@ -85,12 +85,12 @@ const dashboardRoutes = [
   {
     path: "/login",
     component: Login,
-    layout: "/user",
+    layout: "/ecomm",
   },
   {
     path: "/register",
     component: Register,
-    layout: "/user",
+    layout: "/ecomm",
   },
 ];
 
