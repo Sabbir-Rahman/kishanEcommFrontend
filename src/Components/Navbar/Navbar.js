@@ -40,6 +40,13 @@ export default function Navbar() {
             আমাদের সম্পর্কে
         </Menu.Item>
         <Menu.Item
+            className="item"
+            href="/dashboard" 
+            active={('/dashboard' === window.location.pathname)}
+        >
+            ড্যাশবোর্ড
+        </Menu.Item>
+        <Menu.Item
             className="item right menu"
             href="/register" 
             active={('/register' === window.location.pathname)}

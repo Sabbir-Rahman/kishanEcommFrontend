@@ -34,8 +34,7 @@ const Registration = () => {
 
       })
       .catch((error) => {
-        // redirect to register page
-       
+        window.location.href="/register"
       });
   }
     return(
@@ -99,7 +98,11 @@ const Registration = () => {
           </Form>
           <Message>
             একাউন্ট আছে?
-            <Button color="green" fluid size="tiny">
+            <Button
+              color="green"
+              fluid
+              size="tiny"
+              onClick={(event)=>(window.location.href="/login")}>
               প্রবেশ করুন
             </Button>
           </Message>
