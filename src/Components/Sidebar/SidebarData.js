@@ -25,9 +25,19 @@ export const SidebarData = [
     link: "/product-sell",
   },
   {
+    title: "পণ্য বিক্রয় অনুরোধ",
+    icon: <ShoppingCartIcon/>,
+    link: "/buy-req"
+  },
+  {
     title: "পণ্য ক্রয়",
     icon: <RedeemIcon />,
     link: "/product-buy",
+  },
+  {
+    title: "পণ্য ক্রয় অনুরোধ",
+    icon: <RedeemIcon />,
+    link: "/sell-req"
   },
   {
     title: "মেসেজ বক্স",
