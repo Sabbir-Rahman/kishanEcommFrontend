@@ -1,4 +1,3 @@
-import { colors } from "@material-ui/core";
 import React from "react";
 import "./Footer.css";
 function Footer() {
@@ -20,9 +19,9 @@ function Footer() {
             <h4>আমাদের সম্পর্কে জানুন</h4>
             <ui className="list-unstyled">
               <li><a href="/about" class="link">আমরা কারা</a></li>
-              <li><a href="#" class="link">আমাদের উদ্দেশ্য</a></li>
-              <li><a href="#" class="link">সামাজিক যোগাযোগ</a></li>
-              <li><a href="#" class="link">ইমেইল করুন</a></li>
+              <li><a href="/vision" class="link">আমাদের উদ্দেশ্য</a></li>
+              <li><a href="/socialmedia" class="link">সামাজিক যোগাযোগ</a></li>
+              <li><a href="/email" class="link">ইমেইল করুন</a></li>
             </ui>
           </div>
           {/* Column3 */}
