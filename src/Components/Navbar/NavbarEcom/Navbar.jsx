@@ -56,6 +56,7 @@ const PrimarySearchAppBar = ({ totalItems }) => {
         <NavbarMain />
         <Toolbar>
           <div className={classes.grow} />
+          <SearchBar/>
           {location.pathname === "/krishiBazar" && (
             <div className={classes.button}>
               <IconButton
