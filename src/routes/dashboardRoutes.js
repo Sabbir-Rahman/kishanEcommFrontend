@@ -2,11 +2,10 @@ import Dashboard from "views/Dashboard.js";
 import UserProfile from "views/UserProfile.js";
 import TableList from "views/TableList.js";
 import Typography from "views/Typography.js";
-import Icons from "views/Icons.js";
 import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
 import Messages from "views/Messages"
-import Upgrade from "views/Upgrade.js";
+import AddProduct from "views/AddProduct";
 
 const dashboardRoutes = [
   {
@@ -14,7 +13,7 @@ const dashboardRoutes = [
     path: "/addProduct",
     name: "পণ্য যোগ করুন",
     icon: "nc-icon nc-alien-33",
-    component: Upgrade,
+    component: AddProduct,
     layout: "/user",
   },
   {
