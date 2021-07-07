@@ -7,6 +7,8 @@ import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
 import Messages from "views/Messages"
 import Upgrade from "views/Upgrade.js";
+import Login from "views/Login";
+import Register from "views/Registration";
 
 const dashboardRoutes = [
   {
@@ -79,7 +81,17 @@ const dashboardRoutes = [
     icon: "nc-icon nc-delivery-fast",
     component: Maps,
     layout: "/ecomm",
-  }
+  },
+  {
+    path: "/login",
+    component: Login,
+    layout: "/user",
+  },
+  {
+    path: "/register",
+    component: Register,
+    layout: "/user",
+  },
 ];
 
 export default dashboardRoutes;

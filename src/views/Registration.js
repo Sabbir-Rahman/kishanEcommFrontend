@@ -14,6 +14,7 @@ import {
   } from "react-bootstrap";
 import { useState } from "react";
 import axios from "axios";
+import { useHistory } from 'react-router';
 
 const Register = () => {
     const [email, setEmail] = useState("")

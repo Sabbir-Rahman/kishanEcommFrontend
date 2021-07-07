@@ -7,7 +7,6 @@ import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
 import Messages from "views/Messages"
 import Upgrade from "views/Upgrade.js";
-import Login from "views/Login";
 
 const dashboardRoutes = [
   {
@@ -79,11 +78,6 @@ const dashboardRoutes = [
     name: "পণ্য ক্রয় অনুরোধ",
     icon: "nc-icon nc-delivery-fast",
     component: Maps,
-    layout: "/user",
-  },
-  {
-    path: "/login",
-    component: Login,
     layout: "/user",
   },
 ];
