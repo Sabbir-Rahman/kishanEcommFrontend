@@ -26,8 +26,13 @@ function Searchbar(props) {
           onKeyPress={handleEnterKeyPressed}
           type="text"
           value={searchText}
-          placeholder="Search your movies"
+          placeholder="পণ্য খুঁজুন"
         />
+        <button
+          className="input"
+          onClick={handleEnterKeyPressed}  >
+            খুঁজুন
+        </button>
       </div>
     </div>
   );
