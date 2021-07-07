@@ -57,6 +57,8 @@ const Login = () => {
                                 ব্যবহার করুন
                             </p>
                         </Card.Header>
+                    </Card>
+                    <Card>
                         <Card.Body>
                             <Form>
                                 <Form.Group controlId="email">
@@ -73,6 +75,8 @@ const Login = () => {
                                 <Button color="green"  onClick={login}>সাইন ইন</Button>
                             </Form>
                         </Card.Body>
+                    </Card>
+                    <Card>
                         <p>
                             একাউন্ট নেই?
                         </p>
