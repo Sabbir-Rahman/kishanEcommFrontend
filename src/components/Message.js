@@ -16,7 +16,7 @@ const Message = ({type, message}) => {
    }
    return(
        <>
-       {func()}
+            {func()}
        </>
    )
   
