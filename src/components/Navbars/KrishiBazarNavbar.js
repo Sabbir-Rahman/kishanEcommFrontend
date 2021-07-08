@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { CartContext } from 'Global/CartContext'
 import { Link } from 'react-router-dom'
 import './App.css'
 import {Navbar} from 'react-bootstrap'
 
-const KrishiBazarNavbar = () => {
+const KrishiBazarNavbar = ({cartToggle}) => {
+    
+    const {shoppingCart} = useContext(CartContext)
+
     return(
         <Navbar>
         <nav>
@@ -11,11 +15,13 @@ const KrishiBazarNavbar = () => {
                 <li><Link to="/krishi-bazar">কৃষি বাজার</Link></li>
             </ul>
             <ul className="right">
-                <li>
-                    <Link to="cart">
-                        <span className="shoppingCart">
-                            <i class="fas fa-cart-plus"></i>
-                            <span className="cartCount">0</span>
+                <li onClick={cartToggle}>
+                    <Link to="/cart">
+                        <span className="dollor">
+                            <i className="fas fa-cart-plus"></i>
+                        </span>
+                        <span className="shoppingCartTotal">
+                            {shoppingCart ? shoppingCart.length : 0}
                         </span>
                     </Link>
                 </li>
