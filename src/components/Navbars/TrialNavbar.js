@@ -10,8 +10,6 @@ function Navigationbar({routes, authentication}){
     }
 
     return(
-      <>
-      <br />
       <Navbar bg="green-400" variant="light">
         <Navbar.Brand href="#home">কিষাণ</Navbar.Brand>
         <Nav className="mr-auto">
@@ -69,7 +67,6 @@ function Navigationbar({routes, authentication}){
           </Nav>
         </Form>
       </Navbar>
-        </>
     )
 }
 
