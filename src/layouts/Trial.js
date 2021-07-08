@@ -1,16 +1,34 @@
 import React, { Component } from "react"
 import Navbar from 'components/Navbars/TrialNavbar'
-import sidebarImage from 'assets/img/sidebar-3.jpg'
-import routes from "routes/dashboardRoutes.js"
+import routes from "routes/trialRoutes.js"
+import authenticationRoutes from "routes/authentication"
+import { useLocation, Route, Switch } from "react-router-dom"
 function Trial() {
-    const [color, setColor] = React.useState("black")
-    const [hasImage, setHasImage] = React.useState(true)
-    const [image, setImage] = React.useState(sidebarImage)
+
+    const getRoutes = (routes) => {
+        return routes.map((prop, key) => {
+          if (prop.layout === "") {
+            return (
+              <Route
+                path={prop.layout + prop.path}
+                render={(props) => <prop.component {...props} />}
+                key={key}
+              />
+            )
+          } else {
+            return null;
+          }
+        })
+      }
 
     return (
-        <div style={{ backgroundColor: "#F4FFEE" }}>
-            <Navbar routes={routes} />
+        <>
+        <Navbar routes={routes} authentication={authenticationRoutes} />
+        <div style={{ backgroundColor: "#F4FFEE"}}>
+            <Switch>{getRoutes(routes)}</Switch>
+            <Switch>{getRoutes(authenticationRoutes)}</Switch>
         </div>
+        </>
     );
 }
 

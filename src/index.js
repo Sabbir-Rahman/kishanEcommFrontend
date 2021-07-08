@@ -9,7 +9,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import User from "layouts/User"
 import Home from "layouts/Home"
-import Trial from 'layouts/Trial'
+import Trial from "layouts/Trial";
 
 ReactDOM.render(
   <BrowserRouter>
