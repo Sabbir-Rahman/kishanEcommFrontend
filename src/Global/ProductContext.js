@@ -5,10 +5,10 @@ import lychee from '../assets/img/lychee.jpg'
 import mango from '../assets/img/mango.jpg'
 import rice from '../assets/img/rice.jpg'
 
-export const ProductsContext = createContext()
+export const productContext = createContext()
 
 
-const ProductsContextProvider = (props) => {
+const ProductContextProvider = (props) => {
 
     const [products] = useState([
         {id: 1, name: 'Salmon', price: 3000, image: fish, catagory: 'fish'},
@@ -30,10 +30,10 @@ const ProductsContextProvider = (props) => {
     ])
 
     return (
-        <ProductsContext.Provider value={{products: [...products]}}>
+        <productContext.Provider value={{products: [...products]}}>
             {props.children}
-        </ProductsContext.Provider>
+        </productContext.Provider>
     )
 }
 
-export default ProductsContextProvider
+export default ProductContextProvider

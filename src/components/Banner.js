@@ -1,18 +1,18 @@
-import React from 'react'
+import React from "react"
 
 const Banner = () => {
-    return (
+    return(
         <div className="container">
-            <header style={{marginTop: '70px'}}>
-                <div className="headerText">
-                    <div>
-                        <h1>কৃষি বাঁচলে বাঁচবে দেশ</h1>
-                        <p>দেশের প্রথম ও একমাত্র কৃষি বিষয়ক ই-কমার্স ওয়েবসাইটে স্বাগতম</p>
-                    </div>
-                </div>
-            </header>
+        <header style={{marginTop: '70px'}}>
+         <div className="headerText">
+         <div>
+         <h1>Eid ke rung apno ke sung</h1>
+         <p>Enjoy online shopping</p>
+         </div>
+         </div>
+        </header>
         </div>
     )
 }
 
-export default Banner
+export default Banner;

@@ -1,15 +1,14 @@
-import React, { useContext } from 'react'
-import StripeCheckout from 'react-stripe-checkout'
-import { CartContext } from 'Global/CartContext'
-import axios from 'axios'
+import React, {useContext} from "react"
+import StripeCheckout from "react-stripe-checkout"
+import axios from "axios"
+import {cartContext} from "Global/CartContext"
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure();
-
-
 const Cart = (props) => {
    
-    const {dispatch, shoppingCart, totalPrice, qty} = useContext(CartContext);
+    const {dispatch, shoppingCart, totalPrice, qty} = useContext(cartContext);
          console.log("total qty: ",qty);
 
     const handleToken = async (token) => {

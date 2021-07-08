@@ -1,6 +1,6 @@
 import React from 'react'
 import KrishiBazarNavbar from 'components/Navbars/KrishiBazarNavbar'
-import ProductsContextProvider from 'Global/ProductsContext'
+import ProductsContextProvider from 'Global/ProductContext'
 import CartContextProvider from 'Global/CartContext'
 import Products from 'components/Products'
 import './style.css'
