@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import { useLocation, Route, Switch } from "react-router-dom";
-import UserNavbar from "components/Navbars/UserNavbar";
-import Sidebar from "components/Sidebar/Sidebar";
-import routes from "routes/dashboardRoutes.js";
-import sidebarImage from "assets/img/sidebar-3.jpg";
+import React, { Component } from "react"
+import { useLocation, Route, Switch } from "react-router-dom"
+import UserNavbar from "components/Navbars/UserNavbar"
+import Sidebar from "components/Sidebar/Sidebar"
+import routes from "routes/dashboardRoutes.js"
+import sidebarImage from "assets/img/sidebar-3.jpg"
 
 function User() {
-  const [image, setImage] = React.useState(sidebarImage);
-  const [color, setColor] = React.useState("black");
-  const [hasImage, setHasImage] = React.useState(true);
-  const location = useLocation();
-  const mainPanel = React.useRef(null);
+  const [image, setImage] = React.useState(sidebarImage)
+  const [color, setColor] = React.useState("black")
+  const [hasImage, setHasImage] = React.useState(true)
+  const location = useLocation()
+  const mainPanel = React.useRef(null)
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.layout === "/user") {
@@ -22,23 +22,23 @@ function User() {
           />
         );
       } else {
-        return null;
+        return null
       }
     });
   };
   React.useEffect(() => {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    mainPanel.current.scrollTop = 0;
+    document.documentElement.scrollTop = 0
+    document.scrollingElement.scrollTop = 0
+    mainPanel.current.scrollTop = 0
     if (
       window.innerWidth < 993 &&
       document.documentElement.className.indexOf("nav-open") !== -1
     ) {
-      document.documentElement.classList.toggle("nav-open");
-      var element = document.getElementById("bodyClick");
-      element.parentNode.removeChild(element);
+      document.documentElement.classList.toggle("nav-open")
+      var element = document.getElementById("bodyClick")
+      element.parentNode.removeChild(element)
     }
-  }, [location]);
+  }, [location])
   return (
     <>
       <div className="wrapper">
@@ -54,4 +54,4 @@ function User() {
   );
 }
 
-export default User;
+export default User

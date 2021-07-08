@@ -3,8 +3,8 @@ import {productContext} from 'Global/ProductContext'
 import { cartContext } from 'Global/CartContext'
 import Banner from './Banner'
 const Products = () => {
-    const {products} = useContext(productContext);
-    const {dispatch} = useContext(cartContext);
+    const {products} = useContext(productContext)
+    const {dispatch} = useContext(cartContext)
     return(
           <>
             <Banner />
@@ -36,4 +36,4 @@ const Products = () => {
     )
 }
  
- export default Products;
+ export default Products

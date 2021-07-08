@@ -1,26 +1,19 @@
 import React from 'react'
 import {
-    Alert,
-    Badge,
     Button,
     Card,
-    Modal,
-    Navbar,
-    Nav,
     Container,
-    Row,
-    Col,
     Form
-  } from "react-bootstrap";
-import { useState } from "react";
-import axios from "axios";
+  } from "react-bootstrap"
+import { useState } from "react"
+import axios from "axios"
 
 const Login = () => {
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [password, setPassword] = useState("")
   
     function login() {
-      const user = { email, password };
+      const user = { email, password }
   
       // axios
       const options = {
@@ -34,11 +27,11 @@ const Login = () => {
       };
       axios(options)
         .then((response) => {
-          console.warn("varified");
+          console.warn("varified")
         })
         .catch((error) => {
           // redirect to login
-          console.warn("Not varified");
+          console.warn("Not varified")
         });
     }
     return(

@@ -1,10 +1,10 @@
-import Dashboard from "views/Dashboard";
-import FosholerDoctor from "views/FosholerDoctor";
-import Home from "views/Home";
-import KrishiBazar from "views/KrishiBazar";
-import KrishiForum from "views/KrishiForum";
-import Login from "views/Login";
-import Register from "views/Registration";
+import Dashboard from "views/Dashboard"
+import FosholerDoctor from "views/FosholerDoctor"
+import Home from "views/Home"
+import KrishiBazar from "views/KrishiBazar"
+import KrishiForum from "views/KrishiForum"
+import Login from "views/Login"
+import Register from "views/Registration"
 
 const routes = [
   {
@@ -57,6 +57,6 @@ const routes = [
     component: Dashboard,
     layout: ""
   },
-];
+]
 
-export default routes;
+export default routes

@@ -2,14 +2,14 @@ import React, {useContext} from "react"
 import StripeCheckout from "react-stripe-checkout"
 import axios from "axios"
 import {cartContext} from "Global/CartContext"
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 toast.configure();
 const Cart = (props) => {
    
-    const {dispatch, shoppingCart, totalPrice, qty} = useContext(cartContext);
-         console.log("total qty: ",qty);
+    const {dispatch, shoppingCart, totalPrice, qty} = useContext(cartContext)
+         console.log("total qty: ",qty)
 
     const handleToken = async (token) => {
 
@@ -18,14 +18,14 @@ const Cart = (props) => {
               token,
               product
           });
-          const {status} = response.data;
+          const {status} = response.data
           if(status === 'success'){
              
               dispatch({type: 'EMPTY'});
               props.history.push(`/`)
               toast.success("ট্রানজেকশন সফল হয়েছে!", {
                 position: toast.POSITION.TOP_RIGHT
-              });
+              })
 
           } else {
            
@@ -93,4 +93,4 @@ const Cart = (props) => {
     )
 }
 
-export default Cart;
+export default Cart

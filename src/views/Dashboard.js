@@ -1,12 +1,7 @@
-import React from "react";
-import ChartistGraph from "react-chartist";
-// react-bootstrap components
+import React from "react"
 import {
-  Badge,
   Button,
   Card,
-  Navbar,
-  Nav,
   Table,
   Container,
   Row,
@@ -14,7 +9,7 @@ import {
   Form,
   OverlayTrigger,
   Tooltip,
-} from "react-bootstrap";
+} from "react-bootstrap"
 
 function Dashboard() {
   return (
@@ -739,4 +734,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Dashboard

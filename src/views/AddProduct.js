@@ -1,16 +1,13 @@
-import React from "react";
+import React from "react"
 import {
-  Badge,
   Button,
   Card,
-  Navbar,
-  Nav,
   Table,
   Container,
   Row,
   Col,
   Form
-} from "react-bootstrap";
+} from "react-bootstrap"
 
 function AddProduct() {
   return (
@@ -147,4 +144,4 @@ function AddProduct() {
   );
 }
 
-export default AddProduct;
+export default AddProduct

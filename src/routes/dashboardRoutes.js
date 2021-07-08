@@ -1,11 +1,11 @@
-import Dashboard from "views/Dashboard.js";
-import UserProfile from "views/UserProfile.js";
-import TableList from "views/TableList.js";
-import Typography from "views/Typography.js";
-import Maps from "views/Maps.js";
-import Notifications from "views/Notifications.js";
+import Dashboard from "views/Dashboard.js"
+import UserProfile from "views/UserProfile.js"
+import TableList from "views/TableList.js"
+import Typography from "views/Typography.js"
+import BuyRequset from "views/BuyRequest.js"
+import Notifications from "views/Notifications.js"
 import Messages from "views/Messages"
-import AddProduct from "views/AddProduct";
+import AddProduct from "views/AddProduct"
 
 const dashboardRoutes = [
   {
@@ -62,9 +62,9 @@ const dashboardRoutes = [
     path: "/buy-request",
     name: "পণ্য ক্রয় অনুরোধ",
     icon: "nc-icon nc-cart-simple",
-    component: Maps,
+    component: BuyRequset,
     layout: "/user",
   },
-];
+]
 
-export default dashboardRoutes;
+export default dashboardRoutes

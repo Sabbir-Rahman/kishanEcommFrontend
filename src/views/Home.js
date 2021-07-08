@@ -1,16 +1,10 @@
-import React from "react";
-
-// react-bootstrap components
+import React from "react"
 import {
-  Badge,
-  Button,
   Card,
-  Navbar,
-  Nav,
   Container,
   Row,
   Col,
-} from "react-bootstrap";
+} from "react-bootstrap"
 
 function Home() {
   return (
@@ -635,7 +629,7 @@ function Home() {
         </Row>
       </Container>
     </>
-  );
+  )
 }
 
-export default Home;
+export default Home
