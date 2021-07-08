@@ -1,20 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './App.css'
 
 const KrishiBazarNavbar = () => {
     return(
         <nav>
             <ul className="left">
-                <li><a href="">কৃষি বাজার</a></li>
+                <li><Link to="/krishi-bazar">কৃষি বাজার</Link></li>
             </ul>
             <ul className="right">
                 <li>
-                    <a href="">
+                    <Link to="cart">
                         <span className="shoppingCart">
                             <i class="fas fa-cart-plus"></i>
                             <span className="cartCount">0</span>
                         </span>
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </nav>

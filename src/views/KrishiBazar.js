@@ -3,15 +3,20 @@ import KrishiBazarNavbar from 'components/Navbars/KrishiBazarNavbar'
 import Banner from 'components/Banner'
 import ProductsContextProvider from 'Global/ProductsContext'
 import Products from 'components/Products'
+import './style.css'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 const KrishiBazar = () => {
     return(
         <div>
-            <div><KrishiBazarNavbar/></div>
-            <div><Banner/></div>
-            
             <ProductsContextProvider>
-                <Products/>
+                <Router>
+                    <KrishiBazarNavbar/>
+                    <Banner/>
+                    <Switch>
+                        <Route path="/krishi-bazar" exact component={Products} />
+                    </Switch>
+                </Router>
             </ProductsContextProvider>
         </div>
     )
