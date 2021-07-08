@@ -9,13 +9,12 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import User from "layouts/User"
 import Home from "layouts/Home"
+import Trial from 'layouts/Trial'
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/user" render={(props) => <User {...props} />} />
-      <Route path="/" render={(props) => <Home {...props} />} />
-      <Redirect from="/" to="/home" />
+      <Route path="/" render={(props) => <Trial {...props} />} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
