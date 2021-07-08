@@ -11,13 +11,13 @@ body {
 }
 
 nav {
-  width: 100%;
-  background:#fff;
-  height: 70px;
+  width: 75%;
+  background:#28442c;
+  height: 100px;
   line-height: 70px;
   position: fixed;
   top:0;
-  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  box-shadow: 0 1px 3px white;
   padding: 0 103px;
   display: flex;
   z-index: 9999;
@@ -33,8 +33,8 @@ nav .left {
 
 nav .left li a {
   font-size: 20px;
-  font-weight: bold;
-  color: #f57224;
+  font-weight: 300;
+  color: #ffffff;
 }
 
 nav .right {
@@ -43,22 +43,22 @@ nav .right {
 
 nav ul li {
   display: inline-block;
-  color: #222;
+  color: rgb(255, 255, 255);
 }
 
 nav ul li a {
   display: block;
   text-decoration: none;
-  color: #222;
+  color: rgb(255, 255, 255);
 }
 
 nav ul li .shoppingCartTotal {
   display: inline-block;
   width: 35px;
   height: 35px;
-  background: #f57224;
+  background: #ffffff;
   border-radius: 50%;
-  color: #fff;
+  color: #28442c;
   line-height: 35px;
   cursor: pointer;
   text-align: center;
@@ -101,18 +101,17 @@ nav ul li .shoppingCartTotal {
   font-size: 14px;
 }
 
-.hot {
+.corp {
   position: absolute;
   top: 0;
   left: 0;
-  background:#E65100;
+  background:#28442c;
   padding: 7px 15px;
   color: #fff;
   font-size: 14px;
 }
 
 .pro {
-  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
   border-radius: 3px;
   overflow: hidden;
   background-color: #fafafa;
@@ -124,7 +123,6 @@ nav ul li .shoppingCartTotal {
   min-height: 200px;
   text-align: center;
   overflow: hidden;
-  /* padding: 10px; */
 }
 .productImage img {
   min-width: 100%;
@@ -147,14 +145,14 @@ nav ul li .shoppingCartTotal {
 
 .proPrice {
   margin: 15px 0;
-  color:orangered;
+  color:#28442c;
   font-size: 22px;
   font-weight: 30;
 }
 
 .proButton {
   width: 100%;
-  background: #f57224;
+  background: #28442c;
   margin: 0 auto;
   text-align: center;
   padding: 14px 0;
@@ -208,7 +206,7 @@ nav ul li .shoppingCartTotal {
   transform: translate(-50%, -50%);
   width: 35px;
   height: 35px;
-  background:#f57224;
+  background: #28442c;
   line-height: 35px;
   text-align: center;
   border-radius: 4px;
@@ -242,8 +240,8 @@ nav ul li .shoppingCartTotal {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  border: 1.1px solid orangered;
-  color: orangered;
+  border: 1.1px solid #28442c;
+  color: #28442c;
   border-radius: 50%;
   cursor: pointer;
   font-weight: normal;
@@ -261,8 +259,8 @@ nav ul li .shoppingCartTotal {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  border: 1.1px solid rgb(228, 98, 98);
-  color: rgb(228, 98, 98);
+  border: 1.1px solid #28442c;
+  color: #28442c;
   border-radius: 50%;
   cursor: pointer;
   font-weight: normal;
@@ -272,14 +270,14 @@ nav ul li .shoppingCartTotal {
   width: 150px;
   padding: 0 15px;
   font-weight: bold;
-  color: #f57224;
+  color: #28442c;
   text-align: center;
 }
 .deleteCartPro {
   border:none;
   display: inline-block;
   padding: 0 15px;
-  color: rgb(247, 117, 117);
+  color: #28442c;
   background: transparent;
   font-size: 20px;
   cursor: pointer;
@@ -314,7 +312,7 @@ nav ul li .shoppingCartTotal {
   width: 50%;
   text-align: right;
   font-weight: bold;
-  color: #f57224;
+  color: #28442c;
 }
 .totalPriceSection {
   display: flex;
@@ -329,7 +327,7 @@ nav ul li .shoppingCartTotal {
   font-weight: bold;
   width: 50%;
   text-align: right;
-  color: #f57224;
+  color: #28442c;
 }
 .stripSection {
   margin: 15px 0;
@@ -341,7 +339,7 @@ nav ul li .shoppingCartTotal {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgb(235, 95, 95);
+  background: #28442c;
   color: #fff;
   padding: 13px;
   text-align: center;
@@ -359,7 +357,7 @@ nav ul li .shoppingCartTotal {
   border:none;
   border-radius: 30px;
   padding: 8px 17px;
-  background: rgb(248, 7, 120);
+  background: #28442c;
   outline: none;
   color: #fff;
   font-size: 13px;
@@ -371,7 +369,7 @@ nav ul li .shoppingCartTotal {
   border:none;
   border-radius: 30px;
   padding: 8px 17px;
-  background: rgb(246, 23, 60);
+  background: #28442c;
   outline: none;
   color: #fff;
   font-size: 13px;
