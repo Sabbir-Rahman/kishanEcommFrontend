@@ -86,11 +86,9 @@ const Register = () => {
                                     <Form.Label> কনফার্ম পাসওয়ার্ড</Form.Label>
                                     <Form.Control type="password" placeholder="আপনার পাসওয়ার্ডটি পুনরায় এখানে লিখুন" />
                                 </Form.Group>
-                                <Button color="green"  onClick={signUp}>সাইন আপ</Button>
+                                <Button variant="success"  onClick={signUp}>সাইন আপ</Button>
                             </Form>
                         </Card.Body>
-                    </Card>
-                    <Card>
                         <h4>
                             একাউন্ট আছে?
                         </h4>
@@ -104,7 +102,6 @@ const Register = () => {
                         </h4>
                     </Card>
                 </Container>
-
             </div>
     )
 }
