@@ -25,6 +25,8 @@ nav {
     box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
     display: flex;
     position: fixed;
+    background: white;
+    margin-top: 0;
 }
 
 .left {
@@ -39,7 +41,7 @@ nav {
 }
 
 .right {
-    width: 50%;
+    width: 35%;
     text-align: right;
 }
 
@@ -83,7 +85,7 @@ header {
     width: 100;
     background: url("../../assets/img/bgKrishiBazar.jpg");
     height: 250px;
-    margin-top: 70px;
+    margin-top: 0px;
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--whiteColor);
@@ -109,4 +111,76 @@ header {
 .products {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+}
+
+.product {
+    width: 25%;
+    padding: 0 12px;
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.fruit {
+    position: absolute;
+    top: 0;
+    background: rgb(66, 155, 100);
+    padding: 5px 20px;
+    color: var(--whiteColor);
+}
+
+.corp {
+    position: absolute;
+    top: 0;
+    background: rgb(155, 154, 66);
+    padding: 5px 20px;
+    color: var(--whiteColor);
+}
+
+.fish {
+    position: absolute;
+    top: 0;
+    background: rgb(66, 130, 155);
+    padding: 5px 20px;
+    color: var(--whiteColor);
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+}
+
+.product-image img {
+    width: 100%;
+    height: 200px;
+}
+
+.product-details {
+    padding: 15px 10px;
+    text-align: center;
+    background: var(--whiteColor);
+    border-left: 1px solid #fafafa;
+    border-right: 1px solid #fafafa;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 12px 0;
+}
+
+.add-to-cart {
+    background: var(--mainColor);
+    padding: 10px 20px;
+    width: 100%;
+    color: var(--whiteColor);
+    text-transform: uppercase;
+    text-align: center;
 }

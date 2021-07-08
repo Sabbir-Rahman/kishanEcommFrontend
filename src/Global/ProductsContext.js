@@ -11,16 +11,28 @@ export const ProductsContext = createContext()
 const ProductsContextProvider = (props) => {
 
     const [products] = useState([
-        {id: 1, name: 'fish', price: 3000, image: fish, status: 'fresh'},
-        {id: 2, name: 'rice', price: 60, image: rice, status: 'new'},
-        {id: 3, name: 'mango', price: 80, image: mango, status: 'finishes soon'},
-        {id: 4, name: 'lychee', price: 120, image: lychee, status: 'end of season'}
+        {id: 1, name: 'Salmon', price: 3000, image: fish, catagory: 'fish'},
+        {id: 2, name: 'Rice', price: 60, image: rice, catagory: 'corp'},
+        {id: 3, name: 'Mango', price: 80, image: mango, catagory: 'fruit'},
+        {id: 4, name: 'Lychee', price: 120, image: lychee, catagory: 'fruit'},
+        {id: 5, name: 'Salmon', price: 3000, image: fish, catagory: 'fish'},
+        {id: 6, name: 'Rice', price: 60, image: rice, catagory: 'corp'},
+        {id: 7, name: 'Mango', price: 80, image: mango, catagory: 'fruit'},
+        {id: 8, name: 'Lychee', price: 120, image: lychee, catagory: 'fruit'},
+        {id: 9, name: 'Salmon', price: 3000, image: fish, catagory: 'fish'},
+        {id: 10, name: 'Rice', price: 60, image: rice, catagory: 'corp'},
+        {id: 11, name: 'Mango', price: 80, image: mango, catagory: 'fruit'},
+        {id: 12, name: 'Lychee', price: 120, image: lychee, catagory: 'fruit'},
+        {id: 13, name: 'Salmon', price: 3000, image: fish, catagory: 'fish'},
+        {id: 14, name: 'Rice', price: 60, image: rice, catagory: 'corp'},
+        {id: 15, name: 'Mango', price: 80, image: mango, catagory: 'fruit'},
+        {id: 16, name: 'Lychee', price: 120, image: lychee, catagory: 'fruit'}
     ])
 
     return (
-        <ProductsContextProvider.Provider value={{products: [...products]}}>
+        <ProductsContext.Provider value={{products: [...products]}}>
             {props.children}
-        </ProductsContextProvider.Provider>
+        </ProductsContext.Provider>
     )
 }
 

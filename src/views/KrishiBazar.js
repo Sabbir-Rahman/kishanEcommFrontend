@@ -7,8 +7,9 @@ import Products from 'components/Products'
 const KrishiBazar = () => {
     return(
         <div>
-            <KrishiBazarNavbar/>
-            <Banner/>
+            <div><KrishiBazarNavbar/></div>
+            <div><Banner/></div>
+            
             <ProductsContextProvider>
                 <Products/>
             </ProductsContextProvider>
