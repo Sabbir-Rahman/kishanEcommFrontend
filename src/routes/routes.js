@@ -19,6 +19,20 @@ const routes = [
     layout: ""
   },
   {
+    path: "/krishi-forum",
+    name: "কৃষি ফোরাম",
+    icon: "nc-icon nc-paper-2",
+    component: Register,
+    layout: ""
+  },
+  {
+    path: "/fosholer-doctor",
+    name: "ফসলের ডাক্তার",
+    icon: "nc-icon nc-ambulance",
+    component: Register,
+    layout: ""
+  },
+  {
     path: "/login",
     name: "প্রবেশ করুন",
     icon: "nc-icon nc-single-02",
