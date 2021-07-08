@@ -26,7 +26,10 @@ const Products = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="add-to-cart" onClick={()=> dispatch({type: 'ADD_TO_CART', id: product.id, product})}>কার্টে যোগ করুন</div>
+                        <div className="add-to-cart" onClick={()=> dispatch({
+                            type: 'ADD_TO_CART',
+                            id: product.id,
+                            product})}>কার্টে যোগ করুন</div>
                         {product.catagory === 'fruit' ? <div className='fruit'>ফল</div>:''}
                         {product.catagory === 'corp' ? <div className='corp'>শস্য</div>:''}
                         {product.catagory === 'fish' ? <div className='fish'>মাছ</div>:''}
