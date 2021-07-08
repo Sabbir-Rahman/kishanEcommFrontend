@@ -554,3 +554,21 @@ header h1 {
     text-align: center;
   }
 }
+
+.SignInAndUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.SignupButton {
+  position: absolute;
+  right: 20px;
+}
+
+.SignipButton {
+  position: absolute;
+  right: 20px;
+}

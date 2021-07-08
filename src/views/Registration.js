@@ -15,7 +15,6 @@ import {
 import { useState } from "react";
 import axios from "axios";
 import { useHistory } from 'react-router';
-import './App.css'
 
 const Register = () => {
     const [email, setEmail] = useState("")
@@ -49,7 +48,7 @@ const Register = () => {
         });
     }
     return(
-            <div className="App">
+            <div className="SignInAndUp">
                 <thread>
                     <tr>
                         <th>

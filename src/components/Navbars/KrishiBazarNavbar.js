@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import { cartContext } from 'Global/CartContext'
 import { Link } from 'react-router-dom'
-import './App.css'
 
 const KrishiBazarNavbar = ({cartToggle}) => {
     const {shoppingCart} = useContext(cartContext);

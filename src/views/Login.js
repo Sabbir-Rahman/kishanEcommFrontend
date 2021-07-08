@@ -7,7 +7,6 @@ import {
   } from "react-bootstrap"
 import { useState } from "react"
 import axios from "axios"
-import './App.css'
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -36,7 +35,7 @@ const Login = () => {
         });
     }
     return(
-        <div className="App">
+        <div className="SignInAndUp">
         <thead>
             <tr>
                 <th>          
