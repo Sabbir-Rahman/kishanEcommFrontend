@@ -1,5 +1,8 @@
 import Dashboard from "views/Dashboard";
+import FosholerDoctor from "views/FosholerDoctor";
 import Home from "views/Home";
+import KrishiBazar from "views/KrishiBazar";
+import KrishiForum from "views/KrishiForum";
 import Login from "views/Login";
 import Register from "views/Registration";
 
@@ -15,21 +18,21 @@ const routes = [
     path: "/krishi-bazar",
     name: "কৃষি বাজার",
     icon: "nc-icon nc-sun-fog-29",
-    component: Register,
+    component: KrishiBazar,
     layout: ""
   },
   {
     path: "/krishi-forum",
     name: "কৃষি ফোরাম",
     icon: "nc-icon nc-paper-2",
-    component: Register,
+    component: KrishiForum,
     layout: ""
   },
   {
     path: "/fosholer-doctor",
     name: "ফসলের ডাক্তার",
     icon: "nc-icon nc-ambulance",
-    component: Register,
+    component: FosholerDoctor,
     layout: ""
   },
   {
