@@ -1,10 +1,11 @@
 import React from 'react'
+import KrishiBazarNavbar from 'components/Navbars/KrishiBazarNavbar'
 
 const KrishiBazar = () => {
     return(
-        
-        <thead>
-        </thead>
+        <div>
+            <KrishiBazarNavbar/>
+        </div>
     )
 }
 
