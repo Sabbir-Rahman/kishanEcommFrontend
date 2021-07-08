@@ -4,7 +4,7 @@ const Cart = () => {
 
     return (
         <div className="container">
-            <div className="cart-container">
+            <div className="cart-container" style={{marginTop: '100px'}}>
                 <h2>Shopping Cart</h2>
             </div>
         </div>

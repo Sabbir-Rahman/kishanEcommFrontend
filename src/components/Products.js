@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
 import { ProductsContext } from 'Global/ProductsContext'
+import Banner from './Banner'
 
 const Products = () => {
     const {products} = useContext(ProductsContext)
 
     return(
         <div className="container">
+            <Banner />
             <div className="products">
                 {products.map((product) => (
                     <div className="product" key={product.id}>

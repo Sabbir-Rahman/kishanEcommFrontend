@@ -1,10 +1,10 @@
 import React from 'react'
 import KrishiBazarNavbar from 'components/Navbars/KrishiBazarNavbar'
-import Banner from 'components/Banner'
 import ProductsContextProvider from 'Global/ProductsContext'
 import Products from 'components/Products'
 import './style.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Cart from 'components/Cart'
 
 const KrishiBazar = () => {
     return(
@@ -12,9 +12,9 @@ const KrishiBazar = () => {
             <ProductsContextProvider>
                 <Router>
                     <KrishiBazarNavbar/>
-                    <Banner/>
                     <Switch>
                         <Route path="/krishi-bazar" exact component={Products} />
+                        <Route path="/cart" exact component={Cart}/>
                     </Switch>
                 </Router>
             </ProductsContextProvider>

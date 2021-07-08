@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './App.css'
+import {Navbar} from 'react-bootstrap'
 
 const KrishiBazarNavbar = () => {
     return(
+        <Navbar>
         <nav>
             <ul className="left">
                 <li><Link to="/krishi-bazar">কৃষি বাজার</Link></li>
@@ -19,6 +21,7 @@ const KrishiBazarNavbar = () => {
                 </li>
             </ul>
         </nav>
+        </Navbar>
     )
 }
 

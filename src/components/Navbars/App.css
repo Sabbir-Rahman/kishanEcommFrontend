@@ -18,13 +18,13 @@ body {
 /* Navbar Styles */
 
 nav {
-    width: 80%;
+    width: 98%;
     height: 60px;
     line-height: 60px;
     padding: 0 100px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
     display: flex;
-    position: fixed;
+    position:absolute;
     background: white;
     margin-top: 0px;
 }
