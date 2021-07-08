@@ -15,6 +15,7 @@ import {
 import { useState } from "react";
 import axios from "axios";
 import { useHistory } from 'react-router';
+import './App.css'
 
 const Register = () => {
     const [email, setEmail] = useState("")
@@ -48,12 +49,15 @@ const Register = () => {
         });
     }
     return(
-            <div>
+            <div className="App">
+                <thread>
+                    <tr>
+                        <th>
                 <Container fluid>
                     <Card>
                         <Card.Header>
-                            <Card.Title as="h3">নিবন্ধন করুন</Card.Title>
-                            <h4 className="card-category">
+                            <Card.Title as="h4">যোগ দিন</Card.Title>
+                            <p className="card-category">
                                 <a  href="https://github.com/EINazare"
                                     rel="noopener noreferrer"
                                     target="_blank"
@@ -61,7 +65,7 @@ const Register = () => {
                                     গুগল অ্যাকাউন্ট .
                                 </a>
                                 ব্যবহার করুন
-                            </h4>
+                            </p>
                         </Card.Header>
                     </Card>
                     <Card>
@@ -86,22 +90,28 @@ const Register = () => {
                                     <Form.Label> কনফার্ম পাসওয়ার্ড</Form.Label>
                                     <Form.Control type="password" placeholder="আপনার পাসওয়ার্ডটি পুনরায় এখানে লিখুন" />
                                 </Form.Group>
-                                <Button variant="success"  onClick={signUp}>সাইন আপ</Button>
+                                <div className="SignupButton">
+                                    <Button variant="success"  onClick={signUp}>সাইন আপ</Button>
+                                </div>
                             </Form>
-                        </Card.Body>
-                        <h4>
-                            একাউন্ট আছে?
-                        </h4>
-                        <h4 className="card-category">
+                            <p className="card-category">
+                            <p>
+                                একাউন্ট আছে?
+                            </p>
                             <a  href="/ecomm/login"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
                             প্রবেশ করুন।
                             </a>
-                        </h4>
+                            </p>
+                        </Card.Body>
                     </Card>
                 </Container>
+                
+                </th>
+                    </tr>
+                </thread>
             </div>
     )
 }

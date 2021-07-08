@@ -7,6 +7,7 @@ import {
   } from "react-bootstrap"
 import { useState } from "react"
 import axios from "axios"
+import './App.css'
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -35,11 +36,11 @@ const Login = () => {
         });
     }
     return(
-        
+        <div className="App">
         <thead>
             <tr>
-                <th>        
-                    <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
+                <th>          
+                    <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh',}}>
                         <Container fluid>
                             <Card>
                                 <Card.Header>
@@ -69,29 +70,29 @@ const Login = () => {
                                             <Form.Label>পাসওয়ার্ড</Form.Label>
                                             <Form.Control type="password" placeholder="আপনার পাসওয়ার্ডটি এখানে লিখুন" />
                                         </Form.Group>
-                                        <Button variant="success"  onClick={login}>সাইন ইন</Button>
+                                        <div className="SignipButton">
+                                            <Button variant="success"  onClick={login}>সাইন ইন</Button>
+                                        </div>
                                     </Form>
+                                    <p>
+                                        একাউন্ট নেই?
+                                    </p>
+                                    <p className="card-category">
+                                        <a  href="/ecomm/register"
+                                            rel="noopener noreferrer"
+                                            target="_blank"
+                                        >
+                                        নতুন একাউন্ট তৈরি করুন
+                                        </a>
+                                    </p>
                                 </Card.Body>
-                            </Card>
-                            <Card>
-                                <p>
-                                    একাউন্ট নেই?
-                                </p>
-                                <p className="card-category">
-                                    <a  href="/ecomm/register"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                    >
-                                    নতুন একাউন্ট তৈরি করুন
-                                    </a>
-                                </p>
                             </Card>
                         </Container>
                     </div>
                 </th>
-                <th></th>
             </tr>
         </thead>
+        </div>
     )
 }
 
