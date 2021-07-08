@@ -105,3 +105,8 @@ header {
 .headerText p {
     margin-top: 7px;
 }
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
