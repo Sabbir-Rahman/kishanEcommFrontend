@@ -20,14 +20,16 @@ const Products = () => {
                           <h4>{product.name}</h4>
                         </div>
                         <div className="proPrice">
-                          ${product.price}.00
+                          {product.price}.00 টাকা
                         </div>
                       </div>
                       <div className="proButton" onClick={() => dispatch({type: 'ADD_TO_CART', id: product.id, products})}>
-                        <button className="buyNow" >add to cart</button>
+                        <button className="buyNow" >কার্টে যোগ করুন</button>
                       </div>
-                      {product.productStatus === 'new' ? <div className="new">New</div>: ''}
-                      {product.productStatus === 'hot' ? <div className="hot">Hot</div>: ''}
+                      {product.catagory === 'corp' ? <div className="corp">শস্য</div>: ''}
+                      {product.catagory === 'fish' ? <div className="fish">মাছ</div>: ''}
+                      {product.catagory === 'meat' ? <div className="meat">মাংস</div>: ''}
+                      {product.catagory === 'fruit' ? <div className="fruit">ফল</div>: ''}
                     </div>
                   </div>
                 ))}

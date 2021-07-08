@@ -105,7 +105,37 @@ nav ul li .shoppingCartTotal {
   position: absolute;
   top: 0;
   left: 0;
-  background:#28442c;
+  background:#00e676;
+  padding: 7px 15px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.fruit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background:#f3df71;
+  padding: 7px 15px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.fish {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background:#58635a;
+  padding: 7px 15px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.meat {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background:#724848;
   padding: 7px 15px;
   color: #fff;
   font-size: 14px;
