@@ -24,7 +24,7 @@ function Sidebar({ color, image, routes }) {
               />
             </div>
           <a className="simple-text" href="/">
-            <h1>কৃষাণ</h1>
+            <h2>কৃষাণ</h2>
           </a>
         </div>
         <Nav>
