@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { useLocation, NavLink } from 'react-router-dom'
-import { Navbar, Nav, Form } from 'react-bootstrap'
-import { FormControl, Button } from 'react-bootstrap'
+import { Navbar, Nav, Form } from 'react-bootstrap' 
 
 
 function Navigationbar({routes, authentication}){
@@ -9,7 +8,6 @@ function Navigationbar({routes, authentication}){
     const activeRoute = (routeName) => {
       return location.pathname.indexOf(routeName) > -1 ? "active" : "";
     }
-
 
     return(
       <>
@@ -71,14 +69,6 @@ function Navigationbar({routes, authentication}){
           </Nav>
         </Form>
       </Navbar>
-        <Navbar fixed="top" varient="light">
-            <Form inline>
-            
-          </Form>
-          <Form inline>
-          
-          </Form>
-        </Navbar>
         </>
     )
 }
