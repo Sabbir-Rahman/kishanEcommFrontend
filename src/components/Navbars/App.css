@@ -15,6 +15,8 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+/* Navbar Styles */
+
 nav {
     width: 100%;
     height: 70px;
@@ -66,4 +68,40 @@ nav ul a {
     line-height: 35px;
     text-align: center;
     font-size: 12px;
+}
+
+/* Helpers */
+
+.container {
+    width: 100%;
+    padding: 0 100px;
+}
+
+/* Banner Style */
+
+header {
+    width: 100;
+    background: url("../../assets/img/bgKrishiBazar.jpg");
+    height: 250px;
+    margin-top: 70px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--whiteColor);
+}
+
+.headerText {
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerText h1 {
+    font-size: 35px;
+}
+
+.headerText p {
+    margin-top: 7px;
 }
