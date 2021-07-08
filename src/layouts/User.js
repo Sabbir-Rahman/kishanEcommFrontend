@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { useLocation, Route, Switch } from "react-router-dom";
 import UserNavbar from "components/Navbars/UserNavbar";
-import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
 import routes from "routes/dashboardRoutes.js";
 import sidebarImage from "assets/img/sidebar-3.jpg";
@@ -49,7 +48,6 @@ function User() {
           <div className="content">
             <Switch>{getRoutes(routes)}</Switch>
           </div>
-          <Footer />
         </div>
       </div>
     </>

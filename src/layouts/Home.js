@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { useLocation, Route, Switch } from "react-router-dom";
-import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
 import routes from "routes/routes.js";
 import sidebarImage from "assets/img/sidebar-3.jpg";
@@ -47,7 +46,6 @@ function Home() {
           <div className="content">
             <Switch>{getRoutes(routes)}</Switch>
           </div>
-          <Footer />
         </div>
       </div>
     </div>
