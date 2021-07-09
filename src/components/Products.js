@@ -117,9 +117,16 @@ const Products = () => {
               <Row style={{marginTop: 25}}>
                 <Col md="9">
                   <Card md="auto">
-                    <Card.Body className="products" style={{marginTop: '10px'}}>
+                    <Card.Body style={{ marginTop: '10px',
+                                        display: "flex",
+                                        flexWrap: "wrap",
+                                        overflow: "hidden",
+                                        width: "100%" }}>
                       {products.map(product => (
-                        <Card className="product" key={product.id} style={{marginRight: '15px', marginLeft: '10px'}}>
+                        <Card key={product.id} style={{ marginRight: '5px',
+                                                        marginLeft: '5px',
+                                                        overflow: "hidden",
+                                                        }}>
                           <Card.Header className="productImage">
                             <img src={product.image} alt="Not found"/>
                           </Card.Header>

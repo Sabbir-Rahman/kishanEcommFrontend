@@ -73,20 +73,6 @@ nav ul li .shoppingCartTotal {
   font-weight: bold;
 }
 
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 0 100px;
-  margin: 30px 0;
-}
-.product {
-  width: 25%;
-  padding: 0 12px;
-  margin: 20px 0;
-  overflow: hidden;
-}
-
 .pro {
   position: relative;
   width: 100%;
