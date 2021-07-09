@@ -12,7 +12,7 @@ const dashboardRoutes = [
     upgrade: true,
     path: "/addProduct",
     name: "পণ্য যোগ করুন",
-    icon: "nc-icon nc-alien-33",
+    icon: "nc-icon nc-simple-add",
     component: AddProduct,
     layout: "/user",
   },
