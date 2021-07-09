@@ -10,11 +10,6 @@ const KrishiBazarNavbar = ({cartToggle}) => {
                  <li>
                      <Link to="/">কিষাণ</Link>
                 </li>
-                <li>
-                    <form>
-                        <input type="text" className="search" placeholder="পণ্য খুঁজুন..."/>
-                    </form>
-                </li>
             </ul>
             <ul className="right">
                 <li onClick={cartToggle}>

@@ -11,8 +11,9 @@ body {
 }
 
 nav {
-  width: 82%;
-  background:#28442c;
+  margin-left: 0;
+  width: 85%;
+  background: rgb(181, 218, 164);
   height: 100px;
   line-height: 70px;
   position: fixed;
@@ -24,7 +25,7 @@ nav {
 }
 
 nav ul {
-  width: 50%;
+  width: 60%;
 }
 
 nav .left {
@@ -32,7 +33,7 @@ nav .left {
 }
 
 nav .left li a {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 300;
   color: #ffffff;
 }
