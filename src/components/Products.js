@@ -138,16 +138,14 @@ const Products = () => {
                                                                               height: "200px",
                                                                               overflow: "hidden"}}/>
                           </Card.Header>
-                          <Card.Body className="productDetails">
-                            <div className="proName">
-                              <h4>{product.name}</h4>
-                            </div>
-                            <div className="proPrice">
-                              {product.price}.00 টাকা
-                            </div>
+                          <Card.Body>
+                            <p style={{marginTop: "10px", fontSize: "20px"}}>{product.name}</p>
+                            <p style={{marginTop: "0px", color: "grey", fontSize: "12px"}}>সর্বনিম্ন অর্ডার</p>
+                            <h5 style={{fontSize: "25px", color: "green"}}>{product.price}.00 টাকা</h5>
+                            
                           </Card.Body>
-                            <div className="proButton" onClick={() => dispatch({type: 'ADD_TO_CART', id: product.id, products})}>
-                              <button className="buyNow" >কার্টে যোগ করুন</button>
+                            <div className="proButton" >
+                              <button onClick={() => dispatch({type: 'ADD_TO_CART', id: product.id, products})} className="buyNow" >কার্টে যোগ করুন</button>
                             </div>
                             {product.catagory === 'corp' ? <div className="corp">শস্য</div>: ''}
                             {product.catagory === 'fish' ? <div className="fish">মাছ</div>: ''}

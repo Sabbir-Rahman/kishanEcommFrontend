@@ -134,23 +134,7 @@ nav ul li .shoppingCartTotal {
   background-color: #fafafa;
 }
 
-.productDetails {
-  padding: 15px 10px;
-  text-align: center;
-  background: #ffff;
-  border-left: 1px solid #fafafa;
-  border-right: 1px solid #fafafa;
-  color: #fff;
-  color: #222;
-}
-
-.proName {
-  margin: 12px 0;
-  color: #222;
-}
-
 .proPrice {
-  margin: 15px 0;
   color:#28442c;
   font-size: 22px;
   font-weight: 30;
