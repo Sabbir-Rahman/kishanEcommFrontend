@@ -13,7 +13,7 @@ import {
   Col,
 } from "react-bootstrap";
 
-function Notifications() {
+function Messages() {
   const [showModal, setShowModal] = React.useState(false);
   const notificationAlertRef = React.useRef(null);
 
@@ -171,4 +171,4 @@ function Notifications() {
   );
 }
 
-export default Notifications;
+export default Messages;
