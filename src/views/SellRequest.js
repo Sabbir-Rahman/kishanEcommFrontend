@@ -160,7 +160,6 @@ function Sellrequset() {
               </Row>
           </Card.Body>
         </Card>
-
       </Container>
     </>
   );
