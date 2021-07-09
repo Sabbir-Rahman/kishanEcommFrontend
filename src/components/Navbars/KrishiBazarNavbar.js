@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import { cartContext } from 'Global/CartContext'
 import { Link } from 'react-router-dom'
-import './App.css'
 
 const KrishiBazarNavbar = ({cartToggle}) => {
     const {shoppingCart} = useContext(cartContext);
@@ -9,12 +8,7 @@ const KrishiBazarNavbar = ({cartToggle}) => {
         <nav>
             <ul className="left">
                  <li>
-                     <Link to="/">কিষাণ</Link>
-                </li>
-                <li>
-                    <form>
-                        <input type="text" className="search" placeholder="পণ্য খুঁজুন..."/>
-                    </form>
+                     <Link to="/">কৃষি বাজার</Link>
                 </li>
             </ul>
             <ul className="right">

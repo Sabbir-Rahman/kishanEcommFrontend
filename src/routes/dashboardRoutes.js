@@ -1,7 +1,7 @@
 import Dashboard from "views/Dashboard.js"
 import UserProfile from "views/UserProfile.js"
-import TableList from "views/TableList.js"
-import Typography from "views/Typography.js"
+import Statistics from "views/Statistics.js"
+import SellRequest from "views/SellRequest.js"
 import BuyRequset from "views/BuyRequest.js"
 import Notifications from "views/Notifications.js"
 import Messages from "views/Messages"
@@ -12,7 +12,7 @@ const dashboardRoutes = [
     upgrade: true,
     path: "/addProduct",
     name: "পণ্য যোগ করুন",
-    icon: "nc-icon nc-alien-33",
+    icon: "nc-icon nc-simple-add",
     component: AddProduct,
     layout: "/user",
   },
@@ -48,14 +48,15 @@ const dashboardRoutes = [
     path: "/table",
     name: "পরিসংখ্যান",
     icon: "nc-icon nc-notes",
-    component: TableList,
+    component: Statistics,
     layout: "/user",
   },
   {
     path: "/sell-request",
     name: "পণ্য বিক্রয় অনুরোধ",
     icon: "nc-icon nc-delivery-fast",
-    component: Typography,
+    component: SellRequest
+  ,
     layout: "/user",
   },
   {

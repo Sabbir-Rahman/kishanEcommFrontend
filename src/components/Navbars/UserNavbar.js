@@ -56,10 +56,6 @@ function Header() {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="#pablo">
-                <i className="nc-icon nc-zoom-split"></i>
-                <span className="d-lg-block"> খোঁজ করুন</span>
-              </Nav.Link>
             </Nav.Item>
           </Nav>
           <Nav className="ml-auto" navbar>

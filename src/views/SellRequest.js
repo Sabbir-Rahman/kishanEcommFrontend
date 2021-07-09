@@ -1,5 +1,4 @@
-import React from "react";
-import NotificationAlert from "react-notification-alert";
+import React from "react"
 import {
   Alert,
   Badge,
@@ -11,27 +10,21 @@ import {
   Container,
   Row,
   Col,
-} from "react-bootstrap";
+} from "react-bootstrap"
 
-function Notifications() {
-  const [showModal, setShowModal] = React.useState(false);
-  const notificationAlertRef = React.useRef(null);
-
+function Sellrequset() {
   return (
     <>
-      <div className="rna-container">
-        <NotificationAlert ref={notificationAlertRef} />
-      </div>
       <Container fluid>
         <Card>
           <Card.Header>
-            <Card.Title as="h4">নোটিফিকেশনসমূহ</Card.Title>
+            <Card.Title as="h4">পণ্য বিক্রয় অনুরোধ</Card.Title>
           </Card.Header>
           <Card.Body>
             <Row>
               <Col md="6">
                 <h5>
-                  <small>অপঠিত নোটিফিকেশনসমূহ</small>
+                  <small>বিক্রয় সম্পন্নকৃত পণ্যসমূহ</small>
                 </h5>
                 <Alert className="alert-with-icon" variant="info">
                   <button
@@ -47,7 +40,7 @@ function Notifications() {
                     className="nc-icon nc-bell-55"
                   ></span>
                   <span>
-                    নোটিফিকেশন
+                    পণ্য
                   </span>
                 </Alert>
                 <Alert className="alert-with-icon" variant="info">
@@ -64,7 +57,7 @@ function Notifications() {
                     className="nc-icon nc-bell-55"
                   ></span>
                   <span>
-                    নোটিফিকেশন
+                    পণ্য
                   </span>
                 </Alert>
                 <Alert className="alert-with-icon" variant="info">
@@ -81,7 +74,7 @@ function Notifications() {
                     className="nc-icon nc-bell-55"
                   ></span>
                   <span>
-                    নোটিফিকেশন
+                    পণ্য
                   </span>
                 </Alert>
                 <Alert className="alert-with-icon" variant="info">
@@ -98,13 +91,13 @@ function Notifications() {
                     className="nc-icon nc-bell-55"
                   ></span>
                   <span>
-                    নোটিফিকেশন
+                    পণ্য
                   </span>
                 </Alert>
               </Col>
               <Col md="6">
                 <h5>
-                  <small>অপঠিত নোটিফিকেশনসমূহ</small>
+                  <small>বিক্রয় অসম্পন্ন পণ্যসমূহ</small>
                 </h5>
                 <Alert variant="success">
                   <button
@@ -116,8 +109,8 @@ function Notifications() {
                     <i className="nc-icon nc-simple-remove"></i>
                   </button>
                   <span>
-                    <b>নোটিফিকেশন -</b>
-                    পঠিত নোটিফিকেশন
+                    <b>পণ্য -</b>
+                     পণ্য
                   </span>
                 </Alert>
                 <Alert variant="success">
@@ -130,8 +123,8 @@ function Notifications() {
                     <i className="nc-icon nc-simple-remove"></i>
                   </button>
                   <span>
-                    <b>নোটিফিকেশন -</b>
-                    পঠিত নোটিফিকেশন
+                    <b>পণ্য -</b>
+                     পণ্য
                   </span>
                 </Alert>
                 <Alert variant="success">
@@ -144,8 +137,8 @@ function Notifications() {
                     <i className="nc-icon nc-simple-remove"></i>
                   </button>
                   <span>
-                    <b>নোটিফিকেশন -</b>
-                    পঠিত নোটিফিকেশন
+                    <b>পণ্য -</b>
+                     পণ্য
                   </span>
                 </Alert>
                 <Alert variant="success">
@@ -158,17 +151,17 @@ function Notifications() {
                     <i className="nc-icon nc-simple-remove"></i>
                   </button>
                   <span>
-                    <b>নোটিফিকেশন -</b>
-                    পঠিত নোটিফিকেশন
+                    <b>পণ্য -</b>
+                     পণ্য
                   </span>
                 </Alert>
               </Col>
-            </Row>
+              </Row>
           </Card.Body>
         </Card>
       </Container>
     </>
-  );
+  )
 }
 
-export default Notifications;
+export default Sellrequset;
