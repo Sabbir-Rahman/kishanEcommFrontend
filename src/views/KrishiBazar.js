@@ -1,5 +1,4 @@
 import React from 'react'
-import KrishiBazarNavbar from 'components/Navbars/KrishiBazarNavbar'
 import ProductsContextProvider from 'Global/ProductContext'
 import CartContextProvider from 'Global/CartContext'
 import Products from 'components/Products'
@@ -12,7 +11,6 @@ const KrishiBazar = () => {
             <ProductsContextProvider>
                 <CartContextProvider>
                     <Router>
-                        <KrishiBazarNavbar/>
                         <Switch>
                             <Route path="/krishi-bazar" exact component={Products} />
                             <Route path="/cart" exact component={Cart}/>
