@@ -1,6 +1,6 @@
 .sidebar{
     &[data-color="black"]:after{
-        @include icon-gradient(#282828, rgba(#111,.7));
+        @include icon-gradient(rgba(238, 238, 238, 0), rgba(rgb(205, 250, 162),.7));
     }
     .logo-img img {
       max-width: 40px;
