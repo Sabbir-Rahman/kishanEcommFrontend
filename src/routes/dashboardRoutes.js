@@ -1,7 +1,7 @@
 import Dashboard from "views/Dashboard.js"
 import UserProfile from "views/UserProfile.js"
 import Statistics from "views/Statistics.js"
-import Typography from "views/Typography.js"
+import SellRequest from "views/SellRequest.js"
 import BuyRequset from "views/BuyRequest.js"
 import Notifications from "views/Notifications.js"
 import Messages from "views/Messages"
@@ -55,7 +55,8 @@ const dashboardRoutes = [
     path: "/sell-request",
     name: "পণ্য বিক্রয় অনুরোধ",
     icon: "nc-icon nc-delivery-fast",
-    component: Typography,
+    component: SellRequest
+  ,
     layout: "/user",
   },
   {
