@@ -1,5 +1,4 @@
-import React from "react";
-import NotificationAlert from "react-notification-alert";
+import React from "react"
 import {
   Alert,
   Badge,
@@ -11,7 +10,7 @@ import {
   Container,
   Row,
   Col,
-} from "react-bootstrap";
+} from "react-bootstrap"
 
 function Sellrequset() {
   return (
@@ -162,7 +161,7 @@ function Sellrequset() {
         </Card>
       </Container>
     </>
-  );
+  )
 }
 
 export default Sellrequset;
