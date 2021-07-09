@@ -12,16 +12,69 @@ import {
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap"
-import Banner from './Banner'
 import KrishiBazarNavbar from './Navbars/KrishiBazarNavbar'
+import bannerImage from 'assets/img/bgKrishiBazar.jpg'
 const Products = () => {
     const {products} = useContext(productContext)
     const {dispatch} = useContext(cartContext)
     return(
           <>
             <KrishiBazarNavbar />
-            <Banner />
-
+            <Card style={{marginTop: "60px"}}>
+              <Row style={{ marginTop: "25px",
+                            height: "250px",
+                            marginBottom: "25px",
+                            marginLeft: "5px",
+                            marginRight: "5px"}}>
+                <Col md="3">
+                  <Card>
+                    <Form>
+                      <Form.Group as={Col} controlId="division">
+                        <Form.Label as="h5" style={{marginTop: "5px"}}>ক্যাটাগরি</Form.Label>
+                        <Form.Control as="select" defaultValue="ঢাকা">
+                          <option>ঢাকা</option>
+                          <option>ময়মনসিংহ</option>
+                          <option>সিলেট</option>
+                          <option>খুলনা</option>
+                          <option>বরিশাল</option>
+                          <option>রংপুর</option>
+                          <option>রাজশাহী</option>
+                          <option>চট্টগ্রাম</option>
+                        </Form.Control>
+                      </Form.Group>
+                      <Form.Group as={Col} controlId="division">
+                        <Form.Label as="h5" style={{marginTop: "5px"}}>ক্যাটাগরি</Form.Label>
+                        <Form.Control as="select" defaultValue="ঢাকা">
+                          <option>ঢাকা</option>
+                          <option>ময়মনসিংহ</option>
+                          <option>সিলেট</option>
+                          <option>খুলনা</option>
+                          <option>বরিশাল</option>
+                          <option>রংপুর</option>
+                          <option>রাজশাহী</option>
+                          <option>চট্টগ্রাম</option>
+                        </Form.Control>
+                      </Form.Group>
+                    </Form>
+                  </Card>
+                </Col>
+                <Col md="9">
+                  <Card style={{  width: "100%",
+                                      height: "250px",
+                                      backgroundColor: "rgba(181, 218, 164, .3)",
+                                      backgroundSize: "cover",
+                                      display: "flex",
+                                      color: "#000",
+                                      padding: "0 105px",
+                                      position: "relative",
+                                      textAlign: "absolute",
+                                      }}>  
+                      <h1>কিষাণ</h1>
+                      <p>কৃষক হাসলে হাসে দেশ</p>
+                  </Card>
+                </Col>
+              </Row>
+            </Card>
             <Container fluid>
               <Row style={{marginTop: 25}}>
                 <Col md="9">
