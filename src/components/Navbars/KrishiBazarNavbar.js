@@ -8,7 +8,7 @@ const KrishiBazarNavbar = ({cartToggle}) => {
         <nav>
             <ul className="left">
                  <li>
-                     <Link to="/">কিষাণ</Link>
+                     <Link to="/">কৃষি বাজার</Link>
                 </li>
             </ul>
             <ul className="right">
