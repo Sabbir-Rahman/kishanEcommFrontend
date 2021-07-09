@@ -15,6 +15,7 @@ import {
 } from "react-bootstrap"
 import Dropdown from 'react-bootstrap/Dropdown'
 import KrishiBazarNavbar from './Navbars/KrishiBazarNavbar'
+import bgImage from 'assets/img/bgKrishiBazar.jpg'
 const Products = () => {
     const {products} = useContext(productContext)
     const {dispatch} = useContext(cartContext)
@@ -98,17 +99,20 @@ const Products = () => {
                 </Col>
                 <Col md="9">
                   <Card style={{  width: "100%",
-                                      height: "250px",
-                                      backgroundColor: "rgba(181, 218, 164, .3)",
-                                      backgroundSize: "cover",
-                                      display: "flex",
-                                      color: "#000",
-                                      padding: "0 105px",
-                                      position: "relative",
-                                      textAlign: "absolute",
-                                      }}>  
-                      <h1>কিষাণ</h1>
-                      <p>কৃষক হাসলে হাসে দেশ</p>
+                                  height: "250px",
+                                  backgroundColor: "rgba(181, 218, 164, .3)",
+                                  backgroundSize: "cover",
+                                  display: "flex",
+                                  color: "#000",
+                                  position: "relative",
+                                  textAlign: "absolute",
+                  }}>
+                      <img src={bgImage} alt="Not found"
+                        style={{  background: "white",
+                                  width: "100%",
+                                  height: "100%",
+                                  overflow: "hidden"}}
+                      />
                   </Card>
                 </Col>
               </Row>
@@ -127,8 +131,12 @@ const Products = () => {
                                                         marginLeft: '5px',
                                                         overflow: "hidden",
                                                         }}>
-                          <Card.Header className="productImage">
-                            <img src={product.image} alt="Not found"/>
+                          <Card.Header style={{ width: "220px",
+                                                height: "200px"}}>
+                            <img src={product.image} alt="Not found" style={{ background: "white",
+                                                                              width: "220px",
+                                                                              height: "200px",
+                                                                              overflow: "hidden"}}/>
                           </Card.Header>
                           <Card.Body className="productDetails">
                             <div className="proName">
