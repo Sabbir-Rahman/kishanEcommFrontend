@@ -6,7 +6,7 @@ import sidebarImage from "assets/img/sidebar-3.jpg"
 
 function Home() {
   const [image, setImage] = React.useState(sidebarImage)
-  const [color, setColor] = React.useState("black")
+  const [color, setColor] = React.useState("green")
   const [hasImage, setHasImage] = React.useState(true)
   const location = useLocation()
   const mainPanel = React.useRef(null)

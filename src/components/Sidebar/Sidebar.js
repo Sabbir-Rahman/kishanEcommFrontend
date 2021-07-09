@@ -8,7 +8,7 @@ function Sidebar({ color, image, routes }) {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";
   }
   return (
-    <div className="sidebar">
+    <div className="sidebar" data-image={image} data-color={color}>
       <div className="sidebar-wrapper">
         <div className="logo d-flex align-items-center justify-content-start">
             <div className="logo-img">
@@ -47,7 +47,7 @@ function Sidebar({ color, image, routes }) {
           })}
         </Nav>
       </div>
-      </div>
+    </div>
   )
 }
 
