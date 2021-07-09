@@ -1,6 +1,6 @@
 import Dashboard from "views/Dashboard.js"
 import UserProfile from "views/UserProfile.js"
-import TableList from "views/TableList.js"
+import Statistics from "views/Statistics.js"
 import Typography from "views/Typography.js"
 import BuyRequset from "views/BuyRequest.js"
 import Notifications from "views/Notifications.js"
@@ -48,7 +48,7 @@ const dashboardRoutes = [
     path: "/table",
     name: "পরিসংখ্যান",
     icon: "nc-icon nc-notes",
-    component: TableList,
+    component: Statistics,
     layout: "/user",
   },
   {
