@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { useLocation, Route, Switch } from "react-router-dom"
+import { useLocation, Route, Switch, Redirect } from "react-router-dom"
 import Sidebar from "components/Sidebar/Sidebar"
 import routes from "routes/routes.js"
 import sidebarImage from "assets/img/sidebar-3.jpg"
@@ -44,7 +44,10 @@ function Home() {
         <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
         <div className="main-panel" ref={mainPanel}>
           <div className="content">
-            <Switch>{getRoutes(routes)}</Switch>
+            <Switch>
+              {getRoutes(routes)}
+              <Redirect from="/" to="/home" />
+            </Switch>
           </div>
         </div>
       </div>
