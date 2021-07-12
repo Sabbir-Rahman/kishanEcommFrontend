@@ -61,9 +61,13 @@ const Products = () => {
                             marginRight: "5px"}}>
                 <Col md="3">
                   <Card>
-                    <Dropdown as={ButtonGroup} style={{marginTop: "5px", backgroundColor: "rgba(181, 218, 164, .3)"}}>
+                    <Dropdown as={ButtonGroup}
+                              style={{marginTop: "5px",
+                              backgroundColor: "rgba(181, 218, 164, .3)"}}>
                       <Button variant="success" >মাছ</Button>
-                      <Dropdown.Toggle split variant="success" id="dropdown-split-basic" style={{backgroundColor: "rgba(181, 218, 164, .3)"}}/>
+                      <Dropdown.Toggle split variant="success"
+                                       id="dropdown-split-basic"
+                                       style={{backgroundColor: "rgba(181, 218, 164, .3)"}}/>
                       <Dropdown.Menu >
                         <Dropdown.Item href="#/action-1">রুই</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">কাতল</Dropdown.Item>
@@ -76,9 +80,13 @@ const Products = () => {
                         <Dropdown.Item href="#/action-3">অন্যান্য</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
-                    <Dropdown as={ButtonGroup} style={{marginTop: "5px", backgroundColor: "rgba(181, 218, 164, .3)"}}>
+                    <Dropdown as={ButtonGroup}
+                              style={{marginTop: "5px",
+                              backgroundColor: "rgba(181, 218, 164, .3)"}}>
                       <Button variant="success" >মাংস</Button>
-                      <Dropdown.Toggle split variant="success" id="dropdown-split-basic" style={{backgroundColor: "rgba(181, 218, 164, .3)"}}/>
+                      <Dropdown.Toggle split variant="success"
+                                       id="dropdown-split-basic"
+                                       style={{backgroundColor: "rgba(181, 218, 164, .3)"}}/>
                       <Dropdown.Menu>
                         <Dropdown.Item href="#/action-1">গরু</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">ব্রয়লার মুরগি</Dropdown.Item>
@@ -88,9 +96,13 @@ const Products = () => {
                         <Dropdown.Item href="#/action-3">অন্যান্য</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
-                    <Dropdown as={ButtonGroup} style={{marginTop: "5px", backgroundColor: "rgba(181, 218, 164, .3)"}}>
+                    <Dropdown as={ButtonGroup}
+                              style={{marginTop: "5px",
+                              backgroundColor: "rgba(181, 218, 164, .3)"}}>
                       <Button variant="success" >শাক-সবজি</Button>
-                      <Dropdown.Toggle split variant="success" id="dropdown-split-basic" style={{backgroundColor: "rgba(181, 218, 164, .3)"}}/>
+                      <Dropdown.Toggle split variant="success"
+                                       id="dropdown-split-basic"
+                                       style={{backgroundColor: "rgba(181, 218, 164, .3)"}}/>
                       <Dropdown.Menu>
                         <Dropdown.Item href="#/action-1">টমেটো</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">গাজর</Dropdown.Item>
@@ -103,9 +115,13 @@ const Products = () => {
                         <Dropdown.Item href="#/action-3">অন্যান্য</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
-                    <Dropdown as={ButtonGroup} style={{marginTop: "5px", backgroundColor: "rgba(181, 218, 164, .3)"}}>
+                    <Dropdown as={ButtonGroup}
+                              style={{marginTop: "5px",
+                              backgroundColor: "rgba(181, 218, 164, .3)"}}>
                       <Button variant="success" >ফলমূল</Button>
-                      <Dropdown.Toggle split variant="success" id="dropdown-split-basic" style={{backgroundColor: "rgba(181, 218, 164, .3)"}}/>
+                      <Dropdown.Toggle split variant="success"
+                                       id="dropdown-split-basic"
+                                       style={{backgroundColor: "rgba(181, 218, 164, .3)"}}/>
                       <Dropdown.Menu>
                         <Dropdown.Item href="#/action-1">আম</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">লিচু</Dropdown.Item>
@@ -116,9 +132,13 @@ const Products = () => {
                         <Dropdown.Item href="#/action-1">অন্যান্য</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
-                    <Dropdown as={ButtonGroup} style={{marginTop: "5px", backgroundColor: "rgba(181, 218, 164, .3)"}}>
+                    <Dropdown as={ButtonGroup}
+                              style={{marginTop: "5px",
+                              backgroundColor: "rgba(181, 218, 164, .3)"}}>
                       <Button variant="success">অন্যান্য</Button>
-                      <Dropdown.Toggle split variant="success" id="dropdown-split-basic" style={{backgroundColor: "rgba(181, 218, 164, .3)"}}/>
+                      <Dropdown.Toggle split variant="success"
+                                       id="dropdown-split-basic"
+                                       style={{backgroundColor: "rgba(181, 218, 164, .3)"}}/>
                       <Dropdown.Menu>
                         <Dropdown.Item href="#/action-1">সার</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">কিটনাশক</Dropdown.Item>
