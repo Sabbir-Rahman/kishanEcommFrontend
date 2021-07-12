@@ -8,12 +8,18 @@ export const CartReducer = (state, action) => {
         case 'ADD_TO_CART': 
         const check = shoppingCart.find(cart => cart.id === action.id);
         if(check){
-            return {shoppingCart: [...shoppingCart], totalPrice, message: 'This is product is already in the cart!', qty}
+            return { shoppingCart: [...shoppingCart],
+                     totalPrice,
+                     message: 'This is product is already in the cart!',
+                     qty}
         } else {
             product = action.products.find(product => product.id === action.id)
             product['qty'] = 1
             updatedQty = qty + 1
-            return {shoppingCart: [product,...shoppingCart], totalPrice: totalPrice+product.price, message: '', qty: updatedQty}
+            return { shoppingCart: [product,...shoppingCart],
+                     totalPrice: totalPrice+product.price,
+                     message: '',
+                     qty: updatedQty}
         }
         break
         
@@ -22,7 +28,10 @@ export const CartReducer = (state, action) => {
             product = shoppingCart.find(cart => cart.id === action.id);
             updatedPrice = totalPrice - product.price * product.qty;
             updatedQty = qty - product.qty;
-            return {shoppingCart: [...filtered], totalPrice: updatedPrice, message: '', qty: updatedQty}
+            return { shoppingCart: [...filtered],
+                     totalPrice: updatedPrice,
+                     message: '',
+                     qty: updatedQty}
             break
         
         case 'INC':
@@ -34,7 +43,10 @@ export const CartReducer = (state, action) => {
             totalPrice = totalPrice + product.price
             console.log(product, totalPrice)
             shoppingCart[index] = product
-            return {shoppingCart: [...shoppingCart], totalPrice: totalPrice, message: '', qty: updatedQty}
+            return { shoppingCart: [...shoppingCart],
+                     totalPrice: totalPrice,
+                     message: '',
+                     qty: updatedQty}
             break
 
         case 'DEC': 
@@ -47,14 +59,23 @@ export const CartReducer = (state, action) => {
                 updatedQty = qty - 1
                 shoppingCart[index] = product
                 console.log("afer dec",shoppingCart)
-                return {shoppingCart: [...shoppingCart], totalPrice: updatedPrice, message: '', qty: updatedQty}
+                return { shoppingCart: [...shoppingCart],
+                         totalPrice: updatedPrice,
+                         message: '',
+                         qty: updatedQty}
             } else {
-                return {shoppingCart: [...shoppingCart], totalPrice: totalPrice, message: '', qty: qty}
+                return { shoppingCart: [...shoppingCart],
+                         totalPrice: totalPrice,
+                         message: '',
+                         qty: qty}
             }
             break
 
         case 'EMPTY':
-            return {shoppingCart: [], totalPrice: 0, message: '', qty: 0}
+            return { shoppingCart: [],
+                     totalPrice: 0,
+                     message: '',
+                     qty: 0}
             break
         
         default: 
