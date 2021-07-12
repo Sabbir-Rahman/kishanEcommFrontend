@@ -12,11 +12,42 @@ import {
   OverlayTrigger,
   Tooltip,
   ButtonGroup,
+  Modal,
 } from "react-bootstrap"
 import Dropdown from 'react-bootstrap/Dropdown'
 import KrishiBazarNavbar from './Navbars/KrishiBazarNavbar'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
+
+
+function ViewProduct(props, {image, name, price}) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          <p>{name}</p>
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          {price}
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+
 const Products = () => {
+    const [modalShow, setModalShow] = React.useState(false);
     const {products} = useContext(productContext)
     const {dispatch} = useContext(cartContext)
     return(
@@ -144,6 +175,19 @@ const Products = () => {
                             <h5 style={{fontSize: "25px", color: "green"}}>{product.price}.00 টাকা</h5>
                             
                           </Card.Body>
+                          <Row>
+                            <div className="proButton">
+                              <button onClick={() => setModalShow(true)}>পণ্য দেখুন</button>
+                            </div>
+                          <ViewProduct
+                            image={product.image}
+                            name={product.name}
+                            price={product.price}
+                            show={modalShow}
+                            onHide={() => setModalShow(false)}
+                          />  
+                          </Row>
+                          <Row>
                             <div className="proButton" >
                               <button onClick={() => dispatch({type: 'ADD_TO_CART', id: product.id, products})} className="buyNow" >কার্টে যোগ করুন</button>
                             </div>
@@ -151,6 +195,7 @@ const Products = () => {
                             {product.catagory === 'fish' ? <div className="fish">মাছ</div>: ''}
                             {product.catagory === 'meat' ? <div className="meat">মাংস</div>: ''}
                             {product.catagory === 'fruit' ? <div className="fruit">ফল</div>: ''}
+                          </Row>
                         </Card>
                       ))}
                     </Card.Body>
