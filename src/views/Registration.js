@@ -57,9 +57,9 @@ const Register = () => {
                         <Card.Header>
                             <Card.Title as="h4">যোগ দিন</Card.Title>
                             <p className="card-category">
-                                <a  href="https://github.com/EINazare"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
+                                <a  href=""
+                                    rel=""
+                                    target=""
                                 >
                                     গুগল অ্যাকাউন্ট .
                                 </a>

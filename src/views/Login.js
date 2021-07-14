@@ -45,9 +45,9 @@ const Login = () => {
                                 <Card.Header>
                                     <Card.Title as="h4">প্রবেশ করুন</Card.Title>
                                     <p className="card-category">
-                                        <a  href="https://github.com/EINazare"
-                                            rel="noopener noreferrer"
-                                            target="_blank"
+                                        <a  href=""
+                                            rel=""
+                                            target=""
                                         >
                                             গুগল অ্যাকাউন্ট .
                                         </a>
