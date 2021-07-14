@@ -497,3 +497,7 @@ nav ul li .shoppingCartTotal {
   position: absolute;
   right: 20px;
 }
+
+.homeBG {
+  background-image: "assets/img/BG.png";
+}

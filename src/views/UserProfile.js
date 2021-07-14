@@ -110,7 +110,7 @@ function User() {
                   <Button
                     className="btn-fill pull-right"
                     type="submit"
-                    variant="info"
+                    variant="success"
                   >
                     প্রোফাইল আপডেট করুন
                   </Button>
@@ -138,38 +138,11 @@ function User() {
                       className="avatar border-gray"
                       src={require("assets/img/faces/face-3.jpg").default}
                     ></img>
-                    <h5 className="title">মোহতাসিম হাদী রাফী</h5>
+                    <h5 className="title">ব্যবহারকারীর নাম</h5>
                   </a>
-                  <p className="description">mohtasimhadi</p>
+                  <p className="description">বিবরণ</p>
                 </div>
               </Card.Body>
-              <hr></hr>
-              <div className="button-container mr-auto ml-auto">
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                </Button>
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-twitter"></i>
-                </Button>
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-google-plus-square"></i>
-                </Button>
-              </div>
             </Card>
           </Col>
         </Row>

@@ -5,7 +5,7 @@ import {cartContext} from "Global/CartContext"
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-toast.configure();
+toast.configure()
 const Cart = (props) => {
    
     const {dispatch, shoppingCart, totalPrice, qty} = useContext(cartContext)
