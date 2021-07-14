@@ -97,7 +97,7 @@ const Register = () => {
                             <p>
                                 একাউন্ট আছে?
                             </p>
-                            <a  href="/ecomm/login"
+                            <a  href="/login"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
