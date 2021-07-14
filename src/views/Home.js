@@ -45,8 +45,8 @@ function Home() {
                     <img  src={forumLogo}
                           alt="Not Found"
                           style = {{
-                            width: "80px",
-                            height: "80px",
+                            width: "25%",
+                            height: "auto",
                             marginLeft: "auto",
                             marginRight: "auto",
                             display: "block"
@@ -67,8 +67,8 @@ function Home() {
                     <img  src={krishiBazarLogo}
                           alt="Not Found"
                           style = {{
-                            width: "80px",
-                            height: "80px",
+                            width: "25%",
+                            height: "auto",
                             marginLeft: "auto",
                             marginRight: "auto",
                             display: "block"
@@ -89,8 +89,8 @@ function Home() {
                     <img  src={fosholerDoctorLogo}
                           alt="Not Found"
                           style = {{
-                            width: "80px",
-                            height: "80px",
+                            width: "25%",
+                            height: "auto",
                             marginLeft: "auto",
                             marginRight: "auto",
                             display: "block"
