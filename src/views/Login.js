@@ -26,8 +26,12 @@ const Login = () => {
         'http://127.0.0.1:5000/auth/login',
         user
       )
-      console.log(response.data.token)
-      history.push('/dashboard')
+
+      if (response.status == 200) {
+        localStorage.setItem('user', JSON.stringify(response.data.token))
+        //console.log(response.data.token)
+        history.push('/dashboard')
+      }
     } catch (error) {
       alert('try again..')
       history.push('/login')
