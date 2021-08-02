@@ -83,8 +83,8 @@ function Home() {
             </Col>
 
             <Col>
-              <Link to="/krishi-bazar">
-                <Card href="/krishi-bazar">
+              <Link to="/fosholer-doctor">
+                <Card href="/fosholer-doctor">
                   <Card.Body>
                     <img  src={fosholerDoctorLogo}
                           alt="Not Found"

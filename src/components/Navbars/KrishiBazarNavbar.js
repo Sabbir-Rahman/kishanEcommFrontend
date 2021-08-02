@@ -6,10 +6,21 @@ const KrishiBazarNavbar = ({cartToggle}) => {
     const {shoppingCart} = useContext(cartContext);
     return(
         <nav>
+            
             <ul className="left">
                  <li>
-                     <Link to="/home">কৃষি বাজার</Link>
+                     <Link to="#">কৃষি বাজার</Link>
                 </li>
+                <h>
+                    <Link to="/">মূলপাতা</Link>
+                </h>
+                <h>
+                    <Link to="/home">কৃষি ফোরাম</Link>
+                </h>
+                <h>
+                    <Link to="/home">ফসলের ডাক্তার</Link>
+                </h>
+
             </ul>
             <ul className="right">
                 <li onClick={cartToggle}>
