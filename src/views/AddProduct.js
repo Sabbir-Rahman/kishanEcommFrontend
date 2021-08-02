@@ -48,7 +48,7 @@ function AddProduct() {
 
     console.log(product)
 
-    //resetFields()
+    resetFields()
 
     // axios
     const token = localStorage.getItem('user')
@@ -64,6 +64,7 @@ function AddProduct() {
       .post('http://127.0.0.1:5000/product/add', product, config)
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res)
+        alert('Product added successfully')
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
