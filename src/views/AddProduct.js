@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Card, Table, Container, Row, Col, Form } from 'react-bootstrap'
 import { useHistory } from 'react-router'
 import { useState } from 'react'
+import axios from 'axios'
 
 function AddProduct() {
   const [productName, setProductName] = useState('')
@@ -32,14 +33,14 @@ function AddProduct() {
 
   async function addProduct() {
     const product = {
-      productName: productName,
-      minimum: minimum,
+      name: productName,
+      minOrder: minimum,
       category: category,
-      amount: amount,
-      unit: unit,
-      date: date,
-      unitPrice: unitPrice,
-      divison: divison,
+      available: amount,
+      unitname: unit,
+      availableDate: date,
+      unitPrize: unitPrice,
+      division: divison,
       district: district,
       description: description,
       image: image,
@@ -47,22 +48,26 @@ function AddProduct() {
 
     console.log(product)
 
-    resetFields()
+    //resetFields()
 
     // axios
-    // try {
-    //   const response = await axios.post(
-    //     'http://127.0.0.1:5000/product/add',
-    //     product
-    //   )
-    //   console.log(response.data)
-    //   history.push('/login')
-    // } catch (error) {
-    //   alert('try again..')
-    //   history.push('/register')
-    // }
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
 
-    // console.log(response.data)
+    axios
+      .post('http://127.0.0.1:5000/product/add', product, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
   }
 
   return (
@@ -279,7 +284,6 @@ function AddProduct() {
                     <td>
                       <Button
                         className='btn-round btn-fill'
-                        href='#addProduct'
                         variant='success'
                         onClick={addProduct}
                       >

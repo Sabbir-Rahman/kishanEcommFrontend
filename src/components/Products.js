@@ -47,8 +47,7 @@ const Products = (props) => {
   const { products } = useContext(productContext)
   const { dispatch } = useContext(cartContext)
 
-  // data destructure
-
+  // data fetched. you can access attr using props.products.data
   console.log(props.products.data)
 
   return (
