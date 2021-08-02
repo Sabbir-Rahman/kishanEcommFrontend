@@ -1,25 +1,81 @@
-import React from "react"
-import {
-  Button,
-  Card,
-  Table,
-  Container,
-  Row,
-  Col,
-  Form
-} from "react-bootstrap"
+import React from 'react'
+import { Button, Card, Table, Container, Row, Col, Form } from 'react-bootstrap'
+import { useHistory } from 'react-router'
+import { useState } from 'react'
 
 function AddProduct() {
+  const [productName, setProductName] = useState('')
+  const [minimum, setMinimum] = useState('')
+  const [category, setCategory] = useState('')
+  const [amount, setAmount] = useState('')
+  const [unit, setUnit] = useState('')
+  const [date, setDate] = useState('')
+  const [unitPrice, setUnitPrice] = useState('')
+  const [divison, setDivison] = useState('')
+  const [district, setDistrict] = useState('')
+  const [description, setDescription] = useState('')
+  const [image, setImage] = useState('')
+
+  const resetFields = () => {
+    setProductName('')
+    setMinimum('')
+    setCategory('')
+    setAmount('')
+    setUnit('')
+    setDate('')
+    setUnitPrice('')
+    setDivison('')
+    setDistrict('')
+    setDescription('')
+    setImage('')
+  }
+
+  async function addProduct() {
+    const product = {
+      productName: productName,
+      minimum: minimum,
+      category: category,
+      amount: amount,
+      unit: unit,
+      date: date,
+      unitPrice: unitPrice,
+      divison: divison,
+      district: district,
+      description: description,
+      image: image,
+    }
+
+    console.log(product)
+
+    resetFields()
+
+    // axios
+    // try {
+    //   const response = await axios.post(
+    //     'http://127.0.0.1:5000/product/add',
+    //     product
+    //   )
+    //   console.log(response.data)
+    //   history.push('/login')
+    // } catch (error) {
+    //   alert('try again..')
+    //   history.push('/register')
+    // }
+
+    // console.log(response.data)
+  }
+
   return (
     <>
       <Container fluid>
         <Row>
-          <Col className="ml-auto mr-auto" md="8">
+          <Col className='ml-auto mr-auto' md='8'>
             <Card>
-              <div className="header text-center">
-                <h4 className="title">পণ্য সম্পর্কিত তথ্যাদি</h4>
-                <p className="category">
-                  পণ্য যোগ করতে চাইলে নিম্নোক্ত তথ্যাসমূহ সরবরাহ করে সাবমিট করুন।
+              <div className='header text-center'>
+                <h4 className='title'>পণ্য সম্পর্কিত তথ্যাদি</h4>
+                <p className='category'>
+                  পণ্য যোগ করতে চাইলে নিম্নোক্ত তথ্যাসমূহ সরবরাহ করে সাবমিট
+                  করুন।
                 </p>
                 <br></br>
               </div>
@@ -35,100 +91,197 @@ function AddProduct() {
                     <td></td>
                     <td>
                       <Form>
-                        <Form.Group controlId="productName">
-                          <Form.Control type="text" placeholder="পণ্যের নাম"/>
+                        <Form.Group controlId='productName'>
+                          <Form.Control
+                            type='text'
+                            placeholder='পণ্যের নাম'
+                            value={productName}
+                            onChange={(e) => setProductName(e.target.value)}
+                          />
                         </Form.Group>
                       </Form>
                     </td>
                   </tr>
+
+                  <tr>
+                    <td>সর্বনিম্ম পরিমাণ ক্রয়</td>
+                    <td></td>
+                    <td>
+                      <Form>
+                        <Form.Group controlId='minimum'>
+                          <Form.Control
+                            type='text'
+                            placeholder='সর্বনিম্ম পরিমাণ ক্রয়'
+                            value={minimum}
+                            onChange={(e) => setMinimum(e.target.value)}
+                          />
+                        </Form.Group>
+                      </Form>
+                    </td>
+                  </tr>
+
                   <tr>
                     <td>ক্যাটাগরি</td>
                     <td></td>
                     <td>
                       <Form>
-                        <Form.Group controlId="catagorie">
-                          <Form.Control type="text" placeholder="ক্যাটাগরি"/>
+                        <Form.Group controlId='catagorie'>
+                          <Form.Control
+                            type='text'
+                            placeholder='ক্যাটাগরি'
+                            value={category}
+                            onChange={(e) => setCategory(e.target.value)}
+                          />
                         </Form.Group>
                       </Form>
                     </td>
                   </tr>
+
                   <tr>
                     <td>পরিমাণ</td>
                     <td></td>
                     <td>
                       <Form>
-                        <Form.Group controlId="amount">
-                          <Form.Control type="kg" placeholder="পরিমাণ"/>
+                        <Form.Group controlId='amount'>
+                          <Form.Control
+                            type='kg'
+                            placeholder='পরিমাণ'
+                            value={amount}
+                            onChange={(e) => setAmount(e.target.value)}
+                          />
                         </Form.Group>
                       </Form>
-                      </td>
+                    </td>
                   </tr>
+
+                  <tr>
+                    <td>ইউনিট</td>
+                    <td></td>
+                    <td>
+                      <Form>
+                        <Form.Group controlId='unitName'>
+                          <Form.Control
+                            type='text'
+                            placeholder='ইউনিট'
+                            value={unit}
+                            onChange={(e) => setUnit(e.target.value)}
+                          />
+                        </Form.Group>
+                      </Form>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>তারিখ</td>
+                    <td></td>
+                    <td>
+                      <Form>
+                        <Form.Group controlId='date'>
+                          <Form.Control
+                            type='text'
+                            placeholder='বছর-মাস-দিন'
+                            value={date}
+                            onChange={(e) => setDate(e.target.value)}
+                          />
+                        </Form.Group>
+                      </Form>
+                    </td>
+                  </tr>
+
                   <tr>
                     <td>এককপ্রতি মূল্য</td>
-                    <td>
-                      
-                    </td>
+                    <td></td>
                     <td>
                       <Form>
-                        <Form.Group controlId="price">
-                          <Form.Control type="number" placeholder="মূল্য"/>
+                        <Form.Group controlId='price'>
+                          <Form.Control
+                            type='number'
+                            placeholder='মূল্য'
+                            value={unitPrice}
+                            onChange={(e) => setUnitPrice(e.target.value)}
+                          />
                         </Form.Group>
                       </Form>
                     </td>
                   </tr>
+
                   <tr>
-                    <td>উৎপাদন স্থান</td>
-                    <td>
-                      
-                    </td>
+                    <td>বিভাগ</td>
+                    <td></td>
                     <td>
                       <Form>
-                        <Form.Group controlId="origin">
-                          <Form.Control type="text" placeholder="উৎপাদন স্থান"/>
+                        <Form.Group controlId='divison'>
+                          <Form.Control
+                            type='text'
+                            placeholder='বিভাগ'
+                            value={divison}
+                            onChange={(e) => setDivison(e.target.value)}
+                          />
                         </Form.Group>
                       </Form>
                     </td>
                   </tr>
+
+                  <tr>
+                    <td>জেলা</td>
+                    <td></td>
+                    <td>
+                      <Form>
+                        <Form.Group controlId='district'>
+                          <Form.Control
+                            type='text'
+                            placeholder='জেলা'
+                            value={district}
+                            onChange={(e) => setDistrict(e.target.value)}
+                          />
+                        </Form.Group>
+                      </Form>
+                    </td>
+                  </tr>
+
                   <tr>
                     <td>বিবরণ</td>
-                    <td>
-                      
-                    </td>
+                    <td></td>
                     <td>
                       <Form>
-                        <Form.Group controlId="description">
-                          <Form.Control type="text" placeholder="বিবরণ"/>
+                        <Form.Group controlId='description'>
+                          <Form.Control
+                            type='text'
+                            placeholder='বিবরণ'
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                          />
                         </Form.Group>
                       </Form>
                     </td>
                   </tr>
                   <tr>
                     <td>ছবি যোগ করুন</td>
+                    <td></td>
                     <td>
-                      
-                    </td>
-                    <td>
-                    <Form>
-                        <Form.Group controlId="photo">
-                          <Form.Control type="file" placeholder="ছবি"/>
+                      <Form>
+                        <Form.Group controlId='photo'>
+                          <Form.Control
+                            type='file'
+                            placeholder='ছবি'
+                            value={image}
+                            onChange={(e) => setImage(e.target.value)}
+                          />
                         </Form.Group>
                       </Form>
                     </td>
                   </tr>
-                  <tr className="last-row">
+                  <tr className='last-row'>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
                       <Button
-                        className="btn-round btn-fill"
-                        href="#addProduct"
-                        target="_blank"
-                        variant="success"
+                        className='btn-round btn-fill'
+                        href='#addProduct'
+                        variant='success'
+                        onClick={addProduct}
                       >
                         যোগ করুন
                       </Button>
@@ -141,7 +294,7 @@ function AddProduct() {
         </Row>
       </Container>
     </>
-  );
+  )
 }
 
 export default AddProduct
