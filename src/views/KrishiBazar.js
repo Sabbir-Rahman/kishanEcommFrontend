@@ -3,7 +3,7 @@ import ProductsContextProvider from 'Global/ProductContext'
 import CartContextProvider from 'Global/CartContext'
 import Products from 'components/Products'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Cart from 'components/Cart'
+
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
@@ -34,7 +34,6 @@ const KrishiBazar = () => {
               <Route path='/krishi-bazar' exact>
                 <Products products={products} />
               </Route>
-              <Route path='/cart' exact component={Cart} />
             </Switch>
           </Router>
         </CartContextProvider>
