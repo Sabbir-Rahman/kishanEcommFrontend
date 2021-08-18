@@ -13,6 +13,8 @@ import {
   Col,
 } from "react-bootstrap";
 
+// data fetch
+
 function Notifications() {
   const [showModal, setShowModal] = React.useState(false);
   const notificationAlertRef = React.useRef(null);
