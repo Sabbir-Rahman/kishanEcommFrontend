@@ -29,7 +29,15 @@ const Login = () => {
 
       if (response.status == 200) {
         localStorage.setItem('user', JSON.stringify(response.data.token))
-        console.log(response.data.token)
+        localStorage.setItem(
+          'user_role',
+          JSON.stringify(response.data.result.user_role)
+        )
+
+        //localStorage.getItem()
+
+        //console.log(Object.keys(response.data.result))
+        console.log(response.data.result.user_role)
         history.push('/dashboard')
       }
     } catch (error) {
