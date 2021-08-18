@@ -32,6 +32,7 @@ function AddProduct() {
   }
 
   async function addProduct() {
+    //data adding
     const product = {
       name: productName,
       minOrder: minimum,
@@ -69,6 +70,8 @@ function AddProduct() {
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
       })
+
+    //data added
   }
 
   return (
