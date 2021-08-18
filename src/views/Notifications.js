@@ -19,155 +19,63 @@ function Notifications() {
 
   return (
     <>
-      <div className="rna-container">
-        <NotificationAlert ref={notificationAlertRef} />
-      </div>
-      <Container fluid>
-        <Card>
-          <Card.Header>
-            <Card.Title as="h4">নোটিফিকেশনসমূহ</Card.Title>
-          </Card.Header>
-          <Card.Body>
-            <Row>
-              <Col md="6">
-                <h5>
-                  <small>অপঠিত নোটিফিকেশনসমূহ</small>
-                </h5>
-                <Alert className="alert-with-icon" variant="info">
-                  <button
-                    aria-hidden={true}
-                    className="close"
-                    data-dismiss="alert"
-                    type="button"
-                  >
-                    <i className="nc-icon nc-simple-remove"></i>
-                  </button>
-                  <span
-                    data-notify="icon"
-                    className="nc-icon nc-bell-55"
-                  ></span>
-                  <span>
-                    নোটিফিকেশন
-                  </span>
-                </Alert>
-                <Alert className="alert-with-icon" variant="info">
-                  <button
-                    aria-hidden={true}
-                    className="close"
-                    data-dismiss="alert"
-                    type="button"
-                  >
-                    <i className="nc-icon nc-simple-remove"></i>
-                  </button>
-                  <span
-                    data-notify="icon"
-                    className="nc-icon nc-bell-55"
-                  ></span>
-                  <span>
-                    নোটিফিকেশন
-                  </span>
-                </Alert>
-                <Alert className="alert-with-icon" variant="info">
-                  <button
-                    aria-hidden={true}
-                    className="close"
-                    data-dismiss="alert"
-                    type="button"
-                  >
-                    <i className="nc-icon nc-simple-remove"></i>
-                  </button>
-                  <span
-                    data-notify="icon"
-                    className="nc-icon nc-bell-55"
-                  ></span>
-                  <span>
-                    নোটিফিকেশন
-                  </span>
-                </Alert>
-                <Alert className="alert-with-icon" variant="info">
-                  <button
-                    aria-hidden={true}
-                    className="close"
-                    data-dismiss="alert"
-                    type="button"
-                  >
-                    <i className="nc-icon nc-simple-remove"></i>
-                  </button>
-                  <span
-                    data-notify="icon"
-                    className="nc-icon nc-bell-55"
-                  ></span>
-                  <span>
-                    নোটিফিকেশন
-                  </span>
-                </Alert>
-              </Col>
-              <Col md="6">
-                <h5>
-                  <small>অপঠিত নোটিফিকেশনসমূহ</small>
-                </h5>
-                <Alert variant="success">
-                  <button
-                    aria-hidden={true}
-                    className="close"
-                    data-dismiss="alert"
-                    type="button"
-                  >
-                    <i className="nc-icon nc-simple-remove"></i>
-                  </button>
-                  <span>
-                    <b>নোটিফিকেশন -</b>
-                    পঠিত নোটিফিকেশন
-                  </span>
-                </Alert>
-                <Alert variant="success">
-                  <button
-                    aria-hidden={true}
-                    className="close"
-                    data-dismiss="alert"
-                    type="button"
-                  >
-                    <i className="nc-icon nc-simple-remove"></i>
-                  </button>
-                  <span>
-                    <b>নোটিফিকেশন -</b>
-                    পঠিত নোটিফিকেশন
-                  </span>
-                </Alert>
-                <Alert variant="success">
-                  <button
-                    aria-hidden={true}
-                    className="close"
-                    data-dismiss="alert"
-                    type="button"
-                  >
-                    <i className="nc-icon nc-simple-remove"></i>
-                  </button>
-                  <span>
-                    <b>নোটিফিকেশন -</b>
-                    পঠিত নোটিফিকেশন
-                  </span>
-                </Alert>
-                <Alert variant="success">
-                  <button
-                    aria-hidden={true}
-                    className="close"
-                    data-dismiss="alert"
-                    type="button"
-                  >
-                    <i className="nc-icon nc-simple-remove"></i>
-                  </button>
-                  <span>
-                    <b>নোটিফিকেশন -</b>
-                    পঠিত নোটিফিকেশন
-                  </span>
-                </Alert>
-              </Col>
+    <Container fluid>
+      <Card>
+        <Card.Header>
+          <Card.Title as="h4">নোটিফিকেশন</Card.Title>
+        </Card.Header>
+        <Card.Body>
+          <Row>
+            <Col md="6">
+              <h5>
+                <small>পঠিত নোটিফিকেশন</small>
+              </h5>
+              <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
+                <Col md="8" style={{color: "green", width: "80%"}}>নোটিফিকেশন</Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+              </Row>
+
+              <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
+                <Col md="8" style={{color: "green", width: "80%"}}>নোটিফিকেশন</Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+              </Row>
+
+              <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
+                <Col md="8" style={{color: "green", width: "80%"}}>নোটিফিকেশন</Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+              </Row>
+
+            </Col>
+            <Col md="6">
+              <h5>
+                <small>অপঠিত নোটিফিকেশন</small>
+              </h5>
+              <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
+                <Col md="8" style={{color: "green", width: "80%"}}>নোটিফিকেশন</Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+              </Row>
+
+              <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
+                <Col md="8" style={{color: "green", width: "80%"}}>নোটিফিকেশন</Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+              </Row>
+
+              <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
+                <Col md="8" style={{color: "green", width: "80%"}}>নোটিফিকেশন</Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
+                <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+              </Row>
+            </Col>
             </Row>
-          </Card.Body>
-        </Card>
-      </Container>
-    </>
+        </Card.Body>
+      </Card>
+    </Container>
+  </>
   );
 }
 
