@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { BrowserRouter, Route, Switch, Redirect, useHistory } from "react-router-dom"
 import { productContext } from 'Global/ProductContext'
 import { cartContext } from 'Global/CartContext'
 import {
@@ -15,31 +16,11 @@ import {
   Modal,
 } from 'react-bootstrap'
 import Dropdown from 'react-bootstrap/Dropdown'
-import KrishiBazarNavbar from './Navbars/KrishiBazarNavbar'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
+import { Link } from "react-router-dom"
 
-function ViewProduct(props, { image, name, price }) {
-  return (
-    <Modal
-      {...props}
-      size='lg'
-      aria-labelledby='contained-modal-title-vcenter'
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id='contained-modal-title-vcenter'>
-          <p>{name}</p>
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>{price}</p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
-  )
+function handleSubmit(){
+    const product = { productID: productID}
 }
 
 const Products = (props) => {
@@ -47,13 +28,15 @@ const Products = (props) => {
   const { products } = useContext(productContext)
   const { dispatch } = useContext(cartContext)
 
-  // data fetched. you can access attr using props.products.data
-  //console.log(props.products.data)
+  // data destructure
+
+  // console.log(props.products.data)
 
   return (
     <>
-      <KrishiBazarNavbar />
-      <Card style={{ marginTop: '60px' }}>
+      <Card style={{ marginTop: '2px',
+                     marginLeft: '5px',
+                     marginRight: '5px' }}>
         <Row
           style={{
             marginTop: '25px',
@@ -265,35 +248,24 @@ const Products = (props) => {
                         {product.price}.00 টাকা
                       </h5>
                     </Card.Body>
+                    <Link to="/product">
                     <Row>
                       <div className='proButton'>
-                        <button onClick={() => setModalShow(true)}>
-                          পণ্য দেখুন
-                        </button>
-                      </div>
-                      <ViewProduct
-                        image={product.image}
-                        name={product.name}
-                        price={product.price}
-                        show={modalShow}
-                        onHide={() => setModalShow(false)}
-                      />
-                    </Row>
-                    <Row>
-                      <div className='proButton'>
-                        <button
+                      <button
                           onClick={() =>
                             dispatch({
-                              type: 'ADD_TO_CART',
+                              type: 'VIEW_PRODUCT',
                               id: product.id,
                               products,
                             })
-                          }
-                          className='buyNow'
-                        >
-                          কার্টে যোগ করুন
+                          }>
+                          পণ্য দেখুন
                         </button>
                       </div>
+                      
+                    </Row>
+                    </Link>
+                    <Row>
                       {product.catagory === 'corp' ? (
                         <div className='corp'>শস্য</div>
                       ) : (

@@ -5,6 +5,8 @@ import KrishiBazar from "views/KrishiBazar"
 import KrishiForum from "views/KrishiForum"
 import Login from "views/Login"
 import Register from "views/Registration"
+import ViewProduct from "views/ViewProduct"
+import AdminDashboard from "views/Admin"
 
 const routes = [
   {
@@ -15,10 +17,24 @@ const routes = [
     layout: "",
   },
   {
+    upgrade: true,
+    path: "/admin",
+    name: "অ্যাডমিন",
+    component: AdminDashboard,
+    layout: "",
+  },
+  {
     path: "/krishi-bazar",
     name: "কৃষি বাজার",
     icon: "nc-icon nc-sun-fog-29",
     component: KrishiBazar,
+    layout: ""
+  },
+  {
+    path: "/product",
+    name: "কৃষি বাজার",
+    icon: "nc-icon nc-sun-fog-29",
+    component: ViewProduct,
     layout: ""
   },
   {
