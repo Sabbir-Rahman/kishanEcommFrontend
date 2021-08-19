@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { useLocation, Route, Switch } from "react-router-dom"
-import UserNavbar from "components/Navbars/NavbarAuthenticated"
+import UserNavbar from "components/Navbars/Navbar"
 import Sidebar from "components/Sidebar/Sidebar"
 import routes from "routes/dashboardRoutes.js"
 import sidebarImage from "assets/img/sidebar-3.jpg"

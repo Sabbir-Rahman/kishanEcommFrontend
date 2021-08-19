@@ -17,6 +17,28 @@ function Header() {
       document.body.appendChild(node);
     }
 
+    function logout() {
+        localStorage.clear()
+      }
+
+    const token = localStorage.getItem('user')
+    let menu = []
+    if (token) {
+        menu = <NavDropdown title='মেনু' id='basic-nav-dropdown'>
+        <NavDropdown.Item href='/logout' onClick={logout}>
+          লগ আউট
+        </NavDropdown.Item>
+        <NavDropdown.Item href='/user/dashboard'>
+          ড্যাশবোর্ড
+        </NavDropdown.Item>
+      </NavDropdown>
+    } else {
+        menu = <NavDropdown title="মেনু" id="basic-nav-dropdown">
+        <NavDropdown.Item href="/login">লগ ইন</NavDropdown.Item>
+        <NavDropdown.Item href="/register">রেজিস্ট্রেশন</NavDropdown.Item>
+    </NavDropdown>
+    }
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container fluid>
@@ -61,10 +83,7 @@ function Header() {
             </Nav>
             <Nav className="ml-auto" navbar>
                 <Nav.Item>
-                <NavDropdown title="মেনু" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/login">লগ ইন</NavDropdown.Item>
-                    <NavDropdown.Item href="/register">রেজিস্ট্রেশন</NavDropdown.Item>
-                </NavDropdown>
+                {menu}
                 </Nav.Item>
             </Nav>
             </Navbar.Collapse>
