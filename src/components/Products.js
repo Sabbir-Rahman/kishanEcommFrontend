@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { productContext } from 'Global/ProductContext'
-import { cartContext } from 'Global/CartContext'
 import {
   Button,
   Card,
@@ -17,7 +16,6 @@ import { Link } from "react-router-dom"
 const Products = (props) => {
   
   const { products } = useContext(productContext)
-  const { dispatch } = useContext(cartContext)
 
   // data destructure
 
