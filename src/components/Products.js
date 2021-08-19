@@ -254,23 +254,8 @@ const Products = (props) => {
                     </Row>
                     </Link>
                     <Row>
-                      {product.catagory === 'corp' ? (
-                        <div className='corp'>শস্য</div>
-                      ) : (
-                        ''
-                      )}
-                      {product.catagory === 'fish' ? (
-                        <div className='fish'>মাছ</div>
-                      ) : (
-                        ''
-                      )}
-                      {product.catagory === 'meat' ? (
-                        <div className='meat'>মাংস</div>
-                      ) : (
-                        ''
-                      )}
-                      {product.catagory === 'fruit' ? (
-                        <div className='fruit'>ফল</div>
+                      {product.category ? (
+                        <div className='corp'>{product.category}</div>
                       ) : (
                         ''
                       )}
