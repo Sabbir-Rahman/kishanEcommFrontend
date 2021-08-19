@@ -28,7 +28,6 @@ function Home() {
         <Switch>
           {getRoutes(routes)}
           <Redirect from='/' to='/home' />
-          <Redirect from='/user' to='/home' />
         </Switch>
       </div>
     )
