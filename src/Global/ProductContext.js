@@ -17,7 +17,6 @@ const ProductContextProvider = (props) => {
 
   const ShowProduct = async () => {
     const token = localStorage.getItem('user')
-    console.log(token)
     await axios
       .get('http://127.0.0.1:5000/product/view', {
         headers: { Authorization: token },
@@ -30,6 +29,21 @@ const ProductContextProvider = (props) => {
   }, [])
 
   console.log(productss.data)
+
+  //           "minOrder": 30,
+  //           "isVerified": true,
+  //           "isAvailableNow": false,
+  //           "comments": [],
+  //           "question": [],
+  //           "_id": "611cac7ba55c5538ecf962ca",
+  //           "seller_id": "611caa47a55c5538ecf96293",
+  //           "name": "product811",
+  //           "description": "This is a nice product",
+  //           "unitName": "kg",
+  //           "unitPrize": 12.5,
+  //           "available": 70,
+  //           "availableDate": "2021-11-23T00:00:00.000Z",
+  //           "division": "D
 
   const [products] = useState([
     { id: 1, name: 'Salmon', price: 3000, image: fish, catagory: 'fish' },
