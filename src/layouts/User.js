@@ -1,5 +1,5 @@
 import React from "react"
-import { useLocation, Route, Switch } from "react-router-dom"
+import { useLocation, Route, Switch, Redirect } from "react-router-dom"
 import Header from "components/Navbars/Navbar"
 import Sidebar from "components/Sidebar/Sidebar"
 import routes from "routes/dashboardRoutes.js"
@@ -40,6 +40,14 @@ function User() {
     }
   }, [location])
 
+  const token = localStorage.getItem('user')
+  let redirection
+  if (token) {
+    redirection = <Switch>{getRoutes(routes)}</Switch>
+  } else {
+    <Redirect to='/home' />
+  }
+
   return (
     <>
       <div className="wrapper">
@@ -47,7 +55,7 @@ function User() {
         <div className="main-panel" ref={mainPanel}>
           <Header />
           <div className="content">
-            <Switch>{getRoutes(routes)}</Switch>
+            {redirection}
           </div>
         </div>
       </div>
