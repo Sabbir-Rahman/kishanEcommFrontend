@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import {
   Alert,
   Badge,
@@ -10,9 +10,44 @@ import {
   Container,
   Row,
   Col,
-} from "react-bootstrap"
+} from 'react-bootstrap'
+import axios from 'axios'
+import { useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+// data fetch
 
 function Sellrequset() {
+  const [requests, setRequest] = useState([])
+
+  const ShowRequest = async () => {
+    const token = localStorage.getItem('user')
+
+    const _token = token.split('"').join('')
+    console.log(token)
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+
+    axios
+      .get('http://127.0.0.1:5000/product/order/buyRequest', config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        setRequest(res.data)
+        alert('Data fetched')
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+  }
+
+  useEffect(async () => {
+    ShowRequest()
+  }, [])
+
+  // data fetched.. request.data
   return (
     <>
       <Container fluid>
@@ -75,4 +110,4 @@ function Sellrequset() {
   )
 }
 
-export default Sellrequset;
+export default Sellrequset

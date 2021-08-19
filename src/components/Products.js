@@ -30,7 +30,7 @@ const Products = (props) => {
 
   // data destructure
 
-  console.log(props.products.data)
+  // console.log(props.products.data)
 
   return (
     <>
