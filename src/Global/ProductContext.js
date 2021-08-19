@@ -84,7 +84,7 @@ const ProductContextProvider = (props) => {
 
   var products = []
   for(let i=0; i<val.length; i++){
-    products.push({id: id[i], name: name[i], price: unitPrize[i], iamge: image[i], category: category[i]})
+    products.push({id: id[i], name: name[i], price: unitPrize[i], iamge: image[i], category: category[i], minOrder: minOrder[i]})
   }
 
   return (

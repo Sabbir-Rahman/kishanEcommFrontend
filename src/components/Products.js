@@ -209,7 +209,7 @@ const Products = (props) => {
                     <Card.Header style={{ width: '220px', height: '200px' }}>
                       <img
                         src={product.image}
-                        alt='Not found'
+                        alt='দুঃখিত! পণ্যের ছবি পাওয়া যায়নি'
                         style={{
                           background: 'white',
                           width: '220px',
@@ -219,7 +219,7 @@ const Products = (props) => {
                       />
                     </Card.Header>
                     <Card.Body>
-                      <p style={{ marginTop: '10px', fontSize: '20px' }}>
+                      <p style={{ marginTop: '10px', fontSize: '20px', marginBottom: "0px" }}>
                         {product.name}
                       </p>
                       <p
@@ -227,13 +227,14 @@ const Products = (props) => {
                           marginTop: '0px',
                           color: 'grey',
                           fontSize: '12px',
+                          marginBottom: "0px"
                         }}
                       >
-                        সর্বনিম্ন অর্ডার
+                        সর্বনিম্ন অর্ডার {product.minOrder} {product.unitName}
                       </p>
-                      <h5 style={{ fontSize: '25px', color: 'green' }}>
-                        {product.price}.00 টাকা
-                      </h5>
+                      <p style={{ fontSize: '15px', color: 'green', marginBottom: "0px" }}>
+                        {product.price} টাকা/{product.unitName}
+                      </p>
                     </Card.Body>
                     <Link to="/product">
                     <Row>
