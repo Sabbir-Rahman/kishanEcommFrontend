@@ -80,7 +80,7 @@ function Maps() {
                   }}
                 >
                   <Col md='8' style={{ color: 'green', width: '80%' }}>
-                    {val[0].productName}
+                    {/* {val[0].productName} */}
                   </Col>
                   <Col md='2' style={{ marginRight: '0px' }}>
                     <Button>টিক</Button>

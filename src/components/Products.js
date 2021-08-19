@@ -1,30 +1,21 @@
 import React, { useContext } from 'react'
-import { BrowserRouter, Route, Switch, Redirect, useHistory } from "react-router-dom"
 import { productContext } from 'Global/ProductContext'
 import { cartContext } from 'Global/CartContext'
 import {
   Button,
   Card,
-  Table,
   Container,
   Row,
   Col,
   Form,
-  OverlayTrigger,
-  Tooltip,
-  ButtonGroup,
-  Modal,
+  ButtonGroup
 } from 'react-bootstrap'
 import Dropdown from 'react-bootstrap/Dropdown'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
 import { Link } from "react-router-dom"
 
-function handleSubmit(){
-    const product = { productID: productID}
-}
-
 const Products = (props) => {
-  const [modalShow, setModalShow] = React.useState(false)
+  
   const { products } = useContext(productContext)
   const { dispatch } = useContext(cartContext)
 
