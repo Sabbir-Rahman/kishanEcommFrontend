@@ -12,7 +12,7 @@ const KrishiBazar = () => {
             <Switch>
               <Route path='/krishi-bazar' exact>
               <ProductsContextProvider />
-                <Products/>
+              <Products/>
               </Route>
             </Switch>
           </Router>
