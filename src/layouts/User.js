@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import { useLocation, Route, Switch } from "react-router-dom"
 import UserNavbar from "components/Navbars/Navbar"
 import Sidebar from "components/Sidebar/Sidebar"
