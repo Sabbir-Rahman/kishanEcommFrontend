@@ -68,7 +68,7 @@ function Header() {
                   লগ আউট
                 </NavDropdown.Item>
                 <NavDropdown.Item href='/user/dashboard'>
-                  প্রোফাইল
+                  ড্যাশবোর্ড
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav.Item>

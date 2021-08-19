@@ -64,7 +64,6 @@ function Header() {
                 <NavDropdown title="মেনু" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/login">লগ ইন</NavDropdown.Item>
                     <NavDropdown.Item href="/register">রেজিস্ট্রেশন</NavDropdown.Item>
-                    <NavDropdown.Item href="/user/dashboard">প্রোফাইল</NavDropdown.Item>
                 </NavDropdown>
                 </Nav.Item>
             </Nav>
