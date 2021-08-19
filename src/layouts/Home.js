@@ -4,6 +4,7 @@ import Sidebar from "components/Sidebar/Sidebar"
 import routes from "routes/routes.js"
 import sidebarImage from "assets/img/sidebar-3.jpg"
 import Header from "components/Navbars/Navbar"
+import AuthenticatedHeader from "components/Navbars/Navbar"
 
 function Home() {
   const [image, setImage] = React.useState(sidebarImage)
@@ -26,15 +27,28 @@ function Home() {
       }
     })
   }
-  return (
-    <div style={{ backgroundColor: "#F4FFEE" }}>
-      <Header/>
-            <Switch>
-              {getRoutes(routes)}
-              <Redirect from="/" to="/home" />
-            </Switch>
-    </div>
-  );
+
+  if("authenticated"){
+    return (
+      <div style={{ backgroundColor: "#F4FFEE" }}>
+        <AuthenticatedHeader/>
+          <Switch>
+            {getRoutes(routes)}
+            <Redirect from="/" to="/home" />
+          </Switch>
+      </div>
+    )
+  } else {
+    return (
+      <div style={{ backgroundColor: "#F4FFEE" }}>
+        <Header/>
+          <Switch>
+            {getRoutes(routes)}
+            <Redirect from="/" to="/home" />
+          </Switch>
+      </div>
+    )
+  }
 }
 
 export default Home
