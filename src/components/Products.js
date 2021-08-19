@@ -30,8 +30,6 @@ const Products = (props) => {
 
   // data destructure
 
-  // console.log(props.products.data)
-
   return (
     <>
       <Card style={{ marginTop: '2px',
