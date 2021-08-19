@@ -1,36 +1,23 @@
 import React, { useContext } from 'react'
-import { BrowserRouter, Route, Switch, Redirect, useHistory } from "react-router-dom"
 import { productContext } from 'Global/ProductContext'
-import { cartContext } from 'Global/CartContext'
 import {
   Button,
   Card,
-  Table,
   Container,
   Row,
   Col,
   Form,
-  OverlayTrigger,
-  Tooltip,
-  ButtonGroup,
-  Modal,
+  ButtonGroup
 } from 'react-bootstrap'
 import Dropdown from 'react-bootstrap/Dropdown'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
 import { Link } from "react-router-dom"
 
-function handleSubmit(){
-    const product = { productID: productID}
-}
-
 const Products = (props) => {
-  const [modalShow, setModalShow] = React.useState(false)
+  
   const { products } = useContext(productContext)
-  const { dispatch } = useContext(cartContext)
 
   // data destructure
-
-  // console.log(props.products.data)
 
   return (
     <>
@@ -222,7 +209,7 @@ const Products = (props) => {
                     <Card.Header style={{ width: '220px', height: '200px' }}>
                       <img
                         src={product.image}
-                        alt='Not found'
+                        alt='দুঃখিত! পণ্যের ছবি পাওয়া যায়নি'
                         style={{
                           background: 'white',
                           width: '220px',
@@ -232,7 +219,7 @@ const Products = (props) => {
                       />
                     </Card.Header>
                     <Card.Body>
-                      <p style={{ marginTop: '10px', fontSize: '20px' }}>
+                      <p style={{ marginTop: '10px', fontSize: '20px', marginBottom: "0px" }}>
                         {product.name}
                       </p>
                       <p
@@ -240,13 +227,14 @@ const Products = (props) => {
                           marginTop: '0px',
                           color: 'grey',
                           fontSize: '12px',
+                          marginBottom: "0px"
                         }}
                       >
-                        সর্বনিম্ন অর্ডার
+                        সর্বনিম্ন অর্ডার {product.minOrder} {product.unitName}
                       </p>
-                      <h5 style={{ fontSize: '25px', color: 'green' }}>
-                        {product.price}.00 টাকা
-                      </h5>
+                      <p style={{ fontSize: '15px', color: 'green', marginBottom: "0px" }}>
+                        {product.price} টাকা/{product.unitName}
+                      </p>
                     </Card.Body>
                     <Link to="/product">
                     <Row>
@@ -266,23 +254,8 @@ const Products = (props) => {
                     </Row>
                     </Link>
                     <Row>
-                      {product.catagory === 'corp' ? (
-                        <div className='corp'>শস্য</div>
-                      ) : (
-                        ''
-                      )}
-                      {product.catagory === 'fish' ? (
-                        <div className='fish'>মাছ</div>
-                      ) : (
-                        ''
-                      )}
-                      {product.catagory === 'meat' ? (
-                        <div className='meat'>মাংস</div>
-                      ) : (
-                        ''
-                      )}
-                      {product.catagory === 'fruit' ? (
-                        <div className='fruit'>ফল</div>
+                      {product.category ? (
+                        <div className='corp'>{product.category}</div>
                       ) : (
                         ''
                       )}
