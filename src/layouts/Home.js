@@ -32,6 +32,7 @@ function Home() {
   console.log(token)
 
   if (token) {
+    console.log('authincated...')
     return (
       <div style={{ backgroundColor: '#F4FFEE' }}>
         <AuthenticatedHeader />
@@ -42,6 +43,7 @@ function Home() {
       </div>
     )
   } else {
+    console.log('non authicated...')
     return (
       <div style={{ backgroundColor: '#F4FFEE' }}>
         <Header />
