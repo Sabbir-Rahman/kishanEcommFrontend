@@ -1,9 +1,10 @@
 import React, { Component } from "react"
 import { useLocation, Route, Switch } from "react-router-dom"
-import UserNavbar from "components/Navbars/UserNavbar"
+import UserNavbar from "components/Navbars/NavbarAuthenticated"
 import Sidebar from "components/Sidebar/Sidebar"
 import routes from "routes/dashboardRoutes.js"
 import sidebarImage from "assets/img/sidebar-3.jpg"
+import Home from "./Home"
 
 function User() {
   const [image, setImage] = React.useState(sidebarImage)
@@ -39,19 +40,28 @@ function User() {
       element.parentNode.removeChild(element)
     }
   }, [location])
-  return (
-    <>
-      <div className="wrapper">
-        <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
-        <div className="main-panel" ref={mainPanel}>
-          <UserNavbar />
-          <div className="content">
-            <Switch>{getRoutes(routes)}</Switch>
+
+  const token = localStorage.getItem('user')
+
+  if (token){
+    return (
+      <>
+        <div className="wrapper">
+          <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
+          <div className="main-panel" ref={mainPanel}>
+            <UserNavbar />
+            <div className="content">
+              <Switch>{getRoutes(routes)}</Switch>
+            </div>
           </div>
         </div>
-      </div>
-    </>
-  )
+      </>
+    )
+  } else {
+    return (
+      <Home/>
+    )
+  }
 }
 
 export default User
