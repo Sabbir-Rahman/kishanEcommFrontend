@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Button,
-  Card,
-  Container,
-  Row,
-  Col,
-} from 'react-bootstrap'
+import { Button, Card, Container, Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 

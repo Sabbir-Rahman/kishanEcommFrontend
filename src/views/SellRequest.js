@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Button,
-  Card,
-  Container,
-  Row,
-  Col,
-} from 'react-bootstrap'
+import { Button, Card, Container, Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
@@ -66,28 +60,100 @@ function Sellrequset() {
   let sellrequset = []
   for (let i = 0; i < soldProducts.length; i++) {
     sellrequset.push(
-      <Col style={{background: 'rgba(181, 218, 164, .3)', borderColor: 'white'}}>
+      <Col
+        style={{ background: 'rgba(181, 218, 164, .3)', borderColor: 'white' }}
+      >
         <table>
-          <th><h3 style={{ marginRight: '20px' }}>{productName[i]}</h3></th>
-          <th style={{ color: 'gray', marginLeft: '5px' }}>আইডি: {productID[i]}</th>
+          <th>
+            <h3 style={{ marginRight: '20px' }}>{productName[i]}</h3>
+          </th>
+          <th style={{ color: 'gray', marginLeft: '5px' }}>
+            আইডি: {productID[i]}
+          </th>
         </table>
         <table>
-          <th><h5 style={{ color: 'green', marginRight: '50px', font: 'message-box'}}>বুকিং মানি: {bookingMoney[i]} টাকা</h5></th>
-          <th> <h5 style={{ color: 'green', marginRight: '50px', font: 'message-box' }}>মোট মূল্য: {buyingMoney[i]} টাকা </h5></th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginRight: '50px',
+                font: 'message-box',
+              }}
+            >
+              বুকিং মানি: {bookingMoney[i]} টাকা
+            </h5>
+          </th>
+          <th>
+            {' '}
+            <h5
+              style={{
+                color: 'green',
+                marginRight: '50px',
+                font: 'message-box',
+              }}
+            >
+              মোট মূল্য: {buyingMoney[i]} টাকা{' '}
+            </h5>
+          </th>
         </table>
         <table>
-          <th><h5>পরিমাণ:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{buyingQuantity[i]} {buyingQuantityUnit[i]}</h5></th>
-          <th><h5 style={{ marginLeft: '30px', font: 'message-box' }}>স্ট্যাটাস: {status[i]}</h5></th>
+          <th>
+            <h5>পরিমাণ:</h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {buyingQuantity[i]} {buyingQuantityUnit[i]}
+            </h5>
+          </th>
+          <th>
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              স্ট্যাটাস: {status[i]}
+            </h5>
+          </th>
         </table>
-        <table style={{ marginLeft: "85%" }}>
-          <Button variant='success' style={{ marginLeft: '20px' }}>
+        <table style={{ marginLeft: '85%' }}>
+          <Button
+            variant='success'
+            style={{ marginLeft: '20px' }}
+            onClick={approve}
+          >
             এপ্রুভ করুন
           </Button>
         </table>
-        <Row style={{ background: "white", height: "15px" }}></Row>
+        <Row style={{ background: 'white', height: '15px' }}></Row>
       </Col>
     )
+  }
+
+  function approve() {
+    const body = {
+      productId: product_id,
+    }
+
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+
+    axios
+      .post('http://127.0.0.1:5000/product/order/accept', product, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        alert('Product added successfully')
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
   }
 
   return (
