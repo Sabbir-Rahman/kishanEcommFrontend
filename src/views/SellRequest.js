@@ -48,61 +48,158 @@ function Sellrequset() {
   }, [])
 
   // data fetched.. request.data
+  // bookingMoney: 37.5
+  // buyerEmail: 'a@gmail.com'
+  // buyerName: 'a'
+  // buyer_id: '610189cfc4cd5804d00a60a5'
+  // buyingMoney: 375
+  // buyingQuantity: 30
+  // buyingQuantityUnit: 'kg'
+  // productName: 'product22'
+  // product_id: '611c0b5c0c64c12028667217'
+  // seller_id: '60e5d97708d3471718704cee'
+  // status: 'accepted'
+  // timestamp: '2021-08-17T18:45:19.700Z'
+
+  console.log(requests.data)
   return (
     <>
       <Container fluid>
         <Card>
           <Card.Header>
-            <Card.Title as="h4">পণ্য বিক্রয় অনুরোধ</Card.Title>
+            <Card.Title as='h4'>পণ্য বিক্রয় অনুরোধ</Card.Title>
           </Card.Header>
           <Card.Body>
             <Row>
-              <Col md="6">
+              <Col md='6'>
                 <h5>
                   <small>বিক্রয় সম্পন্নকৃত পণ্যসমূহ</small>
                 </h5>
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+                <Row
+                  style={{
+                    background: 'rgba(181, 218, 164, .3)',
+                    width: '100%',
+                    marginBottom: '5px',
+                    marginLeft: '5px',
+                    marginRight: '5px',
+                  }}
+                >
+                  <Col md='8' style={{ color: 'green', width: '80%' }}>
+                    পণ্যের নাম
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>টিক</Button>
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>ক্রস</Button>
+                  </Col>
                 </Row>
 
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+                <Row
+                  style={{
+                    background: 'rgba(181, 218, 164, .3)',
+                    width: '100%',
+                    marginBottom: '5px',
+                    marginLeft: '5px',
+                    marginRight: '5px',
+                  }}
+                >
+                  <Col md='8' style={{ color: 'green', width: '80%' }}>
+                    পণ্যের নাম
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>টিক</Button>
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>ক্রস</Button>
+                  </Col>
                 </Row>
 
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+                <Row
+                  style={{
+                    background: 'rgba(181, 218, 164, .3)',
+                    width: '100%',
+                    marginBottom: '5px',
+                    marginLeft: '5px',
+                    marginRight: '5px',
+                  }}
+                >
+                  <Col md='8' style={{ color: 'green', width: '80%' }}>
+                    পণ্যের নাম
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>টিক</Button>
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>ক্রস</Button>
+                  </Col>
                 </Row>
-
               </Col>
-              <Col md="6">
+              <Col md='6'>
                 <h5>
                   <small>বিক্রয় অসম্পন্ন পণ্যসমূহ</small>
                 </h5>
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+                <Row
+                  style={{
+                    background: 'rgba(181, 218, 164, .3)',
+                    width: '100%',
+                    marginBottom: '5px',
+                    marginLeft: '5px',
+                    marginRight: '5px',
+                  }}
+                >
+                  <Col md='8' style={{ color: 'green', width: '80%' }}>
+                    পণ্যের নাম
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>টিক</Button>
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>ক্রস</Button>
+                  </Col>
                 </Row>
 
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+                <Row
+                  style={{
+                    background: 'rgba(181, 218, 164, .3)',
+                    width: '100%',
+                    marginBottom: '5px',
+                    marginLeft: '5px',
+                    marginRight: '5px',
+                  }}
+                >
+                  <Col md='8' style={{ color: 'green', width: '80%' }}>
+                    পণ্যের নাম
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>টিক</Button>
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>ক্রস</Button>
+                  </Col>
                 </Row>
 
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
+                <Row
+                  style={{
+                    background: 'rgba(181, 218, 164, .3)',
+                    width: '100%',
+                    marginBottom: '5px',
+                    marginLeft: '5px',
+                    marginRight: '5px',
+                  }}
+                >
+                  <Col md='8' style={{ color: 'green', width: '80%' }}>
+                    পণ্যের নাম
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>টিক</Button>
+                  </Col>
+                  <Col md='2' style={{ marginRight: '0px' }}>
+                    <Button>ক্রস</Button>
+                  </Col>
                 </Row>
               </Col>
-              </Row>
+            </Row>
           </Card.Body>
         </Card>
       </Container>
