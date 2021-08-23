@@ -69,11 +69,11 @@ function Sellrequset() {
       <Col style={{background: 'rgba(181, 218, 164, .3)', borderColor: 'white'}}>
         <table>
           <th><h3 style={{ marginRight: '20px' }}>{productName[i]}</h3></th>
-          <th style={{ color: 'gray', marginLeft: '5px' }}>আইডি: {productID}</th>
+          <th style={{ color: 'gray', marginLeft: '5px' }}>আইডি: {productID[i]}</th>
         </table>
         <table>
           <th><h5 style={{ color: 'green', marginRight: '50px', font: 'message-box'}}>বুকিং মানি: {bookingMoney[i]} টাকা</h5></th>
-          <th> <h5 style={{ color: 'green', marginRight: '50px', font: 'message-box' }}> বায়িং মানি: {buyingMoney[i]} টাকা </h5></th>
+          <th> <h5 style={{ color: 'green', marginRight: '50px', font: 'message-box' }}>মোট মূল্য: {buyingMoney[i]} টাকা </h5></th>
         </table>
         <table>
           <th><h5>পরিমাণ:</h5></th>
