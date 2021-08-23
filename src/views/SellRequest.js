@@ -49,17 +49,12 @@ function Sellrequset() {
 
   // data fetched.. request.data
   // bookingMoney: 37.5
-  // buyerEmail: 'a@gmail.com'
   // buyerName: 'a'
-  // buyer_id: '610189cfc4cd5804d00a60a5'
   // buyingMoney: 375
   // buyingQuantity: 30
   // buyingQuantityUnit: 'kg'
   // productName: 'product22'
-  // product_id: '611c0b5c0c64c12028667217'
-  // seller_id: '60e5d97708d3471718704cee'
   // status: 'accepted'
-  // timestamp: '2021-08-17T18:45:19.700Z'
 
   console.log(requests.data)
   return (
