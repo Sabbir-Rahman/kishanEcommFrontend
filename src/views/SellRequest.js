@@ -73,26 +73,49 @@ function Sellrequset() {
         </table>
         <table>
           <th>
+            <h5>বুকিং মানি:</h5>
+          </th>
+          <th>
             <h5
               style={{
                 color: 'green',
-                marginRight: '50px',
+                marginLeft: '10px',
                 font: 'message-box',
               }}
             >
-              বুকিং মানি: {bookingMoney[i]} টাকা
+              {bookingMoney[i]}
             </h5>
           </th>
           <th>
-            {' '}
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              বুকিং মানি:
+            </h5>
+          </th>
+          <th>
             <h5
               style={{
                 color: 'green',
-                marginRight: '50px',
+                marginLeft: '10px',
                 font: 'message-box',
               }}
             >
-              মোট মূল্য: {buyingMoney[i]} টাকা{' '}
+              {bookingMoney[i]} টাকা
+            </h5>
+          </th>
+          <th>
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              মোট মূল্য:
+            </h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {buyingMoney[i]} টাকা
             </h5>
           </th>
         </table>
@@ -113,47 +136,44 @@ function Sellrequset() {
           </th>
           <th>
             <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
-              স্ট্যাটাস: {status[i]}
+              স্ট্যাটাস:
+            </h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {status[i]}
+            </h5>
+          </th>
+        </table>
+        <table>
+          <th>
+            <h5>ক্রেতার নাম:</h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {buyerName[i]}
             </h5>
           </th>
         </table>
         <table style={{ marginLeft: '85%' }}>
-          <Button
-            variant='success'
-            style={{ marginLeft: '20px' }}
-            onClick={approve}
-          >
-            এপ্রুভ করুন
-          </Button>
+          <Button variant='success'>এপ্রুভ করুন</Button>
         </table>
+        <Row style={{ height: '15px' }}></Row>
         <Row style={{ background: 'white', height: '15px' }}></Row>
       </Col>
     )
-  }
-
-  function approve() {
-    const body = {
-      productId: product_id,
-    }
-
-    const token = localStorage.getItem('user')
-    const _token = token.split('"').join('')
-    //console.log(`Bearer ` + _token)
-    const config = {
-      headers: {
-        Authorization: `Bearer ${_token}`,
-      },
-    }
-
-    axios
-      .post('http://127.0.0.1:5000/product/order/accept', product, config)
-      .then((res) => {
-        console.log('RESPONSE RECEIVED: ', res)
-        alert('Product added successfully')
-      })
-      .catch((err) => {
-        console.log('AXIOS ERROR: ', err)
-      })
   }
 
   return (
@@ -165,12 +185,7 @@ function Sellrequset() {
           </Card.Header>
           <Card.Body>
             <Row>
-              <Col>
-                <h5>
-                  <small>বিক্রয় সম্পন্নকৃত পণ্যসমূহ</small>
-                </h5>
-                {sellrequset}
-              </Col>
+              <Col>{sellrequset}</Col>
             </Row>
           </Card.Body>
         </Card>
