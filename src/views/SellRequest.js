@@ -57,6 +57,31 @@ function Sellrequset() {
     status.push(soldProducts[i].status)
   }
 
+  const approve = (product_id) => {
+    //console.log(product_id)
+
+    const productID = {
+      productId: product_id,
+    }
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+    axios
+      .post('http://127.0.0.1:5000/product/order/accept', productID, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        alert('Product accepted successfully')
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+  }
+
   let sellrequset = []
   for (let i = 0; i < soldProducts.length; i++) {
     sellrequset.push(
@@ -72,10 +97,10 @@ function Sellrequset() {
           </th>
         </table>
         <table>
-          <th>
+          {/* <th>
             <h5>বুকিং মানি:</h5>
-          </th>
-          <th>
+          </th> */}
+          {/* <th>
             <h5
               style={{
                 color: 'green',
@@ -85,7 +110,7 @@ function Sellrequset() {
             >
               {bookingMoney[i]}
             </h5>
-          </th>
+          </th> */}
           <th>
             <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
               বুকিং মানি:
@@ -168,7 +193,13 @@ function Sellrequset() {
           </th>
         </table>
         <table style={{ marginLeft: '85%' }}>
-          <Button variant='success'>এপ্রুভ করুন</Button>
+          <Button
+            variant='success'
+            value={productID[i]}
+            onClick={(e) => approve(e.target.value)}
+          >
+            এপ্রুভ করুন
+          </Button>
         </table>
         <Row style={{ height: '15px' }}></Row>
         <Row style={{ background: 'white', height: '15px' }}></Row>
