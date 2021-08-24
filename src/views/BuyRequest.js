@@ -58,26 +58,84 @@ function BuyRequset() {
   let sellrequset = []
   for (let i = 0; i < soldProducts.length; i++) {
     sellrequset.push(
-      <Col style={{background: 'rgba(181, 218, 164, .3)', borderColor: 'white'}}>
+      <Col
+        style={{ background: 'rgba(181, 218, 164, .3)', borderColor: 'white' }}
+      >
         <table>
-          <th><h3 style={{ marginRight: '20px' }}>{productName[i]}</h3></th>
-          <th style={{ color: 'gray', marginLeft: '5px' }}>আইডি: {productID[i]}</th>
+          <th>
+            <h3 style={{ marginRight: '20px' }}>{productName[i]}</h3>
+          </th>
+          <th style={{ color: 'gray', marginLeft: '5px' }}>
+            আইডি: {productID[i]}
+          </th>
         </table>
         <table>
-          <th><h5>বুকিং মানি:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{bookingMoney[i]}</h5></th>
-          <th><h5 style={{ marginLeft: '30px', font: 'message-box' }}>বুকিং মানি:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{bookingMoney[i]} টাকা</h5></th>
-          <th><h5 style={{ marginLeft: '30px', font: 'message-box' }}>মোট মূল্য:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{buyingMoney[i]} টাকা</h5></th>
+          <th>
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              বুকিং মানি:
+            </h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {bookingMoney[i]} টাকা
+            </h5>
+          </th>
+          <th>
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              মোট মূল্য:
+            </h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {buyingMoney[i]} টাকা
+            </h5>
+          </th>
         </table>
         <table>
-          <th><h5>পরিমাণ:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{buyingQuantity[i]} {buyingQuantityUnit[i]}</h5></th>
-          <th><h5 style={{ marginLeft: '30px', font: 'message-box' }}>স্ট্যাটাস:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{status[i]}</h5></th>
+          <th>
+            <h5>পরিমাণ:</h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {buyingQuantity[i]} {buyingQuantityUnit[i]}
+            </h5>
+          </th>
+          <th>
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              স্ট্যাটাস:
+            </h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {status[i]}
+            </h5>
+          </th>
         </table>
-        <Row style={{ background: "white", height: "15px" }}></Row>
+        <Row style={{ background: 'white', height: '15px' }}></Row>
       </Col>
     )
   }
@@ -91,9 +149,7 @@ function BuyRequset() {
           </Card.Header>
           <Card.Body>
             <Row>
-              <Col>
-                {sellrequset}
-              </Col>
+              <Col>{sellrequset}</Col>
             </Row>
           </Card.Body>
         </Card>
