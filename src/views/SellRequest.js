@@ -97,20 +97,6 @@ function Sellrequset() {
           </th>
         </table>
         <table>
-          {/* <th>
-            <h5>বুকিং মানি:</h5>
-          </th> */}
-          {/* <th>
-            <h5
-              style={{
-                color: 'green',
-                marginLeft: '10px',
-                font: 'message-box',
-              }}
-            >
-              {bookingMoney[i]}
-            </h5>
-          </th> */}
           <th>
             <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
               বুকিং মানি:
