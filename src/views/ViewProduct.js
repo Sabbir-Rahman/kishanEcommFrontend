@@ -3,14 +3,14 @@ import ProductContextProvider from 'Global/ProductContext'
 import Product from 'components/Product'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-function ViewProduct() {
+function ViewProduct(props) {
 
   return (
     <ProductContextProvider>
       <Router>
         <Switch>
           <Route path='/product' exact>
-            <Product/>
+            <Product>{props.children}</Product>
             </Route>
         </Switch>
         </Router>

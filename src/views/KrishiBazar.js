@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 const KrishiBazar = () => {
 
   return (
-    <div>
       <ProductsContextProvider>
           <Router>
             <Switch>
@@ -16,7 +15,6 @@ const KrishiBazar = () => {
             </Switch>
           </Router>
       </ProductsContextProvider>
-    </div>
   )
 }
 
