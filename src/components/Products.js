@@ -115,9 +115,7 @@ const Cart = () => {
           <Card href="/product">
           <Row>
             <div className='proButton'>
-              <button
-                value={id[i]}
-              >
+              <button>
                 পণ্য দেখুন
               </button>
             </div>
