@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Button,
-  Card,
-  Container,
-  Row,
-  Col,
-} from 'react-bootstrap'
+import { Button, Card, Container, Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
@@ -63,39 +57,138 @@ function Sellrequset() {
     status.push(soldProducts[i].status)
   }
 
+  const approve = (product_id) => {
+    //console.log(product_id)
+
+    const productID = {
+      productId: product_id,
+    }
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+    axios
+      .post('http://127.0.0.1:5000/product/order/accept', productID, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        alert('Product accepted successfully')
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+  }
+
   let sellrequset = []
   for (let i = 0; i < soldProducts.length; i++) {
     sellrequset.push(
-      <Col style={{background: 'rgba(181, 218, 164, .3)', borderColor: 'white'}}>
+      <Col
+        style={{ background: 'rgba(181, 218, 164, .3)', borderColor: 'white' }}
+      >
         <table>
-          <th><h3 style={{ marginRight: '20px' }}>{productName[i]}</h3></th>
-          <th style={{ color: 'gray', marginLeft: '5px' }}>আইডি: {productID[i]}</th>
+          <th>
+            <h3 style={{ marginRight: '20px' }}>{productName[i]}</h3>
+          </th>
+          <th style={{ color: 'gray', marginLeft: '5px' }}>
+            আইডি: {productID[i]}
+          </th>
         </table>
         <table>
-          <th><h5>বুকিং মানি:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{bookingMoney[i]}</h5></th>
-          <th><h5 style={{ marginLeft: '30px', font: 'message-box' }}>বুকিং মানি:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{bookingMoney[i]} টাকা</h5></th>
-          <th><h5 style={{ marginLeft: '30px', font: 'message-box' }}>মোট মূল্য:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{buyingMoney[i]} টাকা</h5></th>
+          <th>
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              বুকিং মানি:
+            </h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {bookingMoney[i]} টাকা
+            </h5>
+          </th>
+          <th>
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              মোট মূল্য:
+            </h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {buyingMoney[i]} টাকা
+            </h5>
+          </th>
         </table>
         <table>
-          <th><h5>পরিমাণ:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{buyingQuantity[i]} {buyingQuantityUnit[i]}</h5></th>
-          <th><h5 style={{ marginLeft: '30px', font: 'message-box' }}>স্ট্যাটাস:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{status[i]}</h5></th>
+          <th>
+            <h5>পরিমাণ:</h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {buyingQuantity[i]} {buyingQuantityUnit[i]}
+            </h5>
+          </th>
+          <th>
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              স্ট্যাটাস:
+            </h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {status[i]}
+            </h5>
+          </th>
         </table>
         <table>
-          <th><h5>ক্রেতার নাম:</h5></th>
-          <th><h5 style={{ color: 'green', marginLeft: '10px', font: 'message-box'}}>{buyerName[i]}</h5></th>
+          <th>
+            <h5>ক্রেতার নাম:</h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {buyerName[i]}
+            </h5>
+          </th>
         </table>
-        <table style={{ marginLeft: "85%" }}>
-          <Button variant='success'>
+        <table style={{ marginLeft: '85%' }}>
+          <Button
+            variant='success'
+            value={productID[i]}
+            onClick={(e) => approve(e.target.value)}
+          >
             এপ্রুভ করুন
           </Button>
         </table>
-        <Row style={{ height: "15px" }}></Row>
-        <Row style={{ background: "white", height: "15px" }}></Row>
+        <Row style={{ height: '15px' }}></Row>
+        <Row style={{ background: 'white', height: '15px' }}></Row>
       </Col>
     )
   }
@@ -109,9 +202,7 @@ function Sellrequset() {
           </Card.Header>
           <Card.Body>
             <Row>
-              <Col>
-                {sellrequset}
-              </Col>
+              <Col>{sellrequset}</Col>
             </Row>
           </Card.Body>
         </Card>
