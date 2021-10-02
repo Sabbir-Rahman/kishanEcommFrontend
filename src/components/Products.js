@@ -12,8 +12,22 @@ import {
 import Dropdown from 'react-bootstrap/Dropdown'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
 import { Link } from "react-router-dom"
+import { useState } from 'react'
+import { Modal } from 'react-bootstrap'
+import Product from './Product'
+
 
 const Cart = () => {
+
+  function Example(id) {
+    console.log(id)
+    return (
+      <>
+      </>
+    )
+  }
+  
+  
 
   let id = []
   let seller_id = []
@@ -112,15 +126,13 @@ const Cart = () => {
           </p>
         </Card.Body>
         <Link to="/product">
-          <Card href="/product">
-          <Row>
-            <div className='proButton'>
-              <button>
-                পণ্য দেখুন
-              </button>
-            </div>
-          </Row>
-          </Card>
+            <Row>
+              <div className='proButton'>
+                <button onClick={Example()}>
+                  পণ্য দেখুন
+                </button>
+              </div>
+            </Row>
         </Link>
       </Card>
     )
