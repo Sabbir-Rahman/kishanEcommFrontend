@@ -108,7 +108,7 @@ const Cart = () => {
             সর্বনিম্ন অর্ডার {minOrder[i]} {unitName[i]}
           </p>
           <p style={{ fontSize: '15px', color: 'green', marginBottom: "0px" }}>
-            {unitPrize[i]} টাকা/{unitName[i]}
+            মূল্য: {unitPrize[i]} টাকা/{unitName[i]}
           </p>
         </Card.Body>
         <Link to="/product">

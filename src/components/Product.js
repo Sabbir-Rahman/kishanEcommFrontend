@@ -9,7 +9,7 @@ import {
     Form,
 } from 'react-bootstrap'
 
-const Product = (props) => {
+const Product = () => {
 
     let id = []
     let seller_id = []
@@ -101,7 +101,7 @@ const Product = (props) => {
                                     </th>
                                     <th style={{ color: 'gray', marginLeft: '5px' }}>
                                         {' '}
-                                        {props.children} আইডি: {id[num]}{' '}
+                                        আইডি: {id[num]}{' '}
                                     </th>
                                 </table>
                                 <table>
