@@ -112,6 +112,7 @@ const Cart = () => {
           </p>
         </Card.Body>
         <Link to="/product">
+          <Card href="/product">
           <Row>
             <div className='proButton'>
               <button
@@ -120,8 +121,8 @@ const Cart = () => {
                 পণ্য দেখুন
               </button>
             </div>
-
           </Row>
+          </Card>
         </Link>
       </Card>
     )
@@ -135,7 +136,6 @@ const Cart = () => {
 }
 
 const Products = () => {
-  const { products } = useContext(productContext)
 
   return (
     <>
