@@ -11,19 +11,28 @@ import {
 } from 'react-bootstrap'
 import Dropdown from 'react-bootstrap/Dropdown'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
-const Products = (props) => {
+const Products = () => {
   
+  const history = useHistory()
+
+  const routeChange = () => {
+    let path = `product`
+    history.push(path)
+  }
+
   const { products } = useContext(productContext)
 
   // data destructure
 
   return (
     <>
-      <Card style={{ marginTop: '2px',
-                     marginLeft: '5px',
-                     marginRight: '5px' }}>
+      <Card style={{
+        marginTop: '2px',
+        marginLeft: '5px',
+        marginRight: '5px'
+      }}>
         <Row
           style={{
             marginTop: '25px',
@@ -186,7 +195,7 @@ const Products = (props) => {
       </Card>
       <Container fluid>
         <Row style={{ marginTop: 25 }}>
-        <Col md='auto' style={{marginLeft: 25}}>
+          <Col md='auto' style={{ marginLeft: 25 }}>
             <Row>
               <Card className='card-stats'>
                 <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
@@ -267,7 +276,7 @@ const Products = (props) => {
           </Col>
 
 
-          <Col md='9' style={{marginRight: 0, marginLeft: 0}}>
+          <Col md='9' style={{ marginRight: 0, marginLeft: 0 }}>
             <Card md='auto'>
               <Card.Body
                 style={{
@@ -318,21 +327,16 @@ const Products = (props) => {
                       </p>
                     </Card.Body>
                     <Link to="/product">
-                    <Row>
-                      <div className='proButton'>
-                      <button
-                          onClick={() =>
-                            dispatch({
-                              type: 'VIEW_PRODUCT',
-                              id: product.id,
-                              products,
-                            })
-                          }>
-                          পণ্য দেখুন
-                        </button>
-                      </div>
-                      
-                    </Row>
+                      <Row>
+                        <div className='proButton'>
+                          <button
+                            onClick={routeChange}
+                          >
+                            পণ্য দেখুন
+                          </button>
+                        </div>
+
+                      </Row>
                     </Link>
                     <Row>
                       {product.category ? (

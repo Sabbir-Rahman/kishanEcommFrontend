@@ -11,7 +11,6 @@ const KrishiBazar = () => {
           <Router>
             <Switch>
               <Route path='/krishi-bazar' exact>
-              <ProductsContextProvider />
               <Products/>
               </Route>
             </Switch>
