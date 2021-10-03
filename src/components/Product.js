@@ -65,8 +65,15 @@ const Product = () => {
         question.push(product.question),
         timestamp.push(product.timestamp)
     ))
+    
+    let num = 2
 
-    const num = 2
+    // for (let i=0; i<id.length; i++){
+    //     if(props.value = id[i]){
+    //         num = i
+    //     }
+    // }
+
 
     return (
         <>

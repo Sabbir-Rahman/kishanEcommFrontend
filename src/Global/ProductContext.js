@@ -79,7 +79,6 @@ const ProductContextProvider = (props) => {
     comments.push(val[i].comments)
     question.push(val[i].question)
     timestamp.push(val[i].timestamp)
-
   }
 
   var products = []
