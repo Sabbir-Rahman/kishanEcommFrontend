@@ -15,6 +15,7 @@ import {
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
+import BuyRequset from './BuyRequest'
 
 function Statistics() {
   const [OutGoingRequests, setOutGoingRequests] = useState([])
@@ -60,7 +61,7 @@ function Statistics() {
       },
     }
 
-    const params = { status: 'accepted' }
+    const params = { status: 'booked' }
 
     axios
       .get('http://127.0.0.1:5000/product/order/buyRequest', config, {
@@ -81,8 +82,42 @@ function Statistics() {
     ShowInComingRequest()
   }, [])
 
-  console.log(OutGoingRequests)
-  console.log(IncomingRequests)
+  // console.log(OutGoingRequests)
+  // console.log(IncomingRequests)
+
+  let buyRequests = []
+  if (OutGoingRequests.data != undefined) {
+    buyRequests = OutGoingRequests.data
+  }
+  let buyingMoney = []
+  let buyingQuantity = []
+  let productName = []
+
+  for (let i = 0; i < buyRequests.length; i++) {
+    buyingMoney.push(buyRequests[i].buyingMoney)
+    buyingQuantity.push(buyRequests[i].buyingQuantity)
+    productName.push(buyRequests[i].productName)
+  }
+
+  // console.log('yes', buyingMoney)
+
+  let sellRequests = []
+  if (IncomingRequests.data != undefined) {
+    sellRequests = IncomingRequests.data
+  }
+
+  let _buyingMoney = []
+  let _buyingQuantity = []
+  let _productName = []
+
+  for (let i = 0; i < sellRequests.length; i++) {
+    _buyingMoney.push(sellRequests[i].buyingMoney)
+    _buyingQuantity.push(sellRequests[i].buyingQuantity)
+    _productName.push(sellRequests[i].productName)
+  }
+
+  // console.log('sell req: ', sellRequests)
+  //console.log('yes', _buyingMoney)
 
   return (
     <>
@@ -108,7 +143,7 @@ function Statistics() {
                   <tbody>
                     <tr>
                       <td>১</td>
-                      <td></td>
+                      <td>hello</td>
                       <td></td>
                       <td></td>
                       <td></td>
