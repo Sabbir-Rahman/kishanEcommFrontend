@@ -43,7 +43,7 @@ const Login = () => {
         if (role == '"admin"') {
           history.push('/admin')
         } else {
-          history.push('/dashboard')
+          history.push('/user/dashboard')
         }
       }
     } catch (error) {
