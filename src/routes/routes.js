@@ -32,8 +32,6 @@ const routes = [
   },
   {
     path: "/product",
-    name: "কৃষি বাজার",
-    icon: "nc-icon nc-sun-fog-29",
     component: ViewProduct,
     layout: ""
   },

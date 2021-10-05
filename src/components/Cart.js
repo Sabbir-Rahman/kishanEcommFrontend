@@ -2,16 +2,12 @@ import React, { useContext } from 'react'
 import { productContext } from 'Global/ProductContext'
 import { Card, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
-import { BrowserRouter } from 'react-router-dom'
 
 const Cart = () => {
-  const history = useHistory()
   const { products } = useContext(productContext)
-
-  function redirect(product_id) {
-    console.log(product_id)
-    history.push('/product')
+  function redirect() {
+    console.log('Rafi')
+    return <></>
   }
 
   return (
@@ -63,18 +59,17 @@ const Cart = () => {
               মূল্য: {product.unitPrize} টাকা/{product.unitName}
             </p>
           </Card.Body>
-          <Row>
-            <BrowserRouter>
+          <Link to='/product'>
+            <Row>
               <div className='proButton'>
                 <button
-                  value={product.id}
-                  onClick={(e) => redirect(e.target.value)}
+                  onClick={(e) => localStorage.setItem('productID', product.id)}
                 >
                   পণ্য দেখুন
                 </button>
               </div>
-            </BrowserRouter>
-          </Row>
+            </Row>
+          </Link>
         </Card>
       ))}
     </>

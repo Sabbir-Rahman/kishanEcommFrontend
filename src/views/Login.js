@@ -38,7 +38,13 @@ const Login = () => {
 
         //console.log(Object.keys(response.data.result))
         console.log(response.data.result.user_role)
-        history.push('/dashboard')
+        const role = localStorage.getItem('user_role')
+
+        if (role == 'customer') {
+          history.push('/dashboard')
+        } else {
+          history.push('/admin')
+        }
       }
     } catch (error) {
       alert('try again..')
