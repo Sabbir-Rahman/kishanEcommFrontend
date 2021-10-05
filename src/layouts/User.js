@@ -1,7 +1,7 @@
 import React from "react"
 import { useLocation, Route, Switch, Redirect } from "react-router-dom"
-import Header from "components/Navbars/Navbar"
-import Sidebar from "components/Sidebar/Sidebar"
+import Header from "components/Navbar"
+import Sidebar from "components/Sidebar"
 import routes from "routes/dashboardRoutes.js"
 import sidebarImage from "assets/img/sidebar-3.jpg"
 

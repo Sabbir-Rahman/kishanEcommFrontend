@@ -7,7 +7,6 @@ import {
   Row,
   Col,
   Form,
-  ButtonGroup
 } from 'react-bootstrap'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
 import Cart from 'components/Cart'
