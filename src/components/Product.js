@@ -116,6 +116,8 @@ const Product = () => {
     }
   }
 
+  console.log(_unitPrize)
+
   return (
     <>
       <div className='rna-container' style={{ marginTop: '5px' }}></div>
