@@ -125,7 +125,7 @@ function Admin() {
       >
         <table>
           <th>
-            <h3 style={{ marginRight: '20px' }}>{unitName[i]}</h3>
+            <h3 style={{ marginRight: '20px' }}>{name[i]}</h3>
           </th>
           <th style={{ color: 'gray', marginLeft: '5px' }}>আইডি: {id[i]}</th>
         </table>
@@ -143,7 +143,7 @@ function Admin() {
                 font: 'message-box',
               }}
             >
-              {name[i]} টাকা
+              {bookingPercentage[i]} টাকা
             </h5>
           </th>
           <th>
