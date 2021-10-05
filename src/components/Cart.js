@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom'
 const Cart = () => {
   const { products } = useContext(productContext)
 
+  function redirect(productID) {
+    localStorage.setItem('productID', productID)
+    window.location.replace('/product')
+  }
+
   return (
     <>
       {products.map((product) => (
@@ -55,11 +60,11 @@ const Cart = () => {
               মূল্য: {product.unitPrize} টাকা/{product.unitName}
             </p>
           </Card.Body>
-          <Link to='/product'>
+          <Link>
             <Row>
               <div className='proButton'>
                 <button
-                  onClick={(e) => localStorage.setItem('productID', product.id)}
+                  onClick={(e) => redirect(product.id)}
                 >
                   পণ্য দেখুন
                 </button>
