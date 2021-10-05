@@ -10,6 +10,7 @@ const Cart = () => {
 
   const { products } = useContext(productContext)
   function redirect(){
+    console.log("Rafi")
     return(<></>)
   }
 
@@ -57,7 +58,7 @@ const Cart = () => {
           <Link to="/product">
             <Row>
               <div className='proButton'>
-                <button onClick={redirect()}>
+                <button onClick={(e) => localStorage.setItem("productID", product.id)}>
                   পণ্য দেখুন
                 </button>
               </div>

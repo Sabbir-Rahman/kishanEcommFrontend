@@ -15,11 +15,7 @@ const Product = () => {
     let seller_id = []
     let name = []
     let description = []
-    let category = []
-    let subCategory = []
     let image = []
-    let image2 = []
-    let image3 = []
     let unitName = []
     let unitPrize = []
     let bookingPercentage = []
@@ -29,50 +25,61 @@ const Product = () => {
     let division = []
     let district = []
     let upazilla = []
-    let isVerified = []
-    let isAvailableNow = []
-    let rating = []
-    let comments = []
-    let question = []
-    let timestamp = []
 
-    const {products} = useContext(productContext)
-    
-    products.map((product)=>(
+    let _id = []
+    let _seller_id = []
+    let _name = []
+    let _description = []
+    let _image = []
+    let _unitName = []
+    let _unitPrize = []
+    let _bookingPercentage = []
+    let _available = []
+    let _minOrder = []
+    let _availableDate = []
+    let _division = []
+    let _district = []
+    let _upazilla = []
+
+    const { products } = useContext(productContext)
+
+    products.map((product) => (
         id.push(product.id),
         name.push(product.name),
         seller_id.push(product.seller_id),
         description.push(product.description),
-        category.push(product.catagory),
-        subCategory.push(product.subCategory),
         image.push(product.image),
-        image2.push(product.image2),
-        image3.push(product.image3),
         unitName.push(product.unitName),
         unitPrize.push(product.unitPrize),
         bookingPercentage.push(product.bookingPercentage),
         available.push(product.available),
         minOrder.push(product.minOrder),
-        rating.push(product.rating),
         availableDate.push(product.availableDate),
         division.push(product.division),
         district.push(product.district),
-        upazilla.push(product.upazilla),
-        isVerified.push(product.isVerified),
-        isAvailableNow.push(product.isAvailableNow),
-        rating.push(product.rating),
-        comments.push(product.comments),
-        question.push(product.question),
-        timestamp.push(product.timestamp)
+        upazilla.push(product.upazilla)
     ))
-    
+
     const num = localStorage.getItem('productID')
 
-    // for (let i=0; i<id.length; i++){
-    //     if(props.value = id[i]){
-    //         num = i
-    //     }
-    // }
+    for (let i = 0; i < id.length; i++) {
+        if (num == id[i]) {
+            _id = id[i]
+            _seller_id = seller_id[i]
+            _name = name[i]
+            _description = description[i]
+            _image = image[i]    
+            _unitName = unitName[i]
+            _unitPrize = unitPrize[i]
+            _bookingPercentage = bookingPercentage[i]
+            _available = available[i]
+            _minOrder = minOrder[i]
+            _availableDate = available[i]
+            _division = division[i]
+            _district = district[i]
+            _upazilla = upazilla[i]
+        }
+    }
 
 
     return (
@@ -97,11 +104,11 @@ const Product = () => {
                             <Col md='6'>
                                 <table>
                                     <th>
-                                        <h3 style={{ marginRight: '50px' }}>{name[num]}</h3>
+                                        <h3 style={{ marginRight: '50px' }}>{_name}</h3>
                                     </th>
                                     <th style={{ color: 'gray', marginLeft: '5px' }}>
                                         {' '}
-                                        আইডি: {num}{' '}
+                                        আইডি: {_id}{' '}
                                     </th>
                                 </table>
                                 <table>
@@ -113,7 +120,7 @@ const Product = () => {
                                                 font: 'message-box',
                                             }}
                                         >
-                                            {unitPrize[num]} টাকা/{unitName[num]}
+                                            {_unitPrize} টাকা/{_unitName}
                                         </h5>
                                     </th>
                                     <th>
@@ -124,7 +131,7 @@ const Product = () => {
                                                 font: 'message-box',
                                             }}
                                         >
-                                            {bookingPercentage[num]}% বুকিং চার্জ
+                                            {_bookingPercentage}% বুকিং চার্জ
                                         </h5>{' '}
                                     </th>
                                 </table>
@@ -140,7 +147,7 @@ const Product = () => {
                                                 font: 'message-box',
                                             }}
                                         >
-                                            {minOrder[num]} {unitName[num]}
+                                            {_minOrder} {_unitName}
                                         </h5>
                                     </th>
                                     <th>
@@ -156,7 +163,7 @@ const Product = () => {
                                                 font: 'message-box',
                                             }}
                                         >
-                                            {available[num]} {unitName[num]}
+                                            {_available} {_unitName}
                                         </h5>
                                     </th>
                                     <th>
@@ -172,29 +179,29 @@ const Product = () => {
                                                 font: 'message-box',
                                             }}
                                         >
-                                            {availableDate[num]}
+                                            {_availableDate}
                                         </h5>
                                     </th>
                                 </table>
                                 <table>
                                     <th>
                                         <h5 style={{ marginRight: '30px', font: 'status-bar' }}>
-                                            বিভাগঃ {division[num]}
+                                            বিভাগঃ {_division}
                                         </h5>
                                     </th>
                                     <th>
                                         <h5 style={{ marginRight: '30px', font: 'status-bar' }}>
-                                            জেলাঃ {district[num]}
+                                            জেলাঃ {_district}
                                         </h5>
                                     </th>
                                     <th>
                                         <h5 style={{ marginRight: '30px', font: 'status-bar' }}>
-                                            উপজেলাঃ {upazilla[num]}
+                                            উপজেলাঃ {_upazilla}
                                         </h5>
                                     </th>
                                 </table>
                                 <p>
-                                    {description[num]}
+                                    {_description}
                                 </p>
                                 <table>
                                     <th>
@@ -210,7 +217,7 @@ const Product = () => {
                                                 font: 'message-box',
                                             }}
                                         >
-                                            {seller_id[num]}
+                                            {_seller_id}
                                         </h5>{' '}
                                     </th>
                                     <th>
@@ -240,7 +247,7 @@ const Product = () => {
                     </Card.Body>
                 </Card>
             </Container>
-            
+
         </>
     )
 }
