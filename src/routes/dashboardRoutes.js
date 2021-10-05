@@ -6,6 +6,13 @@ import AddProduct from "views/AddProduct"
 
 const dashboardRoutes = [
   {
+    path: "/dashboard",
+    name: "ড্যাশবোর্ড",
+    icon: "nc-icon nc-notes",
+    component: Statistics,
+    layout: "/user",
+  },
+  {
     upgrade: true,
     path: "/addProduct",
     name: "পণ্য যোগ করুন",
@@ -18,13 +25,6 @@ const dashboardRoutes = [
     name: "নোটিফিকেশন",
     icon: "nc-icon nc-bell-55",
     component: Notifications,
-    layout: "/user",
-  },
-  {
-    path: "/table",
-    name: "পরিসংখ্যান",
-    icon: "nc-icon nc-notes",
-    component: Statistics,
     layout: "/user",
   },
   {
