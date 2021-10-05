@@ -37,13 +37,13 @@ const Login = () => {
         //localStorage.getItem()
 
         //console.log(Object.keys(response.data.result))
-        console.log(response.data.result.user_role)
+        
         const role = localStorage.getItem('user_role')
-
-        if (role == 'customer') {
-          history.push('/dashboard')
-        } else {
+          console.log(role)
+        if (role == '"admin"') {
           history.push('/admin')
+        } else {
+          history.push('/dashboard')
         }
       }
     } catch (error) {
