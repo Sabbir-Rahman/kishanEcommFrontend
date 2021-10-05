@@ -5,10 +5,6 @@ import { Link } from 'react-router-dom'
 
 const Cart = () => {
   const { products } = useContext(productContext)
-  function redirect() {
-    console.log('Rafi')
-    return <></>
-  }
 
   return (
     <>
