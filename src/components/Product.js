@@ -50,7 +50,7 @@ const Product = () => {
   let description = []
   let image = []
   let unitName = []
-  let unitPrize = []
+  let unitPrice = []
   let bookingPercentage = []
   let available = []
   let minOrder = []
@@ -59,20 +59,20 @@ const Product = () => {
   let district = []
   let upazilla = []
 
-  let _id = []
-  let _seller_id = []
-  let _name = []
-  let _description = []
-  let _image = []
-  let _unitName = []
-  let _unitPrize = []
-  let _bookingPercentage = []
-  let _available = []
-  let _minOrder = []
-  let _availableDate = []
-  let _division = []
-  let _district = []
-  let _upazilla = []
+  let _id
+  let _seller_id
+  let _name
+  let _description
+  let _image
+  let _unitName
+  let _unitPrice
+  let _bookingPercentage
+  let _available
+  let _minOrder
+  let _availableDate
+  let _division
+  let _district
+  let _upazilla
 
   const { products } = useContext(productContext)
 
@@ -84,7 +84,7 @@ const Product = () => {
       description.push(product.description),
       image.push(product.image),
       unitName.push(product.unitName),
-      unitPrize.push(product.unitPrize),
+      unitPrice.push(product.price),
       bookingPercentage.push(product.bookingPercentage),
       available.push(product.available),
       minOrder.push(product.minOrder),
@@ -95,9 +95,9 @@ const Product = () => {
     )
   )
 
-  const num = localStorage.getItem('productID')
+  let num = localStorage.getItem('productID')
 
-  for (let i = 0; i < id.length; i++) {
+  for (let i = 0; i < products.length; i++) {
     if (num == id[i]) {
       _id = id[i]
       _seller_id = seller_id[i]
@@ -105,18 +105,19 @@ const Product = () => {
       _description = description[i]
       _image = image[i]
       _unitName = unitName[i]
-      _unitPrize = unitPrize[i]
+      _unitPrice = unitPrice[i]
       _bookingPercentage = bookingPercentage[i]
       _available = available[i]
       _minOrder = minOrder[i]
-      _availableDate = available[i]
+      _availableDate = availableDate[i]
       _division = division[i]
       _district = district[i]
-      _upazilla = upazilla[i]
     }
+    break
   }
 
-  console.log(_unitPrize)
+  console.log(id.length)
+  console.log(unitPrice)
 
   return (
     <>
@@ -156,19 +157,8 @@ const Product = () => {
                         font: 'message-box',
                       }}
                     >
-                     মূল্য: {_unitPrize} টাকা/{_unitName}
+                      মূল্য: {_unitPrice} টাকা/{_unitName}
                     </h5>
-                  </th>
-                  <th>
-                    <h5
-                      style={{
-                        color: 'green',
-                        marginRight: '50px',
-                        font: 'message-box',
-                      }}
-                    >
-                      ({_bookingPercentage}% বুকিং চার্জ)
-                    </h5>{' '}
                   </th>
                 </table>
                 <table>
@@ -228,11 +218,6 @@ const Product = () => {
                   <th>
                     <h5 style={{ marginRight: '30px', font: 'status-bar' }}>
                       জেলাঃ {_district}
-                    </h5>
-                  </th>
-                  <th>
-                    <h5 style={{ marginRight: '30px', font: 'status-bar' }}>
-                      উপজেলাঃ {_upazilla}
                     </h5>
                   </th>
                 </table>

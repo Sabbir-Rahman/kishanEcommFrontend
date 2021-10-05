@@ -88,6 +88,12 @@ const ProductContextProvider = (props) => {
       image: image[i],
       category: category[i],
       minOrder: minOrder[i],
+      bookingPercentage: bookingPercentage[i],
+      division: division[i],
+      district: district[i],
+      availableDate: availableDate[i],
+      upazilla: upazilla[i],
+      available: available[i],
     })
   }
 
