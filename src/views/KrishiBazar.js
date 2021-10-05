@@ -156,7 +156,9 @@ const KrishiBazar = () => {
                     <Card md='auto'>
                       <Card.Body
                         style={{
-                          marginTop: '4%',
+                          marginTop: '1%',
+                          marginLeft: '1%',
+                          marginRight: '1%',
                           display: 'flex',
                           flexWrap: 'wrap',
                           overflow: 'hidden',

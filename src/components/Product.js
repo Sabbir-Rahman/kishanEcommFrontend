@@ -154,7 +154,7 @@ const Product = () => {
                         font: 'message-box',
                       }}
                     >
-                      {_unitPrize} টাকা/{_unitName}
+                     মূল্য: {_unitPrize} টাকা/{_unitName}
                     </h5>
                   </th>
                   <th>
@@ -165,7 +165,7 @@ const Product = () => {
                         font: 'message-box',
                       }}
                     >
-                      {_bookingPercentage}% বুকিং চার্জ
+                      ({_bookingPercentage}% বুকিং চার্জ)
                     </h5>{' '}
                   </th>
                 </table>
