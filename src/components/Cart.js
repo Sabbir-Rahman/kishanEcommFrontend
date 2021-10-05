@@ -16,7 +16,7 @@ const Cart = () => {
       {products.map((product) => (
         <div
           style={{
-            marginLeft: '5%',
+            marginLeft: '5px',
             marginBottom: '3%',
           }}
         >
@@ -26,14 +26,14 @@ const Cart = () => {
             onClick={(e) => redirect(product.id)}
           >
             <Card>
-              <Card.Header style={{ width: '220px', height: '200px' }}>
+              <Card.Header style={{ width: '200px', height: '200px' }}>
                 <img
                   src={product.image}
                   alt='দুঃখিত! পণ্যের ছবি পাওয়া যায়নি'
                   style={{
                     background: 'white',
-                    width: '220px',
-                    height: '200px',
+                    width: '100%',
+                    height: '100%',
                     overflow: 'hidden',
                   }}
                 />
