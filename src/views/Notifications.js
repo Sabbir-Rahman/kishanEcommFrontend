@@ -4,8 +4,6 @@ import {
 } from "react-bootstrap"
 
 function Notifications() {
-  const [showModal, setShowModal] = React.useState(false);
-  const notificationAlertRef = React.useRef(null);
 
   return (
     <>
