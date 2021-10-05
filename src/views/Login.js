@@ -3,7 +3,6 @@ import { Button, Card, Container, Form } from 'react-bootstrap'
 import { useState } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
-import api from '../api/fetch'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -17,10 +16,6 @@ const Login = () => {
 
   async function handleSubmit() {
     const user = { email: email, password: password }
-    //console.log(user)
-
-    // axios
-
     try {
       const response = await axios.post(
         'http://127.0.0.1:5000/auth/login',
@@ -33,11 +28,6 @@ const Login = () => {
           'user_role',
           JSON.stringify(response.data.result.user_role)
         )
-
-        //localStorage.getItem()
-
-        //console.log(Object.keys(response.data.result))
-
         const role = localStorage.getItem('user_role')
         console.log(role)
         if (role == '"admin"') {
@@ -50,8 +40,6 @@ const Login = () => {
       alert('try again..')
       history.push('/login')
     }
-
-    // console.log(response.data)
     resetFields()
   }
   return (
