@@ -86,6 +86,8 @@ function Statistics() {
   // console.log(IncomingRequests)
 
   let buyRequests = []
+  let _buyRequest = []
+
   if (OutGoingRequests.data != undefined) {
     buyRequests = OutGoingRequests.data
   }
@@ -99,9 +101,23 @@ function Statistics() {
     productName.push(buyRequests[i].productName)
   }
 
+  
+  for (let i = 0; i < buyRequests.length; i++) {
+    _buyRequest.push(
+      <tr>
+        <td>{i+1}</td>
+        <td>{productName[i]}</td>
+        <td>{buyingMoney}</td>
+        <td>{buyingQuantity}</td>
+        <td></td>
+      </tr>
+    )
+  }
+
   // console.log('yes', buyingMoney)
 
   let sellRequests = []
+  let _sellRequest = []
   if (IncomingRequests.data != undefined) {
     sellRequests = IncomingRequests.data
   }
@@ -116,8 +132,17 @@ function Statistics() {
     _productName.push(sellRequests[i].productName)
   }
 
-  // console.log('sell req: ', sellRequests)
-  //console.log('yes', _buyingMoney)
+  for (let i = 0; i < sellRequests.length; i++) {
+    _sellRequest.push(
+      <tr>
+        <td>{i+1}</td>
+        <td>{_productName[i]}</td>
+        <td>{_buyingMoney}</td>
+        <td>{_buyingQuantity}</td>
+        <td></td>
+      </tr>
+    )
+  }
 
   return (
     <>
@@ -141,20 +166,7 @@ function Statistics() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>১</td>
-                      <td>hello</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>২</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
+                    {_buyRequest}
                   </tbody>
                 </Table>
               </Card.Body>
@@ -178,20 +190,7 @@ function Statistics() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>১</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>২</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
+                    {_sellRequest}
                   </tbody>
                 </Table>
               </Card.Body>
