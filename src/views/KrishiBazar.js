@@ -10,7 +10,6 @@ import {
   Form,
   ButtonGroup
 } from 'react-bootstrap'
-import Dropdown from 'react-bootstrap/Dropdown'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
 import Cart from 'components/Cart'
 
@@ -37,135 +36,12 @@ const KrishiBazar = () => {
                     marginRight: '5px',
                   }}
                 >
-                  <Col md='3'>
-                    <Card>
-                      <Dropdown
-                        as={ButtonGroup}
-                        style={{
-                          marginTop: '5px',
-                          backgroundColor: 'rgba(181, 218, 164, .3)',
-                        }}
-                      >
-                        <Button variant='success'>মাছ</Button>
-                        <Dropdown.Toggle
-                          split
-                          variant='success'
-                          id='dropdown-split-basic'
-                          style={{ backgroundColor: 'rgba(181, 218, 164, .3)' }}
-                        />
-                        <Dropdown.Menu>
-                          <Dropdown.Item href='#/action-1'>রুই</Dropdown.Item>
-                          <Dropdown.Item href='#/action-2'>কাতল</Dropdown.Item>
-                          <Dropdown.Item href='#/action-3'>পাঙ্গাস</Dropdown.Item>
-                          <Dropdown.Item href='#/action-1'>ইলিশ</Dropdown.Item>
-                          <Dropdown.Item href='#/action-2'>বোয়াল</Dropdown.Item>
-                          <Dropdown.Item href='#/action-3'>মাছের পোনা</Dropdown.Item>
-                          <Dropdown.Item href='#/action-1'>কই</Dropdown.Item>
-                          <Dropdown.Item href='#/action-2'>তেলাপিয়া</Dropdown.Item>
-                          <Dropdown.Item href='#/action-3'>অন্যান্য</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                      <Dropdown
-                        as={ButtonGroup}
-                        style={{
-                          marginTop: '5px',
-                          backgroundColor: 'rgba(181, 218, 164, .3)',
-                        }}
-                      >
-                        <Button variant='success'>মাংস</Button>
-                        <Dropdown.Toggle
-                          split
-                          variant='success'
-                          id='dropdown-split-basic'
-                          style={{ backgroundColor: 'rgba(181, 218, 164, .3)' }}
-                        />
-                        <Dropdown.Menu>
-                          <Dropdown.Item href='#/action-1'>গরু</Dropdown.Item>
-                          <Dropdown.Item href='#/action-2'>ব্রয়লার মুরগি</Dropdown.Item>
-                          <Dropdown.Item href='#/action-3'>দেশি মুরগি</Dropdown.Item>
-                          <Dropdown.Item href='#/action-1'>কক</Dropdown.Item>
-                          <Dropdown.Item href='#/action-2'>খাসি</Dropdown.Item>
-                          <Dropdown.Item href='#/action-3'>অন্যান্য</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                      <Dropdown
-                        as={ButtonGroup}
-                        style={{
-                          marginTop: '5px',
-                          backgroundColor: 'rgba(181, 218, 164, .3)',
-                        }}
-                      >
-                        <Button variant='success'>শাক-সবজি</Button>
-                        <Dropdown.Toggle
-                          split
-                          variant='success'
-                          id='dropdown-split-basic'
-                          style={{ backgroundColor: 'rgba(181, 218, 164, .3)' }}
-                        />
-                        <Dropdown.Menu>
-                          <Dropdown.Item href='#/action-1'>টমেটো</Dropdown.Item>
-                          <Dropdown.Item href='#/action-2'>গাজর</Dropdown.Item>
-                          <Dropdown.Item href='#/action-3'>বাঁধাকপি</Dropdown.Item>
-                          <Dropdown.Item href='#/action-1'>ফুলকপি</Dropdown.Item>
-                          <Dropdown.Item href='#/action-2'>ডাঙ্গা</Dropdown.Item>
-                          <Dropdown.Item href='#/action-3'>পটল</Dropdown.Item>
-                          <Dropdown.Item href='#/action-1'>আলু</Dropdown.Item>
-                          <Dropdown.Item href='#/action-2'>শিম</Dropdown.Item>
-                          <Dropdown.Item href='#/action-3'>অন্যান্য</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                      <Dropdown
-                        as={ButtonGroup}
-                        style={{
-                          marginTop: '5px',
-                          backgroundColor: 'rgba(181, 218, 164, .3)',
-                        }}
-                      >
-                        <Button variant='success'>ফলমূল</Button>
-                        <Dropdown.Toggle
-                          split
-                          variant='success'
-                          id='dropdown-split-basic'
-                          style={{ backgroundColor: 'rgba(181, 218, 164, .3)' }}
-                        />
-                        <Dropdown.Menu>
-                          <Dropdown.Item href='#/action-1'>আম</Dropdown.Item>
-                          <Dropdown.Item href='#/action-2'>লিচু</Dropdown.Item>
-                          <Dropdown.Item href='#/action-3'>কদবেল</Dropdown.Item>
-                          <Dropdown.Item href='#/action-1'>কামরাঙ্গা</Dropdown.Item>
-                          <Dropdown.Item href='#/action-2'>আপেল</Dropdown.Item>
-                          <Dropdown.Item href='#/action-3'>কমলা</Dropdown.Item>
-                          <Dropdown.Item href='#/action-1'>অন্যান্য</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                      <Dropdown
-                        as={ButtonGroup}
-                        style={{
-                          marginTop: '5px',
-                          backgroundColor: 'rgba(181, 218, 164, .3)',
-                        }}
-                      >
-                        <Button variant='success'>অন্যান্য</Button>
-                        <Dropdown.Toggle
-                          split
-                          variant='success'
-                          id='dropdown-split-basic'
-                          style={{ backgroundColor: 'rgba(181, 218, 164, .3)' }}
-                        />
-                        <Dropdown.Menu>
-                          <Dropdown.Item href='#/action-1'>সার</Dropdown.Item>
-                          <Dropdown.Item href='#/action-2'>কিটনাশক</Dropdown.Item>
-                          <Dropdown.Item href='#/action-3'>মাচা</Dropdown.Item>
-                          <Dropdown.Item href='#/action-1'>অন্যান্য</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </Card>
-                  </Col>
-                  <Col md='9'>
+
+                  <Col>
                     <Card
                       style={{
                         width: '100%',
-                        height: '250px',
+                        height: '60%',
                         backgroundColor: 'rgba(181, 218, 164, .3)',
                         backgroundSize: 'cover',
                         display: 'flex',
@@ -187,7 +63,7 @@ const KrishiBazar = () => {
                     </Card>
                   </Col>
                 </Row>
-                <Row md='auto' style={{ marginLeft: 25 }}>
+                <Row md='auto' style={{ marginLeft: '2%', marginRight: '2%' }}>
                   <Col>
                     <Card className='card-stats'>
                       <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
@@ -231,6 +107,10 @@ const KrishiBazar = () => {
                           <Form.Group controlId='division'>
                             <Form.Control type='date' placeholder='দিন' />
                           </Form.Group>
+                          <Form.Label>হতে</Form.Label>
+                          <Form.Group controlId='division'>
+                            <Form.Control type='date' placeholder='দিন' />
+                          </Form.Group>
                           <Button
                             variant='success'
                             style={{ marginBottom: 10, marginLeft: 110 }}
@@ -252,7 +132,9 @@ const KrishiBazar = () => {
                             controlId='formBasicRange'
                             style={{ color: 'rgba(181, 218, 164, .3)' }}
                           >
-                            <Form.Label>টাকা</Form.Label>
+                            <Form.Label>সর্বনিম্ন</Form.Label>
+                            <Form.Control type='range' />
+                            <Form.Label>সর্বোচ্চ</Form.Label>
                             <Form.Control type='range' />
                           </Form.Group>
                           <Button
