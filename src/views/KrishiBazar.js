@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import {
   Button,
   Card,
-  Container,
   Row,
   Col,
   Form,
@@ -65,13 +64,13 @@ const KrishiBazar = () => {
                 </Row>
                 <Row md='auto' style={{ marginLeft: '2%', marginRight: '2%' }}>
                   <Col>
-                    <Card className='card-stats'>
-                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
+                    <Card className='card-stats' >
+                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15}}>
                         বিভাগ ও জেলা
                       </Card.Title>
                       <Card.Body>
                         <Form>
-                          <Form.Group as={Col} controlId='division'>
+                          <Form.Group controlId='division'>
                             <Form.Label>বিভাগ</Form.Label>
                             <Form.Control as='select' defaultValue='ঢাকা'>
                               <option>ঢাকা</option>
@@ -149,9 +148,8 @@ const KrishiBazar = () => {
                   </Col>
                 </Row>
               </Card>
-              <Container fluid>
-                <Row style={{ marginTop: 0 }}>
-
+              <Card style={{ marginLeft: 10, marginRight: 10 }}>
+                <Row>
                   <Col style={{ marginRight: 0, marginLeft: 0 }}>
                     <Card md='auto'>
                       <Card.Body
@@ -169,7 +167,7 @@ const KrishiBazar = () => {
                     </Card>
                   </Col>
                 </Row>
-              </Container>
+              </Card>
             </>
           </Route>
         </Switch>

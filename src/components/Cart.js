@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { productContext } from 'Global/ProductContext'
-import { Button, Card, Row } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 
 const Cart = () => {
   const { products } = useContext(productContext)
@@ -23,7 +23,8 @@ const Cart = () => {
         >
           <Button
             variant='success'
-            marginRight
+            md='auto'
+            style={{ marginLeft: '2%', marginRight: '2%' }}
             onClick={(e) => redirect(product.id)}
           >
             <Card>
@@ -42,7 +43,7 @@ const Cart = () => {
               <Card.Body>
                 <p
                   style={{
-                    marginTop: '5%',
+                    marginTop: '2%',
                     fontSize: '20px',
                     marginBottom: '0px',
                   }}
