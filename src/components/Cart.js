@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { productContext } from 'Global/ProductContext'
-import { Button, Card, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Button, Card } from 'react-bootstrap'
 
 const Cart = () => {
   const { products } = useContext(productContext)
@@ -16,17 +15,20 @@ const Cart = () => {
       {products.map((product) => (
         <div
           style={{
-            marginLeft: '5px',
-            marginBottom: '3%',
+            marginLeft: '.3%',
+            marginBottom: '.3%',
+            marginRight: '.3%',
+            marginTop: '.3%'
           }}
         >
           <Button
             variant='success'
-            marginRight
+            md='auto'
+            style={{ marginLeft: '2%', marginRight: '2%' }}
             onClick={(e) => redirect(product.id)}
           >
             <Card>
-              <Card.Header style={{ width: '200px', height: '200px' }}>
+              <Card.Header style={{ width: '200px', height: '180px' }}>
                 <img
                   src={product.image}
                   alt='দুঃখিত! পণ্যের ছবি পাওয়া যায়নি'
@@ -41,7 +43,7 @@ const Cart = () => {
               <Card.Body>
                 <p
                   style={{
-                    marginTop: '10px',
+                    marginTop: '2%',
                     fontSize: '20px',
                     marginBottom: '0px',
                   }}
