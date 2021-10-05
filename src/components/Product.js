@@ -72,7 +72,6 @@ const Product = () => {
   let _availableDate
   let _division
   let _district
-  let _upazilla
 
   const { products } = useContext(productContext)
 
@@ -96,6 +95,7 @@ const Product = () => {
   )
 
   let num = localStorage.getItem('productID')
+  
 
   for (let i = 0; i < products.length; i++) {
     if (num == id[i]) {
@@ -113,11 +113,7 @@ const Product = () => {
       _division = division[i]
       _district = district[i]
     }
-    break
   }
-
-  console.log(id.length)
-  console.log(unitPrice)
 
   return (
     <>

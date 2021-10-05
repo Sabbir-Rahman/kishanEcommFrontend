@@ -7,6 +7,8 @@ const Cart = () => {
 
   function redirect(productID) {
     localStorage.setItem('productID', productID)
+    console.log(productID)
+    console.log("Rafi")
     window.location.replace('/product')
   }
 
