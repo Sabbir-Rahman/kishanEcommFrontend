@@ -1,7 +1,5 @@
-import FosholerDoctor from "views/FosholerDoctor"
 import Home from "views/Home"
 import KrishiBazar from "views/KrishiBazar"
-import KrishiForum from "views/KrishiForum"
 import Login from "views/Login"
 import Register from "views/Registration"
 import ViewProduct from "views/ViewProduct"
@@ -34,20 +32,8 @@ const routes = [
     component: ViewProduct,
     layout: ""
   },
-  {
-    path: "/krishi-forum",
-    name: "কৃষি ফোরাম",
-    icon: "nc-icon nc-paper-2",
-    component: KrishiForum,
-    layout: ""
-  },
-  {
-    path: "/fosholer-doctor",
-    name: "ফসলের ডাক্তার",
-    icon: "nc-icon nc-ambulance",
-    component: FosholerDoctor,
-    layout: ""
-  },
+
+
   {
     path: "/login",
     name: "প্রবেশ করুন",
