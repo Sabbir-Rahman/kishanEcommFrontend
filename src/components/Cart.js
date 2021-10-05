@@ -65,7 +65,7 @@ const Cart = () => {
                     marginBottom: '0px',
                   }}
                 >
-                  মূল্য: {product.unitPrize} টাকা/{product.unitName}
+                  মূল্য: {product.price} টাকা/{product.unitName}
                 </p>
               </Card.Body>
             </Card>
