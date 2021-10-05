@@ -101,11 +101,10 @@ function Statistics() {
     productName.push(buyRequests[i].productName)
   }
 
-  
   for (let i = 0; i < buyRequests.length; i++) {
     _buyRequest.push(
       <tr>
-        <td>{i+1}</td>
+        <td>{i + 1}</td>
         <td>{productName[i]}</td>
         <td>{buyingMoney}</td>
         <td>{buyingQuantity}</td>
@@ -135,7 +134,7 @@ function Statistics() {
   for (let i = 0; i < sellRequests.length; i++) {
     _sellRequest.push(
       <tr>
-        <td>{i+1}</td>
+        <td>{i + 1}</td>
         <td>{_productName[i]}</td>
         <td>{_buyingMoney}</td>
         <td>{_buyingQuantity}</td>
@@ -165,9 +164,7 @@ function Statistics() {
                       <th className='border-0'>ক্রয়ের তাং</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    {_buyRequest}
-                  </tbody>
+                  <tbody>{_buyRequest}</tbody>
                 </Table>
               </Card.Body>
             </Card>
@@ -189,9 +186,7 @@ function Statistics() {
                       <th className='border-0'>ক্রয়ের তাং</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    {_sellRequest}
-                  </tbody>
+                  <tbody>{_sellRequest}</tbody>
                 </Table>
               </Card.Body>
             </Card>
