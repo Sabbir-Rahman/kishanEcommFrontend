@@ -1,4 +1,3 @@
-import Dashboard from "views/Dashboard"
 import FosholerDoctor from "views/FosholerDoctor"
 import Home from "views/Home"
 import KrishiBazar from "views/KrishiBazar"
@@ -62,15 +61,7 @@ const routes = [
     icon: "nc-icon nc-stre-right",
     component: Register,
     layout: ""
-  },
-  {
-    upgrade: true,
-    path: "/user/dashboard",
-    name: "ড্যাশবোর্ড",
-    icon: "nc-icon nc-chart-pie-35",
-    component: Dashboard,
-    layout: ""
-  },
+  }
 ]
 
 export default routes
