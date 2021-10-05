@@ -79,6 +79,7 @@ const Product = () => {
             _district = district[i]
             _upazilla = upazilla[i]
         }
+        localStorage.removeItem('productID')
     }
 
 
