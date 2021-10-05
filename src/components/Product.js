@@ -66,7 +66,8 @@ const Product = () => {
         timestamp.push(product.timestamp)
     ))
     
-    let num = 2
+    const num = localStorage.getItem('productID')
+    localStorage.removeItem('productID')
 
     // for (let i=0; i<id.length; i++){
     //     if(props.value = id[i]){
@@ -101,7 +102,7 @@ const Product = () => {
                                     </th>
                                     <th style={{ color: 'gray', marginLeft: '5px' }}>
                                         {' '}
-                                        আইডি: {id[num]}{' '}
+                                        আইডি: {num}{' '}
                                     </th>
                                 </table>
                                 <table>
