@@ -108,7 +108,6 @@ function Statistics() {
         <td>{productName[i]}</td>
         <td>{buyingMoney}</td>
         <td>{buyingQuantity}</td>
-        <td></td>
       </tr>
     )
   }
@@ -138,7 +137,6 @@ function Statistics() {
         <td>{_productName[i]}</td>
         <td>{_buyingMoney}</td>
         <td>{_buyingQuantity}</td>
-        <td></td>
       </tr>
     )
   }
@@ -161,7 +159,6 @@ function Statistics() {
                       <th className='border-0'>পণ্যের নাম</th>
                       <th className='border-0'>মূল্য</th>
                       <th className='border-0'>পরিমাণ</th>
-                      <th className='border-0'>ক্রয়ের তাং</th>
                     </tr>
                   </thead>
                   <tbody>{_buyRequest}</tbody>
@@ -183,7 +180,6 @@ function Statistics() {
                       <th className='border-0'>পণ্যের নাম</th>
                       <th className='border-0'>মূল্য</th>
                       <th className='border-0'>পরিমাণ</th>
-                      <th className='border-0'>ক্রয়ের তাং</th>
                     </tr>
                   </thead>
                   <tbody>{_sellRequest}</tbody>
