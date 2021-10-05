@@ -59,7 +59,9 @@ const Cart = () => {
             <Row>
               <div className='proButton'>
                 <button
-                  onClick={(e) => localStorage.setItem('productID', product.id)}
+                  onClick={(e) => {
+                    localStorage.setItem('productID', product.id)
+                  }}
                 >
                   পণ্য দেখুন
                 </button>
