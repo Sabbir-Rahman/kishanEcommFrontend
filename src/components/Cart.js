@@ -63,15 +63,7 @@ const Cart = () => {
           <Link>
             <Row>
               <div className='proButton'>
-                <button
-<<<<<<< HEAD
-                  onClick={(e) => {
-                    localStorage.setItem('productID', product.id)
-                  }}
-=======
-                  onClick={(e) => redirect(product.id)}
->>>>>>> a501fb9693fc1e57882ae920fdcec0fa3afb04d8
-                >
+                <button onClick={(e) => redirect(product.id)}>
                   পণ্য দেখুন
                 </button>
               </div>

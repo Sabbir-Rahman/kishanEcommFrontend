@@ -1,8 +1,49 @@
 import React, { useContext } from 'react'
 import { productContext } from 'Global/ProductContext'
 import { Button, Card, Container, Row, Col, Form } from 'react-bootstrap'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const Product = () => {
+  const [quantity, setQuantity] = useState('')
+  const resetFields = () => {
+    setQuantity('')
+  }
+
+  async function order(product_id) {
+    //data adding
+    const product = {
+      productId: product_id,
+      quantity: quantity,
+    }
+
+    console.log(product)
+
+    resetFields()
+
+    // axios
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+
+    axios
+      .post('http://127.0.0.1:5000/product/order', product, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        alert('Product order successfully')
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+
+    //data added
+  }
+
   let id = []
   let seller_id = []
   let name = []
@@ -224,10 +265,17 @@ const Product = () => {
                         type='number'
                         name='qty'
                         placeholder='পণ্যের পরিমাণ'
+                        value={quantity}
+                        onChange={(e) => setQuantity(e.target.value)}
                       />
                     </th>
                     <th>
-                      <Button variant='success' style={{ marginLeft: '20px' }}>
+                      <Button
+                        value={_id}
+                        onClick={(e) => order(e.target.value)}
+                        variant='success'
+                        style={{ marginLeft: '20px' }}
+                      >
                         ক্রয় অনুরোধ প্রেরণ করুন
                       </Button>
                     </th>
