@@ -67,7 +67,6 @@ const Product = () => {
     ))
     
     const num = localStorage.getItem('productID')
-    localStorage.removeItem('productID')
 
     // for (let i=0; i<id.length; i++){
     //     if(props.value = id[i]){
@@ -241,6 +240,7 @@ const Product = () => {
                     </Card.Body>
                 </Card>
             </Container>
+            
         </>
     )
 }
