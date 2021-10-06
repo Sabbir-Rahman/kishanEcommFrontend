@@ -9,7 +9,6 @@ const routes = [
   {
     path: "/home",
     name: "মূল পাতা",
-    icon: "nc-icon nc-mobile",
     component: Home,
     layout: "",
   },
@@ -23,7 +22,6 @@ const routes = [
   {
     path: "/krishi-bazar",
     name: "কৃষি বাজার",
-    icon: "nc-icon nc-sun-fog-29",
     component: KrishiBazar,
     layout: ""
   },
@@ -37,14 +35,12 @@ const routes = [
   {
     path: "/login",
     name: "প্রবেশ করুন",
-    icon: "nc-icon nc-single-02",
     component: Login,
     layout: "",
   },
   {
     path: "/register",
     name: "যোগ দিন",
-    icon: "nc-icon nc-stre-right",
     component: Register,
     layout: ""
   }

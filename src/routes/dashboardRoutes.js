@@ -1,4 +1,4 @@
-import Statistics from "views/Statistics.js"
+import Dashboard from "views/Dashboard.js"
 import SellRequest from "views/SellRequest.js"
 import BuyRequset from "views/BuyRequest.js"
 import Notifications from "views/Notifications.js"
@@ -9,7 +9,7 @@ const dashboardRoutes = [
     path: "/dashboard",
     name: "ড্যাশবোর্ড",
     icon: "nc-icon nc-notes",
-    component: Statistics,
+    component: Dashboard,
     layout: "/user",
   },
   {
