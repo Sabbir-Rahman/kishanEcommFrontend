@@ -15,7 +15,6 @@ const ProductContextProvider = (props) => {
       })
       .then((res) => setProduct(res.data))
   }
-  
 
   useEffect(async () => {
     ShowProduct()
@@ -50,10 +49,8 @@ const ProductContextProvider = (props) => {
   let comments = []
   let question = []
   let timestamp = []
-  
 
-
-  for (let i=0; i<val.length; i++){
+  for (let i = 0; i < val.length; i++) {
     id.push(val[i]._id)
     name.push(val[i].name)
     seller_id.push(val[i].seller_id)
@@ -79,19 +76,25 @@ const ProductContextProvider = (props) => {
     comments.push(val[i].comments)
     question.push(val[i].question)
     timestamp.push(val[i].timestamp)
-
   }
 
   var products = []
-  for(let i=0; i<val.length; i++){
+  for (let i = 0; i < val.length; i++) {
     products.push({
       id: id[i],
       name: name[i],
-      price: unitPrize[i], 
+      price: unitPrize[i],
       unitName: unitName[i],
-      iamge: image[i],
+      image: image[i],
       category: category[i],
-      minOrder: minOrder[i]})
+      minOrder: minOrder[i],
+      bookingPercentage: bookingPercentage[i],
+      division: division[i],
+      district: district[i],
+      availableDate: availableDate[i],
+      upazilla: upazilla[i],
+      available: available[i],
+    })
   }
 
   return (

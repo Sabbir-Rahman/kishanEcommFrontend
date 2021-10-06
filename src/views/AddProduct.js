@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button, Card, Table, Container, Row, Col, Form } from 'react-bootstrap'
-import { useHistory } from 'react-router'
 import { useState } from 'react'
 import axios from 'axios'
 
@@ -15,6 +14,7 @@ function AddProduct() {
   const [divison, setDivison] = useState('')
   const [district, setDistrict] = useState('')
   const [description, setDescription] = useState('')
+  const [bookingPercentage, setBookingPercentage] = useState('')
   const [image, setImage] = useState('')
 
   const resetFields = () => {
@@ -29,6 +29,7 @@ function AddProduct() {
     setDistrict('')
     setDescription('')
     setImage('')
+    setBookingPercentage('')
   }
 
   async function addProduct() {
@@ -45,6 +46,7 @@ function AddProduct() {
       district: district,
       description: description,
       image: image,
+      bookingPercentage: bookingPercentage,
     }
 
     console.log(product)
@@ -157,6 +159,25 @@ function AddProduct() {
                             placeholder='পরিমাণ'
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
+                          />
+                        </Form.Group>
+                      </Form>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>বুকিং মানি</td>
+                    <td></td>
+                    <td>
+                      <Form>
+                        <Form.Group controlId='amount'>
+                          <Form.Control
+                            type='tk'
+                            placeholder='বুকিং মানি'
+                            value={bookingPercentage}
+                            onChange={(e) =>
+                              setBookingPercentage(e.target.value)
+                            }
                           />
                         </Form.Group>
                       </Form>

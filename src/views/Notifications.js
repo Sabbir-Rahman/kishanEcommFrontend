@@ -1,21 +1,9 @@
-import React from "react";
-import NotificationAlert from "react-notification-alert";
+import React from "react"
 import {
-  Alert,
-  Badge,
-  Button,
-  Card,
-  Modal,
-  Navbar,
-  Nav,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+  Button,  Card, Container,  Row,  Col,
+} from "react-bootstrap"
 
 function Notifications() {
-  const [showModal, setShowModal] = React.useState(false);
-  const notificationAlertRef = React.useRef(null);
 
   return (
     <>

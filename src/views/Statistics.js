@@ -15,6 +15,7 @@ import {
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
+import BuyRequset from './BuyRequest'
 
 function Statistics() {
   const [OutGoingRequests, setOutGoingRequests] = useState([])
@@ -60,7 +61,7 @@ function Statistics() {
       },
     }
 
-    const params = { status: 'accepted' }
+    const params = { status: 'booked' }
 
     axios
       .get('http://127.0.0.1:5000/product/order/buyRequest', config, {
@@ -81,8 +82,64 @@ function Statistics() {
     ShowInComingRequest()
   }, [])
 
-  console.log(OutGoingRequests)
-  console.log(IncomingRequests)
+  // console.log(OutGoingRequests)
+  // console.log(IncomingRequests)
+
+  let buyRequests = []
+  let _buyRequest = []
+
+  if (OutGoingRequests.data != undefined) {
+    buyRequests = OutGoingRequests.data
+  }
+  let buyingMoney = []
+  let buyingQuantity = []
+  let productName = []
+
+  for (let i = 0; i < buyRequests.length; i++) {
+    buyingMoney.push(buyRequests[i].buyingMoney)
+    buyingQuantity.push(buyRequests[i].buyingQuantity)
+    productName.push(buyRequests[i].productName)
+  }
+
+  for (let i = 0; i < buyRequests.length; i++) {
+    _buyRequest.push(
+      <tr>
+        <td>{i + 1}</td>
+        <td>{productName[i]}</td>
+        <td>{buyingMoney}</td>
+        <td>{buyingQuantity}</td>
+      </tr>
+    )
+  }
+
+  // console.log('yes', buyingMoney)
+
+  let sellRequests = []
+  let _sellRequest = []
+  if (IncomingRequests.data != undefined) {
+    sellRequests = IncomingRequests.data
+  }
+
+  let _buyingMoney = []
+  let _buyingQuantity = []
+  let _productName = []
+
+  for (let i = 0; i < sellRequests.length; i++) {
+    _buyingMoney.push(sellRequests[i].buyingMoney)
+    _buyingQuantity.push(sellRequests[i].buyingQuantity)
+    _productName.push(sellRequests[i].productName)
+  }
+
+  for (let i = 0; i < sellRequests.length; i++) {
+    _sellRequest.push(
+      <tr>
+        <td>{i + 1}</td>
+        <td>{_productName[i]}</td>
+        <td>{_buyingMoney}</td>
+        <td>{_buyingQuantity}</td>
+      </tr>
+    )
+  }
 
   return (
     <>
@@ -102,25 +159,9 @@ function Statistics() {
                       <th className='border-0'>পণ্যের নাম</th>
                       <th className='border-0'>মূল্য</th>
                       <th className='border-0'>পরিমাণ</th>
-                      <th className='border-0'>ক্রয়ের তাং</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>১</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>২</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
+                  <tbody>{_buyRequest}</tbody>
                 </Table>
               </Card.Body>
             </Card>
@@ -139,25 +180,9 @@ function Statistics() {
                       <th className='border-0'>পণ্যের নাম</th>
                       <th className='border-0'>মূল্য</th>
                       <th className='border-0'>পরিমাণ</th>
-                      <th className='border-0'>ক্রয়ের তাং</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>১</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>২</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
+                  <tbody>{_sellRequest}</tbody>
                 </Table>
               </Card.Body>
             </Card>

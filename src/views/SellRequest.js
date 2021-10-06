@@ -1,20 +1,7 @@
 import React from 'react'
-import {
-  Alert,
-  Badge,
-  Button,
-  Card,
-  Modal,
-  Navbar,
-  Nav,
-  Container,
-  Row,
-  Col,
-} from 'react-bootstrap'
+import { Button, Card, Container, Row, Col } from 'react-bootstrap'
 import axios from 'axios'
-import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-// data fetch
 
 function Sellrequset() {
   const [requests, setRequest] = useState([])
@@ -24,7 +11,6 @@ function Sellrequset() {
 
     const _token = token.split('"').join('')
     console.log(token)
-    //console.log(`Bearer ` + _token)
     const config = {
       headers: {
         Authorization: `Bearer ${_token}`,
@@ -36,7 +22,6 @@ function Sellrequset() {
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res)
         setRequest(res.data)
-        alert('Data fetched')
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
@@ -47,62 +32,178 @@ function Sellrequset() {
     ShowRequest()
   }, [])
 
-  // data fetched.. request.data
+  let soldProducts = []
+  if (requests.data != undefined) {
+    soldProducts = requests.data
+  }
+
+  let productID = []
+  let bookingMoney = []
+  let buyerName = []
+  let buyingMoney = []
+  let buyingQuantity = []
+  let buyingQuantityUnit = []
+  let productName = []
+  let status = []
+
+  for (let i = 0; i < soldProducts.length; i++) {
+    productID.push(soldProducts[i].product_id)
+    bookingMoney.push(soldProducts[i].bookingMoney)
+    buyerName.push(soldProducts[i].buyerName)
+    buyingMoney.push(soldProducts[i].buyingMoney)
+    buyingQuantity.push(soldProducts[i].buyingQuantity)
+    buyingQuantityUnit.push(soldProducts[i].buyingQuantityUnit)
+    productName.push(soldProducts[i].productName)
+    status.push(soldProducts[i].status)
+  }
+
+  const approve = (product_id) => {
+    //console.log(product_id)
+
+    const productID = {
+      productId: product_id,
+    }
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+    axios
+      .post('http://127.0.0.1:5000/product/order/accept', productID, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        alert('Product accepted successfully')
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+  }
+
+  let sellrequset = []
+  for (let i = 0; i < soldProducts.length; i++) {
+    sellrequset.push(
+      <Col
+        style={{ background: 'rgba(181, 218, 164, .3)', borderColor: 'white' }}
+      >
+        <table>
+          <th>
+            <h3 style={{ marginRight: '20px' }}>{productName[i]}</h3>
+          </th>
+          <th style={{ color: 'gray', marginLeft: '5px' }}>
+            আইডি: {productID[i]}
+          </th>
+        </table>
+        <table>
+          <th>
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              বুকিং মানি:
+            </h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {bookingMoney[i]} টাকা
+            </h5>
+          </th>
+          <th>
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              মোট মূল্য:
+            </h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {buyingMoney[i]} টাকা
+            </h5>
+          </th>
+        </table>
+        <table>
+          <th>
+            <h5>পরিমাণ:</h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {buyingQuantity[i]} {buyingQuantityUnit[i]}
+            </h5>
+          </th>
+          <th>
+            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
+              স্ট্যাটাস:
+            </h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {status[i]}
+            </h5>
+          </th>
+        </table>
+        <table>
+          <th>
+            <h5>ক্রেতার নাম:</h5>
+          </th>
+          <th>
+            <h5
+              style={{
+                color: 'green',
+                marginLeft: '10px',
+                font: 'message-box',
+              }}
+            >
+              {buyerName[i]}
+            </h5>
+          </th>
+        </table>
+        <table style={{ marginLeft: '85%' }}>
+          <Button
+            variant='success'
+            value={productID[i]}
+            onClick={(e) => approve(e.target.value)}
+          >
+            এপ্রুভ করুন
+          </Button>
+        </table>
+        <Row style={{ height: '15px' }}></Row>
+        <Row style={{ background: 'white', height: '15px' }}></Row>
+      </Col>
+    )
+  }
+
   return (
     <>
       <Container fluid>
         <Card>
           <Card.Header>
-            <Card.Title as="h4">পণ্য বিক্রয় অনুরোধ</Card.Title>
+            <Card.Title as='h4'>পণ্য বিক্রয় অনুরোধ</Card.Title>
           </Card.Header>
           <Card.Body>
             <Row>
-              <Col md="6">
-                <h5>
-                  <small>বিক্রয় সম্পন্নকৃত পণ্যসমূহ</small>
-                </h5>
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
-                </Row>
-
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
-                </Row>
-
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
-                </Row>
-
-              </Col>
-              <Col md="6">
-                <h5>
-                  <small>বিক্রয় অসম্পন্ন পণ্যসমূহ</small>
-                </h5>
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
-                </Row>
-
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
-                </Row>
-
-                <Row style={{ background: "rgba(181, 218, 164, .3)", width: "100%", marginBottom: "5px", marginLeft: "5px", marginRight: "5px"}}>
-                  <Col md="8" style={{color: "green", width: "80%"}}>পণ্যের নাম</Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button >টিক</Button></Col>
-                  <Col md="2" style={{marginRight: "0px"}}><Button>ক্রস</Button></Col>
-                </Row>
-              </Col>
-              </Row>
+              <Col>{sellrequset}</Col>
+            </Row>
           </Card.Body>
         </Card>
       </Container>

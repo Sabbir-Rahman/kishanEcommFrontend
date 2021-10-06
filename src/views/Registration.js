@@ -1,15 +1,8 @@
 import React from 'react'
 import {
-  Alert,
-  Badge,
   Button,
   Card,
-  Modal,
-  Navbar,
-  Nav,
   Container,
-  Row,
-  Col,
   Form,
 } from 'react-bootstrap'
 import { useState } from 'react'
@@ -37,8 +30,6 @@ const Register = () => {
       password: password,
       confpassword: confpassword,
     }
-
-    // axios
     try {
       const response = await axios.post(
         'http://127.0.0.1:5000/auth/register',
@@ -50,8 +41,6 @@ const Register = () => {
       alert('try again..')
       history.push('/register')
     }
-
-    // console.log(response.data)
     resetFields()
   }
   return (
