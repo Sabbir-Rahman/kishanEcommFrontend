@@ -32,6 +32,8 @@ function AddProduct() {
     setBookingPercentage('')
   }
 
+  let fileName = document.getElementById('photo').files[0].name
+
   async function addProduct() {
     //data adding
     const product = {
@@ -45,7 +47,7 @@ function AddProduct() {
       division: divison,
       district: district,
       description: description,
-      image: image,
+      image: fileName,
       bookingPercentage: bookingPercentage,
     }
 

@@ -49,22 +49,21 @@ const Product = () => {
   const { products } = useContext(productContext)
   let productID = localStorage.getItem('productID')
 
-  products.map(
-    (product) => (
-      (productID == product.id)?
-        toView.push(
+  products.map((product) =>
+    productID == product.id
+      ? toView.push(
           <Container fluid>
             <Card>
               <Card.Body>
                 <Row>
                   <Col md='6'>
                     <img
-                      // src={bgImage}
+                      src={process.env.PUBLIC_URL + '/images/' + product.image}
                       alt='পণ্যের ছবি পাওয়া যায়নি'
                       style={{
                         background: 'white',
-                        width: '100%',
-                        height: '100%',
+                        width: '200px',
+                        height: '180px',
                         overflow: 'hidden',
                       }}
                     />
@@ -155,7 +154,9 @@ const Product = () => {
                     <p>{product.description}</p>
                     <table>
                       <th>
-                        <h5 style={{ marginRight: '20px', font: 'message-box' }}>
+                        <h5
+                          style={{ marginRight: '20px', font: 'message-box' }}
+                        >
                           বিক্রেতা:
                         </h5>
                       </th>
@@ -204,17 +205,11 @@ const Product = () => {
               </Card.Body>
             </Card>
           </Container>
-        ) : null
-    )
+        )
+      : null
   )
 
-  
-
-  return (
-    <>
-      {toView}
-    </>
-  )
+  return <>{toView}</>
 }
 
 export default Product
