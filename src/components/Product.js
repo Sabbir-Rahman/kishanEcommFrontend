@@ -87,7 +87,7 @@ const Product = () => {
                             font: 'message-box',
                           }}
                         >
-                          মূল্য: {product.unitPrice} টাকা/{product.unitName}
+                          মূল্য: {product.unitPrize} টাকা/{product.unitName}
                         </h5>
                       </th>
                     </table>
@@ -151,7 +151,19 @@ const Product = () => {
                         </h5>
                       </th>
                     </table>
-                    <p>{product.description}</p>
+                    <table>
+                      <th>
+                        <h5
+                          style={{
+                            color: 'black',
+                            marginRight: '50px',
+                            font: 'message-box',
+                          }}
+                        >
+                          বিবরণী: {product.description}
+                        </h5>
+                      </th>
+                    </table>
                     <table>
                       <th>
                         <h5

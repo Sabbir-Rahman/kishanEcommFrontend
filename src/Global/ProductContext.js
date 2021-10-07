@@ -25,38 +25,36 @@ const ProductContextProvider = (props) => {
     val = productss.data
   }
 
-
-  
   var products = []
-  val.map((v)=>(
+  val.map((v) =>
     products.push({
-    id: v._id,
-    name: v.name,
-    seller_id: v.seller_i,
-    description: v.description,
-    category: v.catagory,
-    subCategory: v.subCategory,
-    image: v.image,
-    image2: v.image2,
-    image3: v.image3,
-    unitName: v.unitName,
-    unitPrize: v.unitPrize,
-    bookingPercentage: v.bookingPercentage,
-    available: v.available,
-    minOrder: v.minOrder,
-    rating: v.rating,
-    availableDate: v.availableDate,
-    division: v.division,
-    district: v.district,
-    upazilla: v.upazilla,
-    isVerified: v.isVerified,
-    isAvailableNow: v.isAvailableNow,
-    rating: v.rating,
-    comments: v.comments,
-    question: v.question,
-    timestamp: v.timestamp
+      id: v._id,
+      name: v.name,
+      seller_id: v.seller_i,
+      description: v.description,
+      category: v.catagory,
+      subCategory: v.subCategory,
+      image: v.image,
+      image2: v.image2,
+      image3: v.image3,
+      unitName: v.unitName,
+      unitPrize: v.unitPrize,
+      bookingPercentage: v.bookingPercentage,
+      available: v.available,
+      minOrder: v.minOrder,
+      rating: v.rating,
+      availableDate: v.availableDate,
+      division: v.division,
+      district: v.district,
+      upazilla: v.upazilla,
+      isVerified: v.isVerified,
+      isAvailableNow: v.isAvailableNow,
+      rating: v.rating,
+      comments: v.comments,
+      question: v.question,
+      timestamp: v.timestamp,
     })
-  ))
+  )
 
   return (
     <productContext.Provider value={{ products: [...products] }}>
