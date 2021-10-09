@@ -1,10 +1,7 @@
 import React from 'react'
-import { useLocation } from "react-router-dom"
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap'
 
 function Header() {
-
-    const location = useLocation();
     const mobileSidebarToggle = (e) => {
         e.preventDefault()
         document.documentElement.classList.toggle("nav-open");
@@ -19,6 +16,18 @@ function Header() {
 
     function logout() {
         localStorage.clear()
+    }
+
+    function navLinks(href, name) {
+
+        return (
+            <Nav.Item>
+                <Nav.Link href={href}>
+                    <span className="no-icon">{name}</span>
+                </Nav.Link>
+            </Nav.Item>
+        )
+
     }
 
     const token = localStorage.getItem('user')
@@ -69,28 +78,10 @@ function Header() {
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="nav mr-auto" navbar>
-                        <Nav.Item>
-                            <Nav.Link href="/">
-                                <span className="no-icon">মূল পাতা</span>
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href="/krishi-bazar">
-                                <span className="no-icon">কৃষি বাজার</span>
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href="/krishi-forum">
-                                <span className="no-icon">কৃষি ফোরাম</span>
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href="/fosholer-doctor">
-                                <span className="no-icon">ফসলের ডাক্তার</span>
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                        </Nav.Item>
+                        {navLinks("/", "মূলপাতা")}
+                        {navLinks("/krishi-bazar", "কৃষি বাজার")}
+                        {navLinks("/krishi-forum", "কৃষি ফোরাম")}
+                        {navLinks("/fosholer-doctor", "ফসলের ডাক্তার")}
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <Nav.Item>
