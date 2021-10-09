@@ -82,9 +82,6 @@ const KrishiBazar = () => {
                               <option>চট্টগ্রাম</option>
                             </Form.Control>
                           </Form.Group>
-                          <Form.Group controlId='district'>
-                            <Form.Control type='text' placeholder='জেলা' />
-                          </Form.Group>
                           <Button
                             variant='success'
                             style={{ marginBottom: 10, marginLeft: 110 }}
