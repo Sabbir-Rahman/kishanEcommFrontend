@@ -23,15 +23,13 @@ function Header() {
                 </NavDropdown.Item>
             </NavDropdown>
         }
-
-
     } else {
         menu = <NavDropdown title="মেনু" id="basic-nav-dropdown">
             <NavDropdown.Item href="/login">লগ ইন</NavDropdown.Item>
             <NavDropdown.Item href="/register">রেজিস্ট্রেশন</NavDropdown.Item>
         </NavDropdown>
     }
-    
+
     function logout() {
         localStorage.clear()
     }
