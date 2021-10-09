@@ -58,7 +58,7 @@ const Product = () => {
                 <Row>
                   <Col md='6'>
                     <img
-                      src={process.env.PUBLIC_URL + '/images/' + product.image}
+                      src={product.image}
                       alt='পণ্যের ছবি পাওয়া যায়নি'
                       style={{
                         background: 'white',

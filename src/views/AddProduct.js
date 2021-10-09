@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Card, Table, Container, Row, Col, Form } from 'react-bootstrap'
 import { useState } from 'react'
 import axios from 'axios'
+import FileBase from 'react-file-base64'
 
 function AddProduct() {
   const [productName, setProductName] = useState('')
@@ -32,7 +33,7 @@ function AddProduct() {
     setBookingPercentage('')
   }
 
-  let fileName = document.getElementById('photo').files[0].name
+  //let fileName = document.getElementById('photo').files[0].name
 
   async function addProduct() {
     //data adding
@@ -47,7 +48,7 @@ function AddProduct() {
       division: divison,
       district: district,
       description: description,
-      image: fileName,
+      image: image,
       bookingPercentage: bookingPercentage,
     }
 
@@ -293,12 +294,13 @@ function AddProduct() {
                     <td>
                       <Form>
                         <Form.Group controlId='photo'>
-                          <Form.Control
-                            type='file'
-                            placeholder='ছবি'
-                            value={image}
-                            onChange={(e) => setImage(e.target.value)}
-                          />
+                          <div>
+                            <FileBase
+                              type='file'
+                              multiple={false}
+                              onDone={({ base64 }) => setImage(base64)}
+                            />
+                          </div>
                         </Form.Group>
                       </Form>
                     </td>

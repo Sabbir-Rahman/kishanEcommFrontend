@@ -30,7 +30,7 @@ const Cart = () => {
             <Card>
               <Card.Header style={{ width: '200px', height: '180px' }}>
                 <img
-                  src={process.env.PUBLIC_URL + '/images/' + product.image}
+                  src={product.image}
                   alt='দুঃখিত! পণ্যের ছবি পাওয়া যায়নি'
                   style={{
                     background: 'white',
