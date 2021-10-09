@@ -158,7 +158,7 @@ const KrishiBazar = () => {
                           overflow: 'hidden',
                         }}
                       >
-                        <Cart></Cart>
+                        <Cart/>
                       </Card.Body>
                     </Card>
                   </Col>
