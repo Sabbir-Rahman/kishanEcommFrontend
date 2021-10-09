@@ -2,20 +2,14 @@ import React from 'react'
 
 // react-bootstrap components
 import {
-  Badge,
-  Button,
   Card,
-  Navbar,
-  Nav,
   Table,
   Container,
   Row,
   Col,
 } from 'react-bootstrap'
 import axios from 'axios'
-import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-import BuyRequset from './BuyRequest'
 
 function Statistics() {
   const [OutGoingRequests, setOutGoingRequests] = useState([])
