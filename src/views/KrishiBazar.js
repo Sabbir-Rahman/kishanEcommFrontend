@@ -65,7 +65,7 @@ const KrishiBazar = () => {
                   <Col>
                     <Card className='card-stats' >
                       <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15}}>
-                        বিভাগ ও জেলা
+                        বিভাগ
                       </Card.Title>
                       <Card.Body>
                         <Form>
