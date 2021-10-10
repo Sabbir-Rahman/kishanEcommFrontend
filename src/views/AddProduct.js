@@ -246,10 +246,10 @@ function AddProduct() {
                           <Form.Control as='select'
                             type='text'
                             placeholder='বিভাগ'
-                            value={divison}
+                            
                             onChange={(e) => setDivison(e.target.value)}
                           >
-                            <option value='Dhaka'>ঢাকা</option>
+                            <option value='Dhaka'>Dhaka</option>
                             <option value='Mymensingh'>ময়মনসিংহ</option>
                             <option value='Sylhet'>সিলেট</option>
                             <option value='Khulna'>খুলনা</option>
