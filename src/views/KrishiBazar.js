@@ -1,5 +1,4 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import {
   Button,
   Card,
@@ -16,9 +15,6 @@ const KrishiBazar = () => {
   const cart = Cart(null)
 
   return (
-      <Router>
-        <Switch>
-          <Route path='/krishi-bazar' exact>
             <>
               <Card style={{
                 marginTop: '2px',
@@ -157,9 +153,6 @@ const KrishiBazar = () => {
                 </Row>
               </Card>
             </>
-          </Route>
-        </Switch>
-      </Router>
   )
 }
 
