@@ -130,19 +130,37 @@ const KrishiBazar = () => {
   return (
     <>
       {Banner(component, bg)}
-      <Card style={{
-        margin: '2.5%',
-        display: 'flex',
-        flexWrap: 'wrap',
-      }}
-      >
-        <Card style={{
-          margin: '1.5%'
-        }}>
-          <h3 style={{ textAlign: "center" }}>ফাইভ স্টার রেটিং</h3>
-        </Card>
-        <Row style={{ marginLeft: '7%' }}>{Cart('http://http://127.0.0.1:5000/product/view?rating=5')}</Row>
-      </Card>
+
+      <Row>
+        <Col>
+          <Card style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+          }}
+          >
+            <Card style={{
+              margin: '1.5%'
+            }}>
+              <h3 style={{ textAlign: "center" }}>ফাইভ স্টার রেটিং</h3>
+            </Card>
+            <Row style={{ marginLeft: '7%' }}>{Cart('http://127.0.0.1:5000/product/view?rating=5')}</Row>
+          </Card>
+        </Col>
+        <Col>
+          <Card style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+          }}
+          >
+            <Card style={{
+              margin: '1.5%'
+            }}>
+              <h3 style={{ textAlign: "center" }}>সর্বাধিক বিক্রিত</h3>
+            </Card>
+            <Row style={{ marginLeft: '7%' }}>{Cart('http://127.0.0.1:5000/product/view?division=Dhaka&unitPrize=10')}</Row>
+          </Card>
+        </Col>
+      </Row>
 
       <Row>
         <Col>
