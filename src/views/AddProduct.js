@@ -211,8 +211,7 @@ function AddProduct() {
                       <Form>
                         <Form.Group controlId='date'>
                           <Form.Control
-                            type='text'
-                            placeholder='বছর-মাস-দিন'
+                            type='date'
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
                           />
