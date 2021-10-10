@@ -64,23 +64,26 @@ const KrishiBazar = () => {
                 <Row md='auto' style={{ marginLeft: '2%', marginRight: '2%' }}>
                   <Col>
                     <Card className='card-stats' >
-                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15}}>
+                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
                         বিভাগ
                       </Card.Title>
                       <Card.Body>
                         <Form>
                           <Form.Group controlId='division'>
                             <Form.Label>বিভাগ</Form.Label>
-                            <Form.Control as='select' defaultValue='Sylhet'>
-                              <option>Dhaka</option>
-                              <option>Mymensingh</option>
-                              <option>Sylhet</option>
-                              <option>Khulna</option>
-                              <option>Barishal</option>
-                              <option>Rangpur</option>
-                              <option>Rajshahi</option>
-                              <option>Chattagram</option>
-                            </Form.Control>
+                            <select class="form-control"
+                            as='select'
+                          >
+                            <option value='Dhaka'>ঢাকা</option>
+                            <option value='Mymensingh'>ময়মনসিংহ</option>
+                            <option value='Sylhet'>সিলেট</option>
+                            <option value='Khulna'>খুলনা</option>
+                            <option value='Barishal'>বরিশাল</option>
+                            <option value='Rangpur'>রংপুর</option>
+                            <option value='Rajshahi'>রাজশাহী</option>
+                            <option value='Chattagram'>চট্টগ্রাম</option>
+                            
+                          </select>
                           </Form.Group>
                           <Button
                             variant='success'
@@ -94,7 +97,7 @@ const KrishiBazar = () => {
                   </Col>
                   <Col>
                     <Card className='card-stats' >
-                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15}}>
+                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
                         ক্যাটাগরি
                       </Card.Title>
                       <Card.Body>
@@ -146,7 +149,7 @@ const KrishiBazar = () => {
                           overflow: 'hidden',
                         }}
                       >
-                        <Cart/>
+                        <Cart />
                       </Card.Body>
                     </Card>
                   </Col>

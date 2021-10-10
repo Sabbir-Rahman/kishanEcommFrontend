@@ -258,7 +258,6 @@ function AddProduct() {
                             <option value='Rangpur'>রংপুর</option>
                             <option value='Rajshahi'>রাজশাহী</option>
                             <option value='Chattagram'>চট্টগ্রাম</option>
-                            
                           </select>
                         </Form.Group>
                       </Form>
