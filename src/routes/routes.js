@@ -4,6 +4,7 @@ import Login from "views/Login"
 import Register from "views/Registration"
 import ViewProduct from "views/ViewProduct"
 import AdminDashboard from "views/Admin"
+import SearchProduct from "views/SearchProduct"
 
 const routes = [
   {
@@ -18,6 +19,13 @@ const routes = [
     name: "অ্যাডমিন",
     component: AdminDashboard,
     layout: "",
+  },
+  {
+    path: "/category",
+    name: "পণ্য খুঁজুন",
+    component: SearchProduct,
+    layout: ""
+
   },
   {
     path: "/krishi-bazar",

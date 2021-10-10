@@ -5,7 +5,7 @@ import Cart from 'components/Cart'
 import Banner from 'components/Banner'
 import { useState } from 'react'
 import card from 'components/ViewCard'
-import corpsLogo from 'assets/img/corp.jpg' 
+import corpsLogo from 'assets/img/corp.jpg'
 import vegetableLogo from 'assets/img/vegetable.jpg'
 import fruitLogo from 'assets/img/fruit.png'
 import pesticidesLogo from 'assets/img/pesticides.jpeg'
@@ -28,114 +28,119 @@ const KrishiBazar = () => {
 
   const component = (
     <>
-    <Row>
-    {card(corpsLogo, 'শস্য', '/category')}
-    {card(vegetableLogo, 'শাক-সবজি', '/category')}
-    {card(fruitLogo, 'ফল', '/category')}
-    {card(pesticidesLogo, 'সার ও কীটনাশক', '/category')}
-    </Row>
-    <Row>
-    {card(poultryLogo, 'পোল্ট্রিজাত পণ্য', '/category')}
-    {card(meatLogo, 'মাংস', '/category')}
-    {card(fishLogo, 'মাছ', '/category')}
-    {card(othersLogo, 'অন্যান্য', '/category')}
-    </Row>
-    
+      <Row style={{
+        position: 'center'
+      }}>
+        <Button style={{
+          background: 'none',
+          color: 'inherit',
+          border: 'none',
+          padding: '0',
+          font: 'inherit',
+          cursor: 'pointer',
+          outline: 'inherit',
+        }}
+          onClick={(e) => localStorage.setItem('category', "corps")}>
+          {card(corpsLogo, 'শস্য', '/category')}
+        </Button>
+        <Button style={{
+          background: 'none',
+          color: 'inherit',
+          border: 'none',
+          padding: '0',
+          font: 'inherit',
+          cursor: 'pointer',
+          outline: 'inherit',
+        }}
+          onClick={(e) => localStorage.setItem('category', "vegetables")}>
+          {card(vegetableLogo, 'শাক-সবজি', '/category')}
+
+        </Button>
+        <Button style={{
+          background: 'none',
+          color: 'inherit',
+          border: 'none',
+          padding: '0',
+          font: 'inherit',
+          cursor: 'pointer',
+          outline: 'inherit',
+        }}
+          onClick={(e) => localStorage.setItem('category', "fruit")}>
+          {card(fruitLogo, 'ফল', '/category', "fruit")}
+
+        </Button>
+        <Button style={{
+          background: 'none',
+          color: 'inherit',
+          border: 'none',
+          padding: '0',
+          font: 'inherit',
+          cursor: 'pointer',
+          outline: 'inherit',
+        }}
+          onClick={(e) => localStorage.setItem('category', "pesticides")}>
+          {card(pesticidesLogo, 'সার ও কীটনাশক', '/category')}
+        </Button>
+      <Button style={{
+          background: 'none',
+          color: 'inherit',
+          border: 'none',
+          padding: '0',
+          font: 'inherit',
+          cursor: 'pointer',
+          outline: 'inherit',
+        }}
+          onClick={(e) => localStorage.setItem('category', "poultry")}>
+          {card(poultryLogo, 'পোল্ট্রিজাত পণ্য', '/category')}
+        
+        </Button>
+        <Button style={{
+          background: 'none',
+          color: 'inherit',
+          border: 'none',
+          padding: '0',
+          font: 'inherit',
+          cursor: 'pointer',
+          outline: 'inherit',
+        }}
+          onClick={(e) => localStorage.setItem('category', "meat")}>
+        {card(meatLogo, 'মাংস', '/category')}
+        
+        </Button>
+        <Button style={{
+          background: 'none',
+          color: 'inherit',
+          border: 'none',
+          padding: '0',
+          font: 'inherit',
+          cursor: 'pointer',
+          outline: 'inherit',
+        }}
+          onClick={(e) => localStorage.setItem('category', "fish")}>
+        {card(fishLogo, 'মাছ', '/category')}
+        
+        </Button>
+        <Button style={{
+          background: 'none',
+          color: 'inherit',
+          border: 'none',
+          padding: '0',
+          font: 'inherit',
+          cursor: 'pointer',
+          outline: 'inherit',
+        }}
+          onClick={(e) => localStorage.setItem('category', "others")}>
+        {card(othersLogo, 'অন্যান্য', '/category')}
+        </Button>
+      </Row>
     </>
   )
 
   return (
     <>
-    
+
       {Banner(component, bg)}
 
-      <Col>
-        <Card className='card-stats'>
-          <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
-            বিভাগ
-          </Card.Title>
-          <Card.Body>
-            <Form>
-              <Form.Group controlId='division'>
-                <Form.Label>বিভাগ</Form.Label>
-                <select
-                  class='form-control'
-                  as='select'
-                  value={division}
-                  onChange={(e) => setDivision(e.target.value)}
-                >
-                  <option value=''></option>
-                  <option value='Dhaka'>ঢাকা</option>
-                  <option value='Mymensingh'>ময়মনসিংহ</option>
-                  <option value='Sylhet'>সিলেট</option>
-                  <option value='Khulna'>খুলনা</option>
-                  <option value='Barishal'>বরিশাল</option>
-                  <option value='Rangpur'>রংপুর</option>
-                  <option value='Rajshahi'>রাজশাহী</option>
-                  <option value='Chattagram'>চট্টগ্রাম</option>
-                </select>
-              </Form.Group>
-              <Button
-                variant='success'
-                style={{ marginBottom: 10, marginLeft: 110 }}
-                onClick={(e) => {
-                  let temp =
-                    'http://127.0.0.1:5000/product/view?division=' + division
-                  //console.log(temp)
-                  searchFunction(temp)
-                }}
-              >
-                সার্চ করুন
-              </Button>
-            </Form>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col>
-        <Card className='card-stats'>
-          <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
-            ক্যাটাগরি
-          </Card.Title>
-          <Card.Body>
-            <Form>
-              <Form.Group controlId='category'>
-                <Form.Label>ক্যাটাগরি</Form.Label>
-                <select
-                  class='form-control'
-                  as='select'
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                >
-                  <option value=''></option>
-                  <option value='fruit'>ফল</option>
-                  <option value='vegetable'>সবজি</option>
-                  <option value='oil'>তেল</option>
-                  <option value='meat'>মাংস</option>
-                  <option value='seeds'>বীজ</option>
-                  <option value='dairy'>দুগ্ধজাত পণ্য</option>
-                  <option value='egg'>ডিম</option>
-                  <option value='rice'>চাল</option>
-                  <option value='wheat'>গম</option>
-                  <option value='cotton'>তুলা</option>
-                  <option value='spices'>মশলা</option>
-                  <option value='poultry'>পোল্ট্রি</option>
-                  <option value='teaNcoffe'>চা ও কফি</option>
-                  <option value='Others'>অন্যান্য</option>
-                </select>
-              </Form.Group>
-              <Button
-                variant='success'
-                style={{ marginBottom: 10, marginLeft: 110 }}
-                onClick={(e) => {
-                  searchFunction('http://127.0.0.1:5000/product/view?category=' + category)
-                }}
-              >
-                সার্চ করুন
-              </Button>
-            </Form>
-          </Card.Body>
-        </Card>
-      </Col>
       <Card style={{ marginLeft: 10, marginRight: 10 }}>
         <Row>
           <Col style={{ marginRight: 0, marginLeft: 0 }}>

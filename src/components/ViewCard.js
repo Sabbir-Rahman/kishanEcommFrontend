@@ -4,20 +4,24 @@ import {
     Col,
   } from "react-bootstrap"
 
-function card(logo, name, link, category) {
-  localStorage.setItem('searchLink', 'http://127.0.0.1:5000/product/view?category='+category)
+function card(logo, name, link) {
     return (
       <Col>
         <Link to={link}>
           <Card href={link}>
             <Card.Body style={{
-              height: "100px"
+              alignContent: "center",
+              height: "180px",
+              width: "250px",
+              alignItems: "center",
+              display: "block",
+              alignSelf: "center"
             }}>
               <img src={logo}
                 alt="Not Found"
                 style={{
-                  width: "30%",
-                  height: "auto",
+                  width: "100%",
+                  height: "100%",
                   marginLeft: "auto",
                   marginRight: "auto",
                   display: "block"

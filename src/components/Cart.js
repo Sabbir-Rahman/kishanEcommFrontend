@@ -27,6 +27,15 @@ function Cart(param) {
             md='auto'
             style={{ marginLeft: '2%', marginRight: '2%' }}
             onClick={(e) => redirect(product.id)}
+            style={{
+              background: 'none',
+              color: 'inherit',
+              border: 'none',
+              padding: '0',
+              font: 'inherit',
+              cursor: 'pointer',
+              outline: 'inherit'
+            }}
           >
             <Card>
               <Card.Header style={{ width: '200px', height: '180px' }}>
