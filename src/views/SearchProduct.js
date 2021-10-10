@@ -13,7 +13,7 @@ const SearchProduct = () => {
         localStorage.setItem('searchLink', link)
         console.log(localStorage.getItem('searchLink'))
         window.location.reload()
-      }
+    }
 
     const cart = Cart('http://127.0.0.1:5000/product/view?category=' + localStorage.getItem('category'))
     return (
@@ -77,20 +77,14 @@ const SearchProduct = () => {
                                         onChange={(e) => setCategory(e.target.value)}
                                     >
                                         <option value=''></option>
+                                        <option value='corps'>শস্য</option>
+                                        <option value='vegetables'>শাক-সবজি</option>
                                         <option value='fruit'>ফল</option>
-                                        <option value='vegetable'>সবজি</option>
-                                        <option value='oil'>তেল</option>
+                                        <option value='pesticides'>সার ও কীটনাশক</option>
+                                        <option value='poultry'>পোল্ট্রিজাত পণ্য</option>
                                         <option value='meat'>মাংস</option>
-                                        <option value='seeds'>বীজ</option>
-                                        <option value='dairy'>দুগ্ধজাত পণ্য</option>
-                                        <option value='egg'>ডিম</option>
-                                        <option value='rice'>চাল</option>
-                                        <option value='wheat'>গম</option>
-                                        <option value='cotton'>তুলা</option>
-                                        <option value='spices'>মশলা</option>
-                                        <option value='poultry'>পোল্ট্রি</option>
-                                        <option value='teaNcoffe'>চা ও কফি</option>
-                                        <option value='Others'>অন্যান্য</option>
+                                        <option value='fish'>মাছ</option>
+                                        <option value='others'>অন্যান্য</option>
                                     </select>
                                 </Form.Group>
                                 <Button
