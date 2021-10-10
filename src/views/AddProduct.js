@@ -306,8 +306,8 @@ function AddProduct() {
                     <td></td>
                     <td>
                       <Form>
-                        <Form.Group controlId='description'>
-                          <Form.Control
+                        <Form.Group controlId='floatingTextarea2'>
+                          <Form.Control as='textarea'
                             type='text'
                             placeholder='বিবরণ'
                             value={description}
