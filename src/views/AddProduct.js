@@ -248,9 +248,8 @@ function AddProduct() {
                             type='text'
                             placeholder='বিভাগ'
                             value={divison}
-                            onChange={(e) => setDivison(e.target.value)}
                           >
-                            <option value='Dhaka'>ঢাকা</option>
+                            <option onChange={(e) => setDivison('Dhaka')}>ঢাকা</option>
                             <option value='Mymensingh'>ময়মনসিংহ</option>
                             <option value='Sylhet'>সিলেট</option>
                             <option value='Khulna'>খুলনা</option>
