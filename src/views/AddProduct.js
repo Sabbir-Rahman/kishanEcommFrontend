@@ -211,7 +211,7 @@ function AddProduct() {
                       <Form>
                         <Form.Group controlId='date'>
                           <Form.Control
-                            type='text'
+                            type='date'
                             placeholder='বছর-মাস-দিন'
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
@@ -298,7 +298,10 @@ function AddProduct() {
                             <FileBase
                               type='file'
                               multiple={false}
-                              onDone={({ base64 }) => setImage(base64)}
+                              onDone={({ base64 }) => {
+                                console.log(base64)
+                                setImage(base64)
+                              }}
                             />
                           </div>
                         </Form.Group>
