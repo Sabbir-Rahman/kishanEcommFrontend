@@ -44,9 +44,6 @@ const Login = () => {
   }
   return (
     <div className='SignInAndUp'>
-      <thead>
-        <tr>
-          <th>
             <div
               style={{
                 display: 'flex',
@@ -113,9 +110,6 @@ const Login = () => {
                 </Card>
               </Container>
             </div>
-          </th>
-        </tr>
-      </thead>
     </div>
   )
 }
