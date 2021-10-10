@@ -74,6 +74,7 @@ const KrishiBazar = () => {
                             <select class="form-control"
                             as='select'
                           >
+                            <option value=''></option>
                             <option value='Dhaka'>ঢাকা</option>
                             <option value='Mymensingh'>ময়মনসিংহ</option>
                             <option value='Sylhet'>সিলেট</option>
@@ -82,7 +83,6 @@ const KrishiBazar = () => {
                             <option value='Rangpur'>রংপুর</option>
                             <option value='Rajshahi'>রাজশাহী</option>
                             <option value='Chattagram'>চট্টগ্রাম</option>
-                            
                           </select>
                           </Form.Group>
                           <Button
@@ -107,6 +107,7 @@ const KrishiBazar = () => {
                             <select class="form-control"
                             as='select'
                           >
+                            <option value=''></option>
                             <option value='fruit'>ফল</option>
                             <option value='vegetable'>সবজি</option>
                             <option value='oil'>তেল</option>
