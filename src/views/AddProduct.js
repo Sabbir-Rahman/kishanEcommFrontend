@@ -74,6 +74,7 @@ function AddProduct() {
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
+        alert('Error')
       })
 
     //data added
