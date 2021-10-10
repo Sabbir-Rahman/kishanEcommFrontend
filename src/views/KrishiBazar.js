@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
   Button,
   Card,
@@ -13,7 +13,15 @@ import Banner from 'components/Banner'
 
 const KrishiBazar = () => {
 
-  const cart = Cart(null)
+  const cart = Cart(localStorage.getItem('searchLink'))
+  localStorage.removeItem('searchLink')
+
+
+  function searchFunction(link){
+    localStorage.setItem('searchLink', link)
+    console.log(localStorage.getItem('searchLink'))
+    window.location.reload()
+  }
 
   const component = <><Col>
     <Card className='card-stats' >
@@ -41,6 +49,7 @@ const KrishiBazar = () => {
           <Button
             variant='success'
             style={{ marginBottom: 10, marginLeft: 110 }}
+            onClick={(e)=>searchFunction('http://127.0.0.1:5000/product/view?category=fruit')}
           >
             সার্চ করুন
           </Button>
@@ -80,6 +89,7 @@ const KrishiBazar = () => {
             <Button
               variant='success'
               style={{ marginBottom: 10, marginLeft: 110 }}
+              oncClick = {(e) => searchFunction('http://127.0.0.1:5000/product/view?category=fruit')}
             >
               সার্চ করুন
             </Button>
