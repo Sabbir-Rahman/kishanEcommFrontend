@@ -97,10 +97,7 @@ const KrishiBazar = () => {
                 variant='success'
                 style={{ marginBottom: 10, marginLeft: 110 }}
                 onClick={(e) => {
-                  let temp =
-                    'http://127.0.0.1:5000/product/view?category=' + category
-                  // console.log(temp)
-                  searchFunction(temp)
+                  searchFunction('http://127.0.0.1:5000/product/view?category=' + category)
                 }}
               >
                 সার্চ করুন
