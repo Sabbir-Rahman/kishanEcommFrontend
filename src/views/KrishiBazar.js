@@ -104,24 +104,24 @@ const KrishiBazar = () => {
                         <Form>
                           <Form.Group controlId='division'>
                             <Form.Label>ক্যাটাগরি</Form.Label>
-                            <Form.Control as='select' defaultValue='Fruit'>
-                              <option>Fruit</option>
-                              <option>Vegetable</option>
-                              <option>Oil</option>
-                              <option>Meat</option>
-                              <option>Seeds</option>
-                              <option>Dairy</option>
-                              <option>Egg</option>
-                              <option>Wheat</option>
-                              <option>Cotton</option>
-                              <option>Organic</option>
-                              <option>Spices</option>
-                              <option>Rice</option>
-                              <option>Fish</option>
-                              <option>Poultry</option>
-                              <option>Tea</option>
-                              <option>Coffee</option>
-                            </Form.Control>
+                            <select class="form-control"
+                            as='select'
+                          >
+                            <option value='fruit'>ফল</option>
+                            <option value='vegetable'>সবজি</option>
+                            <option value='oil'>তেল</option>
+                            <option value='meat'>মাংস</option>
+                            <option value='seeds'>বীজ</option>
+                            <option value='dairy'>দুগ্ধজাত পণ্য</option>
+                            <option value='egg'>ডিম</option>
+                            <option value='rice'>চাল</option>
+                            <option value='wheat'>গম</option>
+                            <option value='cotton'>তুলা</option>
+                            <option value='spices'>মশলা</option>
+                            <option value='poultry'>পোল্ট্রি</option>
+                            <option value='teaNcoffe'>চা ও কফি</option>
+                            <option value='Others'>অন্যান্য</option>
+                          </select>
                           </Form.Group>
                           <Button
                             variant='success'
