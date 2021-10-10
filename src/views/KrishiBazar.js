@@ -13,6 +13,8 @@ import Cart from 'components/Cart'
 
 const KrishiBazar = () => {
 
+  const cart = Cart(null)
+
   return (
       <Router>
         <Switch>
@@ -148,7 +150,7 @@ const KrishiBazar = () => {
                           overflow: 'hidden',
                         }}
                       >
-                        <Cart />
+                        {cart}
                       </Card.Body>
                     </Card>
                   </Col>

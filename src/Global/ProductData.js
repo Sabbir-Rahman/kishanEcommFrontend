@@ -1,13 +1,21 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-function productData() {
+function productData(param) {
+
     const [productss, setProduct] = useState([])
 
-    const ShowProduct = async () => {
+    const ShowProduct = param==null? async () => {
         const token = localStorage.getItem('user')
         await axios
             .get('http://127.0.0.1:5000/product/view', {
+                headers: { Authorization: token },
+            })
+            .then((res) => setProduct(res.data))
+    } : async () => {
+        const token = localStorage.getItem('user')
+        await axios
+            .get(param, {
                 headers: { Authorization: token },
             })
             .then((res) => setProduct(res.data))
