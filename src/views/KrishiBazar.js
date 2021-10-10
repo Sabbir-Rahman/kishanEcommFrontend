@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   Button,
   Card,
@@ -6,8 +6,10 @@ import {
   Col,
   Form,
 } from 'react-bootstrap'
+import bg from 'assets/img/bgKrishiBazar.jpg'
 import Cart from 'components/Cart'
 import Banner from 'components/Banner'
+
 
 const KrishiBazar = () => {
 
@@ -88,7 +90,7 @@ const KrishiBazar = () => {
 
   return (
     <>
-      {Banner(component)}
+      {Banner(component, bg)}
       <Card style={{ marginLeft: 10, marginRight: 10 }}>
         <Row>
           <Col style={{ marginRight: 0, marginLeft: 0 }}>
