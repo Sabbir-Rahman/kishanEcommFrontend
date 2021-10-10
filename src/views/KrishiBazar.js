@@ -22,8 +22,8 @@ const KrishiBazar = () => {
             <>
               <Card style={{
                 marginTop: '2px',
-                marginLeft: '5px',
-                marginRight: '5px'
+                marginLeft: '10px',
+                marginRight: '10px'
               }}>
                 <Row
                   style={{
@@ -71,15 +71,15 @@ const KrishiBazar = () => {
                         <Form>
                           <Form.Group controlId='division'>
                             <Form.Label>বিভাগ</Form.Label>
-                            <Form.Control as='select' defaultValue='ঢাকা'>
-                              <option>ঢাকা</option>
-                              <option>ময়মনসিংহ</option>
-                              <option>সিলেট</option>
-                              <option>খুলনা</option>
-                              <option>বরিশাল</option>
-                              <option>রংপুর</option>
-                              <option>রাজশাহী</option>
-                              <option>চট্টগ্রাম</option>
+                            <Form.Control as='select' defaultValue='Sylhet'>
+                              <option>Dhaka</option>
+                              <option>Mymensingh</option>
+                              <option>Sylhet</option>
+                              <option>Khulna</option>
+                              <option>Barishal</option>
+                              <option>Rangpur</option>
+                              <option>Rajshahi</option>
+                              <option>Chattagram</option>
                             </Form.Control>
                           </Form.Group>
                           <Button
@@ -93,44 +93,32 @@ const KrishiBazar = () => {
                     </Card>
                   </Col>
                   <Col>
-                    <Card className='card-stats'>
-                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
-                        সময়
+                    <Card className='card-stats' >
+                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15}}>
+                        ক্যাটাগরি
                       </Card.Title>
                       <Card.Body>
                         <Form>
                           <Form.Group controlId='division'>
-                            <Form.Control type='date' placeholder='দিন' />
-                          </Form.Group>
-                          <Form.Label>হতে</Form.Label>
-                          <Form.Group controlId='division'>
-                            <Form.Control type='date' placeholder='দিন' />
-                          </Form.Group>
-                          <Button
-                            variant='success'
-                            style={{ marginBottom: 10, marginLeft: 110 }}
-                          >
-                            সার্চ করুন
-                          </Button>
-                        </Form>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col>
-                    <Card className='card-stats'>
-                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
-                        মূল্য
-                      </Card.Title>
-                      <Card.Body>
-                        <Form>
-                          <Form.Group
-                            controlId='formBasicRange'
-                            style={{ color: 'rgba(181, 218, 164, .3)' }}
-                          >
-                            <Form.Label>সর্বনিম্ন</Form.Label>
-                            <Form.Control type='range' />
-                            <Form.Label>সর্বোচ্চ</Form.Label>
-                            <Form.Control type='range' />
+                            <Form.Label>ক্যাটাগরি</Form.Label>
+                            <Form.Control as='select' defaultValue='Fruit'>
+                              <option>Fruit</option>
+                              <option>Vegetable</option>
+                              <option>Oil</option>
+                              <option>Meat</option>
+                              <option>Seeds</option>
+                              <option>Dairy</option>
+                              <option>Egg</option>
+                              <option>Wheat</option>
+                              <option>Cotton</option>
+                              <option>Organic</option>
+                              <option>Spices</option>
+                              <option>Rice</option>
+                              <option>Fish</option>
+                              <option>Poultry</option>
+                              <option>Tea</option>
+                              <option>Coffee</option>
+                            </Form.Control>
                           </Form.Group>
                           <Button
                             variant='success'
