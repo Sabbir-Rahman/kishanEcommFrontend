@@ -45,9 +45,17 @@ const Register = () => {
   }
   return (
     <div className='SignInAndUp'>
-      <thread>
+      <thead>
         <tr>
           <th>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100vh',
+              }}
+            >
             <Container fluid>
               <Card>
                 <Card.Header>
@@ -117,9 +125,10 @@ const Register = () => {
                 </Card.Body>
               </Card>
             </Container>
+            </div>
           </th>
         </tr>
-      </thread>
+      </thead>
     </div>
   )
 }
