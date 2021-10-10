@@ -243,12 +243,21 @@ function AddProduct() {
                     <td>
                       <Form>
                         <Form.Group controlId='divison'>
-                          <Form.Control
+                          <Form.Control as='select'
                             type='text'
                             placeholder='বিভাগ'
                             value={divison}
                             onChange={(e) => setDivison(e.target.value)}
-                          />
+                          >
+                            <option value='Dhaka'>ঢাকা</option>
+                            <option value='Mymensingh'>ময়মনসিংহ</option>
+                            <option value='Sylhet'>সিলেট</option>
+                            <option value='Khulna'>খুলনা</option>
+                            <option value='Barishal'>বরিশাল</option>
+                            <option value='Rangpur'>রংপুর</option>
+                            <option value='Rajshahi'>রাজশাহী</option>
+                            <option value='Chattagram'>চট্টগ্রাম</option>
+                          </Form.Control>
                         </Form.Group>
                       </Form>
                     </td>

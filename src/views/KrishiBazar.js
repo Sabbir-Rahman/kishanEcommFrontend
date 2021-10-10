@@ -71,15 +71,15 @@ const KrishiBazar = () => {
                         <Form>
                           <Form.Group controlId='division'>
                             <Form.Label>বিভাগ</Form.Label>
-                            <Form.Control as='select' defaultValue='ঢাকা'>
-                              <option>ঢাকা</option>
-                              <option>ময়মনসিংহ</option>
-                              <option>সিলেট</option>
-                              <option>খুলনা</option>
-                              <option>বরিশাল</option>
-                              <option>রংপুর</option>
-                              <option>রাজশাহী</option>
-                              <option>চট্টগ্রাম</option>
+                            <Form.Control as='select' defaultValue='Sylhet'>
+                              <option>Dhaka</option>
+                              <option>Mymensingh</option>
+                              <option>Sylhet</option>
+                              <option>Khulna</option>
+                              <option>Barishal</option>
+                              <option>Rangpur</option>
+                              <option>Rajshahi</option>
+                              <option>Chattagram</option>
                             </Form.Control>
                           </Form.Group>
                           <Button
