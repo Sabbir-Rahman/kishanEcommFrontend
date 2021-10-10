@@ -74,6 +74,7 @@ const KrishiBazar = () => {
                             <select class="form-control"
                             as='select'
                           >
+                            <option value=''></option>
                             <option value='Dhaka'>ঢাকা</option>
                             <option value='Mymensingh'>ময়মনসিংহ</option>
                             <option value='Sylhet'>সিলেট</option>
@@ -106,6 +107,7 @@ const KrishiBazar = () => {
                             <select class="form-control"
                             as='select'
                           >
+                            <option value=''></option>
                             <option value='fruit'>ফল</option>
                             <option value='vegetable'>সবজি</option>
                             <option value='oil'>তেল</option>
