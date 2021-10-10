@@ -1,14 +1,15 @@
-import React, { useContext } from 'react'
-import { productContext } from 'Global/ProductContext'
+import React, { useContext, useState, useEffect } from 'react'
 import { Button, Card } from 'react-bootstrap'
+import productData from 'Global/ProductData'
 
-const Cart = () => {
-  const { products } = useContext(productContext)
+function Cart(param) {
 
   function redirect(productID) {
     localStorage.setItem('productID', productID)
     window.location.replace('/product')
   }
+
+  const products = productData(param)
 
   return (
     <>

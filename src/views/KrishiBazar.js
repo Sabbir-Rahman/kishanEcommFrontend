@@ -1,5 +1,4 @@
 import React from 'react'
-import ProductsContextProvider from 'Global/ProductContext'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import {
   Button,
@@ -14,8 +13,9 @@ import Cart from 'components/Cart'
 
 const KrishiBazar = () => {
 
+  const cart = Cart(null)
+
   return (
-    <ProductsContextProvider>
       <Router>
         <Switch>
           <Route path='/krishi-bazar' exact>
@@ -150,7 +150,7 @@ const KrishiBazar = () => {
                           overflow: 'hidden',
                         }}
                       >
-                        <Cart />
+                        {cart}
                       </Card.Body>
                     </Card>
                   </Col>
@@ -160,7 +160,6 @@ const KrishiBazar = () => {
           </Route>
         </Switch>
       </Router>
-    </ProductsContextProvider>
   )
 }
 

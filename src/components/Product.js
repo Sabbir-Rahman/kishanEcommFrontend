@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
-import { productContext } from 'Global/ProductContext'
+import React, { useContext, useState, useEffect } from 'react'
 import { Button, Card, Container, Row, Col, Form } from 'react-bootstrap'
-import { useEffect, useState } from 'react'
 import axios from 'axios'
+import productData from 'Global/ProductData'
 
 const Product = () => {
   const [quantity, setQuantity] = useState('')
@@ -46,7 +45,8 @@ const Product = () => {
 
   let toView = []
 
-  const { products } = useContext(productContext)
+  const products = productData()
+
   let productID = localStorage.getItem('productID')
 
   products.map((product) =>
