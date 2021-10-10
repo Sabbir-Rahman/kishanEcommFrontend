@@ -140,7 +140,8 @@ function AddProduct() {
                     <td>
                       <Form>
                         <Form.Group controlId='catagorie'>
-                          <select class="form-control"
+                          <select
+                            class='form-control'
                             as='select'
                             type='text'
                             placeholder='ক্যাটাগরি'
