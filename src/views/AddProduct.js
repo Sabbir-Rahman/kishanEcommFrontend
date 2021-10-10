@@ -140,12 +140,28 @@ function AddProduct() {
                     <td>
                       <Form>
                         <Form.Group controlId='catagorie'>
-                          <Form.Control
+                          <select class="form-control"
+                            as='select'
                             type='text'
                             placeholder='ক্যাটাগরি'
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
-                          />
+                          >
+                            <option value='fruit'>ফল</option>
+                            <option value='vegetable'>সবজি</option>
+                            <option value='oil'>তেল</option>
+                            <option value='meat'>মাংস</option>
+                            <option value='seeds'>বীজ</option>
+                            <option value='dairy'>দুগ্ধজাত পণ্য</option>
+                            <option value='egg'>ডিম</option>
+                            <option value='rice'>চাল</option>
+                            <option value='wheat'>গম</option>
+                            <option value='cotton'>তুলা</option>
+                            <option value='spices'>মশলা</option>
+                            <option value='poultry'>পোল্ট্রি</option>
+                            <option value='teaNcoffe'>চা ও কফি</option>
+                            <option value='Others'>অন্যান্য</option>
+                          </select>
                         </Form.Group>
                       </Form>
                     </td>
