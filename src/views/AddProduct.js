@@ -147,6 +147,7 @@ function AddProduct() {
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
                           >
+                            <option value=''></option>
                             <option value='fruit'>ফল</option>
                             <option value='vegetable'>সবজি</option>
                             <option value='oil'>তেল</option>
@@ -266,6 +267,7 @@ function AddProduct() {
                             value={divison}
                             onChange={(e) => setDivison(e.target.value)}
                           >
+                            <option value=''></option>
                             <option value='Dhaka'>ঢাকা</option>
                             <option value='Mymensingh'>ময়মনসিংহ</option>
                             <option value='Sylhet'>সিলেট</option>

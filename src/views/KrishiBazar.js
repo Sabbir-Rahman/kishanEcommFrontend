@@ -82,7 +82,6 @@ const KrishiBazar = () => {
                             <option value='Rangpur'>রংপুর</option>
                             <option value='Rajshahi'>রাজশাহী</option>
                             <option value='Chattagram'>চট্টগ্রাম</option>
-                            
                           </select>
                           </Form.Group>
                           <Button
