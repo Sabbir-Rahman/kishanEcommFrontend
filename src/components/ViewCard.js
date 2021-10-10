@@ -1,22 +1,22 @@
-import kishanLogo from "../assets/img/homepage/kishan.png"
 import { Link } from "react-router-dom"
 import {
     Card,
-    Container,
-    Row,
     Col,
   } from "react-bootstrap"
 
-function card(logo, name, link) {
+function card(logo, name, link, category) {
+  localStorage.setItem('searchLink', 'http://127.0.0.1:5000/product/view?category='+category)
     return (
       <Col>
         <Link to={link}>
           <Card href={link}>
-            <Card.Body>
+            <Card.Body style={{
+              height: "100px"
+            }}>
               <img src={logo}
                 alt="Not Found"
                 style={{
-                  width: "25%",
+                  width: "30%",
                   height: "auto",
                   marginLeft: "auto",
                   marginRight: "auto",

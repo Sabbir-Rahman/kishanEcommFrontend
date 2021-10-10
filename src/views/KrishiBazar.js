@@ -4,6 +4,15 @@ import bg from 'assets/img/bgKrishiBazar.jpg'
 import Cart from 'components/Cart'
 import Banner from 'components/Banner'
 import { useState } from 'react'
+import card from 'components/ViewCard'
+import corpsLogo from 'assets/img/corp.jpg' 
+import vegetableLogo from 'assets/img/vegetable.jpg'
+import fruitLogo from 'assets/img/fruit.png'
+import pesticidesLogo from 'assets/img/pesticides.jpeg'
+import poultryLogo from 'assets/img/poultry.jpg'
+import meatLogo from 'assets/img/meat.png'
+import fishLogo from 'assets/img/fish.jpg'
+import othersLogo from 'assets/img/others.png'
 
 const KrishiBazar = () => {
   const [category, setCategory] = useState('')
@@ -19,6 +28,27 @@ const KrishiBazar = () => {
 
   const component = (
     <>
+    <Row>
+    {card(corpsLogo, 'শস্য', '/category')}
+    {card(vegetableLogo, 'শাক-সবজি', '/category')}
+    {card(fruitLogo, 'ফল', '/category')}
+    {card(pesticidesLogo, 'সার ও কীটনাশক', '/category')}
+    </Row>
+    <Row>
+    {card(poultryLogo, 'পোল্ট্রিজাত পণ্য', '/category')}
+    {card(meatLogo, 'মাংস', '/category')}
+    {card(fishLogo, 'মাছ', '/category')}
+    {card(othersLogo, 'অন্যান্য', '/category')}
+    </Row>
+    
+    </>
+  )
+
+  return (
+    <>
+    
+      {Banner(component, bg)}
+
       <Col>
         <Card className='card-stats'>
           <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
@@ -106,12 +136,6 @@ const KrishiBazar = () => {
           </Card.Body>
         </Card>
       </Col>
-    </>
-  )
-
-  return (
-    <>
-      {Banner(component, bg)}
       <Card style={{ marginLeft: 10, marginRight: 10 }}>
         <Row>
           <Col style={{ marginRight: 0, marginLeft: 0 }}>
