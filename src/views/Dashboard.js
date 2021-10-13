@@ -161,13 +161,13 @@ function Statistics() {
             </Card>
           </Col>
           <Col>
-            <Card className='card-plain table-plain-bg'>
+            <Card className='strpied-tabled-with-hover'>
               <Card.Header>
                 <Card.Title as='h4'>বিক্রয় তালিকা</Card.Title>
                 <p className='card-category'>বিক্রয়কৃত পণ্যসমূহ</p>
               </Card.Header>
               <Card.Body className='table-full-width table-responsive px-0'>
-                <Table className='table-hover'>
+                <Table className='table-hover table-striped'>
                   <thead>
                     <tr>
                       <th className='border-0'>ক্রমিক</th>
