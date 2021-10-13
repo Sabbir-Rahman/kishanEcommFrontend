@@ -42,10 +42,13 @@ function ViewProduct() {
     //data added
   }
 
+  const productID = localStorage.getItem('productID')
+  console.log(productID, "আর তো ভাল্লাগে না বাল‍!")
+
   const ShowProduct = async () => {
     const token = localStorage.getItem('user')
     await axios
-      .get('http://127.0.0.1:5000/product/view?_id=' + localStorage.getItem('productID'), {
+      .get('http://127.0.0.1:5000/product/view?_id=' + productID, {
         headers: { Authorization: token },
       })
       .then((res) => setProduct(res.data))

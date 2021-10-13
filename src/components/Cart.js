@@ -1,13 +1,19 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Button, Card } from 'react-bootstrap'
 import productData from 'Global/ProductData'
+import { useHistory } from 'react-router'
 
 function Cart(param) {
 
+  const history = useHistory()
+
   function redirect(productID) {
     localStorage.setItem('productID', productID)
-    window.location.replace('/product')
+    //window.location.replace('/product')
+    history.push('/product')
   }
+
+  
 
   const products = productData(param)
 

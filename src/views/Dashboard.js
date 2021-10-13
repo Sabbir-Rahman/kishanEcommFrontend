@@ -7,11 +7,23 @@ import {
   Container,
   Row,
   Col,
+  Button
 } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useHistory } from 'react-router'
 
 function Statistics() {
+
+  const history = useHistory()
+
+  function redirect(productID) {
+    localStorage.setItem('productID', productID)
+    history.push('/product')
+    //window.location.replace('/product')
+    //console.log(productID, 'Rafi')
+  }
+
   const [OutGoingRequests, setOutGoingRequests] = useState([])
   const [IncomingRequests, setIncomingRequests] = useState([])
 
@@ -76,20 +88,20 @@ function Statistics() {
     ShowInComingRequest()
   }, [])
 
-  // console.log(OutGoingRequests)
-  // console.log(IncomingRequests)
-
   let buyRequests = []
   let _buyRequest = []
 
   if (OutGoingRequests.data != undefined) {
     buyRequests = OutGoingRequests.data
   }
+
+  let buyingID = []
   let buyingMoney = []
   let buyingQuantity = []
   let productName = []
 
   for (let i = 0; i < buyRequests.length; i++) {
+    buyingID.push(buyRequests[i]._id)
     buyingMoney.push(buyRequests[i].buyingMoney)
     buyingQuantity.push(buyRequests[i].buyingQuantity)
     productName.push(buyRequests[i].productName)
@@ -100,13 +112,12 @@ function Statistics() {
       <tr>
         <td>{i + 1}</td>
         <td>{productName[i]}</td>
-        <td>{buyingMoney}</td>
-        <td>{buyingQuantity}</td>
+        <td>{buyingMoney[i]}</td>
+        <td>{buyingQuantity[i]}</td>
+        <td><Button variant='success' size='sm' onClick={(e) => redirect(buyingID[i])}>পণ্য দেখুন</Button></td>
       </tr>
     )
   }
-
-  // console.log('yes', buyingMoney)
 
   let sellRequests = []
   let _sellRequest = []
@@ -114,11 +125,13 @@ function Statistics() {
     sellRequests = IncomingRequests.data
   }
 
+  let _buyingID = []
   let _buyingMoney = []
   let _buyingQuantity = []
   let _productName = []
 
   for (let i = 0; i < sellRequests.length; i++) {
+    _buyingID.push(sellRequests[i]._id)
     _buyingMoney.push(sellRequests[i].buyingMoney)
     _buyingQuantity.push(sellRequests[i].buyingQuantity)
     _productName.push(sellRequests[i].productName)
@@ -129,8 +142,9 @@ function Statistics() {
       <tr>
         <td>{i + 1}</td>
         <td>{_productName[i]}</td>
-        <td>{_buyingMoney}</td>
-        <td>{_buyingQuantity}</td>
+        <td>{_buyingMoney[i]}</td>
+        <td>{_buyingQuantity[i]}</td>
+        <td><Button variant='success' size='sm' onClick={(e) => redirect(_buyingID[i])}>পণ্য দেখুন</Button></td>
       </tr>
     )
   }
