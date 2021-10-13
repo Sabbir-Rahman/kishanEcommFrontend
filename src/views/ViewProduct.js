@@ -60,7 +60,13 @@ function ViewProduct() {
   if (products.data != undefined) {
     product = products.data[0]
     return (
-      <Container fluid>
+      <Container fluid className='SignInAndUP'
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}>
         <Card>
           <Card.Body>
             <Row>
