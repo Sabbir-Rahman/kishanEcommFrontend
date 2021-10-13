@@ -139,7 +139,7 @@ function Statistics() {
     <>
       <Container fluid>
         <Row>
-          <Col md='12'>
+          <Col>
             <Card className='strpied-tabled-with-hover'>
               <Card.Header>
                 <Card.Title as='h4'>ক্রয় তালিকা</Card.Title>
@@ -160,7 +160,7 @@ function Statistics() {
               </Card.Body>
             </Card>
           </Col>
-          <Col md='12'>
+          <Col>
             <Card className='card-plain table-plain-bg'>
               <Card.Header>
                 <Card.Title as='h4'>বিক্রয় তালিকা</Card.Title>

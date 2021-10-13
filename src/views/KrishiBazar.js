@@ -17,10 +17,8 @@ const KrishiBazar = () => {
 
   const component = (
     <>
-      <Row style={{
-        position: 'center',
-        marginLeft: '9%'
-      }}>
+      <Row className='SignInAndUp'>
+        <Row>
         <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "corps")}>
           {card(corpsLogo, 'শস্য', '/category')}
@@ -39,6 +37,8 @@ const KrishiBazar = () => {
           onClick={(e) => localStorage.setItem('category', "pesticides")}>
           {card(pesticidesLogo, 'সার ও কীটনাশক', '/category')}
         </Button>
+        </Row>
+        <Row>
         <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "poultry")}>
           {card(poultryLogo, 'পোল্ট্রিজাত পণ্য', '/category')}
@@ -58,6 +58,7 @@ const KrishiBazar = () => {
           onClick={(e) => localStorage.setItem('category', "others")}>
           {card(othersLogo, 'অন্যান্য', '/category')}
         </Button>
+        </Row>
       </Row>
     </>
   )
@@ -66,7 +67,7 @@ const KrishiBazar = () => {
     <>
       {Banner(component, bg)}
 
-      <Row>
+      <Row className='SignInAndUp'>
         <Col>
           <Card style={{
             display: 'flex',
@@ -78,7 +79,7 @@ const KrishiBazar = () => {
             }}>
               <h3 style={{ textAlign: "center" }}>ফাইভ স্টার রেটিং</h3>
             </Card>
-            <Row style={{ marginLeft: '7%' }}>{Cart('http://127.0.0.1:5000/product/view?rating=5')}</Row>
+            <Row className='SignInAndUp'>{Cart('http://127.0.0.1:5000/product/view?division=Mymensingh')}</Row>
           </Card>
         </Col>
         <Col>
@@ -92,11 +93,10 @@ const KrishiBazar = () => {
             }}>
               <h3 style={{ textAlign: "center" }}>সর্বাধিক বিক্রিত</h3>
             </Card>
-            <Row style={{ marginLeft: '7%' }}>{Cart('http://127.0.0.1:5000/product/view?division=Dhaka&unitPrize=10')}</Row>
+            <Row className='SignInAndUp'>{Cart('http://127.0.0.1:5000/product/view?division=Dhaka&unitPrize=10')}</Row>
           </Card>
         </Col>
       </Row>
-
       <Row>
         <Col>
           <Card style={{
@@ -109,7 +109,7 @@ const KrishiBazar = () => {
             }}>
               <h3 style={{ textAlign: "center" }}>ঢাকা বিভাগের পণ্য</h3>
             </Card>
-            <Row style={{ marginLeft: '7%' }}>{Cart('http://127.0.0.1:5000/product/view?division=Dhaka')}</Row>
+            <Row className='SignInAndUp'>{Cart('http://127.0.0.1:5000/product/view?division=Dhaka')}</Row>
           </Card>
         </Col>
         <Col>
@@ -123,7 +123,7 @@ const KrishiBazar = () => {
             }}>
               <h3 style={{ textAlign: "center" }}>ময়মনসিংহ বিভাগের পণ্য</h3>
             </Card>
-            <Row style={{ marginLeft: '7%' }}>{Cart('http://127.0.0.1:5000/product/view?division=Mymensingh')}</Row>
+            <Row className='SignInAndUp'>{Cart('http://127.0.0.1:5000/product/view?division=Mymensingh')}</Row>
           </Card>
         </Col>
         <Col>
@@ -137,7 +137,7 @@ const KrishiBazar = () => {
             }}>
               <h3 style={{ textAlign: "center" }}>রংপুর বিভাগের পণ্য</h3>
             </Card>
-            <Row style={{ marginLeft: '7%' }}>{Cart('http://127.0.0.1:5000/product/view?division!=Rangpur')}</Row>
+            <Row className='SignInAndUp'>{Cart('http://127.0.0.1:5000/product/view?division!=Rangpur')}</Row>
           </Card>
         </Col>
       </Row>
