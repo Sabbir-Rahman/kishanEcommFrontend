@@ -3,6 +3,7 @@ import { Button, Card, Table, Container, Row, Col, Form } from 'react-bootstrap'
 import { useState } from 'react'
 import axios from 'axios'
 import FileBase from 'react-file-base64'
+import { districts } from 'components/SearchCriterias'
 
 function AddProduct() {
   const [productName, setProductName] = useState('')
@@ -285,12 +286,16 @@ function AddProduct() {
                     <td>
                       <Form>
                         <Form.Group controlId='district'>
-                          <Form.Control
+                        <select
+                            class='form-control'
+                            as='select'
                             type='text'
                             placeholder='জেলা'
                             value={district}
                             onChange={(e) => setDistrict(e.target.value)}
-                          />
+                          >
+                            {districts(divison)}
+                          </select>
                         </Form.Group>
                       </Form>
                     </td>
