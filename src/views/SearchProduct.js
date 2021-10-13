@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Button, Card, Row, Col, Form } from 'react-bootstrap'
 import Cart from "components/Cart"
-import {categoryFinder, divisionFinder} from 'components/SearchCriterias'
+import {categoryFinder, divisionFinder, districts} from 'components/SearchCriterias'
 
 const SearchProduct = () => {
 
@@ -14,12 +14,19 @@ const SearchProduct = () => {
         cartLink += localStorage.getItem('division')
         localStorage.setItem('bibhag', localStorage.getItem('division'))
         localStorage.removeItem('division')
+
+        if (localStorage.getItem('district')) {
+            cartLink += localStorage.getItem('district')
+            localStorage.setItem('zella', localStorage.getItem('district'))
+            localStorage.removeItem('district')
+        }
     }
 
 
     cart = Cart(cartLink)
 
     const [division, setDivision] = useState('')
+    const [district, setDistrict] = useState('')
     
     function searchByDivision(link) {
         localStorage.setItem('division', link)
@@ -37,7 +44,7 @@ const SearchProduct = () => {
                     <Row>
                         <Card className='card-stats'>
                             <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
-                                বিভাগ
+                                ফিল্টার
                             </Card.Title>
                             <Card.Body>
                                 <Form>
@@ -60,6 +67,17 @@ const SearchProduct = () => {
                                             <option value='Chattagram'>চট্টগ্রাম</option>
                                         </select>
                                     </Form.Group>
+                                    <Form.Group controlId='division'>
+                                        <Form.Label>জেলা</Form.Label>
+                                        <select
+                                            class='form-control'
+                                            as='select'
+                                            value={district}
+                                            onChange={(e) => setDistrict(e.target.value)}
+                                        >
+                                            {districts(division)}
+                                        </select>
+                                    </Form.Group>
                                     <Button
                                         variant='success'
                                         style={{ marginBottom: 10, marginLeft: 110 }}
@@ -73,7 +91,6 @@ const SearchProduct = () => {
                             </Card.Body>
                         </Card>
                     </Row>
-                    
                 </Col>
                 <Col md='9'>
                     <Row style={{ marginLeft: '7%' }}>{cart}</Row>
