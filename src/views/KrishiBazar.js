@@ -12,7 +12,6 @@ import poultryLogo from 'assets/img/poultry.jpg'
 import meatLogo from 'assets/img/meat.png'
 import fishLogo from 'assets/img/fish.jpg'
 import othersLogo from 'assets/img/others.png'
-import { CardFooter } from 'reactstrap'
 
 const KrishiBazar = () => {
 
@@ -22,104 +21,40 @@ const KrishiBazar = () => {
         position: 'center',
         marginLeft: '9%'
       }}>
-        <Button style={{
-          background: 'none',
-          color: 'inherit',
-          border: 'none',
-          padding: '0',
-          font: 'inherit',
-          cursor: 'pointer',
-          outline: 'inherit',
-        }}
+        <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "corps")}>
           {card(corpsLogo, 'শস্য', '/category')}
         </Button>
-        <Button style={{
-          background: 'none',
-          color: 'inherit',
-          border: 'none',
-          padding: '0',
-          font: 'inherit',
-          cursor: 'pointer',
-          outline: 'inherit',
-        }}
+        <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "vegetables")}>
           {card(vegetableLogo, 'শাক-সবজি', '/category')}
 
         </Button>
-        <Button style={{
-          background: 'none',
-          color: 'inherit',
-          border: 'none',
-          padding: '0',
-          font: 'inherit',
-          cursor: 'pointer',
-          outline: 'inherit',
-        }}
+        <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "fruit")}>
           {card(fruitLogo, 'ফল', '/category', "fruit")}
 
         </Button>
-        <Button style={{
-          background: 'none',
-          color: 'inherit',
-          border: 'none',
-          padding: '0',
-          font: 'inherit',
-          cursor: 'pointer',
-          outline: 'inherit',
-        }}
+        <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "pesticides")}>
           {card(pesticidesLogo, 'সার ও কীটনাশক', '/category')}
         </Button>
-        <Button style={{
-          background: 'none',
-          color: 'inherit',
-          border: 'none',
-          padding: '0',
-          font: 'inherit',
-          cursor: 'pointer',
-          outline: 'inherit',
-        }}
+        <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "poultry")}>
           {card(poultryLogo, 'পোল্ট্রিজাত পণ্য', '/category')}
 
         </Button>
-        <Button style={{
-          background: 'none',
-          color: 'inherit',
-          border: 'none',
-          padding: '0',
-          font: 'inherit',
-          cursor: 'pointer',
-          outline: 'inherit',
-        }}
+        <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "meat")}>
           {card(meatLogo, 'মাংস', '/category')}
 
         </Button>
-        <Button style={{
-          background: 'none',
-          color: 'inherit',
-          border: 'none',
-          padding: '0',
-          font: 'inherit',
-          cursor: 'pointer',
-          outline: 'inherit',
-        }}
+        <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "fish")}>
           {card(fishLogo, 'মাছ', '/category')}
 
         </Button>
-        <Button style={{
-          background: 'none',
-          color: 'inherit',
-          border: 'none',
-          padding: '0',
-          font: 'inherit',
-          cursor: 'pointer',
-          outline: 'inherit',
-        }}
+        <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "others")}>
           {card(othersLogo, 'অন্যান্য', '/category')}
         </Button>
