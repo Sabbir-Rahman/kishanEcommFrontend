@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, Row, Col, Form } from 'react-bootstrap'
+import { Button, Card, Row, Col, Form, Carousel } from 'react-bootstrap'
 import bg from 'assets/img/bgKrishiBazar.jpg'
 import Cart from 'components/Cart'
 import Banner from 'components/Banner'
@@ -16,57 +16,57 @@ import othersLogo from 'assets/img/others.png'
 const KrishiBazar = () => {
 
   const component = (
-    <>
       <Row className='SignInAndUp'>
-        <Row>
-        <Button className='categoryCard'
-          onClick={(e) => localStorage.setItem('category', "corps")}>
-          {card(corpsLogo, 'শস্য ও বীজ', '/category')}
-        </Button>
-        <Button className='categoryCard'
-          onClick={(e) => localStorage.setItem('category', "vegetables")}>
-          {card(vegetableLogo, 'শাক-সবজি', '/category')}
+      <Carousel interval='2500' variant='dark'>
+        <Carousel.Item>    
+            <Button className='categoryCard'
+              onClick={(e) => localStorage.setItem('category', "corps")}>
+              {card(corpsLogo, 'শস্য ও বীজ', '/category')}
+            </Button>
+            <Button className='categoryCard'
+              onClick={(e) => localStorage.setItem('category', "vegetables")}>
+              {card(vegetableLogo, 'শাক-সবজি', '/category')}
 
-        </Button>
-        <Button className='categoryCard'
-          onClick={(e) => localStorage.setItem('category', "fruit")}>
-          {card(fruitLogo, 'ফল', '/category', "fruit")}
+            </Button>
+            <Button className='categoryCard'
+              onClick={(e) => localStorage.setItem('category', "fruit")}>
+              {card(fruitLogo, 'ফল', '/category', "fruit")}
 
-        </Button>
-        <Button className='categoryCard'
-          onClick={(e) => localStorage.setItem('category', "pesticides")}>
-          {card(pesticidesLogo, 'সার ও কীটনাশক', '/category')}
-        </Button>
-        </Row>
-        <Row>
-        <Button className='categoryCard'
-          onClick={(e) => localStorage.setItem('category', "poultry")}>
-          {card(poultryLogo, 'পোল্ট্রিজাত পণ্য', '/category')}
+            </Button>
+            <Button className='categoryCard'
+              onClick={(e) => localStorage.setItem('category', "pesticides")}>
+              {card(pesticidesLogo, 'সার ও কীটনাশক', '/category')}
+            </Button>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Button className='categoryCard'
+            onClick={(e) => localStorage.setItem('category', "poultry")}>
+            {card(poultryLogo, 'পোল্ট্রিজাত পণ্য', '/category')}
 
-        </Button>
-        <Button className='categoryCard'
-          onClick={(e) => localStorage.setItem('category', "meat")}>
-          {card(meatLogo, 'মাংস', '/category')}
+          </Button>
+          <Button className='categoryCard'
+            onClick={(e) => localStorage.setItem('category', "meat")}>
+            {card(meatLogo, 'মাংস', '/category')}
 
-        </Button>
-        <Button className='categoryCard'
-          onClick={(e) => localStorage.setItem('category', "fish")}>
-          {card(fishLogo, 'মাছ', '/category')}
+          </Button>
+          <Button className='categoryCard'
+            onClick={(e) => localStorage.setItem('category', "fish")}>
+            {card(fishLogo, 'মাছ', '/category')}
 
-        </Button>
-        <Button className='categoryCard'
-          onClick={(e) => localStorage.setItem('category', "others")}>
-          {card(othersLogo, 'অন্যান্য', '/category')}
-        </Button>
-        </Row>
+          </Button>
+          <Button className='categoryCard'
+            onClick={(e) => localStorage.setItem('category', "others")}>
+            {card(othersLogo, 'অন্যান্য', '/category')}
+          </Button>
+        </Carousel.Item>
+      </Carousel>
       </Row>
-    </>
   )
 
   return (
     <>
       {Banner(component, bg)}
-
+      
       <Row className='SignInAndUp'>
         <Col>
           <Card style={{
