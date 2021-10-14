@@ -17,7 +17,7 @@ const KrishiBazar = () => {
 
   const component = (
       <Row className='SignInAndUp'>
-      <Carousel interval='2500' variant='dark'>
+      <Carousel interval='2500' nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />}	>
         <Carousel.Item>    
             <Button className='categoryCard'
               onClick={(e) => localStorage.setItem('category', "corps")}>
