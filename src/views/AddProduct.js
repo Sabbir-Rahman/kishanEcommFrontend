@@ -138,7 +138,9 @@ function AddProduct() {
                             <option value='শাক-সবজি'>শাক-সবজি</option>
                             <option value='ফল'>ফল</option>
                             <option value='সারওকীটনাশক'>সার ও কীটনাশক</option>
-                            <option value='পোল্ট্রিজাতপণ্য'>পোল্ট্রিজাত পণ্য</option>
+                            <option value='পোল্ট্রিজাতপণ্য'>
+                              পোল্ট্রিজাত পণ্য
+                            </option>
                             <option value='মাংস'>মাংস</option>
                             <option value='মাছ'>মাছ</option>
                             <option value='অন্যান্য'>অন্যান্য</option>
