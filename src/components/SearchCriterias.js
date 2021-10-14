@@ -5,7 +5,7 @@ function categoryFinder(str) {
         case 'vegetables':
             return 'শাক-সবজি >>'
         case 'corps':
-            return 'শস্য >>'
+            return 'শস্য ও বীজ>>'
         case 'fish':
             return 'মাছ >>'
         case 'meat':

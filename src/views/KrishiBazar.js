@@ -21,7 +21,7 @@ const KrishiBazar = () => {
         <Row>
         <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "corps")}>
-          {card(corpsLogo, 'শস্য', '/category')}
+          {card(corpsLogo, 'শস্য ও বীজ', '/category')}
         </Button>
         <Button className='categoryCard'
           onClick={(e) => localStorage.setItem('category', "vegetables")}>

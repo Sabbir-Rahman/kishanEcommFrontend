@@ -151,7 +151,7 @@ function AddProduct() {
                             onChange={(e) => setCategory(e.target.value)}
                           >
                             <option value=''></option>
-                            <option value='corps'>শস্য</option>
+                            <option value='corps'>শস্য ও বীজ</option>
                             <option value='vegetables'>শাক-সবজি</option>
                             <option value='fruit'>ফল</option>
                             <option value='pesticides'>সার ও কীটনাশক</option>
