@@ -19,23 +19,6 @@ function AddProduct() {
   const [bookingPercentage, setBookingPercentage] = useState('')
   const [image, setImage] = useState('')
 
-  const resetFields = () => {
-    setProductName('')
-    setMinimum('')
-    setCategory('')
-    setAmount('')
-    setUnit('')
-    setDate('')
-    setUnitPrice('')
-    setDivison('')
-    setDistrict('')
-    setDescription('')
-    setImage('')
-    setBookingPercentage('')
-  }
-
-  //let fileName = document.getElementById('photo').files[0].name
-
   async function addProduct() {
     //data adding
     const product = {
@@ -55,8 +38,6 @@ function AddProduct() {
 
     console.log(product)
 
-    resetFields()
-
     // axios
     const token = localStorage.getItem('user')
     const _token = token.split('"').join('')
@@ -72,6 +53,7 @@ function AddProduct() {
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res)
         alert('Product added successfully')
+        window.location.reload()
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
