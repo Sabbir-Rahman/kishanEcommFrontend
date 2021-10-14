@@ -34,6 +34,7 @@ function AddProduct() {
       description: description,
       image: image,
       bookingPercentage: bookingPercentage,
+      isAvailableNow: false,
     }
 
     console.log(product)
@@ -171,7 +172,7 @@ function AddProduct() {
                       <Form>
                         <Form.Group controlId='amount'>
                           <Form.Control
-                            type='tk'
+                            type='text'
                             placeholder='বুকিং মানি'
                             value={bookingPercentage}
                             onChange={(e) =>
