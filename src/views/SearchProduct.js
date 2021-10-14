@@ -3,8 +3,11 @@ import { useState } from 'react'
 import { Button, Card, Row, Col, Form } from 'react-bootstrap'
 import Cart from "components/Cart"
 import { categoryFinder, divisionFinder, districts } from 'components/SearchCriterias'
+import { useHistory } from 'react-router'
 
 const SearchProduct = () => {
+
+    const history = useHistory()
 
     let cart, cartLink, bibhag = localStorage.getItem('bibhag')
 
@@ -21,17 +24,18 @@ const SearchProduct = () => {
 
     const [division, setDivision] = useState('')
     const [district, setDistrict] = useState('')
+    const [category, setCategory] = useState('')
 
     function search(link, district) {
         if (district != '') {
-            link = link+'&district='+district
+            link = link + '&district=' + district
             localStorage.setItem('search', link)
             console.log(localStorage.getItem('search'))
-            window.location.reload()
+            history.push('/category')
         } else {
             localStorage.setItem('search', link)
             console.log(localStorage.getItem('search'))
-            window.location.reload()
+            history.push('/category')
         }
     }
 
@@ -49,6 +53,27 @@ const SearchProduct = () => {
                             </Card.Title>
                             <Card.Body>
                                 <Form>
+                                    <Form.Group controlId='category'>
+                                        <Form.Label>ক্যাটাগরি</Form.Label>
+                                        <select
+                                            class='form-control'
+                                            as='select'
+                                            type='text'
+                                            placeholder='ক্যাটাগরি'
+                                            value={category}
+                                            onChange={(e) => setCategory(e.target.value)}
+                                        >
+                                            <option value=''></option>
+                                            <option value='শস্যওবীজ'>শস্য ও বীজ</option>
+                                            <option value='শাক-সবজি'>শাক-সবজি</option>
+                                            <option value='ফল'>ফল</option>
+                                            <option value='সারওকীটনাশক'>সার ও কীটনাশক</option>
+                                            <option value='পোল্ট্রিজাতপণ্য'>পোল্ট্রিজাত পণ্য</option>
+                                            <option value='মাংস'>মাংস</option>
+                                            <option value='মাছ'>মাছ</option>
+                                            <option value='অন্যান্য'>অন্যান্য</option>
+                                        </select>
+                                    </Form.Group>
                                     <Form.Group controlId='division'>
                                         <Form.Label>বিভাগ</Form.Label>
                                         <select
