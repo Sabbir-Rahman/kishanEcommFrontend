@@ -1,16 +1,21 @@
-import React, { useContext } from 'react'
-import { productContext } from 'Global/ProductContext'
+import React, { useContext, useState, useEffect } from 'react'
 import { Button, Card } from 'react-bootstrap'
+import productData from 'Global/ProductData'
+import { useHistory } from 'react-router'
 
-const Cart = () => {
-  const { products } = useContext(productContext)
+function Cart(param) {
+
+  const history = useHistory()
 
   function redirect(productID) {
     localStorage.setItem('productID', productID)
-    console.log(productID)
-    console.log("Rafi")
-    window.location.replace('/product')
+    //window.location.replace('/product')
+    history.push('/product')
   }
+
+  
+
+  const products = productData(param)
 
   return (
     <>
@@ -20,7 +25,7 @@ const Cart = () => {
             marginLeft: '.3%',
             marginBottom: '.3%',
             marginRight: '.3%',
-            marginTop: '.3%'
+            marginTop: '.3%',
           }}
         >
           <Button
@@ -28,6 +33,15 @@ const Cart = () => {
             md='auto'
             style={{ marginLeft: '2%', marginRight: '2%' }}
             onClick={(e) => redirect(product.id)}
+            style={{
+              background: 'none',
+              color: 'inherit',
+              border: 'none',
+              padding: '0',
+              font: 'inherit',
+              cursor: 'pointer',
+              outline: 'inherit'
+            }}
           >
             <Card>
               <Card.Header style={{ width: '200px', height: '180px' }}>
@@ -69,7 +83,7 @@ const Cart = () => {
                     marginBottom: '0px',
                   }}
                 >
-                  মূল্য: {product.price} টাকা/{product.unitName}
+                  মূল্য: {product.unitPrize} টাকা/{product.unitName}
                 </p>
               </Card.Body>
             </Card>

@@ -2,6 +2,8 @@ import React from 'react'
 import { Button, Card, Table, Container, Row, Col, Form } from 'react-bootstrap'
 import { useState } from 'react'
 import axios from 'axios'
+import FileBase from 'react-file-base64'
+import { districts } from 'components/SearchCriterias'
 
 function AddProduct() {
   const [productName, setProductName] = useState('')
@@ -31,6 +33,8 @@ function AddProduct() {
     setImage('')
     setBookingPercentage('')
   }
+
+  //let fileName = document.getElementById('photo').files[0].name
 
   async function addProduct() {
     //data adding
@@ -71,6 +75,7 @@ function AddProduct() {
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
+        alert('Error')
       })
 
     //data added
@@ -137,12 +142,24 @@ function AddProduct() {
                     <td>
                       <Form>
                         <Form.Group controlId='catagorie'>
-                          <Form.Control
+                          <select
+                            class='form-control'
+                            as='select'
                             type='text'
                             placeholder='ক্যাটাগরি'
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
-                          />
+                          >
+                            <option value=''></option>
+                            <option value='corps'>শস্য ও বীজ</option>
+                            <option value='vegetables'>শাক-সবজি</option>
+                            <option value='fruit'>ফল</option>
+                            <option value='pesticides'>সার ও কীটনাশক</option>
+                            <option value='poultry'>পোল্ট্রিজাত পণ্য</option>
+                            <option value='meat'>মাংস</option>
+                            <option value='fish'>মাছ</option>
+                            <option value='others'>অন্যান্য</option>
+                          </select>
                         </Form.Group>
                       </Form>
                     </td>
@@ -208,8 +225,7 @@ function AddProduct() {
                       <Form>
                         <Form.Group controlId='date'>
                           <Form.Control
-                            type='text'
-                            placeholder='বছর-মাস-দিন'
+                            type='date'
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
                           />
@@ -241,12 +257,24 @@ function AddProduct() {
                     <td>
                       <Form>
                         <Form.Group controlId='divison'>
-                          <Form.Control
+                          <select
+                            class='form-control'
+                            as='select'
                             type='text'
                             placeholder='বিভাগ'
                             value={divison}
                             onChange={(e) => setDivison(e.target.value)}
-                          />
+                          >
+                            <option value=''></option>
+                            <option value='Dhaka'>ঢাকা</option>
+                            <option value='Mymensingh'>ময়মনসিংহ</option>
+                            <option value='Sylhet'>সিলেট</option>
+                            <option value='Khulna'>খুলনা</option>
+                            <option value='Barishal'>বরিশাল</option>
+                            <option value='Rangpur'>রংপুর</option>
+                            <option value='Rajshahi'>রাজশাহী</option>
+                            <option value='Chattogram'>চট্টগ্রাম</option>
+                          </select>
                         </Form.Group>
                       </Form>
                     </td>
@@ -258,12 +286,16 @@ function AddProduct() {
                     <td>
                       <Form>
                         <Form.Group controlId='district'>
-                          <Form.Control
+                          <select
+                            class='form-control'
+                            as='select'
                             type='text'
                             placeholder='জেলা'
                             value={district}
                             onChange={(e) => setDistrict(e.target.value)}
-                          />
+                          >
+                            {districts(divison)}
+                          </select>
                         </Form.Group>
                       </Form>
                     </td>
@@ -274,8 +306,9 @@ function AddProduct() {
                     <td></td>
                     <td>
                       <Form>
-                        <Form.Group controlId='description'>
+                        <Form.Group controlId='floatingTextarea2'>
                           <Form.Control
+                            as='textarea'
                             type='text'
                             placeholder='বিবরণ'
                             value={description}
@@ -291,12 +324,17 @@ function AddProduct() {
                     <td>
                       <Form>
                         <Form.Group controlId='photo'>
-                          <Form.Control
-                            type='file'
-                            placeholder='ছবি'
-                            value={image}
-                            onChange={(e) => setImage(e.target.value)}
-                          />
+                          <div>
+                            <FileBase
+                              type='file'
+                              onClick={(e) => (e.target.value = null)}
+                              multiple={false}
+                              onDone={({ base64 }) => {
+                                console.log(base64)
+                                setImage(base64)
+                              }}
+                            />
+                          </div>
                         </Form.Group>
                       </Form>
                     </td>

@@ -2,22 +2,28 @@ import React from 'react'
 
 // react-bootstrap components
 import {
-  Badge,
-  Button,
   Card,
-  Navbar,
-  Nav,
   Table,
   Container,
   Row,
   Col,
+  Button
 } from 'react-bootstrap'
 import axios from 'axios'
-import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-import BuyRequset from './BuyRequest'
+import { useHistory } from 'react-router'
 
 function Statistics() {
+
+  const history = useHistory()
+
+  function redirect(productID) {
+    localStorage.setItem('productID', productID)
+    history.push('/product')
+    //window.location.replace('/product')
+    //console.log(productID, 'Rafi')
+  }
+
   const [OutGoingRequests, setOutGoingRequests] = useState([])
   const [IncomingRequests, setIncomingRequests] = useState([])
 
@@ -82,15 +88,13 @@ function Statistics() {
     ShowInComingRequest()
   }, [])
 
-  // console.log(OutGoingRequests)
-  // console.log(IncomingRequests)
-
   let buyRequests = []
   let _buyRequest = []
 
   if (OutGoingRequests.data != undefined) {
     buyRequests = OutGoingRequests.data
   }
+
   let buyingMoney = []
   let buyingQuantity = []
   let productName = []
@@ -106,13 +110,11 @@ function Statistics() {
       <tr>
         <td>{i + 1}</td>
         <td>{productName[i]}</td>
-        <td>{buyingMoney}</td>
-        <td>{buyingQuantity}</td>
+        <td>{buyingMoney[i]}</td>
+        <td>{buyingQuantity[i]}</td>
       </tr>
     )
   }
-
-  // console.log('yes', buyingMoney)
 
   let sellRequests = []
   let _sellRequest = []
@@ -135,8 +137,8 @@ function Statistics() {
       <tr>
         <td>{i + 1}</td>
         <td>{_productName[i]}</td>
-        <td>{_buyingMoney}</td>
-        <td>{_buyingQuantity}</td>
+        <td>{_buyingMoney[i]}</td>
+        <td>{_buyingQuantity[i]}</td>
       </tr>
     )
   }
@@ -145,7 +147,7 @@ function Statistics() {
     <>
       <Container fluid>
         <Row>
-          <Col md='12'>
+          <Col>
             <Card className='strpied-tabled-with-hover'>
               <Card.Header>
                 <Card.Title as='h4'>ক্রয় তালিকা</Card.Title>
@@ -166,14 +168,14 @@ function Statistics() {
               </Card.Body>
             </Card>
           </Col>
-          <Col md='12'>
-            <Card className='card-plain table-plain-bg'>
+          <Col>
+            <Card className='strpied-tabled-with-hover'>
               <Card.Header>
                 <Card.Title as='h4'>বিক্রয় তালিকা</Card.Title>
                 <p className='card-category'>বিক্রয়কৃত পণ্যসমূহ</p>
               </Card.Header>
               <Card.Body className='table-full-width table-responsive px-0'>
-                <Table className='table-hover'>
+                <Table className='table-hover table-striped'>
                   <thead>
                     <tr>
                       <th className='border-0'>ক্রমিক</th>

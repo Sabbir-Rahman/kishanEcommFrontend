@@ -1,177 +1,80 @@
 import React from 'react'
-import ProductsContextProvider from 'Global/ProductContext'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import {
-  Button,
-  Card,
-  Row,
-  Col,
-  Form,
-} from 'react-bootstrap'
-import bgImage from 'assets/img/bgKrishiBazar.jpg'
+import { Button, Card, Row, Col, Form, Carousel } from 'react-bootstrap'
+import bg from 'assets/img/bgKrishiBazar.jpg'
 import Cart from 'components/Cart'
-
+import Banner from 'components/Banner'
+import card from 'components/ViewCard'
+import corpsLogo from 'assets/img/corp.jpg'
+import vegetableLogo from 'assets/img/vegetable.jpg'
+import fruitLogo from 'assets/img/fruit.png'
+import pesticidesLogo from 'assets/img/pesticides.jpeg'
+import poultryLogo from 'assets/img/poultry.jpg'
+import meatLogo from 'assets/img/meat.png'
+import fishLogo from 'assets/img/fish.jpg'
+import othersLogo from 'assets/img/others.png'
 
 const KrishiBazar = () => {
 
-  return (
-    <ProductsContextProvider>
-      <Router>
-        <Switch>
-          <Route path='/krishi-bazar' exact>
-            <>
-              <Card style={{
-                marginTop: '2px',
-                marginLeft: '5px',
-                marginRight: '5px'
-              }}>
-                <Row
-                  style={{
-                    marginTop: '25px',
-                    height: '250px',
-                    marginBottom: '25px',
-                    marginLeft: '5px',
-                    marginRight: '5px',
-                  }}
-                >
+  const component = (
+      <Row className='SignInAndUp'>
+      <Carousel interval='2500' nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" />}	>
+        <Carousel.Item>    
+            <Button className='categoryCard'
+              onClick={(e) => localStorage.setItem('category', "corps")}>
+              {card(corpsLogo, 'শস্য ও বীজ', '/category')}
+            </Button>
+            <Button className='categoryCard'
+              onClick={(e) => localStorage.setItem('category', "vegetables")}>
+              {card(vegetableLogo, 'শাক-সবজি', '/category')}
+            </Button>
+            <Button className='categoryCard'
+              onClick={(e) => localStorage.setItem('category', "fruit")}>
+              {card(fruitLogo, 'ফল', '/category', "fruit")}
+            </Button>
+            <Button className='categoryCard'
+              onClick={(e) => localStorage.setItem('category', "pesticides")}>
+              {card(pesticidesLogo, 'সার ও কীটনাশক', '/category')}
+            </Button>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Button className='categoryCard'
+            onClick={(e) => localStorage.setItem('category', "poultry")}>
+            {card(poultryLogo, 'পোল্ট্রিজাত পণ্য', '/category')}
+          </Button>
+          <Button className='categoryCard'
+            onClick={(e) => localStorage.setItem('category', "meat")}>
+            {card(meatLogo, 'মাংস', '/category')}
+          </Button>
+          <Button className='categoryCard'
+            onClick={(e) => localStorage.setItem('category', "fish")}>
+            {card(fishLogo, 'মাছ', '/category')}
+          </Button>
+          <Button className='categoryCard'
+            onClick={(e) => localStorage.setItem('category', "others")}>
+            {card(othersLogo, 'অন্যান্য', '/category')}
+          </Button>
+        </Carousel.Item>
+      </Carousel>
+      </Row>
+  )
 
-                  <Col>
-                    <Card
-                      style={{
-                        width: '100%',
-                        height: '60%',
-                        backgroundColor: 'rgba(181, 218, 164, .3)',
-                        backgroundSize: 'cover',
-                        display: 'flex',
-                        color: '#000',
-                        position: 'relative',
-                        textAlign: 'absolute',
-                      }}
-                    >
-                      <img
-                        src={bgImage}
-                        alt='Not found'
-                        style={{
-                          background: 'white',
-                          width: '100%',
-                          height: '100%',
-                          overflow: 'hidden',
-                        }}
-                      />
-                    </Card>
-                  </Col>
-                </Row>
-                <Row md='auto' style={{ marginLeft: '2%', marginRight: '2%' }}>
-                  <Col>
-                    <Card className='card-stats' >
-                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15}}>
-                        বিভাগ ও জেলা
-                      </Card.Title>
-                      <Card.Body>
-                        <Form>
-                          <Form.Group controlId='division'>
-                            <Form.Label>বিভাগ</Form.Label>
-                            <Form.Control as='select' defaultValue='ঢাকা'>
-                              <option>ঢাকা</option>
-                              <option>ময়মনসিংহ</option>
-                              <option>সিলেট</option>
-                              <option>খুলনা</option>
-                              <option>বরিশাল</option>
-                              <option>রংপুর</option>
-                              <option>রাজশাহী</option>
-                              <option>চট্টগ্রাম</option>
-                            </Form.Control>
-                          </Form.Group>
-                          <Form.Group controlId='district'>
-                            <Form.Control type='text' placeholder='জেলা' />
-                          </Form.Group>
-                          <Button
-                            variant='success'
-                            style={{ marginBottom: 10, marginLeft: 110 }}
-                          >
-                            সার্চ করুন
-                          </Button>
-                        </Form>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col>
-                    <Card className='card-stats'>
-                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
-                        সময়
-                      </Card.Title>
-                      <Card.Body>
-                        <Form>
-                          <Form.Group controlId='division'>
-                            <Form.Control type='date' placeholder='দিন' />
-                          </Form.Group>
-                          <Form.Label>হতে</Form.Label>
-                          <Form.Group controlId='division'>
-                            <Form.Control type='date' placeholder='দিন' />
-                          </Form.Group>
-                          <Button
-                            variant='success'
-                            style={{ marginBottom: 10, marginLeft: 110 }}
-                          >
-                            সার্চ করুন
-                          </Button>
-                        </Form>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col>
-                    <Card className='card-stats'>
-                      <Card.Title as='h4' style={{ marginTop: 10, marginLeft: 15 }}>
-                        মূল্য
-                      </Card.Title>
-                      <Card.Body>
-                        <Form>
-                          <Form.Group
-                            controlId='formBasicRange'
-                            style={{ color: 'rgba(181, 218, 164, .3)' }}
-                          >
-                            <Form.Label>সর্বনিম্ন</Form.Label>
-                            <Form.Control type='range' />
-                            <Form.Label>সর্বোচ্চ</Form.Label>
-                            <Form.Control type='range' />
-                          </Form.Group>
-                          <Button
-                            variant='success'
-                            style={{ marginBottom: 10, marginLeft: 110 }}
-                          >
-                            সার্চ করুন
-                          </Button>
-                        </Form>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                </Row>
-              </Card>
-              <Card style={{ marginLeft: 10, marginRight: 10 }}>
-                <Row>
-                  <Col style={{ marginRight: 0, marginLeft: 0 }}>
-                    <Card md='auto'>
-                      <Card.Body
-                        style={{
-                          marginTop: '1%',
-                          marginLeft: '1%',
-                          marginRight: '1%',
-                          display: 'flex',
-                          flexWrap: 'wrap',
-                          overflow: 'hidden',
-                        }}
-                      >
-                        <Cart></Cart>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                </Row>
-              </Card>
-            </>
-          </Route>
-        </Switch>
-      </Router>
-    </ProductsContextProvider>
+  return (
+    <>
+      {Banner(component, bg)}
+      <Card style={{
+        margin: '2.5%',
+        display: 'flex',
+        flexWrap: 'wrap',
+      }}
+      >
+        <Card style={{
+          margin: '1.5%'
+        }}>
+          <h3 style={{ textAlign: "center" }}>সকল পণ্য</h3>
+        </Card>
+        <Row style={{ marginLeft: '7%' }}>{Cart('http://127.0.0.1:5000/product/view')}</Row>
+      </Card>
+    </>
   )
 }
 

@@ -1,17 +1,37 @@
 import React from "react"
+import {
+  Container,
+  Row,
+} from "react-bootstrap"
+import kishanLogo from "../assets/img/homepage/kishan.png"
 
-const Banner = () => {
+function Banner(component, background){
     return(
-        <div className="container">
-            <header style={{marginTop: '70px'}}>
-                <div className="headerText">
-                    <div>
-                        <h1>কিষাণ কৃষি বাজার</h1>
-                        <p>দেশের প্রথম ও একমাত্র কৃষি ইকমার্স ওয়েবসাইট</p>
-                    </div>
-                </div>
-            </header>
-        </div>
+        <Container fluid style={{ backgroundImage: `url(${background})`,
+                                backgroundSize: "100%",
+                                overflow: "hidden",
+                                backgroundRepeat: "no-repeat",
+                                backgroundPosition: "center top",
+                                }}>
+        <Row>
+          <img  src={kishanLogo}
+                            alt="Not Found"
+                            style = {{
+                              width: "40%",
+                              marginTop: "0%",
+                              marginLeft: "auto",
+                              marginRight: "10px",
+                              display: "block",
+                            }}
+          />
+        </Row>
+        <Row style={{ marginTop: "5%",
+                      marginLeft: "5%",
+                      marginRight: "5%",
+                      position: "center",}}>
+            {component}
+        </Row>
+      </Container>
     )
 }
 
