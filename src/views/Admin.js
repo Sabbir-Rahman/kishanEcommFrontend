@@ -1,9 +1,35 @@
 import React from 'react'
-import { Button, Card, Table, Row, Col } from 'react-bootstrap'
+import { Button, Card, Table } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 function Admin() {
+
+  const approve = (product_id) => {
+    const productID = {
+      productId: product_id,
+      isVerified: true,
+      message: 'Your product is verified. Thank you',
+    }
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+    axios
+      .post('http://127.0.0.1:5000/product/verify', productID, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        alert('Product verified successfully')
+        window.location.reload()
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+  }
+
   const [requests, setRequest] = useState([])
 
   const ShowRequest = async () => {
@@ -68,32 +94,7 @@ function Admin() {
     upazilla.push(val[i].upazilla)
   }
 
-  const approve = (product_id) => {
-    //console.log(product_id)
 
-    const productID = {
-      productId: product_id,
-      isVerified: true,
-      message: 'Your product is verified. Thank you',
-    }
-    const token = localStorage.getItem('user')
-    const _token = token.split('"').join('')
-    //console.log(`Bearer ` + _token)
-    const config = {
-      headers: {
-        Authorization: `Bearer ${_token}`,
-      },
-    }
-    axios
-      .post('http://127.0.0.1:5000/product/verify', productID, config)
-      .then((res) => {
-        console.log('RESPONSE RECEIVED: ', res)
-        alert('Product verified successfully')
-      })
-      .catch((err) => {
-        console.log('AXIOS ERROR: ', err)
-      })
-  }
 
   let unverifiedRequests = []
   for (let i = 0; i < val.length; i++) {
