@@ -8,13 +8,16 @@ function Header() {
     let menu = []
     if (token) {
         if (role == '"admin"') {
-            menu = <NavDropdown title='মেনু' id='basic-nav-dropdown'>
+            menu = <NavDropdown title={localStorage.getItem('username').replace(/['"]+/g, '')} id='basic-nav-dropdown'>
+                <NavDropdown.Item href='/admin'>
+                    ড্যাশবোর্ড
+                </NavDropdown.Item>
                 <NavDropdown.Item href='/logout' onClick={logout}>
                     লগ আউট
                 </NavDropdown.Item>
             </NavDropdown>
         } else {
-            menu = <NavDropdown title='মেনু' id='basic-nav-dropdown'>
+            menu = <NavDropdown title={localStorage.getItem('username').replace(/['"]+/g, '')} id='basic-nav-dropdown'>
                 <NavDropdown.Item href='/logout' onClick={logout}>
                     লগ আউট
                 </NavDropdown.Item>
