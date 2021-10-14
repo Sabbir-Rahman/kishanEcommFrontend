@@ -110,8 +110,8 @@ function Admin() {
         <td>বিভাগ: {division[i]}<br/>জেলা: {district[i]}</td>
         <td>{isVerified[i]}</td>
         <td>
-          <tr><Button variant='success' size='sm' value={id[i]} onClick={(e) => approve(e.target.value)}>এপ্রুভ করুন</Button></tr>
-          <tr><Button variant='danger' size='sm' value={id[i]}  >রিমুভ করুন</Button></tr>
+          <Button variant='success' size='sm' value={id[i]} onClick={(e) => approve(e.target.value)}>এপ্রুভ করুন</Button><br/><br/>
+          <Button variant='danger' size='sm' value={id[i]}  >রিমুভ করুন</Button>
         </td>
       </tr>
     )
