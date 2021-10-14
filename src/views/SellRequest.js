@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, Container, Row, Col } from 'react-bootstrap'
+import { Button, Card, Container, Row, Col, Table } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
@@ -37,6 +37,7 @@ function Sellrequset() {
     soldProducts = requests.data
   }
 
+  let productImage = []
   let productID = []
   let bookingMoney = []
   let buyerName = []
@@ -47,6 +48,7 @@ function Sellrequset() {
   let status = []
 
   for (let i = 0; i < soldProducts.length; i++) {
+    productImage.push(soldProducts[i].image)
     productID.push(soldProducts[i].product_id)
     bookingMoney.push(soldProducts[i].bookingMoney)
     buyerName.push(soldProducts[i].buyerName)
@@ -85,128 +87,45 @@ function Sellrequset() {
   let sellrequset = []
   for (let i = 0; i < soldProducts.length; i++) {
     sellrequset.push(
-      <Col
-        style={{ background: 'rgba(181, 218, 164, .3)', borderColor: 'white' }}
-      >
-        <table>
-          <th>
-            <h3 style={{ marginRight: '20px' }}>{productName[i]}</h3>
-          </th>
-          <th style={{ color: 'gray', marginLeft: '5px' }}>
-            আইডি: {productID[i]}
-          </th>
-        </table>
-        <table>
-          <th>
-            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
-              বুকিং মানি:
-            </h5>
-          </th>
-          <th>
-            <h5
-              style={{
-                color: 'green',
-                marginLeft: '10px',
-                font: 'message-box',
-              }}
-            >
-              {bookingMoney[i]} টাকা
-            </h5>
-          </th>
-          <th>
-            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
-              মোট মূল্য:
-            </h5>
-          </th>
-          <th>
-            <h5
-              style={{
-                color: 'green',
-                marginLeft: '10px',
-                font: 'message-box',
-              }}
-            >
-              {buyingMoney[i]} টাকা
-            </h5>
-          </th>
-        </table>
-        <table>
-          <th>
-            <h5>পরিমাণ:</h5>
-          </th>
-          <th>
-            <h5
-              style={{
-                color: 'green',
-                marginLeft: '10px',
-                font: 'message-box',
-              }}
-            >
-              {buyingQuantity[i]} {buyingQuantityUnit[i]}
-            </h5>
-          </th>
-          <th>
-            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
-              স্ট্যাটাস:
-            </h5>
-          </th>
-          <th>
-            <h5
-              style={{
-                color: 'green',
-                marginLeft: '10px',
-                font: 'message-box',
-              }}
-            >
-              {status[i]}
-            </h5>
-          </th>
-        </table>
-        <table>
-          <th>
-            <h5>ক্রেতার নাম:</h5>
-          </th>
-          <th>
-            <h5
-              style={{
-                color: 'green',
-                marginLeft: '10px',
-                font: 'message-box',
-              }}
-            >
-              {buyerName[i]}
-            </h5>
-          </th>
-        </table>
-        <table style={{ marginLeft: '85%' }}>
-          <Button
-            variant='success'
-            value={productID[i]}
-            onClick={(e) => approve(e.target.value)}
-          >
-            এপ্রুভ করুন
-          </Button>
-        </table>
-        <Row style={{ height: '15px' }}></Row>
-        <Row style={{ background: 'white', height: '15px' }}></Row>
-      </Col>
+      <tr>
+        <td>{i + 1}</td>
+        <td>{productName[i]}</td>
+        <td>{bookingMoney[i]}</td>
+        <td>{buyingMoney[i]}</td>
+        <td>{buyingQuantity[i]}</td>
+        <td>{buyerName[i]}</td>
+        <td>{status[i]}</td>
+        <td><Button variant='success' size='sm' value={productID[i]}  onClick={(e) => approve(e.target.value)}>এপ্রুভ করুন</Button></td>
+        <td><Button variant='danger' size='sm' value={productID[i]}  >রিমুভ করুন</Button></td>
+      </tr>
     )
   }
 
   return (
     <>
-      <Container fluid>
-        <Card>
-          <Card.Header>
-            <Card.Title as='h4'>পণ্য বিক্রয় অনুরোধ</Card.Title>
-          </Card.Header>
-          <Card.Body>
-            <Row>
-              <Col>{sellrequset}</Col>
-            </Row>
-          </Card.Body>
-        </Card>
-      </Container>
+
+      <Card className='strpied-tabled-with-hover'>
+        <Card.Header>
+          <Card.Title as='h4'>পণ্য বিক্রয় অনুরোধ</Card.Title>
+          <p className='card-category'>নিম্নের পণ্যসমূহ বিক্রয়ের জন্য অনুরোধ করা হয়েছে</p>
+        </Card.Header>
+        <Card.Body className='table-full-width table-responsive px-0'>
+          <Table className='table-hover table-striped'>
+            <thead>
+              <tr>
+                <th className='border-0'>ক্রমিক</th>
+                <th className='border-0'>পণ্যের নাম</th>
+                <th className='border-0'>বুকিং মানি</th>
+                <th className='border-0'>মোট মূল্য</th>
+                <th className='border-0'>পরিমাণ</th>
+                <th className='border-0'>ক্রেতার নাম</th>
+                <th className='border-0'>স্ট্যাটাস</th>
+              </tr>
+            </thead>
+            <tbody>{sellrequset}</tbody>
+          </Table>
+        </Card.Body>
+      </Card>
     </>
   )
 }
