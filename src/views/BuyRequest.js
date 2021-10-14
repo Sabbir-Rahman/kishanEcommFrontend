@@ -59,16 +59,13 @@ function BuyRequset() {
   for (let i = 0; i < soldProducts.length; i++) {
     sellrequset.push(
       <tr>
-      <td>{i + 1}</td>
-      <td>{productName[i]}</td>
-      <td>{bookingMoney[i]}</td>
-      <td>{buyingMoney[i]}</td>
-      <td>{buyingQuantity[i]}</td>
-      <td>{status[i]}</td>
-      <td><Button variant='success' size='sm' value={productID[i]} onClick={(e) => approve(e.target.value)}>এপ্রুভ করুন</Button></td>
-      <td><Button variant='danger' size='sm' value={productID[i]}  >রিমুভ করুন</Button></td>
-    </tr>
-
+        <td>{i + 1}</td>
+        <td>{productName[i]}</td>
+        <td>{bookingMoney[i]}</td>
+        <td>{buyingMoney[i]}</td>
+        <td>{buyingQuantity[i]}</td>
+        <td>{status[i]}</td>
+      </tr>
     )
   }
 
@@ -76,7 +73,9 @@ function BuyRequset() {
     <Card className='strpied-tabled-with-hover'>
       <Card.Header>
         <Card.Title as='h4'>পণ্য ক্রয় অনুরোধ</Card.Title>
-        <p className='card-category'>নিম্নের পণ্যসমূহ ক্রয়ের জন্য অনুরোধ করা হয়েছে</p>
+        <p className='card-category'>
+          নিম্নের পণ্যসমূহ ক্রয়ের জন্য অনুরোধ করা হয়েছে
+        </p>
       </Card.Header>
       <Card.Body className='table-full-width table-responsive px-0'>
         <Table className='table-hover table-striped'>

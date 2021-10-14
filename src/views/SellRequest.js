@@ -78,6 +78,7 @@ function Sellrequset() {
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res)
         alert('Product accepted successfully')
+        window.location.reload()
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
@@ -95,8 +96,21 @@ function Sellrequset() {
         <td>{buyingQuantity[i]}</td>
         <td>{buyerName[i]}</td>
         <td>{status[i]}</td>
-        <td><Button variant='success' size='sm' value={productID[i]} onClick={(e) => approve(e.target.value)}>এপ্রুভ করুন</Button></td>
-        <td><Button variant='danger' size='sm' value={productID[i]}  >রিমুভ করুন</Button></td>
+        <td>
+          <Button
+            variant='success'
+            size='sm'
+            value={productID[i]}
+            onClick={(e) => approve(e.target.value)}
+          >
+            এপ্রুভ করুন
+          </Button>
+        </td>
+        <td>
+          <Button variant='danger' size='sm' value={productID[i]}>
+            রিমুভ করুন
+          </Button>
+        </td>
       </tr>
     )
   }
@@ -105,7 +119,9 @@ function Sellrequset() {
     <Card className='strpied-tabled-with-hover'>
       <Card.Header>
         <Card.Title as='h4'>পণ্য বিক্রয় অনুরোধ</Card.Title>
-        <p className='card-category'>নিম্নের পণ্যসমূহ বিক্রয়ের জন্য অনুরোধ করা হয়েছে</p>
+        <p className='card-category'>
+          নিম্নের পণ্যসমূহ বিক্রয়ের জন্য অনুরোধ করা হয়েছে
+        </p>
       </Card.Header>
       <Card.Body className='table-full-width table-responsive px-0'>
         <Table className='table-hover table-striped'>
