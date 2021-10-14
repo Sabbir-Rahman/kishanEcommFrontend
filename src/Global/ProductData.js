@@ -31,40 +31,35 @@ function productData(param) {
   if (productss.data != undefined) {
     val = productss.data
   }
-  let s_id = localStorage.getItem('seller_id')
-  s_id = s_id.replace(/['"]+/g, '')
-
   var products = []
   val.map((v) => {
-    if (v.seller_id != s_id) {
-      products.push({
-        id: v._id,
-        name: v.name,
-        seller_id: v.seller_id,
-        description: v.description,
-        category: v.catagory,
-        subCategory: v.subCategory,
-        image: v.image,
-        image2: v.image2,
-        image3: v.image3,
-        unitName: v.unitName,
-        unitPrize: v.unitPrize,
-        bookingPercentage: v.bookingPercentage,
-        available: v.available,
-        minOrder: v.minOrder,
-        rating: v.rating,
-        availableDate: v.availableDate,
-        division: v.division,
-        district: v.district,
-        upazilla: v.upazilla,
-        isVerified: v.isVerified,
-        isAvailableNow: v.isAvailableNow,
-        rating: v.rating,
-        comments: v.comments,
-        question: v.question,
-        timestamp: v.timestamp,
-      })
-    }
+    products.push({
+      id: v._id,
+      name: v.name,
+      seller_id: v.seller_id,
+      description: v.description,
+      category: v.catagory,
+      subCategory: v.subCategory,
+      image: v.image,
+      image2: v.image2,
+      image3: v.image3,
+      unitName: v.unitName,
+      unitPrize: v.unitPrize,
+      bookingPercentage: v.bookingPercentage,
+      available: v.available,
+      minOrder: v.minOrder,
+      rating: v.rating,
+      availableDate: v.availableDate,
+      division: v.division,
+      district: v.district,
+      upazilla: v.upazilla,
+      isVerified: v.isVerified,
+      isAvailableNow: v.isAvailableNow,
+      rating: v.rating,
+      comments: v.comments,
+      question: v.question,
+      timestamp: v.timestamp,
+    })
   })
   return products
 }
