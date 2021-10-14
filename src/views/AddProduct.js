@@ -273,7 +273,7 @@ function AddProduct() {
                             <option value='Barishal'>বরিশাল</option>
                             <option value='Rangpur'>রংপুর</option>
                             <option value='Rajshahi'>রাজশাহী</option>
-                            <option value='Chattagram'>চট্টগ্রাম</option>
+                            <option value='Chattogram'>চট্টগ্রাম</option>
                           </select>
                         </Form.Group>
                       </Form>
