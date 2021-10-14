@@ -286,7 +286,7 @@ function AddProduct() {
                     <td>
                       <Form>
                         <Form.Group controlId='district'>
-                        <select
+                          <select
                             class='form-control'
                             as='select'
                             type='text'
@@ -307,7 +307,8 @@ function AddProduct() {
                     <td>
                       <Form>
                         <Form.Group controlId='floatingTextarea2'>
-                          <Form.Control as='textarea'
+                          <Form.Control
+                            as='textarea'
                             type='text'
                             placeholder='বিবরণ'
                             value={description}
@@ -326,6 +327,7 @@ function AddProduct() {
                           <div>
                             <FileBase
                               type='file'
+                              onClick={(e) => (e.target.value = null)}
                               multiple={false}
                               onDone={({ base64 }) => {
                                 console.log(base64)
