@@ -241,7 +241,7 @@ function AddProduct() {
                       <Form>
                         <Form.Group controlId='price'>
                           <Form.Control
-                            type='number'
+                            type='text'
                             placeholder='মূল্য'
                             value={unitPrice}
                             onChange={(e) => setUnitPrice(e.target.value)}

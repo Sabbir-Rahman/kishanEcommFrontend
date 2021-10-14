@@ -28,6 +28,10 @@ const Login = () => {
           'user_role',
           JSON.stringify(response.data.result.user_role)
         )
+        localStorage.setItem(
+          'user_name',
+          JSON.stringify(response.data.result.fullname)
+        )
         const role = localStorage.getItem('user_role')
         console.log(role)
         if (role == '"admin"') {
