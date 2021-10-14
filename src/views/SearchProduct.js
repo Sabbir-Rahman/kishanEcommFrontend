@@ -2,24 +2,18 @@ import React from 'react'
 import { useState } from 'react'
 import { Button, Card, Row, Col, Form } from 'react-bootstrap'
 import Cart from "components/Cart"
-import {categoryFinder, divisionFinder, districts} from 'components/SearchCriterias'
+import { categoryFinder, divisionFinder, districts } from 'components/SearchCriterias'
 
 const SearchProduct = () => {
 
     let cart, cartLink, bibhag = localStorage.getItem('bibhag')
-    
-    cartLink = 'http://127.0.0.1:5000/product/view?category=' + localStorage.getItem('category')
-    
-    if (localStorage.getItem('division')) {
-        cartLink += localStorage.getItem('division')
-        localStorage.setItem('bibhag', localStorage.getItem('division'))
-        localStorage.removeItem('division')
 
-        if (localStorage.getItem('district')) {
-            cartLink += localStorage.getItem('district')
-            localStorage.setItem('zella', localStorage.getItem('district'))
-            localStorage.removeItem('district')
-        }
+    cartLink = 'http://127.0.0.1:5000/product/view?category=' + localStorage.getItem('category')
+
+    if (localStorage.getItem('search')) {
+        cartLink += localStorage.getItem('search')
+        localStorage.setItem('bibhag', localStorage.getItem('search'))
+        localStorage.removeItem('search')
     }
 
 
@@ -27,11 +21,18 @@ const SearchProduct = () => {
 
     const [division, setDivision] = useState('')
     const [district, setDistrict] = useState('')
-    
-    function searchByDivision(link) {
-        localStorage.setItem('division', link)
-        console.log(localStorage.getItem('division'))
-        window.location.reload()
+
+    function search(link, district) {
+        if (district != '') {
+            link = link+'&district='+district
+            localStorage.setItem('search', link)
+            console.log(localStorage.getItem('search'))
+            window.location.reload()
+        } else {
+            localStorage.setItem('search', link)
+            console.log(localStorage.getItem('search'))
+            window.location.reload()
+        }
     }
 
     return (
@@ -57,14 +58,14 @@ const SearchProduct = () => {
                                             onChange={(e) => setDivision(e.target.value)}
                                         >
                                             <option value=''></option>
-                                            <option value='Dhaka'>ঢাকা</option>
-                                            <option value='Mymensingh'>ময়মনসিংহ</option>
-                                            <option value='Sylhet'>সিলেট</option>
-                                            <option value='Khulna'>খুলনা</option>
-                                            <option value='Barishal'>বরিশাল</option>
-                                            <option value='Rangpur'>রংপুর</option>
-                                            <option value='Rajshahi'>রাজশাহী</option>
-                                            <option value='Chattogram'>চট্টগ্রাম</option>
+                                            <option value='ঢাকা'>ঢাকা</option>
+                                            <option value='ময়মনসিংহ'>ময়মনসিংহ</option>
+                                            <option value='সিলেট'>সিলেট</option>
+                                            <option value='খুলনা'>খুলনা</option>
+                                            <option value='বরিশাল'>বরিশাল</option>
+                                            <option value='রংপুর'>রংপুর</option>
+                                            <option value='রাজশাহী'>রাজশাহী</option>
+                                            <option value='চট্টগ্রাম'>চট্টগ্রাম</option>
                                         </select>
                                     </Form.Group>
                                     <Form.Group controlId='division'>
@@ -82,7 +83,7 @@ const SearchProduct = () => {
                                         variant='success'
                                         style={{ marginBottom: 10, marginLeft: 110 }}
                                         onClick={(e) => {
-                                            searchByDivision('&division=' + division)
+                                            search('&division=' + division, district)
                                         }}
                                     >
                                         সার্চ করুন
