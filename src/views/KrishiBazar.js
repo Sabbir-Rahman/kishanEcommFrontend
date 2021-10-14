@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, Row, Col, Form, Carousel } from 'react-bootstrap'
+import { Button, Card, Row, Carousel } from 'react-bootstrap'
 import bg from 'assets/img/bgKrishiBazar.jpg'
 import Cart from 'components/Cart'
 import Banner from 'components/Banner'
