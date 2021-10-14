@@ -4,7 +4,6 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 function Admin() {
-
   const approve = (product_id) => {
     const productID = {
       productId: product_id,
@@ -62,6 +61,7 @@ function Admin() {
   if (requests.data != undefined) {
     val = requests.data
   }
+  console.log(val)
 
   let id = []
   let seller_id = []
@@ -94,8 +94,6 @@ function Admin() {
     upazilla.push(val[i].upazilla)
   }
 
-
-
   let unverifiedRequests = []
   for (let i = 0; i < val.length; i++) {
     unverifiedRequests.push(
@@ -105,14 +103,32 @@ function Admin() {
         <td>{seller_id[i]}</td>
         <td>{description[i]}</td>
         <td>{category[i]}</td>
-        <td>{unitPrize[i]} টাকা/{unitName[i]}<br />{bookingPercentage[i]}% বুকিং চার্জ
+        <td>
+          {unitPrize[i]} টাকা/{unitName[i]}
+          <br />
+          {bookingPercentage[i]}% বুকিং চার্জ
         </td>
         <td>{minOrder[i]}</td>
-        <td>বিভাগ: {division[i]}<br />জেলা: {district[i]}</td>
+        <td>
+          বিভাগ: {division[i]}
+          <br />
+          জেলা: {district[i]}
+        </td>
         <td>{isVerified[i]}</td>
         <td>
-          <Button variant='success' size='sm' value={id[i]} onClick={(e) => approve(e.target.value)}>এপ্রুভ করুন</Button><br /><br />
-          <Button variant='danger' size='sm' value={id[i]}  >রিমুভ করুন</Button>
+          <Button
+            variant='success'
+            size='sm'
+            value={id[i]}
+            onClick={(e) => approve(e.target.value)}
+          >
+            এপ্রুভ করুন
+          </Button>
+          <br />
+          <br />
+          <Button variant='danger' size='sm' value={id[i]}>
+            রিমুভ করুন
+          </Button>
         </td>
       </tr>
     )
@@ -122,7 +138,9 @@ function Admin() {
     <Card className='strpied-tabled-with-hover'>
       <Card.Header>
         <Card.Title as='h4'>পণ্য যোগ</Card.Title>
-        <p className='card-category'>নিম্নের পণ্যসমূহ যোগ করার জন্য অনুরোধ করা হয়েছে</p>
+        <p className='card-category'>
+          নিম্নের পণ্যসমূহ যোগ করার জন্য অনুরোধ করা হয়েছে
+        </p>
       </Card.Header>
       <Card.Body className='table-full-width table-responsive px-0'>
         <Table className='table-hover table-striped'>
