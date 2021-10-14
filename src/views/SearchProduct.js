@@ -16,7 +16,7 @@ const SearchProduct = () => {
                     <SearchBox/>
                 </Col>
                 <Col md='9'>
-                    <Row style={{ marginLeft: '7%' }}>{Cart()}</Row>
+                    <Row style={{ marginLeft: '7%' }}>{Cart('http://127.0.0.1:5000/product/view?'+localStorage.getItem('search'))}</Row>
                 </Col>
             </Row>
         </>
