@@ -58,112 +58,112 @@ function districts(division) {
             return (
                 <>
                     <option value=''></option>
-                    <option value=''>ঢাকা</option>
-                    <option value=''>কিশোরগঞ্জ</option>
-                    <option value=''>গাজীপুর</option>
-                    <option value=''>গোপালগঞ্জ</option>
-                    <option value=''>টাঙ্গাইল</option>
-                    <option value=''>নরসিংদী</option>
-                    <option value=''>নারায়ণগঞ্জ</option>
-                    <option value=''>ফরিদপুর</option>
-                    <option value=''>মাদারীপুর</option>
-                    <option value=''>মানিকগঞ্জ</option>
-                    <option value=''>মুন্সিগঞ্জ</option>
-                    <option value=''>রাজবাড়ী</option>
-                    <option value=''>শরীয়তপুর</option>
+                    <option value='Dhaka'>ঢাকা</option>
+                    <option value='Kishorganj'>কিশোরগঞ্জ</option>
+                    <option value='Gazipur'>গাজীপুর</option>
+                    <option value='Gopalgonj'>গোপালগঞ্জ</option>
+                    <option value='Tangail'>টাঙ্গাইল</option>
+                    <option value='Narsingdi'>নরসিংদী</option>
+                    <option value='Narayanganj'>নারায়ণগঞ্জ</option>
+                    <option value='Faridpur'>ফরিদপুর</option>
+                    <option value='Madaripur'>মাদারীপুর</option>
+                    <option value='Manikganj'>মানিকগঞ্জ</option>
+                    <option value='Munsiganj'>মুন্সিগঞ্জ</option>
+                    <option value='Rajbari'>রাজবাড়ী</option>
+                    <option value='Sariyatpur'>শরীয়তপুর</option>
                 </>
             )
         case 'Chattogram':
             return (
                 <>
                     <option value=''></option>
-                    <option value=''>কক্সবাজার</option>
-                    <option value=''>কুমিল্লা</option>
-                    <option value=''>খাগড়াছড়ি</option>
-                    <option value=''>চট্টগ্রাম</option>
-                    <option value=''>চাঁদপুর</option>
-                    <option value=''>নোয়াখালী</option>
-                    <option value=''>ফেনী</option>
-                    <option value=''>বান্দরবান</option>
-                    <option value=''>ব্রাহ্মণবাড়িয়া</option>
-                    <option value=''>রাঙ্গামাটি</option>
-                    <option value=''>লক্ষ্মীপুর</option>
+                    <option value='CoxsBazar'>কক্সবাজার</option>
+                    <option value='Comilla'>কুমিল্লা</option>
+                    <option value='Khagrachari'>খাগড়াছড়ি</option>
+                    <option value='Chattogram'>চট্টগ্রাম</option>
+                    <option value='Chandpur'>চাঁদপুর</option>
+                    <option value='Noakhali'>নোয়াখালী</option>
+                    <option value='Feni'>ফেনী</option>
+                    <option value='Bandarban'>বান্দরবান</option>
+                    <option value='Brahmanbaria'>ব্রাহ্মণবাড়িয়া</option>
+                    <option value='Rangamati'>রাঙ্গামাটি</option>
+                    <option value='Lakshmipur'>লক্ষ্মীপুর</option>
                 </>
             )
         case 'Rajshahi':
             return (
                 <>
                     <option value=''></option>
-                    <option value=''>চাঁপাইনবাবগঞ্জ</option>
-                    <option value=''>জয়পুরহাট</option>
-                    <option value=''>নওগাঁ</option>
-                    <option value=''>নাটোর</option>
-                    <option value=''>পাবনা</option>
-                    <option value=''>বগুড়া</option>
-                    <option value=''>রাজশাহী</option>
-                    <option value=''>সিরাজগঞ্জ</option>
+                    <option value='Chapainababganj'>চাঁপাইনবাবগঞ্জ</option>
+                    <option value='Joypurhat'>জয়পুরহাট</option>
+                    <option value='Naogaun'>নওগাঁ</option>
+                    <option value='Natore'>নাটোর</option>
+                    <option value='Pabna'>পাবনা</option>
+                    <option value='Bogra'>বগুড়া</option>
+                    <option value='Rajshahi'>রাজশাহী</option>
+                    <option value='Sirajganj'>সিরাজগঞ্জ</option>
                 </>
             )
         case 'Khulna':
             return (
                 <>
                     <option value=''></option>
-                    <option value=''>কুষ্টিয়া</option>
-                    <option value=''>খুলনা</option>
-                    <option value=''>চুয়াডাঙ্গা</option>
-                    <option value=''>ঝিনাইদহ</option>
-                    <option value=''>নড়াইল</option>
-                    <option value=''>বাগেরহাট</option>
-                    <option value=''>মাগুরা</option>
-                    <option value=''>মেহেরপুর</option>
-                    <option value=''>যশোর</option>
-                    <option value=''>সাতক্ষীরা</option>
+                    <option value='Kustia'>কুষ্টিয়া</option>
+                    <option value='Khulna'>খুলনা</option>
+                    <option value='Chuadanga'>চুয়াডাঙ্গা</option>
+                    <option value='Jhinaidaha'>ঝিনাইদহ</option>
+                    <option value='Norail'>নড়াইল</option>
+                    <option value='Bagerhat'>বাগেরহাট</option>
+                    <option value='Magura'>মাগুরা</option>
+                    <option value='Meherpur'>মেহেরপুর</option>
+                    <option value='Jessore'>যশোর</option>
+                    <option value='Satkhira'>সাতক্ষীরা</option>
                 </>
             )
         case 'Barishal':
             return (
                 <>
                     <option value=''></option>
-                    <option value=''>বরিশাল</option>
-                    <option value=''>পটুয়াখালী</option>
-                    <option value=''>ভোলা</option>
-                    <option value=''>পিরোজপুর</option>
-                    <option value=''>বরগুনা</option>
-                    <option value=''>ঝালকাঠি</option>
+                    <option value='Barishal'>বরিশাল</option>
+                    <option value='Patuakhali'>পটুয়াখালী</option>
+                    <option value='Bhola'>ভোলা</option>
+                    <option value='Pirozpur'>পিরোজপুর</option>
+                    <option value='Barguna'>বরগুনা</option>
+                    <option value='Jhalkathi'>ঝালকাঠি</option>
                 </>
             )
         case 'Rangpur':
             return (
                 <>
                     <option value=''></option>
-                    <option value=''>কুড়িগ্রাম</option>
-                    <option value=''>গাইবান্ধা</option>
-                    <option value=''>ঠাকুরগাঁও</option>
-                    <option value=''>দিনাজপুর</option>
-                    <option value=''>নীলফামারী</option>
-                    <option value=''>পঞ্চগড়</option>
-                    <option value=''>রংপুর</option>
-                    <option value=''>লালমনিরহাট</option>
+                    <option value='Kurigram'>কুড়িগ্রাম</option>
+                    <option value='Gaibandha'>গাইবান্ধা</option>
+                    <option value='Thakurgaun'>ঠাকুরগাঁও</option>
+                    <option value='Dinajpur'>দিনাজপুর</option>
+                    <option value='Nilphamari'>নীলফামারী</option>
+                    <option value='Panchagarh'>পঞ্চগড়</option>
+                    <option value='Rangpur'>রংপুর</option>
+                    <option value='Lalmonirhat'>লালমনিরহাট</option>
                 </>
             )
         case 'Sylhet':
             return (
                 <>
                     <option value=''></option>
-                    <option value=''>সিলেট</option>
-                    <option value=''>মৌলভীবাজার</option>
-                    <option value=''>সুনামগঞ্জ</option>
-                    <option value=''>হবিগঞ্জ</option>
+                    <option value='Sylhet'>সিলেট</option>
+                    <option value='Moulabhibazar'>মৌলভীবাজার</option>
+                    <option value='Sunamganj'>সুনামগঞ্জ</option>
+                    <option value='Habiganj'>হবিগঞ্জ</option>
                 </>
             )
         case 'Mymensingh':
             return (
                 <>
                     <option value=''></option>
-                    <option value=''>জামালপুর</option>
-                    <option value=''>নেত্রকোণা</option>
-                    <option value=''>ময়মনসিংহ</option>
-                    <option value=''>শেরপুর</option>
+                    <option value='Jamalpur'>জামালপুর</option>
+                    <option value='Netrokona'>নেত্রকোণা</option>
+                    <option value='Mymensingh'>ময়মনসিংহ</option>
+                    <option value='Sherpur'>শেরপুর</option>
                 </>
             )
         default:
