@@ -133,14 +133,14 @@ function AddProduct() {
                             onChange={(e) => setCategory(e.target.value)}
                           >
                             <option value=''></option>
-                            <option value='corps'>শস্য ও বীজ</option>
-                            <option value='vegetables'>শাক-সবজি</option>
-                            <option value='fruit'>ফল</option>
-                            <option value='pesticides'>সার ও কীটনাশক</option>
-                            <option value='poultry'>পোল্ট্রিজাত পণ্য</option>
-                            <option value='meat'>মাংস</option>
-                            <option value='fish'>মাছ</option>
-                            <option value='others'>অন্যান্য</option>
+                            <option value='শস্যওবীজ'>শস্য ও বীজ</option>
+                            <option value='শাক-সবজি'>শাক-সবজি</option>
+                            <option value='ফল'>ফল</option>
+                            <option value='সারওকীটনাশক'>সার ও কীটনাশক</option>
+                            <option value='পোল্ট্রিজাতপণ্য'>পোল্ট্রিজাত পণ্য</option>
+                            <option value='মাংস'>মাংস</option>
+                            <option value='মাছ'>মাছ</option>
+                            <option value='অন্যান্য'>অন্যান্য</option>
                           </select>
                         </Form.Group>
                       </Form>
@@ -184,14 +184,14 @@ function AddProduct() {
                   </tr>
 
                   <tr>
-                    <td>ইউনিট</td>
+                    <td>একক</td>
                     <td></td>
                     <td>
                       <Form>
                         <Form.Group controlId='unitName'>
                           <Form.Control
                             type='text'
-                            placeholder='ইউনিট'
+                            placeholder='একক'
                             value={unit}
                             onChange={(e) => setUnit(e.target.value)}
                           />
@@ -248,14 +248,14 @@ function AddProduct() {
                             onChange={(e) => setDivison(e.target.value)}
                           >
                             <option value=''></option>
-                            <option value='Dhaka'>ঢাকা</option>
-                            <option value='Mymensingh'>ময়মনসিংহ</option>
-                            <option value='Sylhet'>সিলেট</option>
-                            <option value='Khulna'>খুলনা</option>
-                            <option value='Barishal'>বরিশাল</option>
-                            <option value='Rangpur'>রংপুর</option>
-                            <option value='Rajshahi'>রাজশাহী</option>
-                            <option value='Chattogram'>চট্টগ্রাম</option>
+                            <option value='ঢাকা'>ঢাকা</option>
+                            <option value='ময়মনসিংহ'>ময়মনসিংহ</option>
+                            <option value='সিলেট'>সিলেট</option>
+                            <option value='খুলনা'>খুলনা</option>
+                            <option value='বরিশাল'>বরিশাল</option>
+                            <option value='রংপুর'>রংপুর</option>
+                            <option value='রাজশাহী'>রাজশাহী</option>
+                            <option value='চট্টগ্রাম'>চট্টগ্রাম</option>
                           </select>
                         </Form.Group>
                       </Form>

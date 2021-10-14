@@ -58,14 +58,14 @@ const SearchProduct = () => {
                                             onChange={(e) => setDivision(e.target.value)}
                                         >
                                             <option value=''></option>
-                                            <option value='Dhaka'>ঢাকা</option>
-                                            <option value='Mymensingh'>ময়মনসিংহ</option>
-                                            <option value='Sylhet'>সিলেট</option>
-                                            <option value='Khulna'>খুলনা</option>
-                                            <option value='Barishal'>বরিশাল</option>
-                                            <option value='Rangpur'>রংপুর</option>
-                                            <option value='Rajshahi'>রাজশাহী</option>
-                                            <option value='Chattogram'>চট্টগ্রাম</option>
+                                            <option value='ঢাকা'>ঢাকা</option>
+                                            <option value='ময়মনসিংহ'>ময়মনসিংহ</option>
+                                            <option value='সিলেট'>সিলেট</option>
+                                            <option value='খুলনা'>খুলনা</option>
+                                            <option value='বরিশাল'>বরিশাল</option>
+                                            <option value='রংপুর'>রংপুর</option>
+                                            <option value='রাজশাহী'>রাজশাহী</option>
+                                            <option value='চট্টগ্রাম'>চট্টগ্রাম</option>
                                         </select>
                                     </Form.Group>
                                     <Form.Group controlId='division'>
