@@ -32,6 +32,7 @@ function productData(param) {
     val = productss.data
   }
   var products = []
+  console.log(val)
   val.map((v) => {
     products.push({
       id: v._id,
