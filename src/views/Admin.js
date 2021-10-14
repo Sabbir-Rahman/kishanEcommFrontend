@@ -104,18 +104,10 @@ function Admin() {
         <td>{seller_id[i]}</td>
         <td>{description[i]}</td>
         <td>{category[i]}</td>
-        <td>
-          <tr>{unitPrize[i]}টাকা/{unitName[i]}</tr>
-          <tr>{bookingPercentage[i]}% বুকিং চার্জ</tr>
+        <td>{unitPrize[i]} টাকা/{unitName[i]}<br/>{bookingPercentage[i]}% বুকিং চার্জ
         </td>
         <td>{minOrder[i]}</td>
-        <td>
-          <tr>
-            <tr>বিভাগ: {division[i]}</tr>
-            <tr>জেলা: {district[i]}</tr>
-            <tr>উপজেলা: {upazilla[i]}</tr>
-          </tr>
-        </td>
+        <td>বিভাগ: {division[i]}<br/>জেলা: {district[i]}</td>
         <td>{isVerified[i]}</td>
         <td>
           <tr><Button variant='success' size='sm' value={id[i]} onClick={(e) => approve(e.target.value)}>এপ্রুভ করুন</Button></tr>
