@@ -29,7 +29,7 @@ const Login = () => {
           JSON.stringify(response.data.result.user_role)
         )
         localStorage.setItem(
-          'user_name',
+          'username',
           JSON.stringify(response.data.result.fullname)
         )
         const role = localStorage.getItem('user_role')
