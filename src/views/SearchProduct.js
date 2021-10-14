@@ -2,24 +2,18 @@ import React from 'react'
 import { useState } from 'react'
 import { Button, Card, Row, Col, Form } from 'react-bootstrap'
 import Cart from "components/Cart"
-import {categoryFinder, divisionFinder, districts} from 'components/SearchCriterias'
+import { categoryFinder, divisionFinder, districts } from 'components/SearchCriterias'
 
 const SearchProduct = () => {
 
     let cart, cartLink, bibhag = localStorage.getItem('bibhag')
-    
-    cartLink = 'http://127.0.0.1:5000/product/view?category=' + localStorage.getItem('category')
-    
-    if (localStorage.getItem('division')) {
-        cartLink += localStorage.getItem('division')
-        localStorage.setItem('bibhag', localStorage.getItem('division'))
-        localStorage.removeItem('division')
 
-        if (localStorage.getItem('district')) {
-            cartLink += localStorage.getItem('district')
-            localStorage.setItem('zella', localStorage.getItem('district'))
-            localStorage.removeItem('district')
-        }
+    cartLink = 'http://127.0.0.1:5000/product/view?category=' + localStorage.getItem('category')
+
+    if (localStorage.getItem('search')) {
+        cartLink += localStorage.getItem('search')
+        localStorage.setItem('bibhag', localStorage.getItem('search'))
+        localStorage.removeItem('search')
     }
 
 
@@ -27,11 +21,18 @@ const SearchProduct = () => {
 
     const [division, setDivision] = useState('')
     const [district, setDistrict] = useState('')
-    
-    function searchByDivision(link) {
-        localStorage.setItem('division', link)
-        console.log(localStorage.getItem('division'))
-        window.location.reload()
+
+    function search(link, district) {
+        if (district != '') {
+            link = link+'&district='+district
+            localStorage.setItem('search', link)
+            console.log(localStorage.getItem('search'))
+            window.location.reload()
+        } else {
+            localStorage.setItem('search', link)
+            console.log(localStorage.getItem('search'))
+            window.location.reload()
+        }
     }
 
     return (
@@ -82,7 +83,7 @@ const SearchProduct = () => {
                                         variant='success'
                                         style={{ marginBottom: 10, marginLeft: 110 }}
                                         onClick={(e) => {
-                                            searchByDivision('&division=' + division)
+                                            search('&division=' + division, district)
                                         }}
                                     >
                                         সার্চ করুন
