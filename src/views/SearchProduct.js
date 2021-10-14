@@ -3,11 +3,8 @@ import { useState } from 'react'
 import { Button, Card, Row, Col, Form } from 'react-bootstrap'
 import Cart from "components/Cart"
 import { categoryFinder, divisionFinder, districts } from 'components/SearchCriterias'
-import { useHistory } from 'react-router'
 
 const SearchProduct = () => {
-
-    const history = useHistory()
 
     let cart, cartLink, bibhag = localStorage.getItem('bibhag')
 
@@ -26,16 +23,16 @@ const SearchProduct = () => {
     const [district, setDistrict] = useState('')
     const [category, setCategory] = useState('')
 
-    function search(link, district) {
+    function khojTheSearch(link, district) {
         if (district != '') {
             link = link + '&district=' + district
             localStorage.setItem('search', link)
             console.log(localStorage.getItem('search'))
-            history.push('/category')
+            window.location.reload()
         } else {
             localStorage.setItem('search', link)
             console.log(localStorage.getItem('search'))
-            history.push('/category')
+            window.location.reload()
         }
     }
 
@@ -108,7 +105,7 @@ const SearchProduct = () => {
                                         variant='success'
                                         style={{ marginBottom: 10, marginLeft: 110 }}
                                         onClick={(e) => {
-                                            search('&division=' + division, district)
+                                            khojTheSearch('&division=' + division, district)
                                         }}
                                     >
                                         সার্চ করুন
