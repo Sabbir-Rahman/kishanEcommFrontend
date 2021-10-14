@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import bg from 'assets/img/bgKrishiBazar.jpg'
 import Cart from 'components/Cart'
 import Banner from 'components/Banner'
@@ -13,7 +13,7 @@ const KrishiBazar = () => {
     <>
       {Banner(<CategoryCard/>, bg)}
         <Row>
-          <Col md='auto'><SearchBox/></Col>
+          <Col md='auto' style={{margin: '30px'}}><SearchBox/></Col>
           <Col><Row>{Cart('http://127.0.0.1:5000/product/view')}</Row></Col>
         </Row>
       

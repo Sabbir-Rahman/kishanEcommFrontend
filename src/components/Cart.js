@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React from 'react'
 import { Button, Card } from 'react-bootstrap'
 import productData from 'Global/ProductData'
 import { useHistory } from 'react-router'
@@ -9,7 +9,6 @@ function Cart(param) {
 
   function redirect(productID) {
     localStorage.setItem('productID', productID)
-    //window.location.replace('/product')
     history.push('/product')
   }
 
@@ -44,14 +43,14 @@ function Cart(param) {
             }}
           >
             <Card>
-              <Card.Header style={{ width: '200px', height: '180px' }}>
+              <Card.Header style={{ width: 'auto', height: '200px' }}>
                 <img
                   src={product.image}
                   alt='দুঃখিত! পণ্যের ছবি পাওয়া যায়নি'
                   style={{
                     background: 'white',
-                    width: '100%',
-                    height: '100%',
+                    width: '200px',
+                    height: '180px',
                     overflow: 'hidden',
                   }}
                 />
