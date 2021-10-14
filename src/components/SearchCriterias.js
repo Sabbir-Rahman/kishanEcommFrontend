@@ -54,7 +54,7 @@ function divisionFinder(str) {
 
 function districts(division) {
     switch (division) {
-        case 'Dhaka':
+        case 'ঢাকা':
             return (
                 <>
                     <option value=''></option>
@@ -73,7 +73,7 @@ function districts(division) {
                     <option value='শরীয়তপুর'>শরীয়তপুর</option>
                 </>
             )
-        case 'Chattogram':
+        case 'চট্টগ্রাম':
             return (
                 <>
                     <option value=''></option>
@@ -90,7 +90,7 @@ function districts(division) {
                     <option value='লক্ষ্মীপুর'>লক্ষ্মীপুর</option>
                 </>
             )
-        case 'Rajshahi':
+        case 'রাজশাহী':
             return (
                 <>
                     <option value=''></option>
@@ -104,7 +104,7 @@ function districts(division) {
                     <option value='সিরাজগঞ্জ'>সিরাজগঞ্জ</option>
                 </>
             )
-        case 'Khulna':
+        case 'খুলনা':
             return (
                 <>
                     <option value=''></option>
@@ -120,7 +120,7 @@ function districts(division) {
                     <option value='সাতক্ষীরা'>সাতক্ষীরা</option>
                 </>
             )
-        case 'Barishal':
+        case 'বরিশাল':
             return (
                 <>
                     <option value=''></option>
@@ -132,7 +132,7 @@ function districts(division) {
                     <option value='ঝালকাঠি'>ঝালকাঠি</option>
                 </>
             )
-        case 'Rangpur':
+        case 'রংপুর':
             return (
                 <>
                     <option value=''></option>
@@ -146,7 +146,7 @@ function districts(division) {
                     <option value='লালমনিরহাট'>লালমনিরহাট</option>
                 </>
             )
-        case 'Sylhet':
+        case 'সিলেট':
             return (
                 <>
                     <option value=''></option>
@@ -156,7 +156,7 @@ function districts(division) {
                     <option value='হবিগঞ্জ'>হবিগঞ্জ</option>
                 </>
             )
-        case 'Mymensingh':
+        case 'ময়মনসিংহ':
             return (
                 <>
                     <option value=''></option>
