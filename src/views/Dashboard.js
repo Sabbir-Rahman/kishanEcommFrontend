@@ -95,13 +95,11 @@ function Statistics() {
     buyRequests = OutGoingRequests.data
   }
 
-  let buyingID = []
   let buyingMoney = []
   let buyingQuantity = []
   let productName = []
 
   for (let i = 0; i < buyRequests.length; i++) {
-    buyingID.push(buyRequests[i]._id)
     buyingMoney.push(buyRequests[i].buyingMoney)
     buyingQuantity.push(buyRequests[i].buyingQuantity)
     productName.push(buyRequests[i].productName)
@@ -114,7 +112,6 @@ function Statistics() {
         <td>{productName[i]}</td>
         <td>{buyingMoney[i]}</td>
         <td>{buyingQuantity[i]}</td>
-        <td><Button variant='success' size='sm' onClick={(e) => redirect(buyingID[i])}>পণ্য দেখুন</Button></td>
       </tr>
     )
   }
@@ -125,13 +122,11 @@ function Statistics() {
     sellRequests = IncomingRequests.data
   }
 
-  let _buyingID = []
   let _buyingMoney = []
   let _buyingQuantity = []
   let _productName = []
 
   for (let i = 0; i < sellRequests.length; i++) {
-    _buyingID.push(sellRequests[i]._id)
     _buyingMoney.push(sellRequests[i].buyingMoney)
     _buyingQuantity.push(sellRequests[i].buyingQuantity)
     _productName.push(sellRequests[i].productName)
@@ -144,7 +139,6 @@ function Statistics() {
         <td>{_productName[i]}</td>
         <td>{_buyingMoney[i]}</td>
         <td>{_buyingQuantity[i]}</td>
-        <td><Button variant='success' size='sm' onClick={(e) => redirect(_buyingID[i])}>পণ্য দেখুন</Button></td>
       </tr>
     )
   }
