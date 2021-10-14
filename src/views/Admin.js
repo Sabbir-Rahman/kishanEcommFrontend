@@ -36,6 +36,7 @@ function Admin() {
   if (requests.data != undefined) {
     val = requests.data
   }
+  console.log(val)
 
   let id = []
   let seller_id = []
@@ -105,7 +106,9 @@ function Admin() {
         <td>{description[i]}</td>
         <td>{category[i]}</td>
         <td>
-          <tr>{unitPrize[i]}টাকা/{unitName[i]}</tr>
+          <tr>
+            {unitPrize[i]}টাকা/{unitName[i]}
+          </tr>
           <tr>{bookingPercentage[i]}% বুকিং চার্জ</tr>
         </td>
         <td>{minOrder[i]}</td>
@@ -118,8 +121,21 @@ function Admin() {
         </td>
         <td>{isVerified[i]}</td>
         <td>
-          <tr><Button variant='success' size='sm' value={id[i]} onClick={(e) => approve(e.target.value)}>এপ্রুভ করুন</Button></tr>
-          <tr><Button variant='danger' size='sm' value={id[i]}  >রিমুভ করুন</Button></tr>
+          <tr>
+            <Button
+              variant='success'
+              size='sm'
+              value={id[i]}
+              onClick={(e) => approve(e.target.value)}
+            >
+              এপ্রুভ করুন
+            </Button>
+          </tr>
+          <tr>
+            <Button variant='danger' size='sm' value={id[i]}>
+              রিমুভ করুন
+            </Button>
+          </tr>
         </td>
       </tr>
     )
@@ -129,7 +145,9 @@ function Admin() {
     <Card className='strpied-tabled-with-hover'>
       <Card.Header>
         <Card.Title as='h4'>পণ্য যোগ</Card.Title>
-        <p className='card-category'>নিম্নের পণ্যসমূহ যোগ করার জন্য অনুরোধ করা হয়েছে</p>
+        <p className='card-category'>
+          নিম্নের পণ্যসমূহ যোগ করার জন্য অনুরোধ করা হয়েছে
+        </p>
       </Card.Header>
       <Card.Body className='table-full-width table-responsive px-0'>
         <Table className='table-hover table-striped'>
