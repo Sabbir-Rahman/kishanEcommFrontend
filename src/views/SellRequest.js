@@ -87,32 +87,33 @@ function Sellrequset() {
 
   let sellrequset = []
   for (let i = 0; i < soldProducts.length; i++) {
-    sellrequset.push(
-      <tr>
-        <td>{i + 1}</td>
-        <td>{productName[i]}</td>
-        <td>{bookingMoney[i]}</td>
-        <td>{buyingMoney[i]}</td>
-        <td>{buyingQuantity[i]}</td>
-        <td>{buyerName[i]}</td>
-        <td>{status[i]}</td>
-        <td>
-          <Button
-            variant='success'
-            size='sm'
-            value={productID[i]}
-            onClick={(e) => approve(e.target.value)}
-          >
-            এপ্রুভ করুন
-          </Button>
-        </td>
-        <td>
-          <Button variant='danger' size='sm' value={productID[i]}>
-            রিমুভ করুন
-          </Button>
-        </td>
-      </tr>
-    )
+    if (status[i] == 'pending') {
+      sellrequset.push(
+        <tr>
+          <td>{productName[i]}</td>
+          <td>{bookingMoney[i]}</td>
+          <td>{buyingMoney[i]}</td>
+          <td>{buyingQuantity[i]}</td>
+          <td>{buyerName[i]}</td>
+          <td>{status[i]}</td>
+          <td>
+            <Button
+              variant='success'
+              size='sm'
+              value={productID[i]}
+              onClick={(e) => approve(e.target.value)}
+            >
+              এপ্রুভ করুন
+            </Button>
+          </td>
+          <td>
+            <Button variant='danger' size='sm' value={productID[i]}>
+              রিমুভ করুন
+            </Button>
+          </td>
+        </tr>
+      )
+    }
   }
 
   return (
@@ -127,7 +128,6 @@ function Sellrequset() {
         <Table className='table-hover table-striped'>
           <thead>
             <tr>
-              <th className='border-0'>ক্রমিক</th>
               <th className='border-0'>পণ্যের নাম</th>
               <th className='border-0'>বুকিং মানি</th>
               <th className='border-0'>মোট মূল্য</th>
