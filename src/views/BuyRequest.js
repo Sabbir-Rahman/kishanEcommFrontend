@@ -53,6 +53,7 @@ function BuyRequset() {
         setBookRequest(res.data)
         console.log(bookRequest)
         //redirect from here
+        console.log(bookRequest.url)
         alert('Data fetched')
       })
       .catch((err) => {
