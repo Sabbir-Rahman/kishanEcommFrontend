@@ -57,7 +57,7 @@ function BuyRequset() {
 
   let sellrequset = []
   for (let i = 0; i < soldProducts.length; i++) {
-    if (status[i]=='accepted'){
+    if (status[i] == 'accepted') {
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
@@ -68,7 +68,19 @@ function BuyRequset() {
           <td>{status[i]}</td>
           <td><Button size='sm' variant='warning'>বুক করুন</Button></td>
         </tr>
-        )
+      )
+    } else if (status[i] == 'paid') {
+      sellrequset.push(
+        <tr>
+          <td>{i + 1}</td>
+          <td>{productName[i]}</td>
+          <td>{bookingMoney[i]}</td>
+          <td>{buyingMoney[i]}</td>
+          <td>{buyingQuantity[i]}</td>
+          <td color='yellow'>{status[i]}</td>
+          <td><Button size='sm' variant='warning'>পণ্য বুঝে পেয়েছি</Button></td>
+        </tr>
+      )
     } else {
       sellrequset.push(
         <tr>
@@ -78,12 +90,11 @@ function BuyRequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td color='yellow'>{status[i]}</td>
-          <td><Button size='sm' variant='warning' disabled>বুক করুন</Button></td>
+          <td></td>
         </tr>
-        )
+      )
     }
-    
-    
+
   }
 
   return (
