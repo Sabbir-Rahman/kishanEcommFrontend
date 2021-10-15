@@ -4,8 +4,6 @@ import {
 } from "react-bootstrap"
 import axios from "axios"
 import { useEffect, useState } from 'react'
-import ReactNotification from 'react-notifications-component'
-import 'react-notifications-component/dist/theme.css'
 import { store } from 'react-notifications-component'
 
 function Notifications() {
@@ -43,7 +41,7 @@ function Notifications() {
   }
   console.log(notification)
 
-  let notifications =  []
+  let notifications = []
 
 
   notification.map((n) => {
@@ -56,11 +54,11 @@ function Notifications() {
 
   const not = () => {
     store.addNotification({
-      title: "Wonderful!",
-      message: "teodosii@react-notifications-component",
+      title: "এইটা তোমার নোটিফিকেশন!",
+      message: "তুমি জ্বরের ঘোরে মার্ক এজ রিড করে দ্যাও",
       type: "success",
       insert: "top",
-      container: "top-right",
+      container: "top-left",
       animationIn: ["animate__animated", "animate__fadeIn"],
       animationOut: ["animate__animated", "animate__fadeOut"],
       dismiss: {
@@ -69,11 +67,10 @@ function Notifications() {
       }
     })
   }
-  
+
 
   return (
     <>
-    <ReactNotification />
       <Container fluid>
         <Card>
           <Card.Header>

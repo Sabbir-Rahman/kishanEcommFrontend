@@ -1,5 +1,7 @@
 import React from 'react'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import ReactNotification from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
 
 function Header() {
 
@@ -57,6 +59,7 @@ function Header() {
                         {navLinks("/krishi-bazar", "কৃষি বাজার")}
                         {navLinks("/krishi-forum", "কৃষি ফোরাম")}
                         {navLinks("/fosholer-doctor", "ফসলের ডাক্তার")}
+                        <ReactNotification />
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <Nav.Item>
