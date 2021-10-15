@@ -6,6 +6,16 @@ import Cart from "components/Cart/Cart"
 
 const SearchProduct = () => {
 
+    let cartLink
+
+    cartLink = 'http://127.0.0.1:5000/product/view?'
+
+    if (localStorage.getItem('search')) {
+        cartLink += localStorage.getItem('search')
+        console.log(cartLink, 'rafi')
+        localStorage.removeItem('search')
+    }
+
     return (
         <>
             <Row style={{ marginLeft: '50px' }}>
@@ -15,7 +25,7 @@ const SearchProduct = () => {
                     <SearchBox/>
                 </Col>
                 <Col md='9'>
-                    <Row style={{ marginLeft: '7%' }}>{Cart('http://127.0.0.1:5000/product/view?isVerified=true')}</Row>
+                    <Row style={{ marginLeft: '7%' }}>{Cart(cartLink)}</Row>
                 </Col>
             </Row>
         </>

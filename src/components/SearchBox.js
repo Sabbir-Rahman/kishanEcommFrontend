@@ -1,37 +1,27 @@
-import { Button, Card, Row, Col, Form } from 'react-bootstrap'
-import Cart from './Cart/Cart'
+import { Button, Card, Form } from 'react-bootstrap'
 import { useState } from 'react'
-import { categoryFinder, divisionFinder, districts } from 'components/SearchCriterias'
+import { districts } from 'components/SearchCriterias'
 
 const SearchBox = () => {
-
-    let cart, cartLink
-
-    cartLink = 'http://127.0.0.1:5000/product/view?category=' + localStorage.getItem('category')
-
-    if (localStorage.getItem('search')) {
-        cartLink += localStorage.getItem('search')
-        localStorage.setItem('bibhag', localStorage.getItem('search'))
-        localStorage.removeItem('search')
-    }
-
-    cart = Cart(cartLink)
 
     const [division, setDivision] = useState('')
     const [district, setDistrict] = useState('')
     const [category, setCategory] = useState('')
 
-    function khojTheSearch(link, district) {
-        if (district != '') {
-            link = link + '&district=' + district
-            localStorage.setItem('search', link)
-            console.log(localStorage.getItem('search'))
-            window.location.reload()
-        } else {
-            localStorage.setItem('search', link)
-            console.log(localStorage.getItem('search'))
-            window.location.reload()
+    let search = 'isVerified=true'
+
+    function khojTheSearch() {
+        if (category!=''){
+            search += '&category='+category
         }
+        if (division!=''){
+            search += '&division='+division
+        }
+        if (district!=''){
+            search += '&district='+district
+        }
+        localStorage.setItem('search', search)
+        window.location.replace('/search')
     }
 
     return (

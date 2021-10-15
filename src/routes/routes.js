@@ -21,7 +21,7 @@ const routes = [
     layout: "",
   },
   {
-    path: "/category",
+    path: "/search",
     name: "পণ্য খুঁজুন",
     component: SearchProduct,
     layout: ""
