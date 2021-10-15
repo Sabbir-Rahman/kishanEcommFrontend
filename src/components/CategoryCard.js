@@ -15,37 +15,37 @@ const CategoryCard = () => {
                 <Carousel.Item>
                     <Button className='categoryCard'
                         onClick={(e) => localStorage.setItem('search', "category=শস্যওবীজ")}>
-                        {card(corpsLogo, 'শস্য ও বীজ', '/category')}
+                        {card(corpsLogo, 'শস্য ও বীজ', '/search')}
                     </Button>
                     <Button className='categoryCard'
                         onClick={(e) => localStorage.setItem('search', "category=শাক-সবজি")}>
-                        {card(vegetableLogo, 'শাক-সবজি', '/category')}
+                        {card(vegetableLogo, 'শাক-সবজি', '/search')}
                     </Button>
                     <Button className='categoryCard'
                         onClick={(e) => localStorage.setItem('search', "category=ফল")}>
-                        {card(fruitLogo, 'ফল', '/category', "fruit")}
+                        {card(fruitLogo, 'ফল', '/search', "search")}
                     </Button>
                     <Button className='categoryCard'
                         onClick={(e) => localStorage.setItem('search', "category=সারওকীটনাশক")}>
-                        {card(pesticidesLogo, 'সার ও কীটনাশক', '/category')}
+                        {card(pesticidesLogo, 'সার ও কীটনাশক', '/search')}
                     </Button>
                 </Carousel.Item>
                 <Carousel.Item>
                     <Button className='categoryCard'
                         onClick={(e) => localStorage.setItem('search', "category=পোল্ট্রিজাতপণ্য")}>
-                        {card(poultryLogo, 'পোল্ট্রিজাত পণ্য', '/category')}
+                        {card(poultryLogo, 'পোল্ট্রিজাত পণ্য', '/search')}
                     </Button>
                     <Button className='categoryCard'
                         onClick={(e) => localStorage.setItem('search', "category=মাংস")}>
-                        {card(meatLogo, 'মাংস', '/category')}
+                        {card(meatLogo, 'মাংস', '/search')}
                     </Button>
                     <Button className='categoryCard'
                         onClick={(e) => localStorage.setItem('search', "category=মাছ")}>
-                        {card(fishLogo, 'মাছ', '/category')}
+                        {card(fishLogo, 'মাছ', '/search')}
                     </Button>
                     <Button className='categoryCard'
                         onClick={(e) => localStorage.setItem('search', "category=অন্যান্য")}>
-                        {card(othersLogo, 'অন্যান্য', '/category')}
+                        {card(othersLogo, 'অন্যান্য', '/search')}
                     </Button>
                 </Carousel.Item>
             </Carousel>
