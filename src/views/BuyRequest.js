@@ -42,16 +42,16 @@ function BuyRequset() {
       },
     }
 
-    //const params = { productId: product_id }
-
     axios
-      .get('http://127.0.0.1:5000/product/ssl-commerze/payment', config, {
-        params: { productId: product_id },
-      })
+      .get(
+        'http://127.0.0.1:5000/product/ssl-commerze/payment?productId=' +
+          product_id,
+        config
+      )
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res)
         setBookRequest(res.data)
-        //console.log(bookRequest)
+        console.log(bookRequest)
         //redirect from here
         alert('Data fetched')
       })
