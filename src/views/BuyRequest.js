@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 
 function BuyRequset() {
   const [requests, setRequest] = useState([])
+  const [bookRequest, setBookRequest] = useState([])
 
   const ShowRequest = async () => {
     const token = localStorage.getItem('user')
@@ -22,6 +23,37 @@ function BuyRequset() {
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res)
         setRequest(res.data)
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+  }
+
+  const BookKorun = async (product_id) => {
+    const token = localStorage.getItem('user')
+
+    const _token = token.split('"').join('')
+    console.log(product_id)
+    //console.log(token)
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+
+    //const params = { productId: product_id }
+
+    axios
+      .get('http://127.0.0.1:5000/product/ssl-commerze/payment', config, {
+        params: { productId: product_id },
+      })
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        setBookRequest(res.data)
+        //console.log(bookRequest)
+        //redirect from here
+        alert('Data fetched')
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
@@ -66,7 +98,16 @@ function BuyRequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{status[i]}</td>
-          <td><Button size='sm' variant='warning'>বুক করুন</Button></td>
+          <td>
+            <Button
+              size='sm'
+              variant='warning'
+              value={productID[i]}
+              onClick={(e) => BookKorun(e.target.value)}
+            >
+              বুক করুন
+            </Button>
+          </td>
         </tr>
       )
     } else if (status[i] == 'paid') {
@@ -78,7 +119,11 @@ function BuyRequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td color='yellow'>{status[i]}</td>
-          <td><Button size='sm' variant='warning'>পণ্য বুঝে পেয়েছি</Button></td>
+          <td>
+            <Button size='sm' variant='warning'>
+              পণ্য বুঝে পেয়েছি
+            </Button>
+          </td>
         </tr>
       )
     } else {
@@ -94,7 +139,6 @@ function BuyRequset() {
         </tr>
       )
     }
-
   }
 
   return (
