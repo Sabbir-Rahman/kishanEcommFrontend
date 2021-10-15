@@ -59,7 +59,7 @@ function Notifications() {
           </Card.Header>
           <Card.Body>
             <Row>
-              <Table className='table-hover table-striped' borderless variant='dark'>
+              <Table className='table-hover table-striped'>
                 <tbody>{notifications}</tbody>
               </Table>
             </Row>
