@@ -85,6 +85,32 @@ function Sellrequset() {
       })
   }
 
+  const paymentDone = async (product_id) => {
+    //console.log(product_id)
+
+    const productID = {
+      productId: product_id,
+    }
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+    axios
+      .post('http://127.0.0.1:5000/product/order/paid', productID, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        alert('Product payment successful')
+        window.location.reload()
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+  }
+
   let sellrequset = []
   for (let i = 0; i < soldProducts.length; i++) {
     if (status[i] == 'pending') {
@@ -105,7 +131,7 @@ function Sellrequset() {
             >
               এপ্রুভ করুন
             </Button>
-            <br/>
+            <br />
             <Button variant='danger' size='sm' value={productID[i]}>
               রিমুভ করুন
             </Button>
@@ -123,7 +149,12 @@ function Sellrequset() {
           <td>{buyerName[i]}</td>
           <td>{status[i]}</td>
           <td>
-            <Button variant='success' size='sm' value={productID[i]}>
+            <Button
+              variant='success'
+              size='sm'
+              value={productID[i]}
+              onClick={(e) => paymentDone(e.target.value)}
+            >
               মূল্য পরিশোধিত হয়েছে
             </Button>
           </td>

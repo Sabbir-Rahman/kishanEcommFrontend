@@ -64,6 +64,58 @@ function BuyRequset() {
       })
   }
 
+  const paymentDone = async (product_id) => {
+    //console.log(product_id)
+
+    const productID = {
+      productId: product_id,
+    }
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+    axios
+      .post('http://127.0.0.1:5000/product/order/paid', productID, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        alert('Product payment successful')
+        window.location.reload()
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+  }
+
+  const productReceived = async (product_id) => {
+    //console.log(product_id)
+
+    const productID = {
+      productId: product_id,
+    }
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+    axios
+      .post('http://127.0.0.1:5000/product/order/complete', productID, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        alert('Product Received successful')
+        window.location.reload()
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+  }
+
   useEffect(async () => {
     ShowRequest()
   }, [])
@@ -124,7 +176,12 @@ function BuyRequset() {
           <td>{buyingQuantity[i]}</td>
           <td color='yellow'>{status[i]}</td>
           <td>
-            <Button size='sm' variant='warning'>
+            <Button
+              size='sm'
+              variant='warning'
+              value={productID[i]}
+              onClick={(e) => productReceived(e.target.value)}
+            >
               পণ্য বুঝে পেয়েছি
             </Button>
           </td>
