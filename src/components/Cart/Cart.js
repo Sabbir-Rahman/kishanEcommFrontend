@@ -23,6 +23,7 @@ function Cart(param) {
           marginBottom: '.3%',
           marginRight: '.3%',
           marginTop: '.3%',
+          backgroundColor: '#F4FFEE',
         }}
       >
         <Button
@@ -40,8 +41,8 @@ function Cart(param) {
             outline: 'inherit'
           }}
         >
-          <Card>
-            <Card.Header style={{ width: '200px', height: '200px' }}>
+          <Card style={{ backgroundColor: '#F4FFEE' }}>
+            <Card.Header style={{ width: '200px', height: '200px', backgroundColor: '#F4FFEE' }}>
               <img
                 src={product.image}
                 alt='দুঃখিত! পণ্যের ছবি পাওয়া যায়নি'

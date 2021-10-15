@@ -15,6 +15,7 @@ const KrishiBazar = () => {
   return (
     <>
       {Banner(<CategoryCard />, bg)}
+
       <Row style={{
         alignItems: 'flex',
         display: 'flex',
@@ -28,7 +29,7 @@ const KrishiBazar = () => {
             <Carousel.Item>
               <Row>
                 <Card className="SignInAndUp" style={{ backgroundColor: '#F4FFEE' }}>
-                  <Card className="SignInAndUp" style={{ margin: '2px' }}><h3>নতুন পণ্য</h3></Card>
+                  <Card className="SignInAndUp" style={{ margin: '2px', backgroundColor: '#F4FFEE' }}><h3>নতুন পণ্য</h3></Card>
                   <Row className="SignInAndUp">
                     <NewArrival />
                   </Row>
