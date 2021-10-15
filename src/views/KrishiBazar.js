@@ -15,12 +15,23 @@ const KrishiBazar = () => {
     <>
       {Banner(<CategoryCard />, bg)}
 
-      <Row>
-        <Col md='2.5' style={{ marginLeft: '5%' }}><SearchBox /></Col>
-        <Col>
-          <Row>
-            <NewArrival />
-          </Row>
+      <Row className="SignInAndUp">
+        <Col md='2'><SearchBox /></Col>
+        <Col md='5'>
+          <Card className="SignInAndUp" style={{ backgroundColor: '#F4FFEE' }}>
+          <h2>নতুন পণ্য</h2>
+            <Row className="SignInAndUp">
+              <NewArrival />
+            </Row>
+          </Card>
+        </Col>
+        <Col md='5'>
+          <Card className="SignInAndUp" style={{ backgroundColor: '#F4FFEE' }}>
+          <h2>নতুন পণ্য</h2>
+            <Row className="SignInAndUp">
+              <NewArrival />
+            </Row>
+          </Card>
         </Col>
       </Row>
     </>

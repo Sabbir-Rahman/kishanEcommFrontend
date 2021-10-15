@@ -50,7 +50,7 @@ function User() {
 
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper" style={{ backgroundColor: '#F4FFEE' }}>
         <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
         <div className="main-panel" ref={mainPanel}>
           <Header />
