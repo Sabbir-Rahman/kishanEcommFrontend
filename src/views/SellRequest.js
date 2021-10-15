@@ -105,12 +105,12 @@ function Sellrequset() {
             >
               এপ্রুভ করুন
             </Button>
-          </td>
-          <td>
+            <br/>
             <Button variant='danger' size='sm' value={productID[i]}>
               রিমুভ করুন
             </Button>
           </td>
+          <td></td>
         </tr>
       )
     } else if (status[i]=='booked') {
