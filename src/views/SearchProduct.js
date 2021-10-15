@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Row, Col } from 'react-bootstrap'
 import SearchBox from 'components/SearchBox'
-import Cart from "components/Cart"
+import Cart from "components/Cart/Cart"
 
 const SearchProduct = () => {
 

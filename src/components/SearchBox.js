@@ -1,5 +1,5 @@
 import { Button, Card, Row, Col, Form } from 'react-bootstrap'
-import Cart from './Cart'
+import Cart from './Cart/Cart'
 import { useState } from 'react'
 import { categoryFinder, divisionFinder, districts } from 'components/SearchCriterias'
 

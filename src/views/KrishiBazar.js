@@ -1,22 +1,28 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Card } from 'react-bootstrap'
 import bg from 'assets/img/bgKrishiBazar.jpg'
-import Cart from 'components/Cart'
+import Cart from 'components/Cart/Cart'
 import Banner from 'components/Banner'
 import CategoryCard from 'components/CategoryCard'
 import SearchBox from 'components/SearchBox'
+import NewArrival from 'components/Cart/NewArrival'
 
 
 const KrishiBazar = () => {
 
+  const cart = Cart()
   return (
     <>
-      {Banner(<CategoryCard/>, bg)}
-        <Row>
-          <Col md='auto' style={{margin: '30px'}}><SearchBox/></Col>
-          <Col><Row>{Cart('http://127.0.0.1:5000/product/view')}</Row></Col>
-        </Row>
-      
+      {Banner(<CategoryCard />, bg)}
+
+      <Row>
+        <Col md='2.5' style={{ marginLeft: '5%' }}><SearchBox /></Col>
+        <Col>
+          <Row>
+            <NewArrival />
+          </Row>
+        </Col>
+      </Row>
     </>
   )
 }
