@@ -1,57 +1,3 @@
-function categoryFinder(str) {
-    switch (str) {
-        case 'fruit':
-            return 'ফল >>'
-        case 'vegetables':
-            return 'শাক-সবজি >>'
-        case 'corps':
-            return 'শস্য ও বীজ>>'
-        case 'fish':
-            return 'মাছ >>'
-        case 'meat':
-            return 'মাংস >>'
-        case 'poultry':
-            return 'পোল্ট্রিজাত পণ্য >>'
-        case 'others':
-            return 'অন্যান্য >>'
-        default:
-            return 'সার ও কীটনাশক >>'
-    }
-}
-
-function divisionFinder(str) {
-    console.log(str)
-
-    switch (str) {
-        case '&division=ঢাকা':
-            localStorage.removeItem('bibhag')
-            return 'ঢাকা বিভাগ >>'
-        case '&division=চট্টগ্রাম':
-            localStorage.removeItem('bibhag')
-            return 'চট্টগ্রাম বিভাগ >>'
-        case '&division=রাজশাহী':
-            localStorage.removeItem('bibhag')
-            return 'রাজশাহী বিভাগ >>'
-        case '&division=খুলনা':
-            localStorage.removeItem('bibhag')
-            return 'খুলনা বিভাগ >>'
-        case '&division=বরিশাল':
-            localStorage.removeItem('bibhag')
-            return 'বরিশাল বিভাগ >>'
-        case '&division=রংপুর':
-            localStorage.removeItem('bibhag')
-            return 'রংপুর বিভাগ >>'
-        case '&division=সিলেট':
-            localStorage.removeItem('bibhag')
-            return 'সিলেট বিভাগ'
-        case '&division=ময়মনসিংহ':
-            localStorage.removeItem('bibhag')
-            return 'ময়মনসিংহ বিভাগ >>'
-        default:
-            return ''
-    }
-}
-
 function districts(division) {
     switch (division) {
         case 'ঢাকা':
@@ -171,4 +117,4 @@ function districts(division) {
     }
 }
 
-export { categoryFinder, divisionFinder, districts }
+export { districts }
