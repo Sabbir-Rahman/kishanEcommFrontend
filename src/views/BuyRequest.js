@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 function BuyRequset() {
   const [requests, setRequest] = useState([])
-  const [bookRequest, setBookRequest] = useState([])
+  const [bookRequest, setBookRequest] = useState('')
 
   const ShowRequest = async () => {
     const token = localStorage.getItem('user')
@@ -49,12 +49,15 @@ function BuyRequset() {
         config
       )
       .then((res) => {
-        console.log('RESPONSE RECEIVED: ', res)
-        setBookRequest(res.data)
-        console.log(bookRequest)
+        //console.log('RESPONSE RECEIVED: ', res)
+        //console.log(res.data.url)
+        //setBookRequest(res.data.url)
+        //console.log(bookRequest)
+        //console.log(bookRequest.url)
         //redirect from here
-        console.log(bookRequest.url)
-        alert('Data fetched')
+        //console.log(res.data.url)
+        window.location.replace(res.data.url)
+        //alert('Data fetched')
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
