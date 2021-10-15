@@ -1,6 +1,4 @@
 import Cart from "./Cart"
-import { Card, Carousel, Row } from "react-bootstrap"
-
 
 const NewArrival = () => {
     const cart = Cart()
