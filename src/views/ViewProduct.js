@@ -41,8 +41,7 @@ function ViewProduct() {
       })
       .then((res) => setProduct(res.data))
   }
-
-  const product_id = localStorage.getItem('productID')
+  
   const ShowComment = async () => {
     const token = localStorage.getItem('user')
 
@@ -57,7 +56,7 @@ function ViewProduct() {
 
     axios
       .get(
-        'http://127.0.0.1:5000/product/comment?productId=' + product_id,
+        'http://127.0.0.1:5000/product/comment?_id=' + productID,
         config
       )
       .then((res) => {
