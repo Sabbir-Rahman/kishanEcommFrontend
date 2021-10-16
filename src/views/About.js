@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card } from "react-bootstrap"
+import { Container, Row, Col, Card } from 'react-bootstrap'
 import রাফীর_ছবি from 'assets/img/about/rafi.jpg'
 import রাতুলের_ছবি from 'assets/img/about/ratul.jpg'
 import সাব্বিরের_ছবি from 'assets/img/about/sabbir.jpg'
