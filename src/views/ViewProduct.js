@@ -210,6 +210,7 @@ function ViewProduct() {
                               <Form.Control
                                 type='text'
                                 placeholder='মন্তব্য করুন'
+                                size='sm'
                                 value={commentt}
                                 onChange={(e) => setCommentt(e.target.value)}
                               />
@@ -220,6 +221,7 @@ function ViewProduct() {
                           <Button
                             className='btn-round btn-fill'
                             variant='info'
+                            size='sm'
                             value={commentt}
                             onClick={(e) => DoComment(e.target.value)}
                           >
