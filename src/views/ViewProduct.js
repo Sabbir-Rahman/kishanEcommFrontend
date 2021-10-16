@@ -42,6 +42,8 @@ function ViewProduct() {
       .then((res) => setProduct(res.data))
   }
 
+  const product_id = localStorage.getItem('productID')
+
   const ShowComment = async () => {
     const token = localStorage.getItem('user')
 
@@ -55,21 +57,26 @@ function ViewProduct() {
     }
 
     axios
-      .get('http://127.0.0.1:5000/product/comment?_id=' + productID, config)
+      .get(
+        'http://127.0.0.1:5000/product/comment?productId=' + product_id,
+        config
+      )
       .then((res) => {
+        //console.log('Comment fetch succesfylly')
+        //setComments(res.data.comments.comments)
+
         if (res.data.message == 'Comment fetch succesfylly') {
-          console.log('Comment fetch succesfylly')
+          console.log('comment fetched!')
+          console.log(res.data.comments.comments)
           setComments(res.data.comments.comments)
         } else {
-          console.log('no comment')
+          console.log('No comment')
         }
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
       })
   }
-
-  console.log(comments)
 
   useEffect(async () => {
     ShowProduct()
