@@ -2,11 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Button, Card, Container, Row, Col, Form, Table } from 'react-bootstrap'
+import post from 'api/PostAPI'
 
 function ViewProduct() {
   const [quantity, setQuantity] = useState('')
   const [comments, setComments] = useState([])
   const [products, setProduct] = useState([])
+  const [commentt, setCommentt] = useState('')
 
   async function order(product_id) {
     const product = {
@@ -72,6 +74,14 @@ function ViewProduct() {
       })
   }
 
+  const DoComment = (cmmnt) => {
+    const _ID = {
+      productId: productID,
+      comment: cmmnt,
+    }
+    post(_ID, 'কমেন্ট সম্পন্ন হয়েছে', 'http://127.0.0.1:5000/product/comment')
+  }
+
   useEffect(async () => {
     ShowProduct()
     ShowComment()
@@ -82,7 +92,9 @@ function ViewProduct() {
   if (comments != undefined) {
     comments.map((c) => {
       comment.push(
-        <tr><td>{c.comments}</td></tr>
+        <tr>
+          <td>{c.comments}</td>
+        </tr>
       )
     })
   }
@@ -118,11 +130,22 @@ function ViewProduct() {
               </Col>
               <Col md='8' style={{ marginLeft: '2%' }}>
                 <Row as='h3'>{product.name}</Row>
-                <Row style={{ color: 'green' }}><Col>মূল্য: {product.unitPrize} টাকা/{product.unitName}</Col></Row>
                 <Row style={{ color: 'green' }}>
-                  <Col>সর্বনিম্ন অর্ডার: {product.minOrder} {product.unitName}</Col>
-                  <Col>মজুদ: {product.available}{product.unitName}</Col>
-                  <Col>তারিখ: {product.availableDate.replace('T00:00:00.000Z', '')}</Col>
+                  <Col>
+                    মূল্য: {product.unitPrize} টাকা/{product.unitName}
+                  </Col>
+                </Row>
+                <Row style={{ color: 'green' }}>
+                  <Col>
+                    সর্বনিম্ন অর্ডার: {product.minOrder} {product.unitName}
+                  </Col>
+                  <Col>
+                    মজুদ: {product.available}
+                    {product.unitName}
+                  </Col>
+                  <Col>
+                    তারিখ: {product.availableDate.replace('T00:00:00.000Z', '')}
+                  </Col>
                 </Row>
                 <Row style={{ marginRight: '20px', font: 'status-bar' }}>
                   <Col>বিভাগঃ {product.division}</Col>
@@ -175,15 +198,34 @@ function ViewProduct() {
                 <Card.Title as='h4'>মন্তব্যসমূহ</Card.Title>
                 <Card.Body>
                   <Table className='table-hover table-striped'>
-                    <tbody>
-                      {comment}
-                    </tbody>
+                    <tbody>{comment}</tbody>
                   </Table>
                   <Table className='table-hover table-striped'>
                     <tbody>
                       <tr>
-                        <td><Form.Control /></td>
-                        <td><Button className='btn-round btn-fill' variant='info'>মন্তব্য করুন</Button></td>
+                        <td>
+                          {' '}
+                          <Form>
+                            <Form.Group controlId='comment'>
+                              <Form.Control
+                                type='text'
+                                placeholder='মন্তব্য করুন'
+                                value={commentt}
+                                onChange={(e) => setCommentt(e.target.value)}
+                              />
+                            </Form.Group>
+                          </Form>
+                        </td>
+                        <td>
+                          <Button
+                            className='btn-round btn-fill'
+                            variant='info'
+                            value={commentt}
+                            onClick={(e) => DoComment(e.target.value)}
+                          >
+                            মন্তব্য করুন
+                          </Button>
+                        </td>
                       </tr>
                     </tbody>
                   </Table>
