@@ -4,7 +4,6 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import post from 'api/PostAPI'
 import Rating from 'react-rating'
-import ReactStars from 'react-rating-stars-component'
 
 function BuyRequset() {
   const [requests, setRequest] = useState([])
