@@ -8,8 +8,16 @@ import Rating from 'react-rating'
 function BuyRequset() {
   const [requests, setRequest] = useState([])
 
-  const rating = (value) => {
-    alert(value)
+  const DoRating = (value, req_ID) => {
+    const rate = {
+      orderRequestId: req_ID,
+      rating: value,
+    }
+    post(
+      rate,
+      'রেটিং দেয়া সম্পন্ন হয়েছে',
+      'http://127.0.0.1:5000/product/order/rating'
+    )
   }
 
   const ShowRequest = async () => {
@@ -81,8 +89,12 @@ function BuyRequset() {
   let buyingQuantityUnit = []
   let productName = []
   let status = []
+  let RequestID = []
+  let rating = []
 
   for (let i = 0; i < soldProducts.length; i++) {
+    rating.push(soldProducts[i].rating)
+    RequestID.push(soldProducts[i]._id)
     productID.push(soldProducts[i].product_id)
     bookingMoney.push(soldProducts[i].bookingMoney)
     buyingMoney.push(soldProducts[i].buyingMoney)
@@ -91,6 +103,8 @@ function BuyRequset() {
     productName.push(soldProducts[i].productName)
     status.push(soldProducts[i].status)
   }
+
+  console.log(RequestID)
 
   let sellrequset = []
   for (let i = 0; i < soldProducts.length; i++) {
@@ -102,7 +116,11 @@ function BuyRequset() {
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
-          <td><Button className='btn-round btn-fill' variant='info' disabled>{status[i]}</Button></td>
+          <td>
+            <Button className='btn-round btn-fill' variant='info' disabled>
+              {status[i]}
+            </Button>
+          </td>
           <td>
             <Button
               size='sm'
@@ -123,7 +141,11 @@ function BuyRequset() {
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
-          <td><Button className='btn-round btn-fill' variant='danger' disabled>{status[i]}</Button></td>
+          <td>
+            <Button className='btn-round btn-fill' variant='danger' disabled>
+              {status[i]}
+            </Button>
+          </td>
           <td>
             <Button
               size='sm'
@@ -144,7 +166,11 @@ function BuyRequset() {
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
-          <td><Button className='btn-round btn-fill' variant='warning' disabled>{status[i]}</Button></td>
+          <td>
+            <Button className='btn-round btn-fill' variant='warning' disabled>
+              {status[i]}
+            </Button>
+          </td>
           <td></td>
         </tr>
       )
@@ -156,11 +182,19 @@ function BuyRequset() {
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
-          <td><Button className='btn-round btn-fill' variant='primary' disabled>{status[i]}</Button></td>
+          <td>
+            <Button className='btn-round btn-fill' variant='primary' disabled>
+              {status[i]}
+            </Button>
+          </td>
           <td></td>
         </tr>
       )
     } else {
+      if (rating[i] != 0) {
+        alert('Already rating given')
+      }
+
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
@@ -168,8 +202,18 @@ function BuyRequset() {
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
-          <td><Button className='btn-round btn-fill' variant='success' disabled>{status[i]}</Button></td>
-          <td><Rating onClick={(rate) => rating(rate)}/></td>
+          <td>
+            <Button className='btn-round btn-fill' variant='success' disabled>
+              {status[i]}
+            </Button>
+          </td>
+          <td>
+            <Rating
+              onClick={(rate) => {
+                DoRating(rate, RequestID[i])
+              }}
+            />
+          </td>
         </tr>
       )
     }
