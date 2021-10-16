@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Button, Card, Container, Row, Col, Form } from 'react-bootstrap'
 import post from 'api/PostAPI'
 import Comment from 'components/Comment'
+import Rating from 'react-rating'
 
 function ViewProduct() {
   const [quantity, setQuantity] = useState('')
@@ -29,7 +30,7 @@ function ViewProduct() {
       .then((res) => setProduct(res.data))
   }
 
-  
+
 
   useEffect(async () => {
     ShowProduct()
@@ -39,7 +40,9 @@ function ViewProduct() {
   let product
   if (products.data != undefined) {
     product = products.data[0]
-    localStorage.setItem('comment', product._id)
+    if (!product.rating) {
+      product.rating = 0
+    }
     return (
       <Container
         fluid
@@ -68,6 +71,14 @@ function ViewProduct() {
               </Col>
               <Col md='8' style={{ marginLeft: '2%' }}>
                 <Row as='h3'>{product.name}</Row>
+                <Row >
+                  <Rating
+                    placeholderRating={product.rating}
+                    quiet
+                    readonly
+                    size='sm'
+                  />
+                </Row>
                 <Row style={{ color: 'green' }}>
                   <Col>
                     মূল্য: {product.unitPrize} টাকা/{product.unitName}
@@ -131,7 +142,7 @@ function ViewProduct() {
                 </Form>
               </Col>
             </Row>
-            <Comment/>
+            <Comment />
           </Card.Body>
         </Card>
       </Container>
