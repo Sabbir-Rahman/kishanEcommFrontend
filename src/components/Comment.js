@@ -57,10 +57,12 @@ const Comment = () => {
   if (comments != undefined) {
     comments.map((c) => {
       comment.push(
-        <tr>
-          <td>{c.userName}</td>
-          <td>{c.comments}</td>
-        </tr>
+
+              <Card>
+                <Card.Title>{c.userName}</Card.Title>
+                <Card.Body>{c.comments}</Card.Body>
+              </Card>
+
       )
     })
   }
