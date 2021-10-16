@@ -192,13 +192,24 @@ function AddProduct() {
                     <td></td>
                     <td>
                       <Form>
-                        <Form.Group controlId='unitName'>
-                          <Form.Control
+                        <Form.Group controlId='unit'>
+                          <select
+                            class='form-control'
+                            as='select'
                             type='text'
                             placeholder='একক'
                             value={unit}
                             onChange={(e) => setUnit(e.target.value)}
-                          />
+                          >
+                            <option value=''></option>
+                            <option value='কেজি'>কেজি</option>
+                            <option value='মণ'>মণ</option>
+                            <option value='পিস'>পিস</option>
+                            <option value='লিটার'>লিটার</option>
+                            <option value='ডজন'>ডজন</option>
+                            <option value='টন'>টন</option>
+                            <option value='হালি'>হালি</option>
+                          </select>
                         </Form.Group>
                       </Form>
                     </td>
