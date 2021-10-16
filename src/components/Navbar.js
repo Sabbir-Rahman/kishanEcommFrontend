@@ -59,6 +59,8 @@ function Header() {
                         {navLinks("/krishi-bazar", "কৃষি বাজার")}
                         {navLinks("/krishi-forum", "কৃষি ফোরাম")}
                         {navLinks("/fosholer-doctor", "ফসলের ডাক্তার")}
+                        {navLinks("/tutorial", "টিউটোরিয়াল")}
+                        {navLinks("/about", "আমাদের সম্পর্কে")}
                         <ReactNotification />
                     </Nav>
                     <Nav className="ml-auto" navbar>

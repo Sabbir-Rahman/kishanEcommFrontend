@@ -6,12 +6,19 @@ import ViewProduct from "views/ViewProduct"
 import AdminDashboard from "views/Admin"
 import SearchProduct from "views/SearchProduct"
 import about from "views/About"
+import Tutorial from 'views/Tutorial'
 
 const routes = [
   {
     path: "/home",
     name: "মূল পাতা",
     component: Home,
+    layout: "",
+  },
+  {
+    path: "/tutorial",
+    name: "টিউটোরিয়াল",
+    component: Tutorial,
     layout: "",
   },
   {
