@@ -1,5 +1,7 @@
 import React from 'react'
-import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap'
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import ReactNotification from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
 
 function Header() {
 
@@ -8,13 +10,16 @@ function Header() {
     let menu = []
     if (token) {
         if (role == '"admin"') {
-            menu = <NavDropdown title='মেনু' id='basic-nav-dropdown'>
+            menu = <NavDropdown title={localStorage.getItem('username').replace(/['"]+/g, '')} id='basic-nav-dropdown'>
+                <NavDropdown.Item href='/admin'>
+                    ড্যাশবোর্ড
+                </NavDropdown.Item>
                 <NavDropdown.Item href='/logout' onClick={logout}>
                     লগ আউট
                 </NavDropdown.Item>
             </NavDropdown>
         } else {
-            menu = <NavDropdown title='মেনু' id='basic-nav-dropdown'>
+            menu = <NavDropdown title={localStorage.getItem('username').replace(/['"]+/g, '')} id='basic-nav-dropdown'>
                 <NavDropdown.Item href='/logout' onClick={logout}>
                     লগ আউট
                 </NavDropdown.Item>
@@ -54,6 +59,7 @@ function Header() {
                         {navLinks("/krishi-bazar", "কৃষি বাজার")}
                         {navLinks("/krishi-forum", "কৃষি ফোরাম")}
                         {navLinks("/fosholer-doctor", "ফসলের ডাক্তার")}
+                        <ReactNotification />
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <Nav.Item>

@@ -1,28 +1,15 @@
 import React from 'react'
-
-// react-bootstrap components
 import {
   Card,
   Table,
   Container,
   Row,
   Col,
-  Button
 } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useHistory } from 'react-router'
 
 function Statistics() {
-
-  const history = useHistory()
-
-  function redirect(productID) {
-    localStorage.setItem('productID', productID)
-    history.push('/product')
-    //window.location.replace('/product')
-    //console.log(productID, 'Rafi')
-  }
 
   const [OutGoingRequests, setOutGoingRequests] = useState([])
   const [IncomingRequests, setIncomingRequests] = useState([])
@@ -32,7 +19,6 @@ function Statistics() {
 
     const _token = token.split('"').join('')
     console.log(token)
-    //console.log(`Bearer ` + _token)
     const config = {
       headers: {
         Authorization: `Bearer ${_token}`,
@@ -48,7 +34,6 @@ function Statistics() {
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res)
         setOutGoingRequests(res.data)
-        //alert('Data fetched')
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
@@ -57,18 +42,13 @@ function Statistics() {
 
   const ShowInComingRequest = async () => {
     const token = localStorage.getItem('user')
-
     const _token = token.split('"').join('')
-    console.log(token)
-    //console.log(`Bearer ` + _token)
     const config = {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
     }
-
     const params = { status: 'booked' }
-
     axios
       .get('http://127.0.0.1:5000/product/order/buyRequest', config, {
         params,
@@ -76,7 +56,6 @@ function Statistics() {
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res)
         setIncomingRequests(res.data)
-        //alert('Data fetched')
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)

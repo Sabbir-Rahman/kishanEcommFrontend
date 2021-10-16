@@ -1,9 +1,21 @@
 import React from 'react'
-import { Button, Card, Container, Row, Col } from 'react-bootstrap'
+import { Button, Card, Table } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import post from 'api/PostAPI'
+
 
 function Admin() {
+
+  const approve = (product_id) => {
+    const productID = {
+      productId: product_id,
+      isVerified: true,
+      message: 'Your product is verified. Thank you',
+    }
+    post(productID, 'পন্য সফলভাবে ভেরিফাই করা হয়েছে', 'http://127.0.0.1:5000/product/verify')
+  }
+
   const [requests, setRequest] = useState([])
 
   const ShowRequest = async () => {
@@ -36,31 +48,22 @@ function Admin() {
   if (requests.data != undefined) {
     val = requests.data
   }
+  console.log(val)
 
   let id = []
   let seller_id = []
   let name = []
   let description = []
   let category = []
-  let subCategory = []
   let image = []
-  let image2 = []
-  let image3 = []
   let unitName = []
   let unitPrize = []
   let bookingPercentage = []
-  let available = []
   let minOrder = []
-  let availableDate = []
   let division = []
   let district = []
   let upazilla = []
   let isVerified = []
-  let isAvailableNow = []
-  let rating = []
-  let comments = []
-  let question = []
-  let timestamp = []
 
   for (let i = 0; i < val.length; i++) {
     id.push(val[i]._id)
@@ -68,179 +71,82 @@ function Admin() {
     seller_id.push(val[i].seller_id)
     description.push(val[i].description)
     category.push(val[i].catagory)
-    subCategory.push(val[i].subCategory)
     image.push(val[i].image)
-    image2.push(val[i].image2)
-    image3.push(val[i].image3)
     unitName.push(val[i].unitName)
     unitPrize.push(val[i].unitPrize)
     bookingPercentage.push(val[i].bookingPercentage)
-    available.push(val[i].available)
     minOrder.push(val[i].minOrder)
-    rating.push(val[i].rating)
-    availableDate.push(val[i].availableDate)
     division.push(val[i].division)
     district.push(val[i].district)
     upazilla.push(val[i].upazilla)
-    isVerified.push(val[i].isVerified)
-    isAvailableNow.push(val[i].isAvailableNow)
-    rating.push(val[i].rating)
-    comments.push(val[i].comments)
-    question.push(val[i].question)
-    timestamp.push(val[i].timestamp)
-  }
-
-  const approve = (product_id) => {
-    //console.log(product_id)
-
-    const productID = {
-      productId: product_id,
-      isVerified: true,
-      message: 'Your product is verified. Thank you',
-    }
-    const token = localStorage.getItem('user')
-    const _token = token.split('"').join('')
-    //console.log(`Bearer ` + _token)
-    const config = {
-      headers: {
-        Authorization: `Bearer ${_token}`,
-      },
-    }
-    axios
-      .post('http://127.0.0.1:5000/product/verify', productID, config)
-      .then((res) => {
-        console.log('RESPONSE RECEIVED: ', res)
-        alert('Product verified successfully')
-      })
-      .catch((err) => {
-        console.log('AXIOS ERROR: ', err)
-      })
   }
 
   let unverifiedRequests = []
   for (let i = 0; i < val.length; i++) {
     unverifiedRequests.push(
-      <Col
-        style={{ background: 'rgba(181, 218, 164, .3)', borderColor: 'white' }}
-      >
-        <table>
-          <th>
-            <h3 style={{ marginRight: '20px' }}>{name[i]}</h3>
-          </th>
-          <th style={{ color: 'gray', marginLeft: '5px' }}>আইডি: {id[i]}</th>
-        </table>
-        <table>
-          <th>
-            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
-              বুকিং মানি:
-            </h5>
-          </th>
-          <th>
-            <h5
-              style={{
-                color: 'green',
-                marginLeft: '10px',
-                font: 'message-box',
-              }}
-            >
-              {bookingPercentage[i]} টাকা
-            </h5>
-          </th>
-          <th>
-            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
-              মোট মূল্য:
-            </h5>
-          </th>
-          <th>
-            <h5
-              style={{
-                color: 'green',
-                marginLeft: '10px',
-                font: 'message-box',
-              }}
-            >
-              {description[i]} টাকা
-            </h5>
-          </th>
-        </table>
-        <table>
-          <th>
-            <h5>পরিমাণ:</h5>
-          </th>
-          <th>
-            <h5
-              style={{
-                color: 'green',
-                marginLeft: '10px',
-                font: 'message-box',
-              }}
-            >
-              {seller_id[i]} {minOrder[i]}
-            </h5>
-          </th>
-          <th>
-            <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
-              স্ট্যাটাস:
-            </h5>
-          </th>
-          <th>
-            <h5
-              style={{
-                color: 'green',
-                marginLeft: '10px',
-                font: 'message-box',
-              }}
-            >
-              {isVerified[i]}
-            </h5>
-          </th>
-        </table>
-        <table>
-          <th>
-            <h5>ক্রেতার নাম:</h5>
-          </th>
-          <th>
-            <h5
-              style={{
-                color: 'green',
-                marginLeft: '10px',
-                font: 'message-box',
-              }}
-            >
-              {minOrder[i]}
-            </h5>
-          </th>
-        </table>
-        <table style={{ marginLeft: '85%' }}>
+      <tr>
+        <td>{i + 1}</td>
+        <td>{name[i]}</td>
+        <td>{seller_id[i]}</td>
+        <td>{description[i]}</td>
+        <td>{category[i]}</td>
+        <td>
+          {unitPrize[i]} টাকা/{unitName[i]}
+          <br />
+          {bookingPercentage[i]}% বুকিং চার্জ
+        </td>
+        <td>{minOrder[i]}</td>
+        <td>
+          বিভাগ: {division[i]}
+          <br />
+          জেলা: {district[i]}
+        </td>
+        <td>{isVerified[i]}</td>
+        <td>
           <Button
             variant='success'
+            size='sm'
             value={id[i]}
             onClick={(e) => approve(e.target.value)}
           >
             এপ্রুভ করুন
           </Button>
-        </table>
-        <Row style={{ height: '15px' }}></Row>
-        <Row style={{ background: 'white', height: '15px' }}></Row>
-      </Col>
+          <br />
+          <br />
+          <Button variant='danger' size='sm' value={id[i]}>
+            রিমুভ করুন
+          </Button>
+        </td>
+      </tr>
     )
   }
 
   return (
-    <>
-      <Container fluid>
-        <Card>
-          <Card.Header>
-            <Card.Title as='h4'>পণ্য বিক্রয় অনুরোধ</Card.Title>
-          </Card.Header>
-          <Card.Body>
-            <Row>
-              <Col>{unverifiedRequests}</Col>
-            </Row>
-          </Card.Body>
-        </Card>
-      </Container>
-    </>
+    <Card className='strpied-tabled-with-hover'>
+      <Card.Header>
+        <Card.Title as='h4'>পণ্য যোগ</Card.Title>
+        <p className='card-category'>
+          নিম্নের পণ্যসমূহ যোগ করার জন্য অনুরোধ করা হয়েছে
+        </p>
+      </Card.Header>
+      <Card.Body className='table-full-width table-responsive px-0'>
+        <Table className='table-hover table-striped'>
+          <thead>
+            <tr>
+              <th className='border-0'>ক্রমিক</th>
+              <th className='border-0'>পণ্যের নাম</th>
+              <th className='border-0'>বিক্রেতা</th>
+              <th className='border-0'>বিবরণ</th>
+              <th className='border-0'>ক্যাটাগরি</th>
+              <th className='border-0'>মূল্য</th>
+              <th className='border-0'>সর্বনিম্ন অর্ডার</th>
+              <th className='border-0'>ঠিকানা</th>
+            </tr>
+          </thead>
+          <tbody>{unverifiedRequests}</tbody>
+        </Table>
+      </Card.Body>
+    </Card>
   )
 }
 

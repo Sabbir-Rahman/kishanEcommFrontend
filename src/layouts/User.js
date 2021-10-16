@@ -4,6 +4,7 @@ import Header from "components/Navbar"
 import Sidebar from "components/Sidebar"
 import routes from "routes/dashboardRoutes.js"
 import sidebarImage from "assets/img/sidebar-3.jpg"
+import { Container } from "react-bootstrap"
 
 function User() {
   const [image, setImage] = React.useState(sidebarImage)
@@ -50,15 +51,15 @@ function User() {
 
   return (
     <>
-      <div className="wrapper">
+      <Container className="wrapper" style={{ backgroundColor: '#F4FFEE' }} fluid>
         <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
-        <div className="main-panel" ref={mainPanel}>
+        <Container className="main-panel" ref={mainPanel} fluid>
           <Header />
-          <div className="content">
+          <Container className="content" fluid>
             {redirection}
-          </div>
-        </div>
-      </div>
+          </Container>
+        </Container>
+      </Container>
     </>
   )
 }

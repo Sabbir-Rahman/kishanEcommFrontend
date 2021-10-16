@@ -5,6 +5,7 @@ import axios from 'axios'
 import FileBase from 'react-file-base64'
 import { districts } from 'components/SearchCriterias'
 
+
 function AddProduct() {
   const [productName, setProductName] = useState('')
   const [minimum, setMinimum] = useState('')
@@ -18,23 +19,6 @@ function AddProduct() {
   const [description, setDescription] = useState('')
   const [bookingPercentage, setBookingPercentage] = useState('')
   const [image, setImage] = useState('')
-
-  const resetFields = () => {
-    setProductName('')
-    setMinimum('')
-    setCategory('')
-    setAmount('')
-    setUnit('')
-    setDate('')
-    setUnitPrice('')
-    setDivison('')
-    setDistrict('')
-    setDescription('')
-    setImage('')
-    setBookingPercentage('')
-  }
-
-  //let fileName = document.getElementById('photo').files[0].name
 
   async function addProduct() {
     //data adding
@@ -51,11 +35,10 @@ function AddProduct() {
       description: description,
       image: image,
       bookingPercentage: bookingPercentage,
+      isAvailableNow: false,
     }
 
     console.log(product)
-
-    resetFields()
 
     // axios
     const token = localStorage.getItem('user')
@@ -72,6 +55,7 @@ function AddProduct() {
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res)
         alert('Product added successfully')
+        window.location.reload()
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
@@ -151,14 +135,16 @@ function AddProduct() {
                             onChange={(e) => setCategory(e.target.value)}
                           >
                             <option value=''></option>
-                            <option value='corps'>শস্য ও বীজ</option>
-                            <option value='vegetables'>শাক-সবজি</option>
-                            <option value='fruit'>ফল</option>
-                            <option value='pesticides'>সার ও কীটনাশক</option>
-                            <option value='poultry'>পোল্ট্রিজাত পণ্য</option>
-                            <option value='meat'>মাংস</option>
-                            <option value='fish'>মাছ</option>
-                            <option value='others'>অন্যান্য</option>
+                            <option value='শস্যওবীজ'>শস্য ও বীজ</option>
+                            <option value='শাক-সবজি'>শাক-সবজি</option>
+                            <option value='ফল'>ফল</option>
+                            <option value='সারওকীটনাশক'>সার ও কীটনাশক</option>
+                            <option value='পোল্ট্রিজাতপণ্য'>
+                              পোল্ট্রিজাত পণ্য
+                            </option>
+                            <option value='মাংস'>মাংস</option>
+                            <option value='মাছ'>মাছ</option>
+                            <option value='অন্যান্য'>অন্যান্য</option>
                           </select>
                         </Form.Group>
                       </Form>
@@ -189,7 +175,7 @@ function AddProduct() {
                       <Form>
                         <Form.Group controlId='amount'>
                           <Form.Control
-                            type='tk'
+                            type='text'
                             placeholder='বুকিং মানি'
                             value={bookingPercentage}
                             onChange={(e) =>
@@ -202,17 +188,28 @@ function AddProduct() {
                   </tr>
 
                   <tr>
-                    <td>ইউনিট</td>
+                    <td>একক</td>
                     <td></td>
                     <td>
                       <Form>
-                        <Form.Group controlId='unitName'>
-                          <Form.Control
+                        <Form.Group controlId='unit'>
+                          <select
+                            class='form-control'
+                            as='select'
                             type='text'
-                            placeholder='ইউনিট'
+                            placeholder='একক'
                             value={unit}
                             onChange={(e) => setUnit(e.target.value)}
-                          />
+                          >
+                            <option value=''></option>
+                            <option value='কেজি'>কেজি</option>
+                            <option value='মণ'>মণ</option>
+                            <option value='পিস'>পিস</option>
+                            <option value='লিটার'>লিটার</option>
+                            <option value='ডজন'>ডজন</option>
+                            <option value='টন'>টন</option>
+                            <option value='হালি'>হালি</option>
+                          </select>
                         </Form.Group>
                       </Form>
                     </td>
@@ -241,7 +238,7 @@ function AddProduct() {
                       <Form>
                         <Form.Group controlId='price'>
                           <Form.Control
-                            type='number'
+                            type='text'
                             placeholder='মূল্য'
                             value={unitPrice}
                             onChange={(e) => setUnitPrice(e.target.value)}
@@ -266,14 +263,14 @@ function AddProduct() {
                             onChange={(e) => setDivison(e.target.value)}
                           >
                             <option value=''></option>
-                            <option value='Dhaka'>ঢাকা</option>
-                            <option value='Mymensingh'>ময়মনসিংহ</option>
-                            <option value='Sylhet'>সিলেট</option>
-                            <option value='Khulna'>খুলনা</option>
-                            <option value='Barishal'>বরিশাল</option>
-                            <option value='Rangpur'>রংপুর</option>
-                            <option value='Rajshahi'>রাজশাহী</option>
-                            <option value='Chattogram'>চট্টগ্রাম</option>
+                            <option value='ঢাকা'>ঢাকা</option>
+                            <option value='ময়মনসিংহ'>ময়মনসিংহ</option>
+                            <option value='সিলেট'>সিলেট</option>
+                            <option value='খুলনা'>খুলনা</option>
+                            <option value='বরিশাল'>বরিশাল</option>
+                            <option value='রংপুর'>রংপুর</option>
+                            <option value='রাজশাহী'>রাজশাহী</option>
+                            <option value='চট্টগ্রাম'>চট্টগ্রাম</option>
                           </select>
                         </Form.Group>
                       </Form>

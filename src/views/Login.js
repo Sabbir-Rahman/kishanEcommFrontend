@@ -28,8 +28,11 @@ const Login = () => {
           'user_role',
           JSON.stringify(response.data.result.user_role)
         )
+        localStorage.setItem(
+          'username',
+          JSON.stringify(response.data.result.fullname)
+        )
         const role = localStorage.getItem('user_role')
-        console.log(role)
         if (role == '"admin"') {
           history.push('/admin')
         } else {
@@ -42,6 +45,7 @@ const Login = () => {
     }
     resetFields()
   }
+  
   return (
     <div className='SignInAndUp'>
       <div
