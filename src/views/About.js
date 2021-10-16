@@ -31,8 +31,9 @@ const about = () => {
               />
             </Col>
             <Col style={{ marginLeft: '2%' }}>
-              <Row as='h3'>রাতুল মাহজাবিন</Row>
+              <Row as='h3'>রাতুল মাহযাবিন</Row>
               <Row>আইডি: ১৮০০৪২১২৩</Row>
+              <Row>প্রোগ্রাম: সফটওয়্যার ইঞ্জিনিয়ারিং(আইইউটি)</Row>
             </Col>
           </Card.Body>
         </Card>
@@ -53,6 +54,7 @@ const about = () => {
             <Col style={{ marginLeft: '2%' }}>
               <Row as='h3'>মোহতাসিম হাদী রাফী</Row>
               <Row>আইডি: ১৮০০৪২১৪৫</Row>
+              <Row>প্রোগ্রাম: সফটওয়্যার ইঞ্জিনিয়ারিং(আইইউটি)</Row>
             </Col>
           </Card.Body>
         </Card>
@@ -73,6 +75,7 @@ const about = () => {
             <Col style={{ marginLeft: '2%' }}>
               <Row as='h3'>মো. সাব্বির রহমান</Row>
               <Row>আইডি: ১৮০০৪২১৪২</Row>
+              <Row>প্রোগ্রাম: সফটওয়্যার ইঞ্জিনিয়ারিং(আইইউটি)</Row>
             </Col>
           </Card.Body>
         </Card>

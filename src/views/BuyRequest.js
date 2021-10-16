@@ -136,6 +136,7 @@ function BuyRequset() {
           <td>
             <Button
               className='btn-round btn-fill'
+              style={{ width: "100px" }}
               size='sm'
               variant='info'
               disabled
@@ -178,6 +179,7 @@ function BuyRequset() {
           <td>
             <Button
               className='btn-round btn-fill'
+              style={{ width: "100px" }}
               size='sm'
               variant='danger'
               disabled
@@ -220,6 +222,7 @@ function BuyRequset() {
           <td>
             <Button
               className='btn-round btn-fill'
+              style={{ width: "100px" }}
               size='sm'
               variant='warning'
               disabled
@@ -252,6 +255,7 @@ function BuyRequset() {
           <td>
             <Button
               className='btn-round btn-fill'
+              style={{ width: "100px" }}
               size='sm'
               variant='primary'
               disabled
@@ -285,6 +289,7 @@ function BuyRequset() {
             <td>
               <Button
                 className='btn-round btn-fill'
+                style={{ width: "100px" }}
                 size='sm'
                 variant='success'
                 disabled
@@ -319,6 +324,7 @@ function BuyRequset() {
             <td>
               <Button
                 className='btn-round btn-fill'
+                style={{ width: "100px" }}
                 size='sm'
                 variant='success'
                 disabled
