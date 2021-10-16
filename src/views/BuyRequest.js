@@ -255,13 +255,11 @@ function BuyRequset() {
               </Button>
             </td>
             <td>
-              <Rating onClick={(rate) => rating(rate)} />
+              <Rating onClick={(rate) => DoRating(rate, RequestID[i])} />
             </td>
           </tr>
         )
       }
-
-      
     }
   }
 
