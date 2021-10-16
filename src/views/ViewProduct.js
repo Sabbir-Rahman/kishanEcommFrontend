@@ -70,6 +70,7 @@ function ViewProduct() {
                 />
               </Col>
               <Col md='8' style={{ marginLeft: '2%' }}>
+                <Card fluid></Card>
                 <Row as='h3'>{product.name}</Row>
                 <Row >
                   <Rating
@@ -107,14 +108,6 @@ function ViewProduct() {
                 <Row>
                   <Col>বিবরণী: {product.description}</Col>
                 </Row>
-                <Row style={{ marginRight: '20px', font: 'status-bar' }}>
-                  <Col>বিভাগঃ {product.division}</Col>
-                  <Col>জেলাঃ {product.district}</Col>
-                  <Col></Col>
-                  <Col></Col>
-                  <Col></Col>
-                  <Col></Col>
-                </Row>
                 <Form style={{ marginLeft: '40%' }}>
                   <Row>
                     <Col>
@@ -140,6 +133,7 @@ function ViewProduct() {
                     </Col>
                   </Row>
                 </Form>
+                <Card fluid></Card>
               </Col>
             </Row>
             <Comment />

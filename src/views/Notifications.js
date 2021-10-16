@@ -1,10 +1,9 @@
 import React from "react"
 import {
-  Button, Card, Container, Row, Table,
+  Card, Container, Row, Table,
 } from "react-bootstrap"
 import axios from "axios"
 import { useEffect, useState } from 'react'
-import { store } from 'react-notifications-component'
 
 function Notifications() {
 
@@ -52,29 +51,12 @@ function Notifications() {
     )
   })
 
-  const not = () => {
-    store.addNotification({
-      title: "এইটা তোমার নোটিফিকেশন!",
-      message: "তুমি জ্বরের ঘোরে মার্ক এজ রিড করে দ্যাও",
-      type: "success",
-      insert: "top",
-      container: "top-left",
-      animationIn: ["animate__animated", "animate__fadeIn"],
-      animationOut: ["animate__animated", "animate__fadeOut"],
-      dismiss: {
-        duration: 5000,
-        onScreen: true
-      }
-    })
-  }
-
 
   return (
     <>
       <Container fluid>
         <Card>
           <Card.Header>
-            <Button onClick={not}></Button>
             <Card.Title as="h4">নোটিফিকেশন</Card.Title>
           </Card.Header>
           <Card.Body>
