@@ -115,22 +115,21 @@ function Sellrequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{buyerName[i]}</td>
-          <td>{status[i]}</td>
+          <td><Button className='btn-round btn-fill' variant='warning' disabled>{status[i]}</Button></td>
           <td>
             <Button
               variant='success'
               size='sm'
               value={productID[i]}
+              className='btn-round btn-fill'
               onClick={(e) => approve(e.target.value)}
             >
               এপ্রুভ করুন
             </Button>
-            <br />
-            <Button variant='danger' size='sm' value={productID[i]}>
+            <Button variant='danger' className='btn-round btn-fill' size='sm' value={productID[i]}>
               রিমুভ করুন
             </Button>
           </td>
-          <td></td>
         </tr>
       )
     } else if (status[i] == 'booked') {
@@ -141,17 +140,29 @@ function Sellrequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{buyerName[i]}</td>
-          <td>{status[i]}</td>
+          <td><Button className='btn-round btn-fill' variant='primary' disabled>{status[i]}</Button></td>
           <td>
             <Button
               variant='success'
               size='sm'
               value={productID[i]}
+              className='btn-round btn-fill'
               onClick={(e) => paymentDone(e.target.value)}
             >
               মূল্য পরিশোধিত হয়েছে
             </Button>
           </td>
+        </tr>
+      )
+    } else if (status[i]=='accepted') {
+      sellrequset.push(
+        <tr>
+          <td>{productName[i]}</td>
+          <td>{bookingMoney[i]}</td>
+          <td>{buyingMoney[i]}</td>
+          <td>{buyingQuantity[i]}</td>
+          <td>{buyerName[i]}</td>
+          <td><Button className='btn-round btn-fill' variant='info' disabled>{status[i]}</Button></td>
           <td></td>
         </tr>
       )
@@ -163,8 +174,7 @@ function Sellrequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{buyerName[i]}</td>
-          <td>{status[i]}</td>
-          <td></td>
+          <td><Button className='btn-round btn-fill' variant='success' disabled>{status[i]}</Button></td>
           <td></td>
         </tr>
       )
