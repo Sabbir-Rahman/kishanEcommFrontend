@@ -3,6 +3,7 @@ import { Button, Card, Table } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import post from 'api/PostAPI'
+import Rating from 'react-rating'
 
 function BuyRequset() {
   const [requests, setRequest] = useState([])
@@ -164,7 +165,7 @@ function BuyRequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td><Button className='btn-round btn-fill' variant='success' disabled>{status[i]}</Button></td>
-          <td>রেটিং দিন</td>
+          <td><Rating /></td>
         </tr>
       )
     }
