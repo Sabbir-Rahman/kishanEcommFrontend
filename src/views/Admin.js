@@ -1,11 +1,12 @@
 import React from 'react'
-import { Button, Card, Table } from 'react-bootstrap'
+import { Button, Card, Table, Form } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import post from 'api/PostAPI'
 
-
 function Admin() {
+  const [requests, setRequest] = useState([])
+  const [cancelMSG, setCancelMSG] = useState('')
 
   const approve = (product_id) => {
     const productID = {
@@ -13,10 +14,24 @@ function Admin() {
       isVerified: true,
       message: 'Your product is verified. Thank you',
     }
-    post(productID, 'পন্য সফলভাবে ভেরিফাই করা হয়েছে', 'http://127.0.0.1:5000/product/verify')
+    post(
+      productID,
+      'পন্য সফলভাবে ভেরিফাই করা হয়েছে',
+      'http://127.0.0.1:5000/product/verify'
+    )
   }
 
-  const [requests, setRequest] = useState([])
+  const cancel = (product_id, msg) => {
+    const productID = {
+      productId: product_id,
+      message: msg,
+    }
+    post(
+      productID,
+      'পন্য সফলভাবে ক্যান্সেল করা হয়েছে',
+      'http://127.0.0.1:5000/product/verify'
+    )
+  }
 
   const ShowRequest = async () => {
     const token = localStorage.getItem('user')
@@ -112,8 +127,24 @@ function Admin() {
             এপ্রুভ করুন
           </Button>
           <br />
-          <br />
-          <Button variant='danger' size='sm' value={id[i]}>
+          <td>
+            <Form>
+              <Form.Group controlId='price'>
+                <Form.Control
+                  type='text'
+                  placeholder='ক্যান্সেল বার্তা'
+                  value={cancelMSG}
+                  onChange={(e) => setCancelMSG(e.target.value)}
+                />
+              </Form.Group>
+            </Form>
+          </td>
+
+          <Button
+            variant='danger'
+            size='sm'
+            onClick={(e) => cancel(id[i], cancelMSG)}
+          >
             রিমুভ করুন
           </Button>
         </td>
