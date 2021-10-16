@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Button, Card, Container, Row, Col, Form, Table } from 'react-bootstrap'
+import { Button, Card, Container, Row, Col, Form } from 'react-bootstrap'
 
 function ViewProduct() {
   const [quantity, setQuantity] = useState('')
@@ -42,8 +42,6 @@ function ViewProduct() {
       .then((res) => setProduct(res.data))
   }
 
-  const product_id = localStorage.getItem('productID')
-
   const ShowComment = async () => {
     const token = localStorage.getItem('user')
 
@@ -58,7 +56,7 @@ function ViewProduct() {
 
     axios
       .get(
-        'http://127.0.0.1:5000/product/comment?productId=' + product_id,
+        'http://127.0.0.1:5000/product/comment?productId=' + productID,
         config
       )
       .then((res) => {
@@ -98,7 +96,7 @@ function ViewProduct() {
           height: '100vh',
         }}
       >
-        <Card>
+        <Card style={{width: '80%'}}>
           <Card.Body>
             <Row>
               <Col md='3'>
@@ -113,98 +111,33 @@ function ViewProduct() {
                   }}
                 />
               </Col>
-              <Col md='9'>
-                <table>
-                  <th>
-                    <h3>{product.name}</h3>
-                  </th>
-                </table>
-                <table>
-                  <th>
-                    <h5
-                      style={{
-                        color: 'green',
-                        marginRight: '50px',
-                        font: 'message-box',
-                      }}
-                    >
-                      মূল্য: {product.unitPrize} টাকা/{product.unitName}
-                    </h5>
-                  </th>
-                </table>
-                <table>
-                  <th>
-                    <h5>সর্বনিম্ন অর্ডার:</h5>
-                  </th>
-                  <th>
-                    <h5
-                      style={{
-                        color: 'green',
-                        marginLeft: '10px',
-                        font: 'message-box',
-                      }}
-                    >
-                      {product.minOrder} {product.unitName}
-                    </h5>
-                  </th>
-                  <th>
-                    <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
-                      মজুদ:
-                    </h5>
-                  </th>
-                  <th>
-                    <h5
-                      style={{
-                        color: 'green',
-                        marginLeft: '10px',
-                        font: 'message-box',
-                      }}
-                    >
-                      {product.available} {product.unitName}
-                    </h5>
-                  </th>
-                  <th>
-                    <h5 style={{ marginLeft: '30px', font: 'message-box' }}>
-                      তারিখ:
-                    </h5>
-                  </th>
-                  <th>
-                    <h5
-                      style={{
-                        color: 'green',
-                        marginLeft: '10px',
-                        font: 'message-box',
-                      }}
-                    >
-                      {product.availableDate}
-                    </h5>
-                  </th>
-                </table>
-                <table>
-                  <th>
-                    <h5 style={{ marginRight: '30px', font: 'status-bar' }}>
-                      বিভাগঃ {product.division}
-                    </h5>
-                  </th>
-                  <th>
-                    <h5 style={{ marginRight: '30px', font: 'status-bar' }}>
-                      জেলাঃ {product.district}
-                    </h5>
-                  </th>
-                </table>
-                <table>
-                  <th>
-                    <h5
-                      style={{
-                        color: 'black',
-                        marginRight: '50px',
-                        font: 'message-box',
-                      }}
-                    >
-                      বিবরণী: {product.description}
-                    </h5>
-                  </th>
-                </table>
+              <Col md='8' style={{ marginLeft: '2%' }}>
+                <Row as='h3'>{product.name}</Row>
+                <Row style={{ color: 'green' }}><Col>মূল্য: {product.unitPrize} টাকা/{product.unitName}</Col></Row>
+                <Row style={{ color: 'green' }}>
+                  <Col>সর্বনিম্ন অর্ডার: {product.minOrder} {product.unitName}</Col>
+                  <Col>মজুদ: {product.available}{product.unitName}</Col>
+                  <Col>তারিখ: {product.availableDate.replace('T00:00:00.000Z', '')}</Col>
+                </Row>
+                <Row style={{ marginRight: '20px', font: 'status-bar' }}>
+                  <Col>বিভাগঃ {product.division}</Col>
+                  <Col>জেলাঃ {product.district}</Col>
+                  <Col></Col>
+                  <Col></Col>
+                  <Col></Col>
+                  <Col></Col>
+                </Row>
+                <Row>
+                  <Col>বিবরণী: {product.description}</Col>
+                </Row>
+                <Row style={{ marginRight: '20px', font: 'status-bar' }}>
+                  <Col>বিভাগঃ {product.division}</Col>
+                  <Col>জেলাঃ {product.district}</Col>
+                  <Col></Col>
+                  <Col></Col>
+                  <Col></Col>
+                  <Col></Col>
+                </Row>
                 <Form style={{ marginLeft: '40%' }}>
                   <Row>
                     <Col>
@@ -235,7 +168,7 @@ function ViewProduct() {
               <Card style={{ width: '100%', margin: '1%' }}>
                 <Card.Title as='h4'>মন্তব্যসমূহ</Card.Title>
                 <Card.Body>
-                  <Table className='table-hover table-striped'>
+                  <Row className='table-hover table-striped'>
                     <thead>
                       <tr>
                         <th className='border-0'></th>
@@ -243,7 +176,7 @@ function ViewProduct() {
                       </tr>
                     </thead>
                     <tbody></tbody>
-                  </Table>
+                  </Row>
                 </Card.Body>
               </Card>
             </Row>
