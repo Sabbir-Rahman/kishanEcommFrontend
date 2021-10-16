@@ -214,31 +214,54 @@ function BuyRequset() {
       )
     } else {
       if (rating[i] != 0) {
-        alert('Already rating given')
+        sellrequset.push(
+          <tr>
+            <td>{i + 1}</td>
+            <td>{productName[i]}</td>
+            <td>{bookingMoney[i]}</td>
+            <td>{buyingMoney[i]}</td>
+            <td>{buyingQuantity[i]}</td>
+            <td>
+              <Button
+                className='btn-round btn-fill'
+                size='sm'
+                variant='success'
+                disabled
+              >
+                {status[i]}
+              </Button>
+            </td>
+            <td>
+              <Rating disabled placeholderRating={rating[i]} readonly />
+            </td>
+          </tr>
+        )
+      } else {
+        sellrequset.push(
+          <tr>
+            <td>{i + 1}</td>
+            <td>{productName[i]}</td>
+            <td>{bookingMoney[i]}</td>
+            <td>{buyingMoney[i]}</td>
+            <td>{buyingQuantity[i]}</td>
+            <td>
+              <Button
+                className='btn-round btn-fill'
+                size='sm'
+                variant='success'
+                disabled
+              >
+                {status[i]}
+              </Button>
+            </td>
+            <td>
+              <Rating onClick={(rate) => rating(rate)} />
+            </td>
+          </tr>
+        )
       }
 
-      sellrequset.push(
-        <tr>
-          <td>{i + 1}</td>
-          <td>{productName[i]}</td>
-          <td>{bookingMoney[i]}</td>
-          <td>{buyingMoney[i]}</td>
-          <td>{buyingQuantity[i]}</td>
-          <td>
-            <Button
-              className='btn-round btn-fill'
-              size='sm'
-              variant='success'
-              disabled
-            >
-              {status[i]}
-            </Button>
-          </td>
-          <td>
-            <Rating onClick={(rate) => rating(rate)} />
-          </td>
-        </tr>
-      )
+      
     }
   }
 
