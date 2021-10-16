@@ -60,14 +60,11 @@ function Sellrequset() {
   }
 
   const approve = (product_id) => {
-    //console.log(product_id)
-
     const productID = {
       productId: product_id,
     }
     const token = localStorage.getItem('user')
     const _token = token.split('"').join('')
-    //console.log(`Bearer ` + _token)
     const config = {
       headers: {
         Authorization: `Bearer ${_token}`,
@@ -86,14 +83,11 @@ function Sellrequset() {
   }
 
   const paymentDone = async (product_id) => {
-    //console.log(product_id)
-
     const productID = {
       productId: product_id,
     }
     const token = localStorage.getItem('user')
     const _token = token.split('"').join('')
-    //console.log(`Bearer ` + _token)
     const config = {
       headers: {
         Authorization: `Bearer ${_token}`,

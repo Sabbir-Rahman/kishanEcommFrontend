@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Card, Table } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import post from 'api/PostAPI'
 
 function BuyRequset() {
   const [requests, setRequest] = useState([])
@@ -9,7 +10,6 @@ function BuyRequset() {
 
   const ShowRequest = async () => {
     const token = localStorage.getItem('user')
-
     const _token = token.split('"').join('')
     console.log(token)
     const config = {
@@ -17,7 +17,6 @@ function BuyRequset() {
         Authorization: `Bearer ${_token}`,
       },
     }
-
     axios
       .get('http://127.0.0.1:5000/product/order/orderRequest', config)
       .then((res) => {
@@ -31,17 +30,12 @@ function BuyRequset() {
 
   const BookKorun = async (product_id) => {
     const token = localStorage.getItem('user')
-
     const _token = token.split('"').join('')
-    console.log(product_id)
-    //console.log(token)
-    //console.log(`Bearer ` + _token)
     const config = {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
     }
-
     axios
       .get(
         'http://127.0.0.1:5000/product/ssl-commerze/payment?productId=' +
@@ -49,16 +43,7 @@ function BuyRequset() {
         config
       )
       .then((res) => {
-        //console.log('RESPONSE RECEIVED: ', res)
-        //console.log(res.data.url)
-        //setBookRequest(res.data.url)
-        //console.log(bookRequest)
-        //console.log(bookRequest.url)
-        //redirect from here
-        //console.log(res.data.url)
-        //window.location.replace(res.data.url)
         window.open(res.data.url, '_blank')
-        //alert('Data fetched')
       })
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
@@ -66,55 +51,17 @@ function BuyRequset() {
   }
 
   const paymentDone = async (product_id) => {
-    //console.log(product_id)
-
     const productID = {
       productId: product_id,
     }
-    const token = localStorage.getItem('user')
-    const _token = token.split('"').join('')
-    //console.log(`Bearer ` + _token)
-    const config = {
-      headers: {
-        Authorization: `Bearer ${_token}`,
-      },
-    }
-    axios
-      .post('http://127.0.0.1:5000/product/order/paid', productID, config)
-      .then((res) => {
-        console.log('RESPONSE RECEIVED: ', res)
-        alert('Product payment successful')
-        window.location.reload()
-      })
-      .catch((err) => {
-        console.log('AXIOS ERROR: ', err)
-      })
+    post(productID, 'মূল্য পরিশোধ সফল হয়েছে', 'http://127.0.0.1:5000/product/order/paid')
   }
 
-  const productReceived = async (product_id) => {
-    //console.log(product_id)
-
+  const productReceived = async (id) => {
     const productID = {
-      productId: product_id,
+      productId: id,
     }
-    const token = localStorage.getItem('user')
-    const _token = token.split('"').join('')
-    //console.log(`Bearer ` + _token)
-    const config = {
-      headers: {
-        Authorization: `Bearer ${_token}`,
-      },
-    }
-    axios
-      .post('http://127.0.0.1:5000/product/order/complete', productID, config)
-      .then((res) => {
-        console.log('RESPONSE RECEIVED: ', res)
-        alert('Product Received successful')
-        window.location.reload()
-      })
-      .catch((err) => {
-        console.log('AXIOS ERROR: ', err)
-      })
+    post(productID, 'পন্য সফলভাবে বুঝে পেয়েছেন', 'http://127.0.0.1:5000/product/order/complete' )
   }
 
   useEffect(async () => {

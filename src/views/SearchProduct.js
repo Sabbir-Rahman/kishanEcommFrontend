@@ -1,18 +1,14 @@
 import React from 'react'
-
 import { Row, Col } from 'react-bootstrap'
 import SearchBox from 'components/SearchBox'
 import Cart from "components/Cart/Cart"
 
 const SearchProduct = () => {
 
-    let cartLink
-
-    cartLink = 'http://127.0.0.1:5000/product/view?'
+    let cartLink = 'http://127.0.0.1:5000/product/view?'
 
     if (localStorage.getItem('search')) {
         cartLink += localStorage.getItem('search')
-        console.log(cartLink, 'rafi')
         localStorage.removeItem('search')
     }
 
