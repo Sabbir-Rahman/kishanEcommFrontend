@@ -5,30 +5,19 @@ import { Button, Card, Container, Row, Col, Form } from 'react-bootstrap'
 
 function ViewProduct() {
   const [quantity, setQuantity] = useState('')
-  const resetFields = () => {
-    setQuantity('')
-  }
+
   async function order(product_id) {
-    //data adding
     const product = {
       productId: product_id,
       quantity: quantity,
     }
-
-    //console.log(product)
-
-    resetFields()
-
-    // axios
     const token = localStorage.getItem('user')
     const _token = token.split('"').join('')
-    //console.log(`Bearer ` + _token)
     const config = {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
     }
-
     axios
       .post('http://127.0.0.1:5000/product/order', product, config)
       .then((res) => {
@@ -38,8 +27,6 @@ function ViewProduct() {
       .catch((err) => {
         console.log('AXIOS ERROR: ', err)
       })
-
-    //data added
   }
 
   const productID = localStorage.getItem('productID')
@@ -64,12 +51,12 @@ function ViewProduct() {
     product = products.data[0]
     return (
       <Container fluid className='SignInAndUP'
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}>
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+        }}>
         <Card>
           <Card.Body>
             <Row>
@@ -89,10 +76,6 @@ function ViewProduct() {
                 <table>
                   <th>
                     <h3 style={{ marginRight: '50px' }}>{product.name}</h3>
-                  </th>
-                  <th style={{ color: 'gray', marginLeft: '5px' }}>
-                    {' '}
-                    আইডি: {product._id}{' '}
                   </th>
                 </table>
                 <table>
@@ -181,53 +164,29 @@ function ViewProduct() {
                     </h5>
                   </th>
                 </table>
-                <table>
-                  <th>
-                    <h5
-                      style={{ marginRight: '20px', font: 'message-box' }}
-                    >
-                      বিক্রেতা:
-                    </h5>
-                  </th>
-                  <th>
-                    <h5
-                      style={{
-                        color: 'green',
-                        marginRight: '10px',
-                        font: 'message-box',
-                      }}
-                    >
-                      {product.seller_id}
-                    </h5>{' '}
-                  </th>
-                  <th>
-                    <h5 style={{ color: 'gray', font: 'status-bar' }}>
-                      আড়তদার
-                    </h5>{' '}
-                  </th>
-                </table>
-                <Form>
-                  <table>
-                    <th>
+                <Form style={{ marginLeft: '40%' }}>
+                  <Row>
+                    <Col>
                       <Form.Control
                         type='number'
                         name='qty'
                         placeholder='পণ্যের পরিমাণ'
+                        size='sm'
                         value={quantity}
                         onChange={(e) => setQuantity(e.target.value)}
                       />
-                    </th>
-                    <th>
+                    </Col>
+                    <Col>
                       <Button
                         value={product._id}
                         onClick={(e) => order(e.target.value)}
                         variant='success'
-                        style={{ marginLeft: '20px' }}
+                        size='sm'
                       >
                         ক্রয় অনুরোধ প্রেরণ করুন
                       </Button>
-                    </th>
-                  </table>
+                    </Col>
+                  </Row>
                 </Form>
               </Col>
             </Row>
