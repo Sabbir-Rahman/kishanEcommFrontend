@@ -5,12 +5,19 @@ import Register from "views/Registration"
 import ViewProduct from "views/ViewProduct"
 import AdminDashboard from "views/Admin"
 import SearchProduct from "views/SearchProduct"
+import about from "views/About"
 
 const routes = [
   {
     path: "/home",
     name: "মূল পাতা",
     component: Home,
+    layout: "",
+  },
+  {
+    path: "/about",
+    name: "আমাদের সম্পর্কে",
+    component: about,
     layout: "",
   },
   {
