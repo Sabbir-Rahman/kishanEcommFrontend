@@ -117,14 +117,20 @@ function BuyRequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>
-            <Button className='btn-round btn-fill' variant='info' disabled>
+            <Button
+              className='btn-round btn-fill'
+              size='sm'
+              variant='info'
+              disabled
+            >
               {status[i]}
             </Button>
           </td>
           <td>
             <Button
               size='sm'
-              variant='warning'
+              variant='secondary'
+              className='btn-round btn-fill'
               value={productID[i]}
               onClick={(e) => BookKorun(e.target.value)}
             >
@@ -142,7 +148,12 @@ function BuyRequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>
-            <Button className='btn-round btn-fill' variant='danger' disabled>
+            <Button
+              className='btn-round btn-fill'
+              size='sm'
+              variant='danger'
+              disabled
+            >
               {status[i]}
             </Button>
           </td>
@@ -150,6 +161,7 @@ function BuyRequset() {
             <Button
               size='sm'
               variant='warning'
+              className='btn-round btn-fill'
               value={productID[i]}
               onClick={(e) => productReceived(e.target.value)}
             >
@@ -167,7 +179,12 @@ function BuyRequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>
-            <Button className='btn-round btn-fill' variant='warning' disabled>
+            <Button
+              className='btn-round btn-fill'
+              size='sm'
+              variant='warning'
+              disabled
+            >
               {status[i]}
             </Button>
           </td>
@@ -183,7 +200,12 @@ function BuyRequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>
-            <Button className='btn-round btn-fill' variant='primary' disabled>
+            <Button
+              className='btn-round btn-fill'
+              size='sm'
+              variant='primary'
+              disabled
+            >
               {status[i]}
             </Button>
           </td>
@@ -203,16 +225,17 @@ function BuyRequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>
-            <Button className='btn-round btn-fill' variant='success' disabled>
+            <Button
+              className='btn-round btn-fill'
+              size='sm'
+              variant='success'
+              disabled
+            >
               {status[i]}
             </Button>
           </td>
           <td>
-            <Rating
-              onClick={(rate) => {
-                DoRating(rate, RequestID[i])
-              }}
-            />
+            <Rating onClick={(rate) => rating(rate)} />
           </td>
         </tr>
       )
