@@ -4,6 +4,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import FileBase from 'react-file-base64'
 import { districts } from 'components/SearchCriterias'
+import post from 'api/PostAPI'
 
 function AddProduct() {
   const [productName, setProductName] = useState('')

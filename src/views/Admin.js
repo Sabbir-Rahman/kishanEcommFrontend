@@ -2,31 +2,18 @@ import React from 'react'
 import { Button, Card, Table } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import post from 'api/PostAPI'
+
 
 function Admin() {
+
   const approve = (product_id) => {
     const productID = {
       productId: product_id,
       isVerified: true,
       message: 'Your product is verified. Thank you',
     }
-    const token = localStorage.getItem('user')
-    const _token = token.split('"').join('')
-    const config = {
-      headers: {
-        Authorization: `Bearer ${_token}`,
-      },
-    }
-    axios
-      .post('http://127.0.0.1:5000/product/verify', productID, config)
-      .then((res) => {
-        console.log('RESPONSE RECEIVED: ', res)
-        alert('Product verified successfully')
-        window.location.reload()
-      })
-      .catch((err) => {
-        console.log('AXIOS ERROR: ', err)
-      })
+    post(productID, 'পন্য সফলভাবে ভেরিফাই করা হয়েছে', 'http://127.0.0.1:5000/product/verify')
   }
 
   const [requests, setRequest] = useState([])
