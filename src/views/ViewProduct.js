@@ -41,7 +41,7 @@ function ViewProduct() {
       })
       .then((res) => setProduct(res.data))
   }
-  
+
   const ShowComment = async () => {
     const token = localStorage.getItem('user')
 
@@ -55,10 +55,7 @@ function ViewProduct() {
     }
 
     axios
-      .get(
-        'http://127.0.0.1:5000/product/comment?_id=' + productID,
-        config
-      )
+      .get('http://127.0.0.1:5000/product/comment?_id=' + productID, config)
       .then((res) => {
         if (res.data.message == 'Comment fetch succesfylly') {
           console.log('Comment fetch succesfylly')
@@ -72,7 +69,7 @@ function ViewProduct() {
       })
   }
 
-  //console.log(comments)
+  console.log(comments)
 
   useEffect(async () => {
     ShowProduct()
