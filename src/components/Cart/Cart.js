@@ -4,7 +4,6 @@ import productData from 'Global/ProductData'
 import { useHistory } from 'react-router'
 
 function Cart(param) {
-
   const history = useHistory()
 
   function redirect(productID) {
@@ -15,7 +14,7 @@ function Cart(param) {
   const products = productData(param)
   let cart = []
 
-  products.map((product) => (
+  products.map((product) =>
     cart.push(
       <div
         style={{
@@ -30,7 +29,9 @@ function Cart(param) {
           variant='success'
           md='auto'
           style={{ marginLeft: '2%', marginRight: '2%' }}
-          onClick={(e) => redirect(product.id)}
+          onClick={(e) => {
+            redirect(product.id)
+          }}
           style={{
             background: 'none',
             color: 'inherit',
@@ -38,11 +39,17 @@ function Cart(param) {
             padding: '0',
             font: 'inherit',
             cursor: 'pointer',
-            outline: 'inherit'
+            outline: 'inherit',
           }}
         >
           <Card style={{ backgroundColor: '#F4FFEE' }}>
-            <Card.Header style={{ width: '200px', height: '200px', backgroundColor: '#F4FFEE' }}>
+            <Card.Header
+              style={{
+                width: '200px',
+                height: '200px',
+                backgroundColor: '#F4FFEE',
+              }}
+            >
               <img
                 src={product.image}
                 alt='দুঃখিত! পণ্যের ছবি পাওয়া যায়নি'
@@ -88,7 +95,7 @@ function Cart(param) {
         </Button>
       </div>
     )
-  ))
+  )
 
   return cart
 }

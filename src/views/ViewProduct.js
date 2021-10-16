@@ -5,6 +5,7 @@ import { Button, Card, Container, Row, Col, Form, Table } from 'react-bootstrap'
 
 function ViewProduct() {
   const [quantity, setQuantity] = useState('')
+  const [comments, setComments] = useState([])
 
   async function order(product_id) {
     const product = {
@@ -30,7 +31,7 @@ function ViewProduct() {
   }
 
   const productID = localStorage.getItem('productID')
-  console.log(productID, "আর তো ভাল্লাগে না বাল‍!")
+  console.log(productID, 'আর তো ভাল্লাগে না বাল‍!')
 
   const ShowProduct = async () => {
     const token = localStorage.getItem('user')
@@ -41,8 +42,42 @@ function ViewProduct() {
       .then((res) => setProduct(res.data))
   }
 
+  const product_id = localStorage.getItem('productID')
+  const ShowComment = async () => {
+    const token = localStorage.getItem('user')
+
+    const _token = token.split('"').join('')
+    //console.log(product_id)
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+
+    axios
+      .get(
+        'http://127.0.0.1:5000/product/comment?productId=' + product_id,
+        config
+      )
+      .then((res) => {
+        if (res.data.message == 'Comment fetch succesfylly') {
+          console.log('Comment fetch succesfylly')
+          setComments(res.data.comments.comments)
+        } else {
+          console.log('no comment')
+        }
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+  }
+
+  //console.log(comments)
+
   useEffect(async () => {
     ShowProduct()
+    ShowComment()
   }, [])
 
   const [products, setProduct] = useState([])
@@ -50,13 +85,16 @@ function ViewProduct() {
   if (products.data != undefined) {
     product = products.data[0]
     return (
-      <Container fluid className='SignInAndUP'
+      <Container
+        fluid
+        className='SignInAndUP'
         style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           height: '100vh',
-        }}>
+        }}
+      >
         <Card>
           <Card.Body>
             <Row>
@@ -191,18 +229,18 @@ function ViewProduct() {
               </Col>
             </Row>
             <Row>
-              <Card style={{width: '100%', margin: '1%'}}>
+              <Card style={{ width: '100%', margin: '1%' }}>
                 <Card.Title as='h4'>মন্তব্যসমূহ</Card.Title>
                 <Card.Body>
-                <Table className='table-hover table-striped'>
-                  <thead>
-                    <tr>
-                      <th className='border-0'></th>
-                      <th className='border-0'></th>
-                    </tr>
-                  </thead>
-                  <tbody></tbody>
-                </Table>
+                  <Table className='table-hover table-striped'>
+                    <thead>
+                      <tr>
+                        <th className='border-0'></th>
+                        <th className='border-0'></th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </Table>
                 </Card.Body>
               </Card>
             </Row>
@@ -210,11 +248,8 @@ function ViewProduct() {
         </Card>
       </Container>
     )
-
   } else {
-    return (
-      <></>
-    )
+    return <></>
   }
 }
 

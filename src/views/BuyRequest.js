@@ -56,7 +56,8 @@ function BuyRequset() {
         //console.log(bookRequest.url)
         //redirect from here
         //console.log(res.data.url)
-        window.location.replace(res.data.url)
+        //window.location.replace(res.data.url)
+        window.open(res.data.url, '_blank')
         //alert('Data fetched')
       })
       .catch((err) => {
