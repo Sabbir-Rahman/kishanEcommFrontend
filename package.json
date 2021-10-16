@@ -19,6 +19,7 @@
     "react-notification-timeline": "^0.0.9",
     "react-notifications-component": "^3.1.0",
     "react-rating": "^2.0.5",
+    "react-rating-stars-component": "^2.2.0",
     "react-redux": "^7.2.4",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",

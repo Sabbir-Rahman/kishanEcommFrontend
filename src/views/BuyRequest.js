@@ -4,9 +4,14 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import post from 'api/PostAPI'
 import Rating from 'react-rating'
+import ReactStars from 'react-rating-stars-component'
 
 function BuyRequset() {
   const [requests, setRequest] = useState([])
+
+  const rating = (value) => {
+    alert(value)
+  }
 
   const ShowRequest = async () => {
     const token = localStorage.getItem('user')
@@ -165,7 +170,7 @@ function BuyRequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td><Button className='btn-round btn-fill' variant='success' disabled>{status[i]}</Button></td>
-          <td><Rating /></td>
+          <td><Rating onClick={(rate) => rating(rate)}/></td>
         </tr>
       )
     }
