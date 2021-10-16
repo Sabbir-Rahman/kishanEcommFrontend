@@ -200,12 +200,10 @@ function ViewProduct() {
                   <Table className='table-hover table-striped'>
                     <tbody>{comment}</tbody>
                   </Table>
-                  <Table className='table-hover table-striped'>
-                    <tbody>
-                      <tr>
-                        <td>
+                  <Row style={{marginLeft: '0%'}}>
+                        
                           {' '}
-                          <Form>
+                          <Form style={{width: '99%'}}>
                             <Form.Group controlId='comment'>
                               <Form.Control
                                 type='text'
@@ -215,10 +213,7 @@ function ViewProduct() {
                                 onChange={(e) => setCommentt(e.target.value)}
                               />
                             </Form.Group>
-                          </Form>
-                        </td>
-                        <td>
-                          <Button
+                            <Button style={{marginLeft: '92%'}}
                             className='btn-round btn-fill'
                             variant='info'
                             size='sm'
@@ -227,10 +222,8 @@ function ViewProduct() {
                           >
                             মন্তব্য করুন
                           </Button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </Table>
+                          </Form>
+                        </Row>
                 </Card.Body>
               </Card>
             </Row>
