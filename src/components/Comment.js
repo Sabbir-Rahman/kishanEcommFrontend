@@ -58,6 +58,7 @@ const Comment = () => {
     comments.map((c) => {
       comment.push(
         <tr>
+          <td>{c.userName}</td>
           <td>{c.comments}</td>
         </tr>
       )
