@@ -5,6 +5,7 @@ import { Button, Card, Container, Row, Col, Form, Table } from 'react-bootstrap'
 
 function ViewProduct() {
   const [quantity, setQuantity] = useState('')
+  const [comments, setComments] = useState([])
 
   async function order(product_id) {
     const product = {
@@ -41,8 +42,42 @@ function ViewProduct() {
       .then((res) => setProduct(res.data))
   }
 
+  const product_id = localStorage.getItem('productID')
+  const ShowComment = async () => {
+    const token = localStorage.getItem('user')
+
+    const _token = token.split('"').join('')
+    //console.log(product_id)
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+
+    axios
+      .get(
+        'http://127.0.0.1:5000/product/comment?productId=' + product_id,
+        config
+      )
+      .then((res) => {
+        if (res.data.message == 'Comment fetch succesfylly') {
+          console.log('Comment fetch succesfylly')
+          setComments(res.data.comments.comments)
+        } else {
+          console.log('no comment')
+        }
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
+  }
+
+  //console.log(comments)
+
   useEffect(async () => {
     ShowProduct()
+    ShowComment()
   }, [])
 
   const [products, setProduct] = useState([])
