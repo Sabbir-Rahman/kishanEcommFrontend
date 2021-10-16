@@ -6,7 +6,6 @@ import post from 'api/PostAPI'
 
 function BuyRequset() {
   const [requests, setRequest] = useState([])
-  const [bookRequest, setBookRequest] = useState('')
 
   const ShowRequest = async () => {
     const token = localStorage.getItem('user')
@@ -50,18 +49,15 @@ function BuyRequset() {
       })
   }
 
-  const paymentDone = async (product_id) => {
-    const productID = {
-      productId: product_id,
-    }
-    post(productID, 'মূল্য পরিশোধ সফল হয়েছে', 'http://127.0.0.1:5000/product/order/paid')
-  }
-
   const productReceived = async (id) => {
     const productID = {
       productId: id,
     }
-    post(productID, 'পন্য সফলভাবে বুঝে পেয়েছেন', 'http://127.0.0.1:5000/product/order/complete' )
+    post(
+      productID,
+      'পন্য সফলভাবে বুঝে পেয়েছেন',
+      'http://127.0.0.1:5000/product/order/complete'
+    )
   }
 
   useEffect(async () => {
