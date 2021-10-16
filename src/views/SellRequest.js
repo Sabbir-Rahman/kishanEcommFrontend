@@ -115,7 +115,7 @@ function Sellrequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{buyerName[i]}</td>
-          <td><Button className='btn-round btn-fill' variant='warning' disabled>{status[i]}</Button></td>
+          <td><Button className='btn-round btn-fill' size='sm' variant='warning' disabled>{status[i]}</Button></td>
           <td>
             <Button
               variant='success'
@@ -140,7 +140,7 @@ function Sellrequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{buyerName[i]}</td>
-          <td><Button className='btn-round btn-fill' variant='primary' disabled>{status[i]}</Button></td>
+          <td><Button className='btn-round btn-fill' size='sm' variant='primary' disabled>{status[i]}</Button></td>
           <td>
             <Button
               variant='warning'
@@ -162,7 +162,7 @@ function Sellrequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{buyerName[i]}</td>
-          <td><Button className='btn-round btn-fill' variant='info' disabled>{status[i]}</Button></td>
+          <td><Button className='btn-round btn-fill' size='sm' variant='info' disabled>{status[i]}</Button></td>
           <td></td>
         </tr>
       )
@@ -174,7 +174,7 @@ function Sellrequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{buyerName[i]}</td>
-          <td><Button className='btn-round btn-fill' variant='success' disabled>{status[i]}</Button></td>
+          <td><Button className='btn-round btn-fill' size='sm' variant='success' disabled>{status[i]}</Button></td>
           <td></td>
         </tr>
       )
