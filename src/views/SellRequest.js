@@ -115,6 +115,7 @@ function Sellrequset() {
     if (status[i] == 'pending') {
       sellrequset.push(
         <tr>
+          <td>{i + 1}</td>
           <td><Button style={{
             background: 'none',
             color: 'inherit',
@@ -131,7 +132,7 @@ function Sellrequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{buyerName[i]}</td>
-          <td><Button className='btn-round btn-fill' size='sm' variant='warning' disabled>{status[i]}</Button></td>
+          <td><Button className='btn-round btn-fill' size='sm' variant='warning' style={{ width: "100px" }} disabled>{status[i]}</Button></td>
           <td>
             <Row>
               <Button
@@ -153,7 +154,7 @@ function Sellrequset() {
                   placeholder='ক্যান্সেল বার্তা'
                 />
               </Form>{' '}
-              <Button variant='danger' style={{ width: "90px" }} className='btn-round btn-fill' size='sm' value={productID[i]}>
+              <Button variant='danger' style={{ width: "100px" }} className='btn-round btn-fill' size='sm' value={productID[i]}>
                 রিমুভ করুন
               </Button>
             </Row>
@@ -163,6 +164,7 @@ function Sellrequset() {
     } else if (status[i] == 'booked') {
       sellrequset.push(
         <tr>
+          <td>{i + 1}</td>
           <td><Button style={{
             background: 'none',
             color: 'inherit',
@@ -179,7 +181,7 @@ function Sellrequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{buyerName[i]}</td>
-          <td><Button className='btn-round btn-fill' size='sm' variant='primary' disabled>{status[i]}</Button></td>
+          <td><Button className='btn-round btn-fill' style={{ width: "100px" }} size='sm' variant='primary' disabled>{status[i]}</Button></td>
           <td>
             <Button
               variant='warning'
@@ -196,6 +198,7 @@ function Sellrequset() {
     } else if (status[i] == 'accepted') {
       sellrequset.push(
         <tr>
+          <td>{i + 1}</td>
           <td><Button style={{
             background: 'none',
             color: 'inherit',
@@ -212,13 +215,14 @@ function Sellrequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{buyerName[i]}</td>
-          <td><Button className='btn-round btn-fill' size='sm' variant='info' disabled>{status[i]}</Button></td>
+          <td><Button className='btn-round btn-fill' style={{ width: "100px" }} size='sm' variant='info' disabled>{status[i]}</Button></td>
           <td></td>
         </tr>
       )
     } else {
       sellrequset.push(
         <tr>
+          <td>{i + 1}</td>
           <td><Button style={{
             background: 'none',
             color: 'inherit',
@@ -235,7 +239,7 @@ function Sellrequset() {
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>{buyerName[i]}</td>
-          <td><Button className='btn-round btn-fill' size='sm' variant='success' disabled>{status[i]}</Button></td>
+          <td><Button className='btn-round btn-fill' style={{ width: "100px" }} size='sm' variant='success' disabled>{status[i]}</Button></td>
           <td></td>
         </tr>
       )
