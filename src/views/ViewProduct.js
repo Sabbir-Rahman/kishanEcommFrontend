@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Button, Card, Container, Row, Col, Form } from 'react-bootstrap'
+import { Button, Card, Container, Row, Col, Form, Table } from 'react-bootstrap'
 
 function ViewProduct() {
   const [quantity, setQuantity] = useState('')
   const [comments, setComments] = useState([])
+  const [products, setProduct] = useState([])
 
   async function order(product_id) {
     const product = {
@@ -46,8 +47,6 @@ function ViewProduct() {
     const token = localStorage.getItem('user')
 
     const _token = token.split('"').join('')
-    //console.log(product_id)
-
     const config = {
       headers: {
         Authorization: `Bearer ${_token}`,
@@ -60,9 +59,6 @@ function ViewProduct() {
         config
       )
       .then((res) => {
-        //console.log('Comment fetch succesfylly')
-        //setComments(res.data.comments.comments)
-
         if (res.data.message == 'Comment fetch succesfylly') {
           console.log('comment fetched!')
           console.log(res.data.comments.comments)
@@ -81,7 +77,16 @@ function ViewProduct() {
     ShowComment()
   }, [])
 
-  const [products, setProduct] = useState([])
+  let comment = []
+
+  if (comments != undefined) {
+    comments.map((c) => {
+      comment.push(
+        <tr><td>{c.comments}</td></tr>
+      )
+    })
+  }
+
   let product
   if (products.data != undefined) {
     product = products.data[0]
@@ -96,7 +101,7 @@ function ViewProduct() {
           height: '100vh',
         }}
       >
-        <Card style={{width: '80%'}}>
+        <Card style={{ width: '80%' }}>
           <Card.Body>
             <Row>
               <Col md='3'>
@@ -153,6 +158,7 @@ function ViewProduct() {
                     <Col>
                       <Button
                         value={product._id}
+                        className='btn-round btn-fill'
                         onClick={(e) => order(e.target.value)}
                         variant='success'
                         size='sm'
@@ -168,15 +174,19 @@ function ViewProduct() {
               <Card style={{ width: '100%', margin: '1%' }}>
                 <Card.Title as='h4'>মন্তব্যসমূহ</Card.Title>
                 <Card.Body>
-                  <Row className='table-hover table-striped'>
-                    <thead>
+                  <Table className='table-hover table-striped'>
+                    <tbody>
+                      {comment}
+                    </tbody>
+                  </Table>
+                  <Table className='table-hover table-striped'>
+                    <tbody>
                       <tr>
-                        <th className='border-0'></th>
-                        <th className='border-0'></th>
+                        <td><Form.Control /></td>
+                        <td><Button className='btn-round btn-fill' variant='info'>মন্তব্য করুন</Button></td>
                       </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </Row>
+                    </tbody>
+                  </Table>
                 </Card.Body>
               </Card>
             </Row>
