@@ -97,7 +97,7 @@ function BuyRequset() {
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
-          <td>{status[i]}</td>
+          <td><Button className='btn-round btn-fill' variant='info' disabled>{status[i]}</Button></td>
           <td>
             <Button
               size='sm'
@@ -118,7 +118,7 @@ function BuyRequset() {
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
-          <td color='yellow'>{status[i]}</td>
+          <td><Button className='btn-round btn-fill' variant='danger' disabled>{status[i]}</Button></td>
           <td>
             <Button
               size='sm'
@@ -131,6 +131,30 @@ function BuyRequset() {
           </td>
         </tr>
       )
+    } else if (status[i] == 'pending') {
+      sellrequset.push(
+        <tr>
+          <td>{i + 1}</td>
+          <td>{productName[i]}</td>
+          <td>{bookingMoney[i]}</td>
+          <td>{buyingMoney[i]}</td>
+          <td>{buyingQuantity[i]}</td>
+          <td><Button className='btn-round btn-fill' variant='warning' disabled>{status[i]}</Button></td>
+          <td></td>
+        </tr>
+      )
+    } else if (status[i] == 'booked') {
+      sellrequset.push(
+        <tr>
+          <td>{i + 1}</td>
+          <td>{productName[i]}</td>
+          <td>{bookingMoney[i]}</td>
+          <td>{buyingMoney[i]}</td>
+          <td>{buyingQuantity[i]}</td>
+          <td><Button className='btn-round btn-fill' variant='primary' disabled>{status[i]}</Button></td>
+          <td></td>
+        </tr>
+      )
     } else {
       sellrequset.push(
         <tr>
@@ -139,8 +163,8 @@ function BuyRequset() {
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
-          <td color='yellow'>{status[i]}</td>
-          <td></td>
+          <td><Button className='btn-round btn-fill' variant='success' disabled>{status[i]}</Button></td>
+          <td>রেটিং দিন</td>
         </tr>
       )
     }
