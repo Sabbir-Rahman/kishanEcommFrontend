@@ -6,6 +6,12 @@ import post from 'api/PostAPI'
 import Rating from 'react-rating'
 
 function BuyRequset() {
+
+  function viewProduct(productID) {
+    localStorage.setItem('productID', productID)
+    window.location.replace('/product')
+  }
+
   const [requests, setRequest] = useState([])
 
   const DoRating = (value, req_ID) => {
@@ -112,7 +118,18 @@ function BuyRequset() {
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
-          <td>{productName[i]}</td>
+          <td><Button style={{
+            background: 'none',
+            color: 'inherit',
+            border: 'none',
+            padding: '0',
+            font: 'inherit',
+            cursor: 'pointer',
+            outline: 'inherit',
+          }}
+          onClick={(e) => viewProduct(productID[i])} >
+            {productName[i]}
+          </Button></td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
@@ -143,7 +160,18 @@ function BuyRequset() {
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
-          <td>{productName[i]}</td>
+          <td><Button style={{
+            background: 'none',
+            color: 'inherit',
+            border: 'none',
+            padding: '0',
+            font: 'inherit',
+            cursor: 'pointer',
+            outline: 'inherit',
+          }}
+          onClick={(e) => viewProduct(productID[i])} >
+            {productName[i]}
+          </Button></td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
@@ -174,7 +202,18 @@ function BuyRequset() {
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
-          <td>{productName[i]}</td>
+          <td><Button style={{
+            background: 'none',
+            color: 'inherit',
+            border: 'none',
+            padding: '0',
+            font: 'inherit',
+            cursor: 'pointer',
+            outline: 'inherit',
+          }}
+          onClick={(e) => viewProduct(productID[i])} >
+            {productName[i]}
+          </Button></td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
@@ -195,7 +234,18 @@ function BuyRequset() {
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
-          <td>{productName[i]}</td>
+          <td><Button style={{
+            background: 'none',
+            color: 'inherit',
+            border: 'none',
+            padding: '0',
+            font: 'inherit',
+            cursor: 'pointer',
+            outline: 'inherit',
+          }}
+          onClick={(e) => viewProduct(productID[i])} >
+            {productName[i]}
+          </Button></td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
@@ -217,7 +267,18 @@ function BuyRequset() {
         sellrequset.push(
           <tr>
             <td>{i + 1}</td>
-            <td>{productName[i]}</td>
+            <td><Button style={{
+            background: 'none',
+            color: 'inherit',
+            border: 'none',
+            padding: '0',
+            font: 'inherit',
+            cursor: 'pointer',
+            outline: 'inherit',
+          }}
+          onClick={(e) => viewProduct(productID[i])} >
+            {productName[i]}
+          </Button></td>
             <td>{bookingMoney[i]}</td>
             <td>{buyingMoney[i]}</td>
             <td>{buyingQuantity[i]}</td>
@@ -240,7 +301,18 @@ function BuyRequset() {
         sellrequset.push(
           <tr>
             <td>{i + 1}</td>
-            <td>{productName[i]}</td>
+            <td><Button style={{
+            background: 'none',
+            color: 'inherit',
+            border: 'none',
+            padding: '0',
+            font: 'inherit',
+            cursor: 'pointer',
+            outline: 'inherit',
+          }}
+          onClick={(e) => viewProduct(productID[i])} >
+            {productName[i]}
+          </Button></td>
             <td>{bookingMoney[i]}</td>
             <td>{buyingMoney[i]}</td>
             <td>{buyingQuantity[i]}</td>

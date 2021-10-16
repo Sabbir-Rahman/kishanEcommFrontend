@@ -4,6 +4,11 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 function Sellrequset() {
+
+  function viewProduct(productID) {
+    localStorage.setItem('productID', productID)
+    window.location.replace('/product')
+  }
   const [requests, setRequest] = useState([])
 
   const ShowRequest = async () => {
@@ -110,7 +115,18 @@ function Sellrequset() {
     if (status[i] == 'pending') {
       sellrequset.push(
         <tr>
-          <td>{productName[i]}</td>
+          <td><Button style={{
+            background: 'none',
+            color: 'inherit',
+            border: 'none',
+            padding: '0',
+            font: 'inherit',
+            cursor: 'pointer',
+            outline: 'inherit',
+          }}
+            onClick={(e) => viewProduct(productID[i])} >
+            {productName[i]}
+          </Button></td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
@@ -135,7 +151,18 @@ function Sellrequset() {
     } else if (status[i] == 'booked') {
       sellrequset.push(
         <tr>
-          <td>{productName[i]}</td>
+          <td><Button style={{
+            background: 'none',
+            color: 'inherit',
+            border: 'none',
+            padding: '0',
+            font: 'inherit',
+            cursor: 'pointer',
+            outline: 'inherit',
+          }}
+            onClick={(e) => viewProduct(productID[i])} >
+            {productName[i]}
+          </Button></td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
@@ -154,10 +181,21 @@ function Sellrequset() {
           </td>
         </tr>
       )
-    } else if (status[i]=='accepted') {
+    } else if (status[i] == 'accepted') {
       sellrequset.push(
         <tr>
-          <td>{productName[i]}</td>
+          <td><Button style={{
+            background: 'none',
+            color: 'inherit',
+            border: 'none',
+            padding: '0',
+            font: 'inherit',
+            cursor: 'pointer',
+            outline: 'inherit',
+          }}
+            onClick={(e) => viewProduct(productID[i])} >
+            {productName[i]}
+          </Button></td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
@@ -169,7 +207,18 @@ function Sellrequset() {
     } else {
       sellrequset.push(
         <tr>
-          <td>{productName[i]}</td>
+          <td><Button style={{
+            background: 'none',
+            color: 'inherit',
+            border: 'none',
+            padding: '0',
+            font: 'inherit',
+            cursor: 'pointer',
+            outline: 'inherit',
+          }}
+            onClick={(e) => viewProduct(productID[i])} >
+            {productName[i]}
+          </Button></td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
