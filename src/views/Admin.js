@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, Table, Form } from 'react-bootstrap'
+import { Button, Card, Table, Form, Row } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import post from 'api/PostAPI'
@@ -121,6 +121,7 @@ function Admin() {
           <Button
             variant='success'
             size='sm'
+            style={{width:"300px"}}
             value={id[i]}
             onClick={(e) => approve(e.target.value)}
           >
@@ -128,25 +129,26 @@ function Admin() {
           </Button>
           <br />
           <td>
-            <Form>
-              <Form.Group controlId='price'>
+            <Row>
+              <Form style={{width:"200px"}}>
                 <Form.Control
                   type='text'
+                  size='sm'
                   placeholder='ক্যান্সেল বার্তা'
                   value={cancelMSG}
                   onChange={(e) => setCancelMSG(e.target.value)}
                 />
-              </Form.Group>
-            </Form>
+              </Form>
+              <Button
+              style={{width:"100px"}}
+                variant='danger'
+                size='sm'
+                onClick={(e) => cancel(id[i], cancelMSG)}
+              >
+                রিমুভ করুন
+              </Button>
+            </Row>
           </td>
-
-          <Button
-            variant='danger'
-            size='sm'
-            onClick={(e) => cancel(id[i], cancelMSG)}
-          >
-            রিমুভ করুন
-          </Button>
         </td>
       </tr>
     )
