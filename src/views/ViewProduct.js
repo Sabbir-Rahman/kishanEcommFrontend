@@ -43,7 +43,7 @@ function ViewProduct() {
   }
 
   const productID = localStorage.getItem('productID')
-  console.log(productID, "আর তো ভাল্লাগে না বাল‍!")
+  console.log(productID, 'আর তো ভাল্লাগে না বাল‍!')
 
   const ShowProduct = async () => {
     const token = localStorage.getItem('user')
@@ -63,13 +63,16 @@ function ViewProduct() {
   if (products.data != undefined) {
     product = products.data[0]
     return (
-      <Container fluid className='SignInAndUP'
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}>
+      <Container
+        fluid
+        className='SignInAndUP'
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+        }}
+      >
         <Card>
           <Card.Body>
             <Row>
@@ -183,9 +186,7 @@ function ViewProduct() {
                 </table>
                 <table>
                   <th>
-                    <h5
-                      style={{ marginRight: '20px', font: 'message-box' }}
-                    >
+                    <h5 style={{ marginRight: '20px', font: 'message-box' }}>
                       বিক্রেতা:
                     </h5>
                   </th>
@@ -235,11 +236,8 @@ function ViewProduct() {
         </Card>
       </Container>
     )
-
   } else {
-    return (
-      <></>
-    )
+    return <></>
   }
 }
 
