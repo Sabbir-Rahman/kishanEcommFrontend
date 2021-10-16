@@ -1,20 +1,27 @@
 import { Container, Row, Col, Card } from "react-bootstrap"
 import রাফীর_ছবি from 'assets/img/about/rafi.jpg'
+import রাতুলের_ছবি from 'assets/img/about/ratul.jpg'
+import সাব্বিরের_ছবি from 'assets/img/about/sabbir.jpg'
 
 const about = () => {
     return (
-        <Container fluid>
-            <Container className="SignInAndUp">
-                <Card className="SignInAndUp">
+        <Container fluid >
+            <Container fluid className="SignInAndUp"         style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: 'auto',
+        }}>
+                <Card style={{ width: '30%', margin: '5%' }}>
                     <Card.Body>
                         <Col >
                             <img
-                                src={'রাতুলের_ছবি'}
+                                src={রাতুলের_ছবি}
                                 alt='রাতুলের ছবি পাওয়া যায়নি'
                                 style={{
                                     background: 'white',
-                                    width: '100%',
-                                    height: 'auto',
+                                    width: '320px',
+                                    height: '420px',
                                     overflow: 'hidden',
                                 }}
                             />
@@ -25,7 +32,7 @@ const about = () => {
                         </Col>
                     </Card.Body>
                 </Card>
-                <Card className="SignInAndUp">
+                <Card style={{ width: '30%' }}>
                     <Card.Body>
                         <Col >
                             <img
@@ -33,8 +40,8 @@ const about = () => {
                                 alt='রাফীর ছবি পাওয়া যায়নি'
                                 style={{
                                     background: 'white',
-                                    width: '100%',
-                                    height: 'auto',
+                                    width: '320px',
+                                    height: '420px',
                                     overflow: 'hidden',
                                 }}
                             />
@@ -45,16 +52,16 @@ const about = () => {
                         </Col>
                     </Card.Body>
                 </Card>
-                <Card className="SignInAndUp">
+                <Card style={{ width: '30%', margin: '5%' }}>
                     <Card.Body>
                         <Col >
                             <img
-                                src={'সাব্বিরের ছবি'}
+                                src={সাব্বিরের_ছবি}
                                 alt='সাব্বিরের ছবি পাওয়া যায়নি'
                                 style={{
                                     background: 'white',
-                                    width: '100%',
-                                    height: 'auto',
+                                    width: '320px',
+                                    height: '420px',
                                     overflow: 'hidden',
                                 }}
                             />
