@@ -31,7 +31,7 @@ const about = () => {
               />
             </Col>
             <Col style={{ marginLeft: '2%' }}>
-              <Row as='h3'>রাতুল মাহজাবিন</Row>
+              <Row as='h3'>রাতুল মাহযাবিন</Row>
               <Row>আইডি: ১৮০০৪২১২৩</Row>
             </Col>
           </Card.Body>
