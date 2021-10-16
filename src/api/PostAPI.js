@@ -1,6 +1,5 @@
 import axios from 'axios'
 const post = (data, message, link) => {
-    console.log(link, data)
     const token = localStorage.getItem('user')
     const _token = token.split('"').join('')
     const config = {

@@ -15,22 +15,7 @@ function ViewProduct() {
       productId: product_id,
       quantity: quantity,
     }
-    const token = localStorage.getItem('user')
-    const _token = token.split('"').join('')
-    const config = {
-      headers: {
-        Authorization: `Bearer ${_token}`,
-      },
-    }
-    axios
-      .post('http://127.0.0.1:5000/product/order', product, config)
-      .then((res) => {
-        console.log('RESPONSE RECEIVED: ', res)
-        alert('Product order successfully')
-      })
-      .catch((err) => {
-        console.log('AXIOS ERROR: ', err)
-      })
+    post(product, 'পন্য সফলভাবে অর্ডার করা হয়েছে', 'http://127.0.0.1:5000/product/order')
   }
 
   const productID = localStorage.getItem('productID')
@@ -47,7 +32,6 @@ function ViewProduct() {
 
   const ShowComment = async () => {
     const token = localStorage.getItem('user')
-
     const _token = token.split('"').join('')
     const config = {
       headers: {
