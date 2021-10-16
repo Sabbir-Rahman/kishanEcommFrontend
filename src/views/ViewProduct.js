@@ -76,7 +76,7 @@ function ViewProduct() {
                     placeholderRating={product.rating}
                     quiet
                     readonly
-                    size='sm'
+                    
                   />
                 </Row>
                 <Row style={{ color: 'green' }}>
