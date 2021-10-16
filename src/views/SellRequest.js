@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, Table } from 'react-bootstrap'
+import { Button, Card, Table, Form, Row } from 'react-bootstrap'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
@@ -133,18 +133,30 @@ function Sellrequset() {
           <td>{buyerName[i]}</td>
           <td><Button className='btn-round btn-fill' size='sm' variant='warning' disabled>{status[i]}</Button></td>
           <td>
-            <Button
-              variant='success'
-              size='sm'
-              value={productID[i]}
-              className='btn-round btn-fill'
-              onClick={(e) => approve(e.target.value)}
-            >
-              এপ্রুভ করুন
-            </Button>
-            <Button variant='danger' className='btn-round btn-fill' size='sm' value={productID[i]}>
-              রিমুভ করুন
-            </Button>
+            <Row>
+              <Button
+                style={{ width: '250px' }}
+                variant='success'
+                size='sm'
+                value={productID[i]}
+                className='btn-round btn-fill'
+                onClick={(e) => approve(e.target.value)}
+              >
+                এপ্রুভ করুন
+              </Button>
+            </Row>
+            <Row>
+              <Form style={{ width: "150px" }}>
+                <Form.Control
+                  type='text'
+                  size='sm'
+                  placeholder='ক্যান্সেল বার্তা'
+                />
+              </Form>{' '}
+              <Button variant='danger' style={{ width: "90px" }} className='btn-round btn-fill' size='sm' value={productID[i]}>
+                রিমুভ করুন
+              </Button>
+            </Row>
           </td>
         </tr>
       )
