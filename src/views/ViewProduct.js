@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Button, Card, Container, Row, Col, Form } from 'react-bootstrap'
+import { Button, Card, Container, Row, Col, Form, Table } from 'react-bootstrap'
 
 function ViewProduct() {
   const [quantity, setQuantity] = useState('')
@@ -75,7 +75,7 @@ function ViewProduct() {
               <Col md='9'>
                 <table>
                   <th>
-                    <h3 style={{ marginRight: '50px' }}>{product.name}</h3>
+                    <h3>{product.name}</h3>
                   </th>
                 </table>
                 <table>
@@ -189,6 +189,22 @@ function ViewProduct() {
                   </Row>
                 </Form>
               </Col>
+            </Row>
+            <Row>
+              <Card style={{width: '100%', margin: '1%'}}>
+                <Card.Title as='h4'>মন্তব্যসমূহ</Card.Title>
+                <Card.Body>
+                <Table className='table-hover table-striped'>
+                  <thead>
+                    <tr>
+                      <th className='border-0'></th>
+                      <th className='border-0'></th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </Table>
+                </Card.Body>
+              </Card>
             </Row>
           </Card.Body>
         </Card>
