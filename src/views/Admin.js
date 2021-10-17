@@ -4,33 +4,66 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import post from 'api/PostAPI'
 
+//https://kishanecommbackend.azurewebsites.net
+
 function Admin() {
   const [requests, setRequest] = useState([])
   const [cancelMSG, setCancelMSG] = useState('')
 
   const approve = (product_id) => {
+    //console.log(product_id)
+
     const productID = {
       productId: product_id,
       isVerified: true,
-      message: 'Your product is verified. Thank you',
+      message: 'আপনার পণ্যটি গ্রহণ করা হয়েছে। ধন্যবাদ',
     }
-    post(
-      productID,
-      'পন্য সফলভাবে ভেরিফাই করা হয়েছে',
-      'http://127.0.0.1:5000/product/verify'
-    )
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+    axios
+      .post('http://127.0.0.1:5000/product/verify', productID, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        alert('পণ্য ভেরিফাই সম্পন্ন হয়েছে')
+        window.localStorage.reload()
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
   }
 
   const cancel = (product_id, msg) => {
+    //console.log(product_id)
+
     const productID = {
       productId: product_id,
+      isVerified: true,
       message: msg,
     }
-    post(
-      productID,
-      'পন্য সফলভাবে ক্যান্সেল করা হয়েছে',
-      'http://127.0.0.1:5000/product/verify/cancel/'
-    )
+    const token = localStorage.getItem('user')
+    const _token = token.split('"').join('')
+    //console.log(`Bearer ` + _token)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    }
+    axios
+      .post('http://127.0.0.1:5000/product/verify/cancel/', productID, config)
+      .then((res) => {
+        console.log('RESPONSE RECEIVED: ', res)
+        alert('পণ্য বাতিল সম্পন্ন হয়েছে')
+        window.localStorage.reload()
+      })
+      .catch((err) => {
+        console.log('AXIOS ERROR: ', err)
+      })
   }
 
   const ShowRequest = async () => {
