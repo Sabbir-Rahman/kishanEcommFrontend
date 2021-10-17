@@ -24,8 +24,8 @@ const about = () => {
                 alt='রাতুলের ছবি পাওয়া যায়নি'
                 style={{
                   background: 'white',
-                  width: '320px',
-                  height: '420px',
+                  width: '100%',
+                  height: 'auto',
                   overflow: 'hidden',
                 }}
               />
@@ -33,7 +33,8 @@ const about = () => {
             <Col style={{ marginLeft: '2%' }}>
               <Row as='h3'>রাতুল মাহযাবিন</Row>
               <Row>আইডি: ১৮০০৪২১২৩</Row>
-              <Row>প্রোগ্রাম: সফটওয়্যার ইঞ্জিনিয়ারিং(আইইউটি)</Row>
+              <Row>প্রোগ্রাম: বিএসসি ইন সফটওয়্যার ইঞ্জিনিয়ারিং</Row>
+              <Row>ইসলামি প্রযুক্তি বিশ্ববিদ্যালয়</Row>
             </Col>
           </Card.Body>
         </Card>
@@ -45,8 +46,8 @@ const about = () => {
                 alt='রাফীর ছবি পাওয়া যায়নি'
                 style={{
                   background: 'white',
-                  width: '320px',
-                  height: '420px',
+                  width: '100%',
+                  height: 'auto',
                   overflow: 'hidden',
                 }}
               />
@@ -54,7 +55,8 @@ const about = () => {
             <Col style={{ marginLeft: '2%' }}>
               <Row as='h3'>মোহতাসিম হাদী রাফী</Row>
               <Row>আইডি: ১৮০০৪২১৪৫</Row>
-              <Row>প্রোগ্রাম: সফটওয়্যার ইঞ্জিনিয়ারিং(আইইউটি)</Row>
+              <Row>প্রোগ্রাম: বিএসসি ইন সফটওয়্যার ইঞ্জিনিয়ারিং</Row>
+              <Row>ইসলামি প্রযুক্তি বিশ্ববিদ্যালয়</Row>
             </Col>
           </Card.Body>
         </Card>
@@ -66,8 +68,8 @@ const about = () => {
                 alt='সাব্বিরের ছবি পাওয়া যায়নি'
                 style={{
                   background: 'white',
-                  width: '320px',
-                  height: '420px',
+                  width: '100%',
+                  height: 'auto',
                   overflow: 'hidden',
                 }}
               />
@@ -75,7 +77,8 @@ const about = () => {
             <Col style={{ marginLeft: '2%' }}>
               <Row as='h3'>মো. সাব্বির রহমান</Row>
               <Row>আইডি: ১৮০০৪২১৪২</Row>
-              <Row>প্রোগ্রাম: সফটওয়্যার ইঞ্জিনিয়ারিং(আইইউটি)</Row>
+              <Row>প্রোগ্রাম: বিএসসি ইন সফটওয়্যার ইঞ্জিনিয়ারিং</Row>
+              <Row>ইসলামি প্রযুক্তি বিশ্ববিদ্যালয়</Row>
             </Col>
           </Card.Body>
         </Card>

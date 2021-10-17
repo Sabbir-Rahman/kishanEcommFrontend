@@ -141,7 +141,7 @@ function BuyRequset() {
               variant='info'
               disabled
             >
-              {status[i]}
+              একসেপ্টেড
             </Button>
           </td>
           <td>
@@ -184,7 +184,7 @@ function BuyRequset() {
               variant='danger'
               disabled
             >
-              {status[i]}
+              পেইড
             </Button>
           </td>
           <td>
@@ -227,7 +227,7 @@ function BuyRequset() {
               variant='warning'
               disabled
             >
-              {status[i]}
+              পেন্ডিং
             </Button>
           </td>
           <td></td>
@@ -260,7 +260,40 @@ function BuyRequset() {
               variant='primary'
               disabled
             >
-              {status[i]}
+              বুকড
+            </Button>
+          </td>
+          <td></td>
+        </tr>
+      )
+    } else if (status[i] == 'cancel') {
+      sellrequset.push(
+        <tr>
+          <td>{i + 1}</td>
+          <td><Button style={{
+            background: 'none',
+            color: 'inherit',
+            border: 'none',
+            padding: '0',
+            font: 'inherit',
+            cursor: 'pointer',
+            outline: 'inherit',
+          }}
+          onClick={(e) => viewProduct(productID[i])} >
+            {productName[i]}
+          </Button></td>
+          <td>{bookingMoney[i]}</td>
+          <td>{buyingMoney[i]}</td>
+          <td>{buyingQuantity[i]}</td>
+          <td>
+            <Button
+              className='btn-round btn-fill'
+              style={{ width: "100px" }}
+              size='sm'
+              variant='dark'
+              disabled
+            >
+              বাতিলকৃত
             </Button>
           </td>
           <td></td>
@@ -294,7 +327,7 @@ function BuyRequset() {
                 variant='success'
                 disabled
               >
-                {status[i]}
+                সম্পন্ন
               </Button>
             </td>
             <td>
@@ -329,7 +362,7 @@ function BuyRequset() {
                 variant='success'
                 disabled
               >
-                {status[i]}
+                সম্পন্ন
               </Button>
             </td>
             <td>
