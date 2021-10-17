@@ -4,6 +4,8 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import post from 'api/PostAPI'
 
+//https://kishanecommbackend.azurewebsites.net
+
 function Sellrequset() {
   const [requests, setRequest] = useState([])
   const [cancelMSG, setCancelMSG] = useState('')
@@ -242,6 +244,45 @@ function Sellrequset() {
             >
               মূল্য পরিশোধিত হয়েছে
             </Button>
+          </td>
+        </tr>
+      )
+    }else if (status[i] == 'paid') {
+      sellrequset.push(
+        <tr>
+          <td>{i + 1}</td>
+          <td>
+            <Button
+              style={{
+                background: 'none',
+                color: 'inherit',
+                border: 'none',
+                padding: '0',
+                font: 'inherit',
+                cursor: 'pointer',
+                outline: 'inherit',
+              }}
+              onClick={(e) => viewProduct(productID[i])}
+            >
+              {productName[i]}
+            </Button>
+          </td>
+          <td>{bookingMoney[i]}</td>
+          <td>{buyingMoney[i]}</td>
+          <td>{buyingQuantity[i]}</td>
+          <td>{buyerName[i]}</td>
+          <td>
+            <Button
+              className='btn-round btn-fill'
+              style={{ width: '100px' }}
+              size='sm'
+              variant='danger'
+              disabled
+            >
+              পেইড
+            </Button>
+          </td>
+          <td>
           </td>
         </tr>
       )

@@ -5,6 +5,7 @@ import Cart from "components/Cart/Cart"
 
 const SearchProduct = () => {
 
+
     let cartLink = 'http://127.0.0.1:5000/product/view?'
 
     if (localStorage.getItem('search')) {
@@ -14,11 +15,10 @@ const SearchProduct = () => {
 
     return (
         <>
-            <Row style={{ marginLeft: '50px' }}>
-            </Row>
+            <Row style={{ marginLeft: '50px' }}></Row>
             <Row>
                 <Col md='auto' style={{ marginLeft: '50px' }}>
-                    <SearchBox/>
+                    <SearchBox />
                 </Col>
                 <Col md='9'>
                     <Row style={{ marginLeft: '7%' }}>{Cart(cartLink)}</Row>

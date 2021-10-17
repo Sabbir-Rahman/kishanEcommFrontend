@@ -6,7 +6,6 @@ import post from 'api/PostAPI'
 import Rating from 'react-rating'
 
 function BuyRequset() {
-
   function viewProduct(productID) {
     localStorage.setItem('productID', productID)
     window.location.replace('/product')
@@ -118,25 +117,29 @@ function BuyRequset() {
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
-          <td><Button style={{
-            background: 'none',
-            color: 'inherit',
-            border: 'none',
-            padding: '0',
-            font: 'inherit',
-            cursor: 'pointer',
-            outline: 'inherit',
-          }}
-          onClick={(e) => viewProduct(productID[i])} >
-            {productName[i]}
-          </Button></td>
+          <td>
+            <Button
+              style={{
+                background: 'none',
+                color: 'inherit',
+                border: 'none',
+                padding: '0',
+                font: 'inherit',
+                cursor: 'pointer',
+                outline: 'inherit',
+              }}
+              onClick={(e) => viewProduct(productID[i])}
+            >
+              {productName[i]}
+            </Button>
+          </td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>
             <Button
               className='btn-round btn-fill'
-              style={{ width: "100px" }}
+              style={{ width: '100px' }}
               size='sm'
               variant='info'
               disabled
@@ -161,25 +164,29 @@ function BuyRequset() {
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
-          <td><Button style={{
-            background: 'none',
-            color: 'inherit',
-            border: 'none',
-            padding: '0',
-            font: 'inherit',
-            cursor: 'pointer',
-            outline: 'inherit',
-          }}
-          onClick={(e) => viewProduct(productID[i])} >
-            {productName[i]}
-          </Button></td>
+          <td>
+            <Button
+              style={{
+                background: 'none',
+                color: 'inherit',
+                border: 'none',
+                padding: '0',
+                font: 'inherit',
+                cursor: 'pointer',
+                outline: 'inherit',
+              }}
+              onClick={(e) => viewProduct(productID[i])}
+            >
+              {productName[i]}
+            </Button>
+          </td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>
             <Button
               className='btn-round btn-fill'
-              style={{ width: "100px" }}
+              style={{ width: '100px' }}
               size='sm'
               variant='danger'
               disabled
@@ -204,25 +211,29 @@ function BuyRequset() {
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
-          <td><Button style={{
-            background: 'none',
-            color: 'inherit',
-            border: 'none',
-            padding: '0',
-            font: 'inherit',
-            cursor: 'pointer',
-            outline: 'inherit',
-          }}
-          onClick={(e) => viewProduct(productID[i])} >
-            {productName[i]}
-          </Button></td>
+          <td>
+            <Button
+              style={{
+                background: 'none',
+                color: 'inherit',
+                border: 'none',
+                padding: '0',
+                font: 'inherit',
+                cursor: 'pointer',
+                outline: 'inherit',
+              }}
+              onClick={(e) => viewProduct(productID[i])}
+            >
+              {productName[i]}
+            </Button>
+          </td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>
             <Button
               className='btn-round btn-fill'
-              style={{ width: "100px" }}
+              style={{ width: '100px' }}
               size='sm'
               variant='warning'
               disabled
@@ -237,25 +248,29 @@ function BuyRequset() {
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
-          <td><Button style={{
-            background: 'none',
-            color: 'inherit',
-            border: 'none',
-            padding: '0',
-            font: 'inherit',
-            cursor: 'pointer',
-            outline: 'inherit',
-          }}
-          onClick={(e) => viewProduct(productID[i])} >
-            {productName[i]}
-          </Button></td>
+          <td>
+            <Button
+              style={{
+                background: 'none',
+                color: 'inherit',
+                border: 'none',
+                padding: '0',
+                font: 'inherit',
+                cursor: 'pointer',
+                outline: 'inherit',
+              }}
+              onClick={(e) => viewProduct(productID[i])}
+            >
+              {productName[i]}
+            </Button>
+          </td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>
             <Button
               className='btn-round btn-fill'
-              style={{ width: "100px" }}
+              style={{ width: '100px' }}
               size='sm'
               variant='primary'
               disabled
@@ -270,25 +285,29 @@ function BuyRequset() {
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
-          <td><Button style={{
-            background: 'none',
-            color: 'inherit',
-            border: 'none',
-            padding: '0',
-            font: 'inherit',
-            cursor: 'pointer',
-            outline: 'inherit',
-          }}
-          onClick={(e) => viewProduct(productID[i])} >
-            {productName[i]}
-          </Button></td>
+          <td>
+            <Button
+              style={{
+                background: 'none',
+                color: 'inherit',
+                border: 'none',
+                padding: '0',
+                font: 'inherit',
+                cursor: 'pointer',
+                outline: 'inherit',
+              }}
+              onClick={(e) => viewProduct(productID[i])}
+            >
+              {productName[i]}
+            </Button>
+          </td>
           <td>{bookingMoney[i]}</td>
           <td>{buyingMoney[i]}</td>
           <td>{buyingQuantity[i]}</td>
           <td>
             <Button
               className='btn-round btn-fill'
-              style={{ width: "100px" }}
+              style={{ width: '100px' }}
               size='sm'
               variant='dark'
               disabled
@@ -304,25 +323,29 @@ function BuyRequset() {
         sellrequset.push(
           <tr>
             <td>{i + 1}</td>
-            <td><Button style={{
-            background: 'none',
-            color: 'inherit',
-            border: 'none',
-            padding: '0',
-            font: 'inherit',
-            cursor: 'pointer',
-            outline: 'inherit',
-          }}
-          onClick={(e) => viewProduct(productID[i])} >
-            {productName[i]}
-          </Button></td>
+            <td>
+              <Button
+                style={{
+                  background: 'none',
+                  color: 'inherit',
+                  border: 'none',
+                  padding: '0',
+                  font: 'inherit',
+                  cursor: 'pointer',
+                  outline: 'inherit',
+                }}
+                onClick={(e) => viewProduct(productID[i])}
+              >
+                {productName[i]}
+              </Button>
+            </td>
             <td>{bookingMoney[i]}</td>
             <td>{buyingMoney[i]}</td>
             <td>{buyingQuantity[i]}</td>
             <td>
               <Button
                 className='btn-round btn-fill'
-                style={{ width: "100px" }}
+                style={{ width: '100px' }}
                 size='sm'
                 variant='success'
                 disabled
@@ -339,25 +362,29 @@ function BuyRequset() {
         sellrequset.push(
           <tr>
             <td>{i + 1}</td>
-            <td><Button style={{
-            background: 'none',
-            color: 'inherit',
-            border: 'none',
-            padding: '0',
-            font: 'inherit',
-            cursor: 'pointer',
-            outline: 'inherit',
-          }}
-          onClick={(e) => viewProduct(productID[i])} >
-            {productName[i]}
-          </Button></td>
+            <td>
+              <Button
+                style={{
+                  background: 'none',
+                  color: 'inherit',
+                  border: 'none',
+                  padding: '0',
+                  font: 'inherit',
+                  cursor: 'pointer',
+                  outline: 'inherit',
+                }}
+                onClick={(e) => viewProduct(productID[i])}
+              >
+                {productName[i]}
+              </Button>
+            </td>
             <td>{bookingMoney[i]}</td>
             <td>{buyingMoney[i]}</td>
             <td>{buyingQuantity[i]}</td>
             <td>
               <Button
                 className='btn-round btn-fill'
-                style={{ width: "100px" }}
+                style={{ width: '100px' }}
                 size='sm'
                 variant='success'
                 disabled
