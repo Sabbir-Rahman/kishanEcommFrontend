@@ -4,6 +4,8 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import post from 'api/PostAPI'
 
+//https://kishanecommbackend.azurewebsites.net
+
 function Sellrequset() {
   const [requests, setRequest] = useState([])
   const [cancelMSG, setCancelMSG] = useState('')
