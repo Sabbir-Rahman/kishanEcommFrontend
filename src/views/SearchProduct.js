@@ -23,6 +23,7 @@ const SearchProduct = () => {
 
     const onSuggestionHandler = (text) => {
         setText(text)
+        console.log(text, 'rafi')
         setSuggestions([])
     }
 
@@ -64,20 +65,25 @@ const SearchProduct = () => {
                 <Col md='9'>
                     <Row style={{ marginLeft: '7%' }}>
                         <Col>
-                            <input type="text" className="col-md-12" style={{ marginTop: 10 }}
-                                onChange={e => onChangeHandler(e.target.value)}
-                                value={text}
-                                onBlur={() => {
-                                    setTimeout(() => {
-                                        setSuggestions([])
-                                    }, 100)
-                                }}
-                            />
-                            {suggestions && suggestions.map((suggestion, i) =>
-                                <div key={i} className="suggestion col-md-12 justify-content-md-center"
-                                    onClick={() => onSuggestionHandler(suggestion.name)}
-                                >{suggestion.name}</div>
-                            )}
+                            <Form>
+                                <Form.Group>
+                                    <Form.Control type="text" style={{ marginTop: 10 }}
+                                        onChange={e => onChangeHandler(e.target.value)}
+                                        value={text}
+                                        onBlur={() => {
+                                            setTimeout(() => {
+                                                setSuggestions([])
+                                            }, 100)
+                                        }}>
+                                        
+                                    </Form.Control>
+                                    {suggestions && suggestions.map((suggestion, i) =>
+                                        <div key={i}
+                                            onClick={() => onSuggestionHandler(suggestion.name)}
+                                        >{suggestion.name}</div>
+                                    )}
+                                </Form.Group>
+                            </Form>
                         </Col>
                         <Col>
                             <Button

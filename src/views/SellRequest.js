@@ -247,6 +247,45 @@ function Sellrequset() {
           </td>
         </tr>
       )
+    }else if (status[i] == 'paid') {
+      sellrequset.push(
+        <tr>
+          <td>{i + 1}</td>
+          <td>
+            <Button
+              style={{
+                background: 'none',
+                color: 'inherit',
+                border: 'none',
+                padding: '0',
+                font: 'inherit',
+                cursor: 'pointer',
+                outline: 'inherit',
+              }}
+              onClick={(e) => viewProduct(productID[i])}
+            >
+              {productName[i]}
+            </Button>
+          </td>
+          <td>{bookingMoney[i]}</td>
+          <td>{buyingMoney[i]}</td>
+          <td>{buyingQuantity[i]}</td>
+          <td>{buyerName[i]}</td>
+          <td>
+            <Button
+              className='btn-round btn-fill'
+              style={{ width: '100px' }}
+              size='sm'
+              variant='danger'
+              disabled
+            >
+              পেইড
+            </Button>
+          </td>
+          <td>
+          </td>
+        </tr>
+      )
     } else if (status[i] == 'accepted') {
       sellrequset.push(
         <tr>
