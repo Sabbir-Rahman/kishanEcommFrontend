@@ -31,7 +31,6 @@ function Home() {
           {getRoutes(routes)}
           <Redirect from='/' to='/home' />
         </Switch>
-        <FooterPage/>
       </Container>
     )
   

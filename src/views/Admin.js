@@ -156,6 +156,7 @@ function Admin() {
           <Button
             variant='success'
             size='sm'
+            className='btn-round btn-fill'
             style={{ width: '300px' }}
             value={id[i]}
             onClick={(e) => approve(e.target.value)}
@@ -176,6 +177,7 @@ function Admin() {
               </Form>
               <Button
                 style={{ width: '100px' }}
+                className='btn-round btn-fill'
                 variant='danger'
                 size='sm'
                 onClick={(e) => cancel(id[i], cancelMSG)}
