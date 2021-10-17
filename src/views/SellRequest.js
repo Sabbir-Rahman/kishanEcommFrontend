@@ -95,7 +95,7 @@ function Sellrequset() {
       .post('http://127.0.0.1:5000/product/order/accept', productID, config)
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res)
-        alert('Product accepted successfully')
+        alert('রিকুয়েস্ট এক্সেপ্টেড হয়েছে')
         window.location.reload()
       })
       .catch((err) => {
@@ -247,7 +247,7 @@ function Sellrequset() {
           </td>
         </tr>
       )
-    }else if (status[i] == 'paid') {
+    } else if (status[i] == 'paid') {
       sellrequset.push(
         <tr>
           <td>{i + 1}</td>
@@ -282,8 +282,7 @@ function Sellrequset() {
               পেইড
             </Button>
           </td>
-          <td>
-          </td>
+          <td></td>
         </tr>
       )
     } else if (status[i] == 'accepted') {

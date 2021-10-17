@@ -5,7 +5,6 @@ import axios from 'axios'
 import FileBase from 'react-file-base64'
 import { districts } from 'components/SearchCriterias'
 
-
 function AddProduct() {
   const [productName, setProductName] = useState('')
   const [minimum, setMinimum] = useState('')
@@ -54,7 +53,7 @@ function AddProduct() {
       .post('http://127.0.0.1:5000/product/add', product, config)
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res)
-        alert('Product added successfully')
+        alert('পণ্য ভেরিফিকেশনের জন্য যুক্ত হয়েছে')
         window.location.reload()
       })
       .catch((err) => {
