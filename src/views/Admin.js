@@ -29,7 +29,7 @@ function Admin() {
     post(
       productID,
       'পন্য সফলভাবে ক্যান্সেল করা হয়েছে',
-      'http://127.0.0.1:5000/product/verify'
+      'http://127.0.0.1:5000/product/verify/cancel/'
     )
   }
 
@@ -58,6 +58,8 @@ function Admin() {
   useEffect(async () => {
     ShowRequest()
   }, [])
+
+  console.log(requests)
 
   let val = []
   if (requests.data != undefined) {
@@ -121,7 +123,7 @@ function Admin() {
           <Button
             variant='success'
             size='sm'
-            style={{width:"300px"}}
+            style={{ width: '300px' }}
             value={id[i]}
             onClick={(e) => approve(e.target.value)}
           >
@@ -130,7 +132,7 @@ function Admin() {
           <br />
           <td>
             <Row>
-              <Form style={{width:"200px"}}>
+              <Form style={{ width: '200px' }}>
                 <Form.Control
                   type='text'
                   size='sm'
@@ -140,7 +142,7 @@ function Admin() {
                 />
               </Form>
               <Button
-              style={{width:"100px"}}
+                style={{ width: '100px' }}
                 variant='danger'
                 size='sm'
                 onClick={(e) => cancel(id[i], cancelMSG)}
