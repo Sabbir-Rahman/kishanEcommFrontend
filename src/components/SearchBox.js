@@ -86,7 +86,7 @@ const SearchBox = () => {
                         variant='success'
                         style={{ marginBottom: 10, marginLeft: 110 }}
                         onClick={(e) => {
-                            khojTheSearch('&division=' + division, district)
+                            khojTheSearch()
                         }}
                     >
                         সার্চ করুন
