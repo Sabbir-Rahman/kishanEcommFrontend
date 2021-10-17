@@ -41,14 +41,6 @@ const SearchBox = () => {
         setText(text)
     }
 
-    function khojTheSearch(text) {
-        alert(text)
-        console.log(text)
-        // let search = 'isVerified=true'
-        // localStorage.setItem('search', search)
-        // window.location.replace('/search')
-    }
-
     let search = 'isVerified=true'
 
     function khojTheSearch() {
